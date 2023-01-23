@@ -46,15 +46,14 @@ function Footer() {
             >
               Documentation
             </a>
-            
+
             <a
               href="/solutions"
               class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Solutions
             </a>
-            
-            
+
             {/* <a
               href="#"
               class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
@@ -64,14 +63,10 @@ function Footer() {
                 COMING SOON
               </span>
             </a> */}
-            
-          
           </div>
 
           <div class="flex flex-col w-full md:w-1/6 md:ml-8">
-            <p class="mt-6 md:mt-0 text-md text-white font-semibold">
-              Legal
-            </p>
+            <p class="mt-6 md:mt-0 text-md text-white font-semibold">Legal</p>
             <a
               href="/agreement"
               class="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
@@ -84,50 +79,45 @@ function Footer() {
             >
               Privacy Statement
             </a>
-                      
+
             <a
               href="/service-terms"
               class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
-             Terms of Service
+              Terms of Service
             </a>
-            
+
             <a
               href="/sla"
               class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
-            SLAs
+              SLAs
             </a>
-           
           </div>
           <div class="flex flex-col w-full md:w-1/6 md:ml-8 pb-8 md:pb-0 border-b md:border-none border-gray-700">
             <p class="mt-6 md:mt-0 text-md text-white font-semibold">
               Get Help
             </p>
-          
+
             <a
               href="/helpcenter"
               class="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Help Desk{" "}
             </a>
-         
+
             <a
               href="/contact"
               class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Contact
             </a>
-            <a
-              
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
+            <a class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
               Up-Time
               <span class="ml-1 px-1 font-semibold text-gray-900 text-xs bg-gray-300 rounded">
                 99.98%
               </span>
             </a>
-            
           </div>
 
           <div class="flex flex-col items-center md:items-start w-full md:w-2/6 pb-0 pt-4 md:pl-4 md:pt-0 md:pb-8 md:pb-0 ">
@@ -135,7 +125,10 @@ function Footer() {
               We accept the following payment systems
             </p>
             <div class="flex justify-center space-x-2">
-              <img class="md:block my-10 w-16 p-1 shadow-lg" src="/mastercard.png" />
+              <img
+                class="md:block my-10 w-16 p-1 shadow-lg"
+                src="/mastercard.png"
+              />
               <img class="md:block my-10 w-16 p-1 shadow-lg" src="/visa.png" />
             </div>
           </div>
@@ -216,7 +209,7 @@ function Footer() {
               </p>
             </div>
             <p class="mt-4 md:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
-              © 2022 Nkponani Ltd. All rights reserved.
+              © 2023 Nkponani Ltd. All rights reserved.
             </p>
           </div>
         </div>

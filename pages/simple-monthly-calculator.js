@@ -74,66 +74,65 @@ function smc() {
         >
           <div className="py-20 px-8 lg:pt-40 sm:px-20">
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Calculate your savings
+              Nobus Simple Monthly Calculator
             </h1>
             <p className="text-sm sm:text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
-              Nobus Flexible Compute Service (Nobus FCS) is a web service that
-              provides resizable compute capacity in the cloud. It is designed
-              to make web-scale computing easier for developers. Nobus Flexible
-              Block Store (FBS) provides persistent storage to Nobus FCS
-              instances.
+              Calculate your savings
             </p>
           </div>
         </div>
-        <div className="px-20 py-10">
+        <div className="px-10 lg:px-20 py-5">
           <div className="flex-col">
-            <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-              {cardData?.map((item) => (
-                <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-3xl border group">
-                  {" "}
-                  <img
-                    src={item.image}
-                    className="h-20 w-20 flex-shrink-0 text-gray-400"
-                    aria-hidden="true"
-                  />
-                  {/* <div className="pl-4">
-                          <item.icon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true" />
-
-                          </div> */}
-                  <div className="py-5">
-                    <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
-                      {item.title}
-                    </h1>
-                    <p className="text-base text-white tracking-wide leading-relaxed text-gray-800">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="py-5 text-left">
+              <p class="pb-3">
+                {" "}
+                Nobus Flexible Compute Service (Nobus FCS) is a web service that
+                provides resizable compute capacity in the cloud. It is designed
+                to make web-scale computing easier for developers. Nobus
+                Flexible Block Store (FBS) provides persistent storage to Nobus
+                FCS instances.
+              </p>
             </div>
-            <div className="py-5 text-center">
-              <h1 className="pb-3 text-xl tracking-wide leading-relaxed font-semibold text-gray-800">
+          </div>
+        </div>
+        <section className="p-20 bg-gray-100">
+          <div className="grid grid-cols-1 gap-y-20 sm:gap-x-4 lg:gap-x-20 md:grid-cols-2 ">
+            <div className="flex-col py-10 px-10 bg-white text-gray-700 shadow-lg rounded-xl border">
+              <p class="pb-3 ">
+                <b>Please Note :</b> <br /> For each Running Licensed Windows
+                Instance, you incur an additional charge of{" "}
+                <b>Seventeen Thousand Naira ( +17000 naira)</b>
+                to the initial calculated cost of selected Windows Instance
+                Types (Flavor).{" "}
+              </p>
+
+              <p>
                 Ensure to select the appropriate flavor for each images (linux
                 or windows)
-              </h1>
+              </p>
+            </div>
+            <div className="flex-col py-10 px-10">
+              <p class="pb-3 font-semibold">
+                keys
+                <br />
+              </p>
+              <p class="text-red-600">
+                nomenclature; si...l -- linux only <br />
+                si...w -- windows only <br />
+              </p>
             </div>
           </div>
-          <div className="flex-col">
-            <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-              <div className="">
-                <CalPrice />
-              </div>
-              <div className="">2</div>
-              <div className="">3</div>
-            </div>
-          </div>
-          <div className="text-center py-10">
-            <h1 className="pb-3 text-xl tracking-wide leading-relaxed font-semibold text-gray-800">
-              Charges displayed by this calculator are as a result of the
-              infomation you provided and may differ from Nobus original
-              billing. You will be billed based on how you use Nobus services.
-            </h1>
-          </div>
+        </section>
+
+        <div className="flex-col py-10 px-10 lg:px-20 bg-white">
+          <CalPrice />
+        </div>
+        <div className="p-10 lg:px-20 bg-gray-100 text-center">
+          <p className="font-semibold text-gray-700">
+            Charges displayed by this calculator are as a result of the
+            infomation you provided and may differ from Nobus original billing.
+            You will be billed based on how you use Nobus services.
+          </p>
         </div>
       </div>
       <Footer />
