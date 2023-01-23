@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { Disclosure } from "@headlessui/react";
-import { MinusIcon, PlusIcon } from "@heroicons/react/outline";
+import {
+  MinusIcon,
+  PlusIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/outline";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -39,7 +44,7 @@ const sections = [
     name: "Storage",
     items: [
       {
-        name: "Nobus Flexible Block Store (FBS)",
+        name: "Nobus Flexible Block Storage (FBS)",
         href: "#",
         desc: "Block level storage volumes (1 GB to 1 TB ) for use with Nobus FC Instances",
       },
@@ -71,48 +76,77 @@ const sections = [
 const faqFilters = [
   {
     id: "compute",
-    name: "Compute",
+    name: "Will Nobus really save me money?",
     options: [
-      { value: "Flexible Compute Services", href: "#" },
-      { value: "Server Groups", href: "#" },
-      { value: "Autoscaling Groups", href: "#" },
+      {
+        value:
+          "Yes. Compared to private cloud, with nobus you pay only for the resources that you actually use.",
+      },
     ],
   },
   {
     id: "storage",
-    name: "Storage",
+    name: "How can I set up my Nobus account?",
     options: [
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
+      {
+        value:
+          "Nobus is very easy to use. You can go through the Nobus website to create an account.",
+      },
+      {
+        value: "See Nobus fcs documentation to get started.",
+        href: "/documentation/fcs/",
+      },
     ],
   },
   {
-    id: "backup",
-    name: "Cloud Backup",
+    id: "payment",
+    name: "What payment methods are acceptable by Nobus?",
     options: [
-      { value: "Acronis Cloud Backup", href: "#" },
-      { value: "Object Storage", href: "#" },
+      {
+        value:
+          "We offer several payment methods for adding balance to your Nobus account:",
+      },
+      { value: "Credit cards: Visa and MasterCard" },
+      {
+        value:
+          "PayStack: PayStack balance, bank account, debit and credit cards (payment methods may vary by region).",
+      },
+      { value: "Bank Transfers: Wallet" },
+      {
+        value:
+          "Contact us if you have any questions about the payment methods, please contact support",
+        href: "/contact/",
+      },
     ],
   },
   {
-    id: "networking",
-    name: "Networking",
+    id: "usage",
+    name: "How will I be billed for resource usage?",
     options: [
-      { value: "Bandwidth", href: "#" },
-      { value: "FastTransit", href: "#" },
-      { value: "Floating IPs", href: "#" },
-      { value: "Virtual Private Network", href: "#" },
+      {
+        value:
+          "All Simple plans on your account are billed hourly up to the monthly rate cap and the hourly rate is determined by dividing the monthly rate by 672 hours (28 days). However, if your server is online for more than 672 hours in a calendar month, we will bill you on the monthly rate. The Flexible plan is billed hourly according to our pricing for the used resources. All invoices are calculated based on UTC times.",
+      },
     ],
   },
   {
-    id: "security",
-    name: "Security",
+    id: "shutdown",
+    name: "How are cloud servers billed if shutdown?",
     options: [
-      { value: "PfSense", href: "#" },
-      { value: "Sophos XG Security Services", href: "#" },
-      { value: "Acronis cyber sercurity", href: "#" },
-      { value: "Security Groups", href: "#" },
-      { value: "Virtual Private Gateway", href: "#" },
+      {
+        value:
+          "Cloud servers are billed per hour regardless of whether the server is powered on or shutdown.",
+      },
+    ],
+  },
+  {
+    id: "other",
+    name: "How does Nobus compare to other cloud providers?",
+    options: [
+      {
+        value:
+          "Nobus is hosted on a Tier III datacenter, Fully automated, User friendly, easy to use and you pay as you use.",
+      },
     ],
   },
 ];
@@ -148,13 +182,13 @@ function index() {
         </div>
         <div className="flex-col px-20 py-5">
           <div className="py-5 text-center">
-            <h1 className="pb-3 text-3xl tracking-wide leading-relaxed font-semibold text-gray-800">
+            <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Service Payment Options
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             {cardData?.map((item) => (
-              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-3xl border group">
+              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-xl border group">
                 <div className="py-5">
                   <h1 className="pb-3 text-2xl text-center tracking-wide leading-relaxed font-semibold text-gray-800">
                     {item.title}
@@ -169,17 +203,17 @@ function index() {
         </div>
         <div className="flex-col px-20 py-5">
           <div className="py-5 text-center">
-            <h1 className="pb-3 text-3xl tracking-wide leading-relaxed font-semibold text-gray-800">
+            <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Service Pricing
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-3xl border group">
-                <div key={section.name} className="hover:bg-gray-100 p-2 group">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border hover:scale-95">
+                <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
-                    className="text-xl font-medium text-gray-900 group-hover:text-blue-600"
+                    className="text-xl font-medium text-gray-900"
                   >
                     {section.name}
                   </p>
@@ -220,11 +254,11 @@ function index() {
         >
           <div className="flex flex-col lg:flex-row mx-auto ">
             <div className="text-left lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
-              <h1 className="text-3xl sm:text-4xl font-semibold">
+              <h1 className="text-3xl xl:text-4xl font-semibold">
                 Nobus Simple monthly calculator
               </h1>
 
-              <p className="my-2 text-lg tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:pt-5 lg:pb-10">
+              <p className="my-2 text-base xl:text-lg tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:pt-5 lg:pb-10">
                 You can estimate your monthly bill (individual and multiple
                 prices) using NCS Simple Monthly Calculator.
               </p>
@@ -261,7 +295,7 @@ function index() {
                     <a href="/agreement/">Customer agreement (CA)</a>
                   </h6>
                   <h6>
-                    <a href="/cost-optimization/">Cost Optimization</a>
+                    <a href="/service-terms">Service terms</a>
                   </h6>
                   <h6>
                     <a href="/documentation/">Resources</a>
@@ -292,31 +326,27 @@ function index() {
           </div>
         </div>
         <div className="flex-col p-20 bg-gray-100">
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
                 {faqFilters.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
-                    <Disclosure
-                      as="div"
-                      key={section.id}
-                      className="border-b border-gray-200 py-6"
-                    >
+                    <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
                         <>
                           <h3 className="-my-3 flow-root ">
-                            <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-base text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
-                              <span className="font-medium ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
                                 {section.name}
                               </span>
                               <span className="flex items-center">
                                 {open ? (
-                                  <MinusIcon
+                                  <ChevronUpIcon
                                     className="h-4 w-4"
                                     aria-hidden="true"
                                   />
                                 ) : (
-                                  <PlusIcon
+                                  <ChevronDownIcon
                                     className="h-4 w-4"
                                     aria-hidden="true"
                                   />
@@ -325,15 +355,15 @@ function index() {
                             </Disclosure.Button>
                           </h3>
                           <Disclosure.Panel className="pt-6">
-                            <div className="space-y-4 pt-4">
+                            <div className="space-y-4 p-3 bg-blue-100">
                               {section.options.map((option) => (
                                 <div
                                   key={option.value}
-                                  className="flex items-center group"
+                                  className="flex items-center"
                                 >
                                   <a
                                     href={option.href}
-                                    className="font-medium text-md text-gray-700 group-hover:bg-gray-200 group-hover:scale-105"
+                                    className="font-md text-md text-gray-700"
                                   >
                                     <span aria-hidden="true" />
                                     {option.value}

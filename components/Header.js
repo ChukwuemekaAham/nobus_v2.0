@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Script from "next/script";
 import {
   Dialog,
   Disclosure,
@@ -107,6 +108,8 @@ const navigation = {
             { name: "Security Groups", href: "#" },
             { name: "XG Firewall", href: "#" },
             { name: "Sophos Cyber Security", href: "#" },
+            { name: "Acronis Cyber Protect", href: "#" },
+            { name: "PFSense", href: "#" },
             { name: "Virtual Private Network", href: "#" },
           ],
         },
@@ -322,7 +325,7 @@ const resources = [
     name: "Help Center",
     description:
       "Get all of your questions answered in our forums or contact support.",
-    href: "/helpcenter",
+    href: "/service-faq",
     icon: UserIcon,
   },
   {
@@ -342,7 +345,7 @@ const resources = [
     name: "Guides",
     description:
       "Learn how to maximize our platform to get the most out of it.",
-    href: "/documentation/user-guide/",
+    href: "/documentation/",
     icon: LightBulbIcon,
   },
 ];
@@ -600,6 +603,7 @@ function classNames(...classes) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   return (
     <div className="bg-white">
@@ -758,7 +762,11 @@ export default function Header() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <div className="bg-blue-700 block lg:hidden">
+        <div
+          id="discount"
+          style={{ display: visible ? "block lg:hidden" : "none" }}
+          className="bg-blue-700 block lg:hidden"
+        >
           <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between">
               <div className="flex w-0 flex-1 items-center">
@@ -783,6 +791,7 @@ export default function Header() {
               <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                 <button
                   type="button"
+                  onClick={() => setVisible(!visible)}
                   className="-mr-1 flex rounded-md p-2 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
                 >
                   <span className="sr-only">Dismiss</span>
@@ -792,7 +801,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
