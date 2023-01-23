@@ -1,0 +1,899 @@
+{% load crispy_forms_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Nobus Website">
+    <meta name="author" content="Nkponani">
+    <title>Nobus - Cloud Computing Services</title>
+    <link rel='shortcut icon' href={% static 'favicon.ico' %} type="image/x-icon" />
+    <!-- Font Awesome Icons -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="{% static 'css/menumaker.css' %}" rel="stylesheet">
+    <link href="{% static 'css/creative.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nex.css' %}" rel="stylesheet">
+    <link href="{% static 'css/new.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href={% static 'vendor/bootstrap/css/bootstrap.min.css' %}>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <style>
+        .error {
+            color: #F00;
+        }
+
+        input.error {
+            border-color: #FF0000;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background: url({% static 'img/Preloader_2.gif' %}) center no-repeat #fff;
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script>
+      $(window).on('load', function() { 
+        $(".se-pre-con").fadeOut("slow"); 
+        });
+      
+    </script>
+    
+</head>
+
+<body cz-shortcut-listen="true" id="home">
+    <div class="se-pre-con"></div>
+    <!-- Navigation -->
+    {% comment %} {% include 'home/_nav.html'%}  {% endcomment %}
+     
+      <div class="container-fluid" style="background-color:whitesmoke;" >
+        
+        <div class="d-flex bd-highlight">
+          <div class="flex-grow-1 bd-highlight row">
+          
+            <div class="p-2 bd-highlight">
+              <a class="" href={% url 'home' %}>
+                <img src={% static 'img/nobus_logo.png' %} width="80" height="30" alt="Nobus">
+            
+              </a> 
+              
+            </div>
+            <div class="p-2 bd-highlight" style="border-left: 2px solid rgb(30,30,110)">
+              <a class="h6 font-weight-bold" style="color:rgb(30,30,110)">Registration</a> 
+              
+            </div>
+          </div>
+          <div class="p-2 bd-highlight">
+            <a class="h6 font-weight-bold" style="color:rgb(30,30,110)" href={% url 'ias' %}>Products <i class="fa fa-sm fa-angle-right"></i></a> 
+            
+          </div>
+          <div class="p-2 bd-highlight">
+            <a class="h6 font-weight-bold " style="color:rgb(30,30,110)" href={% url 'docs' %}>Documentation <i class="fa fa-sm fa-angle-right"></i></a> 
+            
+          </div>
+          <div class="p-2 bd-highlight">
+            <a class="h6 font-weight-bold" style="color:rgb(30,30,110)" href={% url 'news' %}>News <i class="fa fa-sm fa-angle-right"></i></a> 
+            
+          </div>
+        </div>
+        
+      </div>
+
+
+
+
+    <main style="background-color:#fff">
+
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+              </div>
+            {% endfor %}
+        {% endif %}
+        <div class="content-section mt-4" id="register">
+            <div class="container-fluid" style="height: min-content">
+                <div class="col-md-12 mx-auto pb-3 shadow-lg rounded" style="outline: 1px solid #17a2b8">
+                   <div class="container px-2">
+                        <form method="POST" id="signup-form">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="display-6 text-center" style="color:rgb(30, 30, 89);"><strong>Sign Up</strong></legend>
+                            <hr>
+                            <p class="text-muted text-sm-center text-info">Fill out the form below to continue with your registration</p>
+                            <hr> {# {% crispy form %}#}
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <Label for="first_name">First Name*</Label>
+                                    <input type="text" name="first_name" class="form-control form-control-sm">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="last_name">Last Name*</Label>
+                                    <input type="text" name="last_name" class="form-control form-control-sm">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="password1">Password*</Label>
+                                    <input type="password" name="password1" class="form-control form-control-sm" id="password1">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="password2">Confirm Password*</Label>
+                                    <input type="password" name="password2" class="form-control form-control-sm" id="password2">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <Label for="email">Email Address*</Label>
+                                    <input type="email" name="email" class="form-control form-control-sm" id="email">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <Label for="company">Company Name*</Label>
+                                    <input type="text" name="company" class="form-control form-control-sm" id="company">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <Label for="project_name">Project Name*</Label>
+                                    <input type="text" name="project_name" class="form-control form-control-sm" id="project_name">
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <Label for="country">Country*</Label>
+                                    <select onchange="print_state('state',this.selectedIndex);" id="id_country" class="form-control form-control-sm" name="country"></select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="state">State/Province*</Label>
+                                    <select name="state" id="state" class="form-control form-control-sm"></select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="city">City*</Label>
+                                    <input type="text" name="city" class="form-control form-control-sm">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <Label for="zip_code">Zip Code</Label>
+                                    <input type="text" name="zip_code" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <Label for="address">Address*</Label>
+                                    <input type="text" name="address" class="form-control form-control-sm" id="address">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <Label for="phone_number">Phone Number*</Label>
+                                    <div class="input-group col-md-12">
+                                        <div class="input-group-prepend">
+                                            <select class="form-control form-control-sm" id="country_code">
+                                                <!-- Countries often selected by users can be moved to the top of the list. -->
+                                                <!-- Countries known to be subject to general US embargo are commented out by default. -->
+                                                <!-- The data-countryCode attribute is populated with ISO country code, and value is int'l calling code. -->
+                                                <option data-countryCode="NG" value="234" selected>Nigeria (+234)</option>
+                                                <option data-countryCode="US" value="1" >USA (+1)</option>
+                                                <option data-countryCode="GB" value="44">UK (+44)</option>
+
+                                                <option disabled="disabled">Other Countries</option>
+                                                <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                                                <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                                                <option data-countryCode="AO" value="244">Angola (+244)</option>
+                                                <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+                                                <option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                                                <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                                                <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                                                <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                                                <option data-countryCode="AU" value="61">Australia (+61)</option>
+                                                <option data-countryCode="AT" value="43">Austria (+43)</option>
+                                                <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                                                <option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+                                                <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                                                <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                                                <option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+                                                <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                                                <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                                                <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                                                <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                                                <option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+                                                <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                                                <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                                                <option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+                                                <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                                                <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                                                <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                                                <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                                                <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                                                <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                                                <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                                                <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                                                <option data-countryCode="CA" value="1">Canada (+1)</option>
+                                                <option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+                                                <option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+                                                <option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+                                                <option data-countryCode="CL" value="56">Chile (+56)</option>
+                                                <option data-countryCode="CN" value="86">China (+86)</option>
+                                                <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                                                <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                                                <option data-countryCode="CG" value="242">Congo (+242)</option>
+                                                <option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+                                                <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                                                <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                                                <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                                                <option data-countryCode="CY" value="90">Cyprus - North (+90)</option>
+                                                <option data-countryCode="CY" value="357">Cyprus - South (+357)</option>
+                                                <option data-countryCode="CZ" value="420">Czech Republic (+420)</option>
+                                                <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                                                <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                                                <option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+                                                <option data-countryCode="DO" value="1809">Dominican Republic (+1809)</option>
+                                                <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                                                <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                                                <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                                                <option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+                                                <option data-countryCode="ER" value="291">Eritrea (+291)</option>
+                                                <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                                                <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                                                <option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+                                                <option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+                                                <option data-countryCode="FJ" value="679">Fiji (+679)</option>
+                                                <option data-countryCode="FI" value="358">Finland (+358)</option>
+                                                <option data-countryCode="FR" value="33">France (+33)</option>
+                                                <option data-countryCode="GF" value="594">French Guiana (+594)</option>
+                                                <option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+                                                <option data-countryCode="GA" value="241">Gabon (+241)</option>
+                                                <option data-countryCode="GM" value="220">Gambia (+220)</option>
+                                                <option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+                                                <option data-countryCode="DE" value="49">Germany (+49)</option>
+                                                <option data-countryCode="GH" value="233">Ghana (+233)</option>
+                                                <option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+                                                <option data-countryCode="GR" value="30">Greece (+30)</option>
+                                                <option data-countryCode="GL" value="299">Greenland (+299)</option>
+                                                <option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+                                                <option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+                                                <option data-countryCode="GU" value="671">Guam (+671)</option>
+                                                <option data-countryCode="GT" value="502">Guatemala (+502)</option>
+                                                <option data-countryCode="GN" value="224">Guinea (+224)</option>
+                                                <option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+                                                <option data-countryCode="GY" value="592">Guyana (+592)</option>
+                                                <option data-countryCode="HT" value="509">Haiti (+509)</option>
+                                                <option data-countryCode="HN" value="504">Honduras (+504)</option>
+                                                <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                                                <option data-countryCode="HU" value="36">Hungary (+36)</option>
+                                                <option data-countryCode="IS" value="354">Iceland (+354)</option>
+                                                <option data-countryCode="IN" value="91">India (+91)</option>
+                                                <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                                                <option data-countryCode="IQ" value="964">Iraq (+964)</option>
+                                                <option data-countryCode="IR" value="98">Iran (+98)</option>
+                                                <option data-countryCode="IE" value="353">Ireland (+353)</option>
+                                                <option data-countryCode="IL" value="972">Israel (+972)</option>
+                                                <option data-countryCode="IT" value="39">Italy (+39)</option>
+                                                <option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+                                                <option data-countryCode="JP" value="81">Japan (+81)</option>
+                                                <option data-countryCode="JO" value="962">Jordan (+962)</option>
+                                                <option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+                                                <option data-countryCode="KE" value="254">Kenya (+254)</option>
+                                                <option data-countryCode="KI" value="686">Kiribati (+686)</option>
+                                                <option data-countryCode="KP" value="850">Korea - North (+850)</option>
+                                                <option data-countryCode="KR" value="82">Korea - South (+82)</option>
+                                                <option data-countryCode="KW" value="965">Kuwait (+965)</option>
+                                                <option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+                                                <option data-countryCode="LA" value="856">Laos (+856)</option>
+                                                <option data-countryCode="LV" value="371">Latvia (+371)</option>
+                                                <option data-countryCode="LB" value="961">Lebanon (+961)</option>
+                                                <option data-countryCode="LS" value="266">Lesotho (+266)</option>
+                                                <option data-countryCode="LR" value="231">Liberia (+231)</option>
+                                                <option data-countryCode="LY" value="218">Libya (+218)</option>
+                                                <option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+                                                <option data-countryCode="LT" value="370">Lithuania (+370)</option>
+                                                <option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+                                                <option data-countryCode="MO" value="853">Macao (+853)</option>
+                                                <option data-countryCode="MK" value="389">Macedonia (+389)</option>
+                                                <option data-countryCode="MG" value="261">Madagascar (+261)</option>
+                                                <option data-countryCode="MW" value="265">Malawi (+265)</option>
+                                                <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                                                <option data-countryCode="MV" value="960">Maldives (+960)</option>
+                                                <option data-countryCode="ML" value="223">Mali (+223)</option>
+                                                <option data-countryCode="MT" value="356">Malta (+356)</option>
+                                                <option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+                                                <option data-countryCode="MQ" value="596">Martinique (+596)</option>
+                                                <option data-countryCode="MR" value="222">Mauritania (+222)</option>
+                                                <option data-countryCode="YT" value="269">Mayotte (+269)</option>
+                                                <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                                                <option data-countryCode="FM" value="691">Micronesia (+691)</option>
+                                                <option data-countryCode="MD" value="373">Moldova (+373)</option>
+                                                <option data-countryCode="MC" value="377">Monaco (+377)</option>
+                                                <option data-countryCode="MN" value="976">Mongolia (+976)</option>
+                                                <option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+                                                <option data-countryCode="MA" value="212">Morocco (+212)</option>
+                                                <option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+                                                <option data-countryCode="MN" value="95">Myanmar (+95)</option>
+                                                <option data-countryCode="NA" value="264">Namibia (+264)</option>
+                                                <option data-countryCode="NR" value="674">Nauru (+674)</option>
+                                                <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                                                <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                                                <option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+                                                <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                                                <option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+                                                <option data-countryCode="NE" value="227">Niger (+227)</option>
+                                                <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                                                <option data-countryCode="NU" value="683">Niue (+683)</option>
+                                                <option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+                                                <option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+                                                <option data-countryCode="NO" value="47">Norway (+47)</option>
+                                                <option data-countryCode="OM" value="968">Oman (+968)</option>
+                                                <option data-countryCode="PK" value="92">Pakistan (+92)</option>
+                                                <option data-countryCode="PW" value="680">Palau (+680)</option>
+                                                <option data-countryCode="PA" value="507">Panama (+507)</option>
+                                                <option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+                                                <option data-countryCode="PY" value="595">Paraguay (+595)</option>
+                                                <option data-countryCode="PE" value="51">Peru (+51)</option>
+                                                <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                                                <option data-countryCode="PL" value="48">Poland (+48)</option>
+                                                <option data-countryCode="PT" value="351">Portugal (+351)</option>
+                                                <option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+                                                <option data-countryCode="QA" value="974">Qatar (+974)</option>
+                                                <option data-countryCode="RE" value="262">Reunion (+262)</option>
+                                                <option data-countryCode="RO" value="40">Romania (+40)</option>
+                                                <option data-countryCode="RU" value="7">Russia (+7)</option>
+                                                <option data-countryCode="RW" value="250">Rwanda (+250)</option>
+                                                <option data-countryCode="SM" value="378">San Marino (+378)</option>
+                                                <option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+                                                <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                                                <option data-countryCode="SN" value="221">Senegal (+221)</option>
+                                                <option data-countryCode="CS" value="381">Serbia (+381)</option>
+                                                <option data-countryCode="SC" value="248">Seychelles (+248)</option>
+                                                <option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+                                                <option data-countryCode="SG" value="65">Singapore (+65)</option>
+                                                <option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+                                                <option data-countryCode="SI" value="386">Slovenia (+386)</option>
+                                                <option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+                                                <option data-countryCode="SO" value="252">Somalia (+252)</option>
+                                                <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                                                <option data-countryCode="ES" value="34">Spain (+34)</option>
+                                                <option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+                                                <option data-countryCode="SH" value="290">St. Helena (+290)</option>
+                                                <option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+                                                <option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+                                                <option data-countryCode="SR" value="597">Suriname (+597)</option>
+                                                <option data-countryCode="SD" value="249">Sudan (+249)</option>
+                                                <option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+                                                <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                                                <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                                                <option data-countryCode="SY" value="963">Syria (+963)</option>
+                                                <option data-countryCode="TW" value="886">Taiwan (+886)</option>
+                                                <option data-countryCode="TJ" value="992">Tajikistan (+992)</option>
+                                                <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                                                <option data-countryCode="TG" value="228">Togo (+228)</option>
+                                                <option data-countryCode="TO" value="676">Tonga (+676)</option>
+                                                <option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+                                                <option data-countryCode="TN" value="216">Tunisia (+216)</option>
+                                                <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                                                <option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+                                                <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+                                                <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+                                                <option data-countryCode="UG" value="256">Uganda (+256)</option>
+                                                <option data-countryCode="UA" value="380">Ukraine (+380)</option>
+                                                <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                                                <option data-countryCode="UY" value="598">Uruguay (+598)</option>
+                                                <option data-countryCode="UZ" value="998">Uzbekistan (+998)</option>
+                                                <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+                                                <option data-countryCode="VA" value="379">Vatican City (+379)</option>
+                                                <option data-countryCode="VE" value="58">Venezuela (+58)</option>
+                                                <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                                                <option data-countryCode="VG" value="1">Virgin Islands - British (+1)</option>
+                                                <option data-countryCode="VI" value="1">Virgin Islands - US (+1)</option>
+                                                <option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
+                                                <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                                                <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+                                                <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                                                <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+                                            </select>
+                                        </div>
+					<div class="text-danger text-muted text-center" id="tell-error">
+					</div>
+                                        <!-- <Label for="phone_number">Phone Number</Label> -->
+                                        <input type="text" name="phone_number" value="+234" class="form-control form-control-sm" id="phone_number">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="d-flex submit-btn justify-content-end align-content-end px-5">
+                                <input class="submit btn btn-primary btn-sm btn-block" type="submit" value="Submit">
+                            </div>
+                        </fieldset>
+                    </form>
+                   </div>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">Already Filled This form? <a class="ml-2" href={% url 'continue' %}>Continue Registration</a></small>
+                        <div class="border-top pt-3"> 
+                            <small class="text-muted">Already have an account? <a class="ml-2" href="http://dashboard.nobus.io/" target="_blank">Sign In</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h6 class=" pl-3 mt-4 font-weight-bold text-center pb-4" style="color: rgb(30,30,89);">
+            <span class="">Copyright &copy; 2020 </span> Nkponani Limited. All Rights Reserved. | <a href="">Terms of Use</a> | <a href="">Privacy Statement</a>
+        </h6>
+        <!--Search modal-->
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header shadow" style="background-color:white;">
+                        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Enter Keyword</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="searchform" class="search-form" name="search_form" method="post" action="/">
+                            {% csrf_token %}
+                            <div class="hiddenFields">
+                                <input type="hidden" name="ACT" value="21">
+                                <input type="hidden" name="RES" value="">
+                                <input type="hidden" name="meta" value="IfQrBXp+rPMZJooW73gcpdC/uu/gXfr4W0d0vonr0LTPfl7uf84JO6ZZaR9xavIXdib/Dazp2GAF1HaLNAkiol8WoSOv9hZCWARYsJmqmM0kH/uRMXt82dFQY3zM8BG76VrNB1lFrf5Adl3MSVfI/89iIooWghvfFIR2EV3v7rwNpNbMDN8ByqudRsZKFW4XonUhqbjzDNa9XEfi8n6mQDhXYTIO11Atcof08Byte5X51r3Ws5/GHEvCCM03AFNXyD0SQ50lQMaCriTl0s8IFNuImab5bVzWL1cXa6s3LUOPGKXgHmQzb95EPYzHgdgwUl4m9vPITgefu9BesHyhzDMX/6VIOHwZyYp5T9qiq0t9OzW3Ea73WiwwxuA1ps6mC/m9/PeUplTeL+chZCkcCz4Sa7X3HcmW4UO5P7H9KMjXt2A6V2FqW2FG5Hu8IQDpl3JvWIDmGjM6R/di6GW1fjqjBBENjmUR005M8hSvm3z7M7Qsbxmr3meirQV5dsCH">
+                                <input type="hidden" name="site_id" value="1">
+                                <input type="hidden" name="csrf_token" value="">
+                            </div>
+
+                            <script>
+                                //<![CDATA[
+
+                                var firstcategory = 1;
+                                var firststatus = 1;
+
+                                function changemenu(index) {
+                                    var categories = new Array();
+
+                                    var i = firstcategory;
+                                    var j = firststatus;
+
+                                    var theSearchForm = false
+
+                                    if (document.searchform) {
+                                        theSearchForm = document.searchform;
+                                    } else if (document.getElementById('searchform')) {
+                                        theSearchForm = document.getElementById('searchform');
+                                    }
+
+                                    if (theSearchForm.elements['channel_id']) {
+                                        var channel_obj = theSearchForm.elements['channel_id'];
+                                    } else {
+                                        var channel_obj = theSearchForm.elements['channel_id[]'];
+                                    }
+
+                                    var channels = channel_obj.options[index].value;
+
+                                    var reset = 0;
+
+                                    for (var g = 0; g < channel_obj.options.length; g++) {
+                                        if (channel_obj.options[g].value != 'null' &&
+                                            channel_obj.options[g].selected == true) {
+                                            reset++;
+                                        }
+                                    }
+
+                                    with(theSearchForm.elements['cat_id[]']) {
+                                        if (channels == "10") {
+
+                                        } // END if channels
+
+
+                                        if (channels == "6") {
+                                            categories[i] = new Option("-------", "");
+                                            i++;
+                                            categories[i] = new Option("Home", "1");
+                                            i++;
+                                            categories[i] = new Option("Products", "2");
+                                            i++;
+                                            categories[i] = new Option("Customers", "2");
+                                            i++;
+                                        } // END if channels
+
+
+                                        if (channels == "5") {
+
+                                        } // END if channels
+
+
+                                        if (reset > 1) {
+                                            categories = new Array();
+                                        }
+
+                                        spaceString = eval("/!-!/g");
+
+                                        with(theSearchForm.elements['cat_id[]']) {
+                                            for (i = length - 1; i >= firstcategory; i--)
+                                                options[i] = null;
+
+                                            for (i = firstcategory; i < categories.length; i++) {
+                                                options[i] = categories[i];
+                                                options[i].text = options[i].text.replace(spaceString, String.fromCharCode(160));
+                                            }
+
+                                            options[0].selected = true;
+                                        }
+
+                                    }
+                                }
+
+                                //]]>
+                            </script>
+
+                            <div class="search-form-container">
+                                <label for="keywords" class="sr-only">Search</label>
+                                <input type="text" name="keywords" id="keywords" value="" size="50" maxlength="100" placeholder="Search">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header shadow" style="background-color:white;">
+            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Enter Keyword</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form id="searchform" class="search-form" name="search_form" method="post" action="http://127.0.0.1:8000/pricing/">
+              {% csrf_token %}
+              <div class="hiddenFields">
+              <input type="hidden" name="ACT" value="21">
+              <input type="hidden" name="RES" value="">
+              <input type="hidden" name="meta" value="IfQrBXp+rPMZJooW73gcpdC/uu/gXfr4W0d0vonr0LTPfl7uf84JO6ZZaR9xavIXdib/Dazp2GAF1HaLNAkiol8WoSOv9hZCWARYsJmqmM0kH/uRMXt82dFQY3zM8BG76VrNB1lFrf5Adl3MSVfI/89iIooWghvfFIR2EV3v7rwNpNbMDN8ByqudRsZKFW4XonUhqbjzDNa9XEfi8n6mQDhXYTIO11Atcof08Byte5X51r3Ws5/GHEvCCM03AFNXyD0SQ50lQMaCriTl0s8IFNuImab5bVzWL1cXa6s3LUOPGKXgHmQzb95EPYzHgdgwUl4m9vPITgefu9BesHyhzDMX/6VIOHwZyYp5T9qiq0t9OzW3Ea73WiwwxuA1ps6mC/m9/PeUplTeL+chZCkcCz4Sa7X3HcmW4UO5P7H9KMjXt2A6V2FqW2FG5Hu8IQDpl3JvWIDmGjM6R/di6GW1fjqjBBENjmUR005M8hSvm3z7M7Qsbxmr3meirQV5dsCH">
+              <input type="hidden" name="site_id" value="1">
+
+              </div>
+
+              <script>
+                //<![CDATA[
+
+                    var firstcategory = 1;
+                    var firststatus = 1;
+
+                    function changemenu(index)
+                    {
+                      var categories = new Array();
+
+                      var i = firstcategory;
+                      var j = firststatus;
+
+                      var theSearchForm = false
+
+                      if (document.searchform)
+                      {
+                        theSearchForm = document.searchform;
+                      }
+                      else if (document.getElementById('searchform'))
+                      {
+                        theSearchForm = document.getElementById('searchform');
+                      }
+
+                      if (theSearchForm.elements['channel_id'])
+                      {
+                        var channel_obj = theSearchForm.elements['channel_id'];
+                      }
+                      else
+                      {
+                        var channel_obj = theSearchForm.elements['channel_id[]'];
+                      }
+
+                      var channels = channel_obj.options[index].value;
+
+                      var reset = 0;
+
+                      for (var g = 0; g < channel_obj.options.length; g++)
+                      {
+                        if (channel_obj.options[g].value != 'null' &&
+                          channel_obj.options[g].selected == true)
+                        {
+                          reset++;
+                        }
+                      }
+
+                      with (theSearchForm.elements['cat_id[]'])
+                      {
+                        if (channels == "10")
+                        {
+
+                        } // END if channels
+
+
+                        if (channels == "6")
+                        {
+                          categories[i] = new Option("-------", ""); i++;
+                          categories[i] = new Option("Home", "1"); i++;
+                          categories[i] = new Option("Products", "2"); i++;
+
+                        } // END if channels
+
+
+                        if (channels == "5")
+                        {
+
+                        } // END if channels
+
+
+                        if (reset > 1)
+                        {
+                          categories = new Array();
+                        }
+
+                        spaceString = eval("/!-!/g");
+
+                        with (theSearchForm.elements['cat_id[]'])
+                        {
+                          for (i = length-1; i >= firstcategory; i--)
+                            options[i] = null;
+
+                          for (i = firstcategory; i < categories.length; i++)
+                          {
+                            options[i] = categories[i];
+                            options[i].text = options[i].text.replace(spaceString, String.fromCharCode(160));
+                          }
+
+                          options[0].selected = true;
+                        }
+
+                      }
+                    }
+
+                //]]>
+                </script>
+
+                  <div class="search-form-container">
+                      <label for="keywords" class="sr-only">Search</label>
+                      <input type="text" name="keywords" id="keywords" value="" size="50" maxlength="100" placeholder="Search">
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        {% comment %} <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script> {% endcomment %}
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+
+        <!-- Custom scripts for this template -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script src="{% static 'js/creative.js' %}"></script>
+        <script src="{% static 'js/creative.min.js' %}"></script>         
+        <script src="{% static 'js/new.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/country.js' %}"></script>
+        <script src="{% static 'js/menumaker.js' %}" ></script>
+        <script type="text/javascript">
+        $("#cssmenu").menumaker({
+          title: "<a class='' href={% url 'home' %}><img src={% static 'img/nobus_logo.png' %} width='60' height='28' alt='Nobus'></a>",        // The text of the button which toggles the menu
+          breakpoint: 960,			// The breakpoint for switching to the mobile view
+          format: "multitoggle" // It takes three values: dropdown for a simple toggle menu, select for select list menu, multitoggle for a menu where each submenu can be toggled separately
+        });
+      </script>
+        <script>
+            print_country("id_country");
+            $('#id_country').val('');
+            print_state('id_state', $('#id_country')[0].selectedIndex);
+        </script>
+        <script>
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+            $('form[id="signup-form"]').submit(() => {
+                let email = $('#email').val();
+                fetch(`${baseUrl}check_stage/`, {
+                        'method': 'POST',
+                        'credentials': 'include',
+                        'headers': new Headers({
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }),
+                        body: `email=${email}`,
+                    })
+                    .then(response => {
+                        if (response.ok) {
+
+                        } else {
+                            window.location.href = 'http://197.156.233.5:4000/continue/'
+                        }
+                    });
+            });
+        </script>
+        <script>
+            var getUrl = window.location;
+            var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+            var post_url = `/check_mail/`;
+            $.validator.addMethod("nowhitespace", function(value, element) {
+                return this.optional(element) || /^\S+$/i.test(value);
+            }, "No white space please");
+            $.validator.addMethod("phone_regx", function(value, element) {
+                return value.length > 9 &&
+                    value.match(/(\+|00)(297|93|244|1264|358|355|376|971|54|374|1684|1268|61|43|994|257|32|229|226|880|359|973|1242|387|590|375|501|1441|591|55|1246|673|975|267|236|1|61|41|56|86|225|237|243|242|682|57|269|238|506|53|5999|61|1345|357|420|49|253|1767|45|1809|1829|1849|213|593|20|291|212|34|372|251|358|679|500|33|298|691|241|44|995|44|233|350|224|590|220|245|240|30|1473|299|502|594|1671|592|852|504|385|509|36|62|44|91|246|353|98|964|354|972|39|1876|44|962|81|76|77|254|996|855|686|1869|82|383|965|856|961|231|218|1758|423|94|266|370|352|371|853|590|212|377|373|261|960|52|692|389|223|356|95|382|976|1670|258|222|1664|596|230|265|60|262|264|687|227|672|234|505|683|31|47|977|674|64|968|92|507|64|51|63|680|675|48|1787|1939|850|351|595|970|689|974|262|40|7|250|966|249|221|65|500|4779|677|232|503|378|252|508|381|211|239|597|421|386|46|268|1721|248|963|1649|235|228|66|992|690|993|670|676|1868|216|90|688|886|255|256|380|598|1|998|3906698|379|1784|58|1284|1340|84|678|681|685|967|27|260|263)(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{4,20}$/)
+            }, "Please enter a valid Phone Number.");
+            $.validator.addMethod("password_regx", function(password, element, ) {
+                return password.match(/^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#*!%^&])[\w\d@#$*!%^&]{6,12}$/);
+            }, "Please enter a valid password.");
+            $.validator.addMethod("check_mail", function(email, element, ) {
+
+                var result = false;
+                var getUrl = window.location;
+                var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+                fetch(`/check_mail/`, {
+                        'method': 'POST',
+                        'credentials': 'include',
+                        'headers': new Headers({
+
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }),
+                        body: `email=${email}`,
+                    })
+                    .then(response => {
+                        console.log(`response state = ${response.ok}`);
+                        window.result = response.ok;
+                    });
+                console.log(result);
+                return result
+
+            });
+
+            $('form[id="signup-form"]').validate({
+
+                rules: {
+                    first_name: {
+                        required: true,
+                        nowhitespace: true,
+                    },
+                    last_name: {
+                        required: true,
+                        nowhitespace: true,
+                    },
+                    company: {
+                        required: true
+                    },
+                    project_name: {
+                        required: true,
+                        nowhitespace: true,
+                    },
+                    address: {
+                        required: true
+                    },
+                    country: {
+                        required: true
+                    },
+                    zip_code: {
+                        required: false
+                    },
+                    state: {
+                        required: true
+                    },
+                    city: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                        remote: {
+                            url: post_url,
+                            method: "POST",
+                            data: {
+                                email: function() {
+                                    return $('#email').val();
+                                }
+                            }
+                        },
+
+                    },
+                    phone_number: {
+                        required: true,
+                        phone_regx: true,
+                    },
+                    password1: {
+                        required: true,
+                        nowhitespace: true,
+                        minlength: 8,
+                        
+
+                    },
+                    password2: {
+                        required: true,
+                        equalTo: '#password1',
+
+                    }
+                },
+                messages: {
+                    first_name: {
+                        nowhitespace: 'No whitespace allowed'
+                    },
+                    last_name: {
+                        nowhitespace: 'No whitespace allowed'
+                    },
+                    address: 'This field is required',
+                    city: 'This field is required',
+                    project_name: {
+                        nowhitespace: 'No whitespace allowed'
+                    },
+
+                    zip_code: 'This field is required',
+                    state: 'This field is required',
+                    country: 'This field is required',
+                    email: {
+                        email: 'Enter a valid email',
+                        remote: "Email address already in use. Please use other email."
+                    },
+                    password1: {
+                        minlength: 'Password must be at least 8 characters long',
+                        nowhitespace: 'No whitespace allowed'
+                    },
+                    password2: {
+                        equalTo: 'Password Don\'t match'
+                    }
+                },
+		errorPlacement: function(error, element) {
+			if(element.attr("name") === 'phone_number'){
+				$("#telerror").html(error);
+			}else {
+  			error.insertAfter(element); // <- the default
+			}
+		},
+                onkeyup: false,
+                submitHandler: function(form) {
+                    form.submit();
+                }
+
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#country_code").change(function() {
+                    var selectedCountry = $(this).children("option:selected").val();
+                    console.log(selectedCountry);
+                    $('#phone_number').val(`+${selectedCountry}`);
+                });
+            });
+        </script>
+</body>
+
+</html>
+
+

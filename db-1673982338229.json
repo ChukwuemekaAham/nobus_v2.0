@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "emeka",
+      "lastName": "aham",
+      "password": "jsihiddii112",
+      "confirmPassword": "shdihdihi123",
+      "email": "chukwuemekaaham1@gmail.com",
+      "company": "company",
+      "project": "project",
+      "country": "country",
+      "street": "street",
+      "city": "city",
+      "region": "region",
+      "postal": "12566",
+      "dialup": "+23408052995472"
+    },
+    {
+      "firstName": "djjjvjc",
+      "lastName": "malnmqlns",
+      "password": "cbjbssj1232",
+      "confirmPassword": "mannadknbk123",
+      "email": "chukwuemekaaham1@gmail.com",
+      "company": "Nkponani Limited",
+      "project": "adffd",
+      "country": "NG",
+      "street": "Ikeja",
+      "city": "ssfsf",
+      "region": "Lagos",
+      "postal": "1234",
+      "dialup": "+2348052995472",
+      "id": 2
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "password": "hsnnksnknkn123",
+      "confirmPassword": "knsnkndkdf123",
+      "email": "chukwuemekaaham1@gmail.com",
+      "company": "Nkponani Limited",
+      "project": "nksnk",
+      "country": "NG",
+      "street": "Ikeja",
+      "city": "dnkdsnkn",
+      "region": "Lagos",
+      "postal": "10029",
+      "dialup": "+2348052995472",
+      "id": 3
+    }
+  ]
+}

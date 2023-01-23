@@ -1,0 +1,28 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section class="page-section">
+      <div class="contain">
+        <div class="container">
+            <div class="col-md-12">
+                <legend class="border-buttom mb-4  text-black-50"><strong><h2>Nobus Terms and Agreement</h2></strong></legend>
+                <p class="text-muted header-4">Download <a target="_blank" href="{% url 'agreement'%}">Nobus Terms and Agreements</a></p>
+                <form method="post" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <input type="hidden" name="user_id" value="{{user_id}}" />
+                        <input type="checkbox" name="checkbox" value="agree" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+                        <input type="submit" class="btn btn-primary " name="submit" value="I Agree" />
+                    </fieldset>
+                </form>
+            </div>
+        <!-- col2 -->
+            
+            
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+
+{% endblock %}
