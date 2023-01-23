@@ -41,7 +41,8 @@ const index = () => {
   const [postal, setPostal] = useState("");
   const [dialup, setDialup] = useState("");
   const [isPending, setIsPending] = useState(false);
-  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [visible, setVisible] = useState(true);
 
   const handleSubmit = async (e) => {
@@ -95,13 +96,15 @@ const index = () => {
       .then((res) => {
         console.log(res);
         console.log("post successfull");
-        setMessage("Successful...please check your confirmation email.");
+        setSuccess("Successful...please check your confirmation email.");
+        setError(false);
         setIsPending(false);
       })
       .catch((err) => {
         console.log(err);
         console.log("post unsuccessfull");
-        setMessage(err.toString());
+        setSuccess(false);
+        setError(err.toString());
       });
   };
 
@@ -407,14 +410,32 @@ const index = () => {
                 style={{ display: visible ? "block" : "none" }}
                 className="fixed inset-x-0 top-20 mx-80"
               >
-                {message && (
+                {success && (
                   <div className="flex flex-wrap bg-blue-600 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
-                    <div className="flex w-0 flex-1 p-2">{message}</div>{" "}
+                    <div className="flex w-0 flex-1 p-2">{success}</div>{" "}
                     <div className="order-2 flex-shrink-0 sm:order-3 bg-blue-600">
                       <button
                         type="button"
                         onClick={() => setVisible(!visible)}
-                        className="-mr-1 p-2 bg-blue-600 focus:outline-none sm:-mr-2"
+                        className="-mr-1 p-2 bg-blue-600 hover:bg-blue-400 rounded-full focus:outline-none sm:-mr-2"
+                      >
+                        <span className="sr-only">Dismiss</span>
+                        <XIcon
+                          className="h-6 w-6 text-white hover:scale-95"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {error && (
+                  <div className="flex flex-wrap bg-red-600 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
+                    <div className="flex w-0 flex-1 p-2">{error}</div>{" "}
+                    <div className="order-2 flex-shrink-0 sm:order-3 bg-red-600">
+                      <button
+                        type="button"
+                        onClick={() => setVisible(!visible)}
+                        className="-mr-1 p-2 bg-red-600 hover:bg-red-400 rounded-full focus:outline-none sm:-mr-2"
                       >
                         <span className="sr-only">Dismiss</span>
                         <XIcon
@@ -451,7 +472,7 @@ const index = () => {
                 </div>
                 <div className="mt-5 text-base">
                   <a
-                    href="#"
+                    href="/blog"
                     className="font-medium text-blue-500 hover:text-blue-400"
                   >
                     View all blog posts
