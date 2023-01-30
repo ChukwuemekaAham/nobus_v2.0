@@ -15,16 +15,10 @@ import {
   GlobeAltIcon,
   MenuAlt3Icon,
   LightBulbIcon,
-  BookOpenIcon,
   PlayIcon,
   PhoneIcon,
-  ChartBarIcon,
-  CogIcon,
   SearchIcon,
-  ShoppingBagIcon,
   XIcon,
-  CalendarIcon,
-  ShieldCheckIcon,
   ChevronDownIcon,
 } from "@heroicons/react/outline";
 
@@ -316,7 +310,7 @@ const navigation = {
     { name: "News Blog", href: "/blogs" },
     { name: "Contact", href: "/contact" },
     { name: "Watch Demo", href: "/demo" },
-    { name: "Events", href: "/events" },
+    { name: "FAQs", href: "/service-faq" },
   ],
 };
 

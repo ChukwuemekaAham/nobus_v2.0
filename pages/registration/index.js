@@ -1,8 +1,5 @@
 import Head from "next/head";
-// import Script from "next/script";
-// import axios from "axios";
-// import { apiEndpoint } from "../config";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import HeaderRegister from "../../components/HeaderRegister";
 import Footer2 from "../../components/Footer2";
 import "react-phone-number-input/style.css";
@@ -22,9 +19,6 @@ const recentPosts = [
     href: "/blog",
   },
 ];
-// const client = axios.create({
-//   baseURL: "https://",
-// });
 
 const index = () => {
   const [firstName, setFirstName] = useState("");
@@ -77,10 +71,11 @@ const index = () => {
 
     const JSONdata = JSON.stringify(data);
 
-    const endpoint = "http://localhost:8000/users";
+    const endpoint = process.env.REGISTRATION_ENDPOINT;
     const options = {
       method: "POST",
       headers: {
+        Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
       body: JSONdata,
@@ -93,16 +88,40 @@ const index = () => {
 
         return res.json();
       })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
         console.log("post successfull");
+        setFirstName("");
+        setLastName("");
+        setPassword("");
+        setConfirmPassword("");
+        setEmail("");
+        setCompany("");
+        setProject("");
+        setCountry("");
+        setStreet("");
+        setCity("");
+        setRegion("");
+        setPostal("");
+        setDialup("");
+
         setSuccess("Successful...please check your confirmation email.");
         setError(false);
         setIsPending(false);
       })
       .catch((err) => {
-        console.log(err);
-        console.log("post unsuccessfull");
+        setFirstName("");
+        setLastName("");
+        setPassword("");
+        setConfirmPassword("");
+        setEmail("");
+        setCompany("");
+        setProject("");
+        setCountry("");
+        setStreet("");
+        setCity("");
+        setRegion("");
+        setPostal("");
+        setDialup("");
         setSuccess(false);
         setError(err.toString());
       });
@@ -408,16 +427,16 @@ const index = () => {
               </form>
               <div
                 style={{ display: visible ? "block" : "none" }}
-                className="fixed inset-x-0 top-20 mx-80"
+                className="fixed inset-x-0 bottom-10 ml-5 mr-5 sm:mr-[200px] md:mr-[400px] lg:mr-[600px] xl:mr-[800px]"
               >
                 {success && (
-                  <div className="flex flex-wrap bg-blue-600 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
+                  <div className="flex flex-wrap bg-gray-800 shadow-lg w-50 px-3 py-2 text-md text-white font-semibold justify-between rounded-md">
                     <div className="flex w-0 flex-1 p-2">{success}</div>{" "}
-                    <div className="order-2 flex-shrink-0 sm:order-3 bg-blue-600">
+                    <div className="order-2 flex-shrink-0 sm:order-3 bg-gray-800">
                       <button
                         type="button"
                         onClick={() => setVisible(!visible)}
-                        className="-mr-1 p-2 bg-blue-600 hover:bg-blue-400 rounded-full focus:outline-none sm:-mr-2"
+                        className="-mr-1 p-2 bg-gray-800 hover:bg-gray-600 rounded-full focus:outline-none sm:-mr-2"
                       >
                         <span className="sr-only">Dismiss</span>
                         <XIcon
@@ -429,13 +448,13 @@ const index = () => {
                   </div>
                 )}
                 {error && (
-                  <div className="flex flex-wrap bg-red-600 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
+                  <div className="flex flex-wrap bg-red-600 w-50 px-3 py-2 shadow-lg text-md text-white font-semibold justify-between rounded-md">
                     <div className="flex w-0 flex-1 p-2">{error}</div>{" "}
                     <div className="order-2 flex-shrink-0 sm:order-3 bg-red-600">
                       <button
                         type="button"
                         onClick={() => setVisible(!visible)}
-                        className="-mr-1 p-2 bg-red-600 hover:bg-red-400 rounded-full focus:outline-none sm:-mr-2"
+                        className="-mr-1 p-2 bg-red-600 hover:bg-red-500 rounded-full focus:outline-none sm:-mr-2"
                       >
                         <span className="sr-only">Dismiss</span>
                         <XIcon

@@ -53,7 +53,7 @@ function product() {
             backgroundSize: "cover",
           }}
         >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
+          <div className="py-20 px-8 lg:pt-40 sm:px-20 ">
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
               Infrastructure as a service (IaaS)
             </h1>
@@ -82,7 +82,7 @@ function product() {
                   <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
                     {item.title}
                   </h1>
-                  <p className="text-base text-white tracking-wide leading-relaxed text-gray-800">
+                  <p className="text-base tracking-wide leading-relaxed text-gray-800">
                     {item.description}
                   </p>
                 </div>
