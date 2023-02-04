@@ -155,7 +155,7 @@ function faqs() {
   return (
     <section>
       <Head>
-        <title> Nobus | FAQs </title>
+        <title> Nobus | Service FAQs </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
@@ -164,123 +164,47 @@ function faqs() {
         <div
           className="flex-col justify-center text-center"
           style={{
-            backgroundImage: "url('/pricing.png')",
+            backgroundImage: "url('/backup.png')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
         >
           <div className="py-20 px-8 lg:pt-40 sm:px-20">
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Nobus Pricing
+              Nobus Service FAQs
             </h1>
-            <p className="text-sm sm:text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
-              Low Ongoing Cost; pay-as-you-use pricing with flexible expenses,
-              of short or long term commitments, without requiring complex
-              licensing.
+            <p className="text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
+              Get all the answers to your questions
             </p>
           </div>
         </div>
-        <div className="flex-col px-20 py-5">
-          <div className="py-5 text-center">
-            <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
-              Service Payment Options
-            </h1>
-          </div>
+
+        <div className="px-10 md:px-20 py-10">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-            {cardData?.map((item) => (
-              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-xl border group">
-                <div className="py-5">
-                  <h1 className="pb-3 text-2xl text-center tracking-wide leading-relaxed font-semibold text-gray-800">
-                    {item.title}
-                  </h1>
-                  <p className="text-base text-gray-700 text-justify tracking-tight leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex-col px-20 py-5">
-          <div className="py-5 text-center">
-            <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
-              Service Pricing
-            </h1>
-          </div>
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-3">
-            {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border hover:scale-95">
-                <div key={section.name} className="p-2">
-                  <p
-                    id={`${section.name}-heading`}
-                    className="text-xl font-medium text-gray-900"
-                  >
-                    {section.name}
-                  </p>
-                  <ul
-                    role="list"
-                    aria-labelledby={`${section.name}-heading`}
-                    className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                  >
-                    {section.items.map((item) => (
-                      <li key={item.name} className="flex-col">
-                        <p>
-                          <a
-                            href={item.href}
-                            className="hover:underline group-hover:scale-110 text-base"
-                          >
-                            {item.name}
-                          </a>
-                        </p>
-
-                        <p className="text-base text-gray-700 text-justify tracking-tight leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div
-          className="px-20 py-10"
-          style={{
-            backgroundImage: "url('/backup.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="flex flex-col lg:flex-row mx-auto ">
-            <div className="text-left lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
-              <h1 className="text-3xl xl:text-4xl font-semibold">
-                Nobus Simple monthly calculator
-              </h1>
-
-              <p className="my-2 text-base xl:text-lg tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:pt-5 lg:pb-10">
-                You can estimate your monthly bill (individual and multiple
-                prices) using NCS Simple Monthly Calculator.
-              </p>
-
-              <div className="mt-10 pb-5 flex flex-col sm:flex-row md:justify-start">
-                <a href="/simple_monthly_calculator">
-                  <button className="w-full mt-2 sm:mt-0 sm:ml-2 sm:w-40 px-4 py-3 font-semibold text-md text-white rounded hover:shadow active:scale-90 cursor-pointer border border-white">
-                    Calculate Cost
-                  </button>
-                </a>
+            <div className="px-5 md:py-5 lg:py-20 justify-self-center flex-col space-x-4">
+              <div>
+                <p className="pb-2 text-3xl md:text-4xl font-bold text-blue-500">
+                  Free Tier
+                </p>
+                <p className="text-xl lg:text-2xl font-semibold">
+                  Can I try Nobus before I buy?
+                </p>
+                <p className="text-base">
+                  No. Nobus does not offer a free tier user account.
+                </p>
               </div>
             </div>
-
-            <div className="hidden lg:block lg:w-1/2 mt-10 lg:mt-0">
-              <div className="flex-col">
-                <img src="/analytics.png" />
+            <div className="px-5 flex-col space-x-4 group">
+              <div className="p-5">
+                <img src="/faq.png" />
               </div>
             </div>
           </div>
         </div>
-
-        <div className="flex-col p-20 bg-gray-100">
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Account and Billing
+          </p>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
@@ -335,14 +259,722 @@ function faqs() {
               </div>
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
-              <div className="p-5">
-                <img src="/faq.png" />
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
               </div>
-              <a href="#" className="pl-2">
-                <button className="border border-gray-500 py-2 px-3 text-md font-semibold text-gray-500 ">
-                  View more FAQs <span aria-hidden="true"> &rarr;</span>
-                </button>
-              </a>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Nobus FCS Instances
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Nobus Cloud Storage
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Nobus Networking
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Nobus API
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            GDPR
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="px-10 md:px-20 py-10">
+          <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
+            Nobus Support
+          </p>
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

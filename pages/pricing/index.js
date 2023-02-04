@@ -383,7 +383,7 @@ function index() {
               <div className="p-5">
                 <img src="/faq.png" />
               </div>
-              <a href="#" className="pl-2">
+              <a href="/service-faq" className="pl-2">
                 <button className="border border-gray-500 py-2 px-3 text-md font-semibold text-gray-500 ">
                   View more FAQs <span aria-hidden="true"> &rarr;</span>
                 </button>

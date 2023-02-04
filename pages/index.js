@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+import CookieConsent from "../components/CookieConsent";
 import Chat from "../components/Chat";
 import Workflow from "../components/Workflow";
 import MediumCard from "../components/MediumCard";
@@ -101,6 +102,7 @@ const Home = () => {
 
       <main>
         <Banner />
+        <CookieConsent />
 
         <Chat />
         <Workflow />

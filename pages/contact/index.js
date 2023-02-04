@@ -19,7 +19,7 @@ const cardData = [
     title: "Q&A",
     description: "Find quick answers to resolve your issues",
     image: "/qa.png",
-    href: "/helpcenter",
+    href: "/service-faq",
     icon: UserIcon,
   },
   {

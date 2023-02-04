@@ -41,7 +41,10 @@ const index = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if (password && confirmPassword && password.length < 8) {
+      alert("Password must at least be 8 digits long.");
+      return false;
+    }
     if (password !== confirmPassword) {
       alert("Password must be the same.");
       return false;

@@ -20,6 +20,7 @@ import {
   SearchIcon,
   XIcon,
   ChevronDownIcon,
+  ChevronUpIcon,
 } from "@heroicons/react/outline";
 
 const navigation = {
@@ -317,24 +318,17 @@ const navigation = {
 const resources = [
   {
     name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
+    description: "Get all of your questions answered or contact us.",
     href: "/service-faq",
     icon: UserIcon,
   },
   {
     name: "Contact",
-    description: "Speak to Sales",
+    description: "Speak with our sales team",
     href: "/contact/",
     icon: PhoneIcon,
   },
 
-  // {
-  //   name: 'Events',
-  //   description: 'See what meet-ups and other events we might be planning.',
-  //   href: '/events',
-  //   icon: CalendarIcon,
-  // },
   {
     name: "Guides",
     description:
@@ -1258,7 +1252,7 @@ export default function Header() {
                                     </div>
                                     <div className="flex w-2/3">
                                       <div className="grid grid-cols-1 gap-y-10">
-                                        <div className="flex -ml-2 space-x-5 overflow-scroll p-3 scrollbar-hide">
+                                        <div className="flex -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scroll-smooth p-3">
                                           {category.featured.map((item) => (
                                             <div
                                               key={item.name}
@@ -1474,7 +1468,7 @@ export default function Header() {
                                         </div>
                                       </div>
                                     </div>
-                                    <div className="flex w-1/3 -ml-2 space-x-5 overflow-scroll p-3 scrollbar-hide">
+                                    <div className="flex w-1/3 -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scroll-smooth p-3">
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}

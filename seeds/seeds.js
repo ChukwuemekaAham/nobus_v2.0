@@ -14,18 +14,18 @@ mongoose
     console.log(err);
   });
 
-const p = new Product({
-  name: "Ruby Grapefruit",
-  price: 1.99,
-  category: "fruit",
-});
-p.save()
-  .then((p) => {
-    console.log(p);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+// const p = new Product({
+//   name: "Ruby Grapefruit",
+//   price: 1.99,
+//   category: "fruit",
+// });
+// p.save()
+//   .then((p) => {
+//     console.log(p);
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   });
 
 const seedProducts = [
   {
