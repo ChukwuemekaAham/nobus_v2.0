@@ -25,7 +25,7 @@ function storage() {
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold">
               Nobus Cloud Storage
             </h1>
-            <p className="text-sm sm:text-md lg:text-lg font-semibold tracking-wide leading-relaxed pb-4">
+            <p className="text-sm sm:text-md font-semibold tracking-wide leading-relaxed pb-4">
               Scalable, Dependable, and Secure.
             </p>
           </div>

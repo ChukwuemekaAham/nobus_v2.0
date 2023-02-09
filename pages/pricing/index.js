@@ -173,7 +173,7 @@ function index() {
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
               Nobus Pricing
             </h1>
-            <p className="text-sm sm:text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
+            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
               Low Ongoing Cost; pay-as-you-use pricing with flexible expenses,
               of short or long term commitments, without requiring complex
               licensing.
@@ -188,7 +188,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             {cardData?.map((item) => (
-              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-xl border group">
+              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-lg border border-gray-300 group">
                 <div className="py-5">
                   <h1 className="pb-3 text-2xl text-center tracking-wide leading-relaxed font-semibold text-gray-800">
                     {item.title}
@@ -209,7 +209,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border hover:scale-95">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow border border-gray-300 hover:scale-95">
                 <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
@@ -258,7 +258,7 @@ function index() {
                 Nobus Simple monthly calculator
               </h1>
 
-              <p className="my-2 text-base xl:text-lg tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:pt-5 lg:pb-10">
+              <p className="my-2 text-base tracking-wide leading-relaxed lg:mx-auto lg:pt-5 lg:pb-10">
                 You can estimate your monthly bill (individual and multiple
                 prices) using NCS Simple Monthly Calculator.
               </p>
@@ -283,21 +283,21 @@ function index() {
         <div className="flex-col px-20 py-8 lg:px-0 lg:mx-40">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             <div className="p-5 flex flex-col space-x-4 text-left group">
-              <div className="py-2">
-                <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
+              <div className="space-y-4">
+                <h1 className="text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
                   Related links
                 </h1>
-                <div className="pt-4 text-base font-semibold text-white tracking-wide leading-relaxed text-gray-800">
-                  <h6>
+                <div className="text-base font-semibold text-white tracking-tight leading-relaxed text-gray-800">
+                  <h6 className="hover:underline">
                     <a href="/sla/">Service-level agreement (SLA)</a>
                   </h6>
-                  <h6>
+                  <h6 className="hover:underline">
                     <a href="/agreement/">Customer agreement (CA)</a>
                   </h6>
-                  <h6>
+                  <h6 className="hover:underline">
                     <a href="/service-terms">Service terms</a>
                   </h6>
-                  <h6>
+                  <h6 className="hover:underline">
                     <a href="/documentation/">Resources</a>
                   </h6>
                 </div>

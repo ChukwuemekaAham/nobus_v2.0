@@ -145,7 +145,8 @@ function policy() {
               <p>
                 To enable our systems to recognize your browser or device and to
                 provide NCS Services, we use cookies. For more information about
-                cookies and how we use them, please read our Cookie Notice.
+                cookies and how we use them, please read our{" "}
+                <a href="/cookie-policy">Cookie notice</a>.
               </p>
             </div>
 
@@ -563,7 +564,7 @@ function policy() {
 
               <li>
                 identifiers and information contained in cookies (see our{" "}
-                <a href="#">Cookie Notice</a>).{" "}
+                <a href="/cookie-policy">Cookie notice</a>).{" "}
               </li>
 
               <p>Information from Other Sources</p>

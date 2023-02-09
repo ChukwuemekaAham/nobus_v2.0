@@ -204,7 +204,7 @@ function index() {
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
               Nobus Documentation
             </h1>
-            <p className="text-sm sm:text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
+            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
               Find user guides, developer guides, API references, tutorials, and
               more.
             </p>
@@ -218,7 +218,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border hover:scale-95">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border border-gray-400 hover:scale-95">
                 <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
@@ -293,7 +293,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-2 lg:grid-cols-4 lg:mx-20">
             {cardData?.map((item) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border group">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border border-gray-300 group">
                 <a href={item.href}>
                   <div className="py-5 cursor-pointer text-center">
                     <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800 group-hover:underline group-hover:scale-105">

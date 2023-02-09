@@ -22,6 +22,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/outline";
+import CookieConsent from "./CookieConsent";
 
 const navigation = {
   productcategories: [
@@ -549,7 +550,7 @@ const prodproducts = [
   {
     id: 1,
     name: "Cloud Operating Model",
-    href: "/product",
+    href: "/product#building-cloud-operating-model",
     color:
       "Understand how to adopt cloud technology while maximizing cloud benefits",
     imageSrc: "/model.png",
@@ -748,6 +749,7 @@ export default function Header() {
           </div>
         </Dialog>
       </Transition.Root>
+      <CookieConsent />
 
       <header className="relative bg-white">
         <div

@@ -114,7 +114,7 @@ function Chat() {
                                 src="/logo.png"
                                 alt="nobus cloud"
                               />
-                              {/* <p className="text-base text-gray-800 font-bold leading-relaxed ml-4">
+                              {/* <p className="text-lg text-stone-700 italic font-bold tracking-tight leading-relaxed ml-4">
                                 Support
                               </p> */}
                             </span>

@@ -173,7 +173,7 @@ function faqs() {
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
               Nobus Service FAQs
             </h1>
-            <p className="text-md lg:text-lg font-semibold text-white tracking-wide leading-relaxed pb-4">
+            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
               Get all the answers to your questions
             </p>
           </div>
