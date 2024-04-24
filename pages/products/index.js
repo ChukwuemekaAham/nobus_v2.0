@@ -2,9 +2,7 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ProductList from "../../components/ProductList";
-
-const mongoose = require("mongoose");
-const Product = mongoose.model("Product");
+import { Product } from "../../models/product";
 
 export default function Products({ productData }) {
   return (

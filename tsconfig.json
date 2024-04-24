@@ -24,6 +24,6 @@
     "pages/*.js",
     "pages/index.js",
     "pages/_app.js"
-  ],
+, "verified/index"  ],
   "exclude": ["node_modules"]
 }

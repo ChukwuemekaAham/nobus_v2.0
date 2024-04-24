@@ -51,7 +51,7 @@ function networking() {
           </div>
         </div>
 
-        <div className="p-20">
+        <div className="p-10 md:p-20">
           <p className="pb-5">
             Nobus understands the vital role played by networks in supporting
             various kind of workloads thus, we are keen to deliver the

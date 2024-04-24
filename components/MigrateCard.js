@@ -44,16 +44,18 @@ const products = [
 
 export default function MigrateCard() {
   return (
-    <div className="bg-blue-50 text-center px-20 py-20 mt-10">
-      <div className="mx-auto max-w-2xl md:max-w-4xl lg:max-w-7xl">
-        <h2 className="text-3xl md:text-4xl text-center font-semibold tracking-wider text-gray-900">
+    <div className="bg-indigo-50 text-center px-6 md:px-20 py-24 sm:py-32 mt-10">
+      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-2xl sm:text-center">
+        <h2 className="text-3xl md:text-4xl text-center font-semibold tracking-tight text-gray-900">
           Migrate
         </h2>
-        <h2 className="text-base lg:text-xl mt-4 text-center font-small tracking-wider text-gray-900 pb-5">
+        <h2 className="text-justify text-base mt-4 font-small tracking-wide text-gray-900 pb-5">
           Migrate securely and easily to the nobus platform. Eliminate guessing
           on your infrastructure capacity needs, scale up or down as the need
           arises.
         </h2>
+        </div>
 
         <div className="mt-10 grid grid-cols-1 gap-y-10 gap-x-10 sm:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
@@ -61,7 +63,7 @@ export default function MigrateCard() {
               key={product.id}
               className="group relative bg-white border rounded-xl shadow hover:scale-102 hover:shadow-xl"
             >
-              <div className="min-h-36 h-36 aspect-w-1 aspect-h-1 w-full rounded-t-xl overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none ">
+              <div className="max-h-36 h-36 aspect-w-1 aspect-h-1 w-full rounded-t-xl overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none ">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
@@ -73,7 +75,7 @@ export default function MigrateCard() {
                 <h3 className="text-xl text-gray-900 font-semibold lg:text-2xl">
                   {product.name}
                 </h3>
-                <p className="text-[15px] tracking-wide leading-relaxed py-5 text-gray-800">
+                <p className="text-[15px] tracking-wide text-justify leading-relaxed py-5 text-gray-800">
                   {product.desc}
                 </p>
               </div>

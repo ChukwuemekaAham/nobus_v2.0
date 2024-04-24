@@ -1,143 +1,141 @@
 import React from "react";
 import Image from "next/image";
+import CookieAccept from "./CookieConsent";
 
 function Footer() {
   return (
-    <footer class="flex justify-center w-full bg-gray-900 px-20">
-      <div class="w-full mt-12 max-w-7xl">
-        <div class="flex flex-col flex-grow md:flex-row text-center md:text-left">
-          <div class="flex flex-col items-center md:items-start w-full md:w-2/6 border-b pb-8 md:pb-0 md:border-none border-gray-700">
+    <>
+    <CookieAccept />
+     <footer className="flex justify-center w-full bg-gray-900 px-16">
+      <div className="w-full mt-12 max-w-7xl">
+        <div className="flex flex-col flex-grow md:flex-row text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start w-full md:w-2/6 border-b border-gray-700 pb-5 md:pb-0 md:border-none">
             <a href="/">
               <Image
-                class="mx-auto mt-4 md:hidden my-10 w-16"
+                className="mx-auto my-10 w-26 md:mb-4 md:mt-0"
                 src="/logo.png"
                 width={105}
                 height={40}
               />
             </a>
-            <div class="hidden flex-col md:flex mt-10">
-              <p class="text-md font-semibold text-gray-100">
+            <div className="hidden flex-col md:flex mt-10">
+              <p className="text-sm font-semibold text-gray-100">
                 Call us: +2347057721442
               </p>
-              <p class="text-md font-semibold text-gray-100">
+              <p className="text-sm font-semibold text-gray-100">
                 media.marketing@nobus.io
               </p>
             </div>
           </div>
-          <div class="flex flex-col w-full md:w-1/6 md:ml-8">
-            <p class="mt-6 md:mt-0 text-md text-white font-semibold">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-10 text-left justify-center mx-auto pb-10 ">
+          <div className="flex flex-col w-full">
+            <p className="mt-6 md:mt-0 text-md text-white font-semibold">
               Features
             </p>
             <a
               href="/blog/"
-              class="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Blog
             </a>
             <a
               href="/pricing/"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Pricing
             </a>
             <a
               href="/documentation/"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Documentation
             </a>
 
             <a
               href="/solutions"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Solutions
             </a>
 
-            {/* <a
-              href="#"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              PaaS{" "}
-              <span class="ml-1 px-1 font-semibold text-white text-xs bg-blue-500 rounded">
-                COMING SOON
-              </span>
-            </a> */}
           </div>
 
-          <div class="flex flex-col w-full md:w-1/6 md:ml-8">
-            <p class="mt-6 md:mt-0 text-md text-white font-semibold">Legal</p>
+          <div className="flex flex-col w-full">
+            <p className="mt-6 md:mt-0 text-md text-white font-semibold">Legal</p>
             <a
               href="/agreement"
-              class="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Customer Agreement
             </a>
             <a
               href="/policy"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Privacy Statement
             </a>
 
             <a
               href="/service-terms"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Terms of Service
             </a>
 
             <a
               href="/sla"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               SLAs
             </a>
           </div>
-          <div class="flex flex-col w-full md:w-1/6 md:ml-8 pb-8 md:pb-0 border-b md:border-none border-gray-700">
-            <p class="mt-6 md:mt-0 text-md text-white font-semibold">
+          <div className="flex flex-col w-full">
+            <p className="mt-6 md:mt-0 text-md text-white font-semibold">
               Get Help
             </p>
 
             <a
-              href="/helpcenter"
-              class="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              href="#"
+              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Help Desk{" "}
             </a>
 
             <a
               href="/contact"
-              class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
             >
               Contact
             </a>
-            <a class="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
+            <a className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
               Up-Time
-              <span class="ml-1 px-1 font-semibold text-gray-900 text-xs bg-gray-300 rounded">
+              <span className="ml-1 px-1 font-semibold text-gray-900 text-xs bg-gray-300 rounded">
                 99.98%
               </span>
             </a>
           </div>
 
-          <div class="flex flex-col items-center md:items-start w-full md:w-2/6 pb-0 pt-4 md:pl-4 md:pt-0 md:pb-8 md:pb-0 ">
-            <p class="mt-2 md:mt-0 text-2xl md:text-xl lg:text-2xl font-semibold text-gray-100">
+          </div>
+          
+
+          <div className="flex flex-col items-center md:items-start w-full md:w-2/6 pb-0 pt-4 md:pl-4 md:pt-0">
+            <p className="mt-2 md:mt-0 text-md md:text-lg lg:text-xl font-semibold text-gray-100">
               We accept the following payment systems
             </p>
-            <div class="flex justify-center space-x-2">
+            <div className="flex justify-center space-x-2">
               <img
-                class="md:block my-10 w-16 p-1 shadow-lg"
+                className="md:block my-10 w-16 p-1 shadow-lg"
                 src="/mastercard.png"
               />
-              <img class="md:block my-10 w-16 p-1 shadow-lg" src="/visa.png" />
+              <img className="md:block my-10 w-16 p-1 shadow-lg" src="/visa.png" />
             </div>
           </div>
         </div>
-        <div class="py-10 mt-0 md:mt-6 flex flex-col md:flex-row items-center justify-between md:py-4 w-full border-t border-gray-700">
-          <div class="flex text-gray-400">
-            <a class="text-gray-400" href="#">
+        <div className="py-10 mt-0 md:mt-6 flex flex-col md:flex-row items-center justify-between md:py-4 w-full border-t border-gray-700">
+          <div className="flex text-gray-400">
+            <a className="text-gray-400" href="#">
               <svg
-                class="h-6 w-6 fill-current"
+                className="h-6 w-6 fill-current"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -154,7 +152,7 @@ function Footer() {
             </a>
             <a href="#">
               <svg
-                class="ml-4 h-6 w-6 fill-current"
+                className="ml-4 h-6 w-6 fill-current"
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +171,7 @@ function Footer() {
             </a>
             <a href="#">
               <svg
-                class="ml-4 h-6 w-6 fill-current"
+                className="ml-4 h-6 w-6 fill-current"
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,29 +190,31 @@ function Footer() {
               </svg>
             </a>
           </div>
-          <div class="flex flex-col md:flex-row text-center text-gray-400">
-            <div class="flex flex:inline mx-auto">
-              <img class="" src="/favicon.ico" width={35} height={15} />
-              <p class="mt-4 md:mt-0 ml-2 text-sm md:pt-2 text-gray-300">
+          <div className="flex flex-col md:flex-row text-center text-gray-400">
+            <div className="flex flex:inline mx-auto mt-4 md:mt-0">
+              <img className="h-8 w-8" src="/favicon.ico" />
+              <p className="mt-2 md:mt-0 sm:ml-2 ml-1 text-sm md:pt-2 text-gray-300">
                 Native public cloud service.
               </p>
             </div>
 
-            <div class="md:hidden mt-10">
-              <p class="text-md font-semibold text-gray-100">
+            <div className="md:hidden mt-10">
+              <p className="text-md font-semibold text-gray-100">
                 Call us: +2347057721442
               </p>
-              <p class="text-md font-semibold text-gray-100">
+              <p className="text-md font-semibold text-gray-100">
                 media.marketing@nobus.io
               </p>
             </div>
-            <p class="mt-4 md:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
-              © 2023 Nkponani Ltd. All rights reserved.
+            <p className="mt-4 md:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
+              © 2024 Nkponani Ltd. All rights reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
+    </>
+   
   );
 }
 

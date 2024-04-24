@@ -26,10 +26,8 @@ function Chat() {
       message,
     };
     setIsPending(true);
-
-    const endpoint = process.env.CONTACT_ENDPOINT;
-
-    fetch(endpoint, {
+    const BASE = process.env.NEXT_PUBLIC_BASE
+    fetch(`${BASE}/contact`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -41,16 +39,13 @@ function Chat() {
         if (res.status !== 250) {
           throw new Error(res.statusText);
         }
-
-        return res.json();
+        return res.json()
       })
       .then((res) => {
         setName("");
         setEmail("");
         setSubject("");
         setMessage("");
-        console.log(res);
-        console.log("post successfull");
         setSuccess("Message Sent");
         setError(false);
         setIsPending(false);
@@ -60,10 +55,9 @@ function Chat() {
         setEmail("");
         setSubject("");
         setMessage("");
-        console.log(err);
-        console.log("Message Unsuccessfull");
         setSuccess(false);
-        setError(err.toString());
+        setIsPending(false);
+        setError("Unable to send message at this time.");
       });
   };
 
@@ -78,7 +72,7 @@ function Chat() {
                   className={classNames(
                     open ? "focus:scale-125 outline-black" : "outline-black",
 
-                    "group fixed right-10 bottom-10 w-10 my-1 outline hover:scale-125 shadow-xl rounded-full bg-black cursor-pointer p-2 text-white"
+                    "group fixed right-6 md:right-10 bottom-5 sm:bottom-10 w-10 my-1 outline scale-125 shadow-xl rounded-full bg-black cursor-pointer p-2 text-white"
                   )}
                 >
                   {!open && (
@@ -97,16 +91,16 @@ function Chat() {
                   leaveTo="opacity-0 translate-y-1"
                 >
                   <Popover.Panel
-                    className="absolute rounded-3xl right-10 sm:right-20 z-10 top-10 sm:top-20 w-screen max-w-sm -translate-x-2/5 transform"
+                    className="absolute rounded-3xl right-10 md:right-20 left-5 sm:left-auto z-10 top-2 md:top-5 lg:top-20 md:w-screen max-w-sm -translate-x-2/5 transform"
                     style={{
                       backgroundImage: "url('/cont6.jpg')",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
                   >
-                    <div className="flex min-h-full items-center justify-center pb-10">
+                    <div className="flex min-h-full items-center justify-center pb-5 md:pb-10">
                       <div className="w-full max-w-md space-y-8">
-                        <div className="flex rounded-t-2xl shadow-lg pl-4 pr-2 py-3 bg-white justify-between">
+                        <div className="flex rounded-t-2xl shadow-lg pl-4 pr-2 py-2 md:py-3 bg-white justify-between">
                           <div className="flex-col">
                             <span className="flex">
                               <img
@@ -133,7 +127,7 @@ function Chat() {
                           <h2 className="mt-6 text-center text-base font-bold tracking-wide leading-relaxed text-gray-100">
                             Chat unavailable right now
                           </h2>
-                          <p className="mt-2 text-center text-sm tracking-wide leading-relaxed font-medium text-gray-100">
+                          <p className="mt-2 px-2 md:px-0 text-center text-sm tracking-wide leading-relaxed font-medium text-gray-100">
                             please take some time to tell us about your project
                           </p>
                         </div>
@@ -161,7 +155,7 @@ function Chat() {
                                 }}
                                 autoComplete="name"
                                 required
-                                className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                                className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 text-[14px] md:text-sm px-1 py-1 md:px-3 md:py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
                                 placeholder="Full name"
                               />
                             </div>
@@ -182,7 +176,7 @@ function Chat() {
                                 }}
                                 autoComplete="email"
                                 required
-                                className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                                className="relative block w-full appearance-none rounded-none border border-gray-300 text-[14px] md:text-sm px-1 py-1 md:px-3 md:py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
                                 placeholder="Email address"
                               />
                             </div>
@@ -200,7 +194,7 @@ function Chat() {
                                 }}
                                 autoComplete="subject"
                                 required
-                                className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                                className="relative block w-full appearance-none rounded-none border border-gray-300 text-[14px] md:text-sm px-1 py-1 md:px-3 md:py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
                                 placeholder="Subject"
                               />
                             </div>
@@ -216,9 +210,9 @@ function Chat() {
                                 onChange={(e) => {
                                   setMessage(e.target.value);
                                 }}
-                                rows={5}
+                                rows={4}
                                 required
-                                className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                                className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 text-[14px] md:text-sm px-1 py-1 md:px-3 md:py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
                                 placeholder="Message"
                                 defaultValue={""}
                               />

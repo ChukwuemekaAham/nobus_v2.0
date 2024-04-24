@@ -64,7 +64,7 @@ function compute() {
           </div>
         </div>
 
-        <div className="p-20">
+        <div className="p-10 md:p-20">
           <p className="pb-5">
             Nobus offers standard compute services that allows you to develop,
             deploy, run, and scale your applications and workloads in a secure,

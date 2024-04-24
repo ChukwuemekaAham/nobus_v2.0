@@ -81,9 +81,9 @@ function smc() {
             </p>
           </div>
         </div>
-        <div className="px-10 lg:px-20 py-5">
+        <div className="px-10 lg:px-20 md:py-5">
           <div className="flex-col">
-            <div className="py-5 text-left">
+            <div className="py-2 md:py-5 text-left">
               <p class="pb-3">
                 {" "}
                 Nobus Flexible Compute Service (Nobus FCS) is a web service that
@@ -95,7 +95,7 @@ function smc() {
             </div>
           </div>
         </div>
-        <section className="p-20 bg-gray-100">
+        <section className="p-10 md:p-20 bg-gray-100">
           <div className="grid grid-cols-1 gap-y-20 sm:gap-x-4 lg:gap-x-20 md:grid-cols-2 ">
             <div className="flex-col py-10 px-10 bg-white text-gray-700 shadow-lg rounded-xl border">
               <p class="pb-3 ">
@@ -111,20 +111,20 @@ function smc() {
                 or windows)
               </p>
             </div>
-            <div className="flex-col py-10 px-10">
+            <div className="flex-col px-2 sm:p-10">
               <p class="pb-3 font-semibold">
                 keys
                 <br />
               </p>
               <p class="text-red-600">
-                nomenclature; si...l -- linux only <br />
+                nomenclature; <br /> si...l -- linux only <br />
                 si...w -- windows only <br />
               </p>
             </div>
           </div>
         </section>
 
-        <div className="flex-col py-10 px-10 lg:px-20 bg-white">
+        <div className="flex-col py-10 px-2 lg:px-20 bg-white">
           <CalPrice />
         </div>
         <div className="p-10 lg:px-20 bg-gray-100 text-center">

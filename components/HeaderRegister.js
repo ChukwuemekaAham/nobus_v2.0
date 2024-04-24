@@ -195,7 +195,7 @@ export default function Headerregister() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600 focus:scale-110"
+                                  ? "border-blue-600 rounded-md text-blue-600 focus:scale-110"
                                   : "border-transparent text-gray-700 hover:text-gray-800",
 
                                 "group inline-flex relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"

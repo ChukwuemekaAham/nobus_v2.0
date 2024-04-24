@@ -26,6 +26,31 @@ const blogCard = [
     desc: "Nobus understands the vital role played by networks in supporting various kind of workloads thus, we are keen to deliver the...",
     learn: "Continue to page",
   },
+];
+
+const blogCard2 = [
+  {
+    id: 1,
+    tagname: "CLOUD ADOPTION",
+    name: "Cloud Adoption in Nigeria",
+    date: "January 13, 2021",
+    href: "/blog/data-center",
+    img: "storage.png",
+    imgalt: "Front of men's Basic Tee in black.",
+    desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
+    
+  },
+  {
+    id: 2,
+    tagname: "CLOUD MIGRATION",
+    name: "Migrate to the cloud with no doubts",
+    date: "December 27, 2021",
+    href: "/blog/networking",
+    img: "network.png",
+    imgalt: "Front of men's Basic Tee in black.",
+    desc: "Nobus understands the vital role played by networks in supporting various kind of workloads thus, we are keen to deliver the...",
+    
+  },
 
   {
     id: 3,
@@ -36,7 +61,7 @@ const blogCard = [
     img: "/compute.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus offers standard compute services that allows you to develop, deploy, run, and scale your applications and...",
-    learn: "Continue to page",
+    
   },
   {
     id: 4,
@@ -47,7 +72,7 @@ const blogCard = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    learn: "Continue to page",
+    
   },
   {
     id: 5,
@@ -58,7 +83,7 @@ const blogCard = [
     img: "/storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Cloud storage plays an important role in cloud computing since it is more reliable, scalable and secure than traditional...",
-    learn: "Continue to page",
+    
   },
   {
     id: 6,
@@ -69,7 +94,7 @@ const blogCard = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    learn: "Continue to page",
+    
   },
   {
     id: 7,
@@ -80,7 +105,7 @@ const blogCard = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    learn: "Continue to page",
+    
   },
 ];
 
@@ -168,13 +193,14 @@ function index() {
         <div class="">
           <div class="md:grid md:grid-cols-3 md:gap-6 my-10">
             <div class="mt-5 md:col-span-2 md:mt-0 ">
-              <div className="grid grid-cols-1 gap-y-10 gap-x-8 mx-10 sm:mx-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 mx-10 sm:mx-20">
                 {blogCard.map((blog) => (
                   <div
                     key={blog.id}
                     className="group relative bg-white border shadow hover:scale-102 hover:shadow-xl"
                   >
-                    <div className="min-h-36 h-96 aspect-w-1 aspect-h-1 w-full  overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none ">
+                    <div className="aspect-w-1 aspect-h-1 w-26 overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none ">
+                      
                       <img
                         src={blog.img}
                         alt={blog.imgalt}
@@ -183,18 +209,18 @@ function index() {
                       />
                     </div>
                     <div className="py-5 px-4">
-                      <div className="flex text-sm py-3 font-semibold text-gray-400">
+                      <div className="flex text-xs py-3 font-semibold text-gray-400">
                         <hr className="w-full flex:inline my-2 mr-4" />
                         <span className="flex:inline">{blog.tagname}</span>
                       </div>
-                      <h3 className="text-xl text-gray-900 font-semibold lg:text-3xl">
+                      <h3 className="text-sm text-gray-900 font-semibold">
                         {blog.name}
                       </h3>
                       <span className="flex py-2">
                         <ClockIcon className="h-5 text-sm font-medium bg-gray-200 rounded-full p-1 mr-1" />
                         <p className="font-md text-sm">{blog.date}</p>
                       </span>
-                      <p className="text-[15px] tracking-wide leading-relaxed py-5 text-gray-800">
+                      <p className="text-sm tracking-wide leading-relaxed py-5 text-gray-800">
                         {blog.desc}
                       </p>
                     </div>
@@ -290,6 +316,43 @@ function index() {
               </div>
             </div>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-6 mx-10 sm:mx-20 my-20">
+                {blogCard2.map((blog) => (
+                  <div
+                    key={blog.id}
+                    className="group bg-white border shadow hover:scale-102 hover:shadow-xl"
+                  >
+                    
+                    <div className="py-5 px-4">
+                    <div className="">
+                      <div className="flex text-xs py-3 font-semibold text-gray-400">
+                        <hr className="w-full flex:inline my-2 mr-4" />
+                        <span className="flex:inline">{blog.tagname}</span>
+                      </div>
+                      <h3 className="text-md text-gray-900 font-semibold">
+                        {blog.name}
+                      </h3>
+                      <span className="flex py-2">
+                        <ClockIcon className="h-5 text-xs font-medium bg-gray-200 rounded-full p-1 mr-1" />
+                        <p className="font-md text-sm">{blog.date}</p>
+                      </span>
+                      <p className="text-sm tracking-wide leading-relaxed py-5 text-gray-800">
+                        {blog.desc}
+                      </p>
+                    </div>
+
+                      <h3 className="font-semibold text-sm text-gray-700">
+                        <a href={blog.href}>
+                        
+                          <ArrowRightIcon className="h-5 text-sm font-medium bg-gray-200 group-hover:bg-gray-600 group-hover:text-white rounded-full p-1" />
+                  
+                        </a>
+                      </h3>
+                    </div>
+                  
+                  </div>
+                ))}
+              </div>
         </div>
       </div>
       <Footer />

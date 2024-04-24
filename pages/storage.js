@@ -31,7 +31,7 @@ function storage() {
           </div>
         </div>
 
-        <div className="p-20">
+        <div className="p-10 md:p-20">
           <p className="pb-5">
             Cloud storage plays an important role in cloud computing since it is
             more reliable, scalable, secure than traditional storage systems.
@@ -76,7 +76,7 @@ function storage() {
             </div>
             <div className="py-2">
               <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
-                Nobus Flexible Block Store (FBS)
+                Nobus Flexible Block Storage (FBS)
               </h1>
               <p className="text-base text-gray-700 text-justify tracking-tight leading-relaxed">
                 Store and process block data on persistent volumes for Nobus FCS

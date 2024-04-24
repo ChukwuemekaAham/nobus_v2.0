@@ -5,37 +5,58 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import {
-  ArrowCircleDownIcon,
-  ArrowCircleUpIcon,
-  UserIcon,
-  ServerIcon,
-  BadgeCheckIcon,
-  LockClosedIcon,
   DatabaseIcon,
-  CloudDownloadIcon,
-  CloudUploadIcon,
-  CloudIcon,
   BookmarkIcon,
-  ArchiveIcon,
-  WifiIcon,
-  BanIcon,
-  DesktopComputerIcon,
   GlobeAltIcon,
-  InformationCircleIcon,
-  ExternalLinkIcon,
-  ShieldExclamationIcon,
   ShieldCheckIcon,
   FolderOpenIcon,
   ChipIcon,
   LinkIcon,
-  MenuAlt3Icon,
   ChevronDownIcon,
   ChevronUpIcon,
-  KeyIcon,
 } from "@heroicons/react/outline";
 
-import { ArrowRightIcon } from "@heroicons/react/solid";
+const card = [
+  {
+    id: "1",
+    title: "Compute",
+    href: "#",
+    icon: ChipIcon,
+  },
+  {
+    id: "2",
+    title: "Storage",
+    href: "#",
+    icon: FolderOpenIcon,
+  },
+  {
+    id: "3",
+    title: "Networking",
+    href: "#",
+    icon: GlobeAltIcon,
+  },
+  {
+    id: "4",
+    title: "Security & Identity",
+    href: "#",
 
+    icon: ShieldCheckIcon,
+  },
+  {
+    id: "5",
+    title: "Database",
+    href: "#",
+
+    icon: DatabaseIcon,
+  },
+  {
+    id: "6",
+    title: "Images",
+    href: "#",
+
+    icon: BookmarkIcon,
+  },
+];
 const cardData = [
   {
     id: "1",
@@ -138,6 +159,55 @@ const cardSample = [
     id: "12",
     tag: "Cloud Backups",
     title: "Acronis Cloud Backup",
+    href: "#",
+    description: "Let's talk about how we can help your business",
+  },
+  {
+    id: "13",
+    tag: "Networking",
+    title: "Cloud Router",
+    href: "#",
+    description: "Let's help you resolve all the technical issues",
+  },
+  {
+    id: "14",
+    tag: "Networking",
+    title: "Domains and DNS",
+    href: "#",
+    description: "Let's help you resolve all the technical issues",
+  },
+  {
+    id: "15",
+    tag: "Compute",
+    title: "Dedicated Hosting",
+    href: "#",
+    description: "Let's talk about how we can help your business",
+  },
+  {
+    id: "16",
+    tag: "Database",
+    title: "MS SQL on Windows Server",
+    href: "#",
+    description: "Let's talk about how we can help your business",
+  },
+  {
+    id: "17",
+    tag: "Database",
+    title: "MongoDB Cluster",
+    href: "#",
+    description: "Let's talk about how we can help your business",
+  },
+  {
+    id: "18",
+    tag: "Database",
+    title: "MySQL Cluster",
+    href: "#",
+    description: "Let's talk about how we can help your business",
+  },
+  {
+    id: "19",
+    tag: "Database",
+    title: "PostgreSQL Cluster",
     href: "#",
     description: "Let's talk about how we can help your business",
   },
@@ -285,11 +355,11 @@ function solution() {
           <div className="px-10 md:px-20">
             <div>
               <h1 className="pb-5 text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-                Explore All Solutions from Nobus
+                Explore Our IaaS Solutions
               </h1>
-              <hr className="border-b-2 border-blue-400 max-w-[200px]" />
+              <hr className="border-b-2 border-blue-400 max-w-[100px]" />
 
-              <p className="pt-5">
+              <p className="pt-5 text-justify">
                 Organizations today are in search of vetted solutions and
                 architectural guidance to rapidly solve business challenges.
                 Whether customers prefer off-the-shelf deployments, or
@@ -299,7 +369,7 @@ function solution() {
               </p>
             </div>
 
-            <div className="grid gap-y-8 gap-x-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-8">
+            <div className="grid gap-y-8 gap-x-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-8">
               {cardData?.map((item) => (
                 <div className="p-5 bg-white space-x-4 shadow rounded border border-gray-300 group">
                   <div className="py-2">
@@ -314,9 +384,39 @@ function solution() {
               ))}
             </div>
           </div>
+          <div className="flex-col px-10 py-10 md:px-20">
+          <div className="">
+            <div>
+              <h1 className="pb-5 text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+                Explore Categories
+              </h1>
+              <hr className="border-b-2 border-blue-400 max-w-[96px]" />
+            </div>
+            <div className="grid gap-y-8 gap-x-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-8">
+              {card?.map((item) => (
+                <div className="p-5 bg-white space-x-4 shadow rounded border border-gray-300 group">
+                  <a href={item.href}>
+                    <div className="py-2 cursor-pointer ">
+                      <p className="pb-3">
+                        <item.icon
+                          className="h-[56px] w-[56px] flex-shrink-0 text-gray-600"
+                          aria-hidden="true"
+                        />
+                      </p>
+                      <h1 className="pb-3 text-lg tracking-tight leading-relaxed font-semibold text-gray-800 group-hover:text-blue-700  group-hover:scale-105">
+                        {item.title}
+                      </h1>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+        </div>
           <div className="pt-20 px-10 md:p-20">
-            <div className="md:grid md:grid-cols-3 md:gap-4 mt-8">
-              <div className="md:col-span-1">
+            <div className="lg:grid lg:grid-cols-3 lg:gap-4 mt-8">
+              <div className="lg:col-span-1 hidden lg:block">
                 <div className="pb-20 md:pb-0 md:mr-10 ">
                   <a href="https://dashboard.nobus.io/">
                     <div className="p-2 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded ">
@@ -347,15 +447,15 @@ function solution() {
                     <hr className="border-t py-5" />
 
                     <a href="/registration">
-                      <div className="px-2 py-3 mx-20 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded-50 ">
+                      <div className="px-2 py-3 mx-10 md:mx-5 lg:mx-10 xl:mx-20 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded-50 ">
                         Create an Account
                       </div>
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="md:col-span-2">
-                <div className="grid gap-y-8 gap-x-6 grid-cols-2 lg:grid-cols-3 ">
+              <div className="lg:col-span-2 pb-10 md:pb-0">
+                <div className="grid gap-y-8 gap-x-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
                   {cardSample?.map((item) => (
                     <div className="p-5 bg-white flex flex-col shadow space-x-4 rounded border border-gray-400 group">
                       <a href={item.href}>
@@ -375,11 +475,49 @@ function solution() {
                   ))}
                 </div>
               </div>
+              <div className="block pt-10 lg:hidden">
+                <div className="pb-20 md:pb-0 md:mr-10 ">
+                  <a href="https://dashboard.nobus.io/">
+                    <div className="p-2 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded ">
+                      Sign In to the Dashboard
+                    </div>
+                  </a>
+                  <div className="pt-10 ">
+                    <p className="border-t pt-5 pb-2 font-semibold text-sm text-gray-700">
+                      Resources
+                    </p>
+                    <div className="text-md text-gray-600 space-y-2">
+                      {resData?.map((item) => (
+                        <div>
+                          <a href={item.href}>
+                            <span className="flex justify-between hover:p-2 hover:bg-blue-100">
+                              <p className="text-gray-600">{item.title} </p>
+                              <item.icon
+                                className="h-4 w-4 flex-shrink-0 text-gray-600"
+                                aria-hidden="true"
+                              />
+                            </span>
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="pt-10 ">
+                    <hr className="border-t py-5" />
+
+                    <a href="/registration">
+                      <div className="px-2 py-3 mx-10 md:mx-5 lg:mx-10 xl:mx-20 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded-50 ">
+                        Create an Account
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div
-            className="px-20 py-10"
+            className="px-10 md:px-20 py-10"
             style={{
               backgroundImage: "url('/backup.png')",
               backgroundRepeat: "no-repeat",
@@ -398,7 +536,7 @@ function solution() {
                 </p>
 
                 <div className="mt-10 pb-5 flex flex-col sm:flex-row md:justify-start">
-                  <a href="/simple_monthly_calculator">
+                  <a href="/simple-monthly-calculator">
                     <button className="w-full mt-2 sm:mt-0 sm:ml-2 sm:w-40 px-4 py-3 font-semibold text-md text-white rounded hover:shadow active:scale-90 cursor-pointer border border-white">
                       Calculate Cost
                     </button>
@@ -414,12 +552,12 @@ function solution() {
             </div>
           </div>
 
-          <div className="flex-col px-20 py-10 md:py-20 lg:px-0 lg:mx-40">
-            <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-              <div className="p-5 flex flex-col space-x-4 text-left group">
+          <div className="flex-col px-10 py-10 md:px-20 lg:px-0 lg:mx-40">
+            <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+              <div className="p-0 lg:p-5 flex flex-col space-x-4 text-left group">
                 <img src="/adv.png" />
               </div>
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow border group">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border border-gray-300 group">
                 <div className="py-2">
                   <h1 className="pb-3 text-2xl tracking-tight leading-relaxed font-semibold text-gray-800">
                     Please note!
@@ -441,9 +579,13 @@ function solution() {
               </div>
             </div>
           </div>
-          <div className="flex-col p-20 bg-gray-100">
+          <div className="flex-col p-5 sm:p-10 md:p-20 bg-gray-100">
             <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
-              <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+              <div className="block lg:hidden px-5 pb-5 lg:p-5">
+                <img src="/faq.png" />
+              </div>
+
+              <div className="px-2 lg:px-5 bg-gray-100 flex flex-col lg:space-x-4">
                 <div className="">
                   {faqFilters.map((section) => (
                     <div className="overflow-y-scroll scrollbar-hide px-3">
@@ -495,11 +637,11 @@ function solution() {
                   ))}
                 </div>
               </div>
-              <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
-                <div className="p-5">
+              <div className="px-2 lg:px-5 bg-gray-100 flex flex-col space-x-4 group">
+                <div className="hidden lg:block px-0 pb-5 lg:p-5 ">
                   <img src="/faq.png" />
                 </div>
-                <a href="/service-faq" className="pl-2">
+                <a href="/service-faq" className="lg:pl-2">
                   <button className="border border-gray-500 py-2 px-3 text-md font-semibold text-gray-500 ">
                     View more FAQs <span aria-hidden="true"> &rarr;</span>
                   </button>

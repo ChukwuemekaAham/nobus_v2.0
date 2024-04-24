@@ -1,19 +1,19 @@
 const nodemailer = require("nodemailer");
 
 export default function (req, res) {
-  require("dotenv").config();
+  console.log(req.body);
   const transporter = nodemailer.createTransport({
-    port: process.env.PORT,
-    host: process.env.HOST,
+    port: process.env.NEXT_PUBLIC_PORT,
+    host: process.env.NEXT_PUBLIC_HOST,
     auth: {
-      user: process.env.USER,
-      pass: process.env.PASSWORD,
+      user: process.env.NEXT_PUBLIC_USER,
+      pass: process.env.NEXT_PUBLIC_PASSWORD,
     },
     secure: false, // tls requires this set to false
     tls: true,
   });
   const mailData = {
-    from: process.env.USER,
+    from: process.env.NEXT_PUBLIC_USER,
     to: "support@nobus.io",
     subject: `Message from ${req.body.name}: ${req.body.subject}`,
     text: req.body.message,

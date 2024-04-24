@@ -181,6 +181,7 @@ function faqs() {
 
         <div className="px-10 md:px-20 py-10">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
+            
             <div className="px-5 md:py-5 lg:py-20 justify-self-center flex-col space-x-4">
               <div>
                 <p className="pb-2 text-3xl md:text-4xl font-bold text-blue-500">
@@ -201,7 +202,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-5 md:py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Account and Billing
           </p>
@@ -312,7 +313,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Nobus FCS Instances
           </p>
@@ -423,7 +424,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Nobus Cloud Storage
           </p>
@@ -534,7 +535,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Nobus Networking
           </p>
@@ -645,7 +646,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Nobus API
           </p>
@@ -756,7 +757,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             GDPR
           </p>
@@ -867,7 +868,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="px-10 md:px-20 py-10">
+        <div className="px-5 md:px-20 py-10">
           <p className="pb-10 text-blue-500 text-center text-3xl font-bold ">
             Nobus Support
           </p>
@@ -978,7 +979,7 @@ function faqs() {
             </div>
           </div>
         </div>
-        <div className="flex-col px-20 py-8 lg:px-0 lg:mx-40">
+        <div className="flex-col px-10 md:px-20 py-8 lg:px-0 lg:mx-40">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             <div className="p-5 flex flex-col space-x-4">
               <div className="py-2">

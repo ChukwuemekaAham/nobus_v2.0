@@ -2,9 +2,8 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useRouter } from "next/router";
+import { Product } from "../../models/product";
 
-const mongoose = require("mongoose");
-const Product = mongoose.model("Product");
 
 export default function Detail({ productDetail }) {
   console.log(productDetail);

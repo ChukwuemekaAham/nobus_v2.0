@@ -1,0 +1,700 @@
+# run the following to re-install node and npm 
+$ nvm list
+
+  * 18.16.0 (Currently using 64-bit executable)
+    16.13.2
+
+# get an old version
+$ nvm use 16.13.2
+Now using node v16.13.2 (64-bit)
+
+# uninstall 
+$ nvm uninstall 18.16.0
+Uninstalling node v18.16.0... done
+
+# reinstall 
+$ nvm install 18.16.0
+Downloading node.js version 18.16.0 (64-bit)... 
+Extracting node and npm...
+Complete
+npm v9.5.1 installed successfully.
+
+nvm alias default vX.Y.Z
+
+Installation complete. If you want to use this version, type
+
+# run / use  it 
+$ nvm use 18.16.0
+Now using node v18.16.0 (64-bit)
+
+<!-- import { Alert } from "flowbite-react";
+
+export default function MyPage() {
+  return <Alert color="info">Alert!</Alert>;
+} -->
+
+async headers() {
+  return [
+      {
+          // matching all API routes
+          source: "/api/:path*",
+          headers: [
+              { key: "Access-Control-Allow-Credentials", value: "true" },
+              { key: "Access-Control-Allow-Origin", value: "http://172.16.11.152:4002" }, // replace this your actual origin
+              { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT" },
+              { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
+          ]
+      }
+  ]
+} 
+
+
+<footer class="bg-gray-100 relative z-50 pt-16 pb-6 text-[#1A237E]">
+    <div class="z-90 relative mx-auto -mt-40 mb-20 w-4/5 rounded-xl md:w-3/5" style="background-image:url('/img/subscribe.jpg')">
+        <div class="flex flex-wrap items-center p-5 md:p-10">
+            <div class="w-full px-4 lg:w-6/12">
+                <h2 class="block antialiased font-sans text-4xl leading-[1.3] text-white mb-2 font-black tracking-normal">Sign up for our newsletter</h2>
+                <p class="block antialiased font-sans text-base font-light leading-relaxed text-white opacity-80">Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about this.
+                </p>
+            </div>
+            <div class="w-full px-4 lg:w-6/12"><form action="https://material-tailwind.us1.list-manage.com/subscribe/post?u=e97df4875fc1b2fb28f609b88&amp;id=628d9b1722" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="mt-4 block md:flex lg:mt-0">
+            <div class="w-full md:w-8/12">
+            <div class="relative w-full min-w-[200px] h-11">
+            <input type="email" name="EMAIL" id="mce-EMAIL" required="" class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-blue-500 text-white/80" placeholder=" ">
+            <label class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500 peer-placeholder-shown:text-white/80 text-white/80">Enter your email<!-- --> <span class="inline-block text-red-500 ml-0.5">*</span></label></div></div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] mt-3 w-full md:mt-0 md:ml-3 md:w-auto">Subscribe</button></form></div></div></div><div class="container mx-auto"><div class="flex flex-wrap"><div class="w-full px-4 md:w-6/12"><h3 class="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-inherit mb-2">Material Tailwind</h3><h5 class="block antialiased tracking-normal font-sans text-inherit mt-0 mb-2 text-lg font-normal opacity-60">Easy to use React components for Tailwind CSS and Material Design.</h5><div class="mt-6"><a href="https://www.twitter.com/creativetim?ref=material-tailwind" target="_blank" rel="noreferrer"><i class="fab fa-twitter text-light-blue-400 font-lg align-center mr-2 inline-block items-center justify-center rounded-full bg-white p-3 text-center shadow-lg outline-none focus:outline-none" aria-hidden="true"></i></a><a href="https://www.facebook.com/creativetim?ref=material-tailwind" target="_blank" rel="noreferrer"><i class="fab fa-facebook-square text-light-blue-600 font-lg align-center mr-2 inline-block items-center justify-center rounded-full bg-white p-3 text-center shadow-lg outline-none focus:outline-none" aria-hidden="true"></i></a><a href="https://www.dribbble.com/creativetim?ref=material-tailwind" target="_blank" rel="noreferrer"><i class="fab fa-dribbble text-pink-400 font-lg align-center mr-2 inline-block items-center justify-center rounded-full bg-white p-3 text-center shadow-lg outline-none focus:outline-none" aria-hidden="true"></i></a><a href="https://www.github.com/creativetimofficial?ref=material-tailwind" target="_blank" rel="noreferrer"><i class="fab fa-github text-gray-900 font-lg align-center mr-2 inline-block items-center justify-center rounded-full bg-white p-3 text-center shadow-lg outline-none focus:outline-none" aria-hidden="true"></i></a><a href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind" target="_blank" rel="noreferrer"><i class="fab fa-discord text-blue-700 font-lg align-center mr-2 inline-block items-center justify-center rounded-full bg-white p-3 text-center shadow-lg outline-none focus:outline-none" aria-hidden="true"></i></a></div></div><div class="w-full px-4 md:w-6/12"><div class="items-top mb-6 flex flex-wrap"><div class="w-6/12 pt-6 md:ml-auto md:px-4 md:pt-0 xl:w-4/12"><span class="mb-2 block text-lg font-bold text-[#1A237E]">Useful Links</span><ul class="list-unstyled"><li><a href="https://www.creative-tim.com/presentation?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">About Us</a></li><li><a href="https://www.creative-tim.com/blog?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Blog</a></li><li><a href="https://github.com/creativetimofficial?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Github</a></li><li><a href="https://www.creative-tim.com/templates/free?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Free Products</a></li></ul></div><div class="ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-4/12"><span class="mb-2 block text-lg font-bold text-[#1A237E]">Other Resources</span><ul class="list-unstyled"><li><a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">MIT License</a></li><li><a href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Contribute</a></li><li><a href="https://github.com/creativetimofficial/material-tailwind/blob/main/CODE_OF_CONDUCT.md?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Code of Conduct</a></li><li><a href="https://www.creative-tim.com/contact-us?ref=material-tailwind" target="_blank" rel="noreferrer" class="block pb-2 text-sm font-normal text-[#1A237E]/60">Contact Us</a></li></ul></div></div></div></div><hr class="border-gray-300 my-6"><div class="flex flex-wrap items-center justify-center gap-2 md:justify-between"><a href="https://vercel.com/?utm_source=ct-tailwind-team&amp;utm_campaign=oss" target="_blank" rel="noopener noreferrer" class="text-dark inline-flex items-center font-semibold no-underline"><span class="mr-1">Powered by</span><span><svg height="20" viewBox="0 0 283 64" fill="none"><path fill="currentColor" d="M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z"></path></svg></span></a><div class="w-full px-4 text-center md:w-4/12 md:px-0 md:text-right"><div class="py-1 text-sm font-medium">Copyright © <!-- -->2023<!-- --> Material Tailwind by<!-- --> <a href="https://www.creative-tim.com?ref=material-tailwind" target="_blank" rel="noreferrer" class="text-inherit transition-all">Creative Tim.</a></div></div></div></div>
+            </footer>
+
+
+create user
+/api/auth/user/create
+
+http://172.16.11.152:4002/api/docs#/Create%20User/73687058_controller_create_user_view
+            {
+                "email": "user@example.com",
+                "first_name": "string",
+                "last_name": "string",
+                "is_active": true,
+                "is_root": false,
+                "email_verified": false,
+                "is_admin": false,
+                "company": {
+                  "name": "string",
+                  "phone_number": "string",
+                  "address": "string",
+                  "state": "string",
+                  "country": "string",
+                  "billing": "string",
+                  "payment_gateway": "string",
+                  "discount": 0
+                },
+                "project": {
+                  "name": "string",
+                  "swift_quota": 1,
+                  "current_swift_quota": 1,
+                  "bandwidth": 1,
+                  "current_bandwidth": 1
+                },
+                "password": "string"
+              }
+
+
+  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$"
+
+
+  "An email with a verification code has been sent to your mail box"
+                          
+  await fetch(`http://172.16.11.152:4002/api/auth/email/verify/initiate/${data.verificationCode}`, {
+    method: "POST", 
+    mode: 'no-cors',
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    referrerPolicy: "origin", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data),
+  }
+  )
+
+
+  await fetch('http://172.16.11.152:4002/api/auth/user/create', {
+    method: "POST", 
+    mode: 'no-cors',
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    referrerPolicy: "origin", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  })
+
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:4002/:path*'
+      }
+    ]
+  }
+
+  const BASE_URL = "http://172.16.11.152:4002/api"
+  const registerUser = async (data: RegisterInput) => {
+    try {
+      store.setRequestLoading(true);
+      const response = await fetch(`${BASE_URL}/auth/user/create`, {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          referrerPolicy: "origin", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data), // body data type must match "Content-Type" header
+        });
+
+  "proxy": "http://172.16.11.152/4002"
+
+
+  const SERVER_URL = 
+  process.env.NODE_ENV === 'production' ? 'https://produrl.com : 'http://localhost:8000';
+
+export async function getStaticProps() {
+  const data = axios.get(`${SERVER_URL}/api/my-route`)
+  // ...
+}
+
+
+
+********************************************************88
+
+
+Certainly! Here's an updated example with error messages and validation for the verification code input with six boxes using React, Next.js, and React Hook Form:
+
+First, make sure you have React, Next.js, and React Hook Form installed in your project:
+
+```bash
+npm install react react-dom next react-hook-form
+```
+
+Next, create a new file called `VerificationCodeInput.js` in your components directory and add the following code:
+
+```jsx
+import React, { useRef } from 'react';
+
+const VerificationCodeInput = ({ name, control, errors }) => {
+  const inputRefs = Array.from({ length: 6 }, () => useRef(null));
+
+  const handleInputChange = (index, event) => {
+    const { value } = event.target;
+    if (value) {
+      if (index < inputRefs.length - 1) {
+        inputRefs[index + 1].current.focus();
+      }
+    }
+  };
+
+  const handleInputPaste = (event) => {
+    event.preventDefault();
+    const pastedData = event.clipboardData.getData('text/plain').slice(0, 6);
+    const characters = pastedData.split('');
+    characters.forEach((character, index) => {
+      if (inputRefs[index] && inputRefs[index].current) {
+        inputRefs[index].current.value = character;
+        if (index < inputRefs.length - 1) {
+          inputRefs[index + 1].current.focus();
+        }
+      }
+    });
+  };
+
+  return (
+    <div>
+      {Array.from({ length: 6 }, (_, index) => (
+        <input
+          key={index}
+          type="text"
+          name={`${name}[${index}]`}
+          ref={(el) => {
+            inputRefs[index].current = el;
+            control.register(el, { required: true, pattern: /\d/ });
+          }}
+          maxLength="1"
+          onChange={(e) => handleInputChange(index, e)}
+          onPaste={handleInputPaste}
+          className={errors && errors[name] ? 'error' : ''}
+        />
+      ))}
+      {errors && errors[name] && (
+        <span className="error-message">Please enter the verification code.</span>
+      )}
+    </div>
+  );
+};
+
+export default VerificationCodeInput;
+```
+
+In this updated component, we pass the `errors` object from `react-hook-form` to the `VerificationCodeInput` component to access the validation errors. We add the `required` and `pattern` validations to each input box to make them required and allow only numeric input.
+
+Next, let's use the updated `VerificationCodeInput` component in a form using React Hook Form. Create a new file called `MyForm.js` in your components directory and add the following code:
+
+```jsx
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import VerificationCodeInput from './VerificationCodeInput';
+
+const MyForm = () => {
+  const { handleSubmit, register, control, errors } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <VerificationCodeInput name="verificationCode" control={control} errors={errors} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default MyForm;
+```
+
+In this updated example, we also destructure the `errors` object from `useForm` to access the validation errors. We pass the `errors` object to the `VerificationCodeInput` component to display the error message when the verification code is not entered.
+
+Finally, update the `index.js` file in your pages directory with the following code:
+
+```jsx
+import React from 'react';
+import MyForm from '../components/MyForm';
+
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Verification Code Input Example</h1>
+      <MyForm />
+    </div>
+  );
+};
+
+export default HomePage;
+```
+
+Now you can run your Next.js application and visit the homepage to see the verification code input with error messages and validation in action:
+
+```bash
+npm run dev
+```
+
+This updated example demonstrates how to handle validation and display error 
+messages for the verification code input with six boxes. You can further 
+customize the error styling and validation rules to match your specific 
+requirements.
+
+
+*********************************************************************8
+
+
+Certainly! Here's an updated example with error messages, validation, form submission, and redirection using Next.js's `useRouter` and `useSearchParams` hooks:
+
+First, make sure you have React, Next.js, and React Hook Form installed in your project:
+
+```bash
+npm install react react-dom next react-hook-form
+```
+
+Next, create a new file called `VerificationCodeInput.js` in your components directory and add the following code:
+
+```jsx
+import React, { useRef } from 'react';
+
+const VerificationCodeInput = ({ name, control, errors }) => {
+  const inputRefs = Array.from({ length: 6 }, () => useRef(null));
+
+  const handleInputChange = (index, event) => {
+    const { value } = event.target;
+    if (value) {
+      if (index < inputRefs.length - 1) {
+        inputRefs[index + 1].current.focus();
+      }
+    }
+  };
+
+  const handleInputPaste = (event) => {
+    event.preventDefault();
+    const pastedData = event.clipboardData.getData('text/plain').slice(0, 6);
+    const characters = pastedData.split('');
+    characters.forEach((character, index) => {
+      if (inputRefs[index] && inputRefs[index].current) {
+        inputRefs[index].current.value = character;
+        if (index < inputRefs.length - 1) {
+          inputRefs[index + 1].current.focus();
+        }
+      }
+    });
+  };
+
+  return (
+    <div>
+      {Array.from({ length: 6 }, (_, index) => (
+        <input
+          key={index}
+          type="text"
+          name={`${name}[${index}]`}
+          ref={(el) => {
+            inputRefs[index].current = el;
+            control.register(el, { required: true, pattern: /\d/ });
+          }}
+          maxLength="1"
+          onChange={(e) => handleInputChange(index, e)}
+          onPaste={handleInputPaste}
+          className={errors && errors[name] ? 'error' : ''}
+        />
+      ))}
+      {errors && errors[name] && (
+        <span className="error-message">Please enter the verification code.</span>
+      )}
+    </div>
+  );
+};
+
+export default VerificationCodeInput;
+```
+
+In this updated component, we continue to pass the `errors` object from `react-hook-form` to the `VerificationCodeInput` component to access the validation errors.
+
+Next, let's update the `MyForm.js` component to handle form submission and post the verification code to the `/api/verification` endpoint. If the verification is successful, we'll redirect the user to the `/home` page using Next.js's `useRouter` hook. Here's the updated code:
+
+```jsx
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import VerificationCodeInput from './VerificationCodeInput';
+import { useRouter } from 'next/router';
+
+const MyForm = () => {
+  const { handleSubmit, register, control, errors } = useForm();
+  const router = useRouter();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch('/api/verification', {
+        method: 'POST',
+        body: JSON.stringify(data.verificationCode),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        router.push('/home');
+      } else {
+        // Handle verification failure
+      }
+    } catch (error) {
+      // Handle error
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <VerificationCodeInput name="verificationCode" control={control} errors={errors} />
+      {errors && errors.verificationCode && (
+        <span className="error-message">Please enter the verification code.</span>
+      )}
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default MyForm;
+```
+
+In this updated code, we import the `useRouter` hook from Next.js to handle redirection. Inside the `onSubmit` function, we make a POST request to the `/api/verification` endpoint with the verification code as the request payload. If the response is successful (status code 200), we redirect the user to the `/home` page using `router.push('/home')`. You can handle verification failure and error scenarios according to your requirements.
+
+Finally, update the `index.js` file in your pages directory with the following code:
+
+```jsx
+import React from 'react';
+import MyForm from '../components/MyForm';
+
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Verification Code Input Example</h1>
+      <MyForm />
+    </div>
+  );
+};
+
+export default HomePage;
+```
+
+Now you can run your Next.js application and visit the homepage to see the verification code input with error messages, validation, form submission, and redirection in action:
+
+```bash
+npmrun dev
+```
+
+This updated example demonstrates how to handle validation, form submission, and redirection using Next.js's `useRouter` hook. You can further customize the form submission logic and handle different scenarios based on the response from the verification endpoint.
+
+
+
+
+
+************************************** DYNAMIC ROUTE **************************************
+
+
+
+I say all that but actually, we just have to use a dynamic route. Create the file /pages/account/[tab].tsx.
+
+// pages/account/[tab].tsx
+import React from 'react'
+const AccountPage = () => {
+  return (
+    <div>AccountPage</div>
+  )
+}
+export default AccountPage
+
+
+Step 2 - Creating Unstyled Tabs with HeadlessUI #
+
+// pages/account/[tab].tsx
+import { Tab } from "@headlessui/react";
+const AccountPage = () => {
+  const tabs = ["profile", "subscription", "settings"];
+  return (
+    <div>
+      <Tab.Group>
+        <Tab.List>
+          {tabs.map((tab) => (
+            <Tab key={tab}>{tab + "/"}</Tab>
+          ))}
+        </Tab.List>
+        <Tab.Panels>
+          <Tab.Panel>Profile Content</Tab.Panel>
+          <Tab.Panel>Subscription Content</Tab.Panel>
+          <Tab.Panel>Settings Content</Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
+      {/* use to check the window location in demo */}
+      {typeof window !== "undefined" && (
+        <pre>Current Location : {window.location.href}</pre>
+      )}
+    </div>
+  );
+};
+export default AccountPage;
+
+
+Explanation:
+
+We use the Tab.Group component as the wrapper for the Tabs.
+
+We use the Tab.List and Tab components to create the buttons that switch the view when clicked.
+
+We use the Tab.Panels and Tab.Panel components to contain the content for each view.
+
+This is almost fully functional. You can click the tab or use the arrow keys to switch the view.
+
+Below is a demo after this step. Go to localhost:3000/account/profile. You can see that the location doesn't change even if we switch tabs. We'll fix it in the next step.
+
+
+Step 3 - Integrating next/link and router #
+
+Currently, our tabs component is uncontrolled. Meaning we don't currently control the state inside the Tab.Group component, to add control, we need to provide selectedIndex and onChange props.
+
+Let's integrate NextJS useRouter and Link component to handle the selected state of the Tabs component:
+
+
+// pages/account/[tab].tsx
+import { Tab } from "@headlessui/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+const AccountPage = () => {
+  const tabs = ["profile", "subscription", "settings"];
+  // 👇 1. Identify the selected index based on router.query.
+  const router = useRouter();
+  const _selectedTab = (router.query.tab as string) ?? "profile";
+  const selectedIndex = tabs.indexOf(_selectedTab) ?? 0;
+  if (!router.isReady) {
+    return null;
+  }
+  return (
+    <div>
+      <Tab.Group
+        // 👇 2. make the Tab.Group component a "controlled" component
+        // by providing selectedIndex and onChange
+        selectedIndex={selectedIndex}
+        onChange={(index) => {
+          const tab = tabs.at(index);
+          router.replace(`/account/${tab}`, undefined, { shallow: true });
+        }}
+      >
+        <Tab.List className={"tabs tabs-boxed"}>
+          {tabs.map((tab) => (
+            // 👇 3. use the next/link component as the component for the Tab component.
+            // this will add the LinkProps to the tab component like `href`,`shallow`,etc.
+            <Tab key={tab} as={Link} href={`/account/${tab}`} shallow>
+              {tab}
+            </Tab>
+          ))}
+        </Tab.List>
+        ...
+      </Tab.Group>
+     ...
+    </div>
+  );
+};
+export default AccountPage;
+
+
+This is the output after this step. Notice that now, the location changes when we switch tabs. Also, try refreshing the different URLs, if it matches the content
+
+Step 4 - Adding Styling #
+
+The last step is to add styling to our components so that it looks nicer and more importantly, we can easily identify the selected tab. Let's use some tailwind classes and DaisyUI tab classes here:
+
+// pages/account/[tab].tsx
+import { Tab } from "@headlessui/react";
+import classNames from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
+const AccountPage = () => {
+  const tabs = ["profile", "subscription", "settings"];
+  const router = useRouter();
+  const _selectedTab = (router.query.tab as string) ?? "profile";
+  const selectedIndex = tabs.indexOf(_selectedTab) ?? 0;
+  if (!router.isReady) {
+    return null;
+  }
+  return (
+    <div className="p-4">
+      <Tab.Group
+        selectedIndex={selectedIndex}
+        onChange={(index) => {
+          const tab = tabs.at(index);
+          router.replace(`/account/${tab}`, undefined, { shallow: true });
+        }}
+      >
+        <Tab.List className={"tabs tabs-boxed"}>
+          {tabs.map((tab, index) => (
+            <Tab
+              key={tab}
+              as={Link}
+              href={`/account/${tab}`}
+              // 👇 use classNames to toggle the tab-active state easily
+              className={classNames({
+                "tab m-2 capitalize": true,
+                "tab-active": selectedIndex === index,
+              })}
+              shallow
+            >
+              {tab}
+            </Tab>
+          ))}
+        </Tab.List>
+        <Tab.Panels
+          className={"p-2 bg-base-200 my-4 rounded-md text-base-content"}
+        >
+          <Tab.Panel>Pofile Content</Tab.Panel>
+          <Tab.Panel>Subscription Content</Tab.Panel>
+          <Tab.Panel>Settings Content</Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
+      <pre>Current Location : {window.location.href}</pre>
+    </div>
+  );
+};
+export default AccountPage;
+
+
+After this step, you should get this beautiful result:
+
+
+That's basically it!
+
+If you need the project full code you can access it at GitHub: NextJS Tabs Tailwind Tutorial
+
+
+
+
+
+
+
+***************************************
+
+
+
+<div className="w-full px-2 py-16 sm:px-0">
+  <Tab.Group vertical>
+    <div className="grid grid-cols-1 md:grid-cols-3">
+      
+                       
+      <Tab.List className="flex flex-col col-span-1 rounded-xl bg-gray-100">
+      <h2 className="py-2 pl-2 text-2xl font-semibold text-[#232f3e]">TOPICS</h2>
+        {Object.keys(categories).map((category) => (
+          <Tab
+            key={category}
+            className={({ selected }) =>
+              classNames(
+                'w-full py-2.5 pl-2 text-md text-left font-medium leading-5',
+                'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none',
+                selected
+                  ? 'bg-white text-blue-500 shadow'
+                  : 'text-gray-800 hover:bg-white/[0.12] hover:text-gray-400'
+              )
+            }
+          >
+            {category}
+          </Tab>
+        ))}
+      </Tab.List>
+
+      <Tab.Panels className="flex flex-col col-span-1 md:col-span-2">
+        {Object.values(categories).map((posts, idx) => (
+          <Tab.Panel
+            key={idx}
+            className={classNames(
+              'rounded-xl bg-white p-3',
+              'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+            )}
+          >
+            <ul>
+              {posts.map((post) => (
+                <li
+                  key={post.id}
+                  className="relative rounded-md p-3 hover:bg-gray-100"
+                >
+                  <h3 className="text-sm font-medium leading-5">
+                    {post.title}
+                  </h3>
+
+                  <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
+                    <li>{post.date}</li>
+                    <li>&middot;</li>
+                    <li>{post.commentCount} comments</li>
+                    <li>&middot;</li>
+                    <li>{post.shareCount} shares</li>
+                  </ul>
+
+                  <a
+                    href="#"
+                    className={classNames(
+                      'absolute inset-0 rounded-md',
+                      'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
+                    )}
+                  />
+                </li>
+              ))}
+            </ul>
+          </Tab.Panel>
+        ))}
+      </Tab.Panels>
+    
+    </div>
+  </Tab.Group>
+</div>
+
+
+
+fetch(`${API_URL}/verify?code=${data.code}`

@@ -2,7 +2,9 @@ import Head from "next/head";
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { ArrowRightIcon, UserIcon } from "@heroicons/react/outline";
+import { Disclosure } from "@headlessui/react";
+import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, PlayIcon, UserIcon } from "@heroicons/react/outline";
+
 
 const cardData = [
   {
@@ -80,20 +82,14 @@ const sections = [
     items: [
       {
         name: "Nobus Flexible Compute Service (FCS)",
-        href: "#",
+        href: "/documentation/fcs",
         desc: "A web service that provides resizable compute capacity in the cloud",
       },
+   
       {
-        name: "Adding SSH Keys",
-        href: "#",
-      },
-      {
-        name: "Connect to Your Linux Instance",
-        href: "#",
-      },
-      {
-        name: "Connect to Your Windows Instance",
-        href: "#",
+        name: "Dedicated Hosting",
+        href: "/documentation/fcs",
+        desc: "Worldwide hosting; instant ready with highest level of resource allocation, privacy, and control",
       },
     ],
   },
@@ -103,17 +99,17 @@ const sections = [
     items: [
       {
         name: "Nobus Flexible Block Storage (FBS)",
-        href: "#",
+        href: "/documentation/fbs",
         desc: "Provides block level storage volumes (1 GB to 1 TB ) for use with Nobus FC instances",
       },
       {
         name: "Flexible Object Storage (FOS)",
-        href: "#",
+        href: "/documentation/fos",
         desc: "Extensive and unlimited storage in the cloud",
       },
       {
         name: "Acronis Cloud Backup",
-        href: "#",
+        href: "/documentation/acronis",
         desc: "Disaster recovery",
       },
     ],
@@ -142,10 +138,18 @@ const sections = [
       },
       {
         name: "Domains and DNS",
-        href: "#",
+        href: "/documentation/dns",
       },
       {
         name: "Floating IPs",
+        href: "#",
+      },
+      {
+        name: "Network ACLs",
+        href: "#",
+      },
+      {
+        name: "Network ACLs",
         href: "#",
       },
       {
@@ -154,6 +158,10 @@ const sections = [
       },
       {
         name: "Virtual Private Network (VPN)",
+        href: "#",
+      },
+      {
+        name: "Cloud Router",
         href: "#",
       },
     ],
@@ -181,6 +189,94 @@ const sections = [
     ],
   },
 ];
+
+const faqFilters = [
+  {
+    id: "compute",
+    name: "Will Nobus really save me money?",
+    options: [
+      {
+        value:
+          "Yes. Compared to private cloud, with nobus you pay only for the resources that you actually use.",
+      },
+    ],
+  },
+  {
+    id: "storage",
+    name: "How can I set up my Nobus account?",
+    options: [
+      {
+        value:
+          "Nobus is very easy to use. You can go through the Nobus website to create an account.",
+      },
+      {
+        value: "See Nobus fcs documentation to get started.",
+        href: "/documentation/fcs/",
+      },
+    ],
+  },
+  {
+    id: "payment",
+    name: "What payment methods are acceptable by Nobus?",
+    options: [
+      {
+        value:
+          "We offer several payment methods for adding balance to your Nobus account:",
+      },
+      { value: "Credit cards: Visa and MasterCard" },
+      {
+        value:
+          "PayStack: PayStack balance, bank account, debit and credit cards (payment methods may vary by region).",
+      },
+      { value: "Bank Transfers: Wallet" },
+      {
+        value:
+          "Contact us if you have any questions about the payment methods, please contact support",
+        href: "/contact/",
+      },
+    ],
+  },
+  {
+    id: "usage",
+    name: "How will I be billed for resource usage?",
+    options: [
+      {
+        value:
+          "All Simple plans on your account are billed hourly up to the monthly rate cap and the hourly rate is determined by dividing the monthly rate by 672 hours (28 days). However, if your server is online for more than 672 hours in a calendar month, we will bill you on the monthly rate. The Flexible plan is billed hourly according to our pricing for the used resources. All invoices are calculated based on UTC times.",
+      },
+    ],
+  },
+  {
+    id: "shutdown",
+    name: "How are cloud servers billed if shutdown?",
+    options: [
+      {
+        value:
+          "Cloud servers are billed per hour regardless of whether the server is powered on or shutdown.",
+      },
+    ],
+  },
+  {
+    id: "other",
+    name: "How does Nobus compare to other cloud providers?",
+    options: [
+      {
+        value:
+          "Nobus is hosted on a Tier III datacenter, Fully automated, User friendly, easy to use and you pay as you use.",
+      },
+    ],
+  },
+];
+
+const includedFeatures = [
+  'Virtual Hosting',
+  'Storage Services',
+  'Cloud Backup/Disaster Recovery',
+  'Networking Services',
+  'Cloud Security',
+  'Advanced Cyber Sercurity Service',
+  'Image Services',
+]
 
 function index() {
   return (
@@ -210,7 +306,7 @@ function index() {
             </p>
           </div>
         </div>
-        <div className="flex-col py-5 px-20">
+        <div className="flex-col py-5 px-10 md:px-20">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Guides & API References
@@ -229,7 +325,7 @@ function index() {
                   <ul
                     role="list"
                     aria-labelledby={`${section.name}-heading`}
-                    className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                    className="mt-6 space-y-2 sm:mt-4 sm:space-y-4"
                   >
                     {section.items.map((item) => (
                       <li key={item.name} className="flex-col">
@@ -253,39 +349,8 @@ function index() {
             ))}
           </div>
         </div>
-        <div
-          className="p-20"
-          style={{
-            backgroundImage: "url('/backup.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="flex flex-col lg:flex-row mx-auto">
-            <div className="text-left lg:w-1/2 md:pr-20 pt-0 lg:pt-10 xl:pt-20 text-white">
-              <h1 className="text-3xl xl:text-4xl font-semibold">
-                We are project focused
-              </h1>
-
-              <p className="my-5 text-md tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:py-6 xl:py-5 xl:text-lg">
-                Easy and Secure Onboarding. Displaying the highest level of
-                Integrity in the way we conduct our business
-              </p>
-              <a href="/blog">
-                <button className="w-full sm:w-40 px-4 py-3 rounded hover:shadow active:scale-90 cursor-pointer text-md font-semibold bg-blue-600 text-white border-2 border-blue-600">
-                  Get Started
-                </button>
-              </a>
-            </div>
-
-            <div className="hidden lg:block lg:w-1/2 lg:mt-0">
-              <div className="flex-col">
-                <img src="/backup2.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-col p-20">
+       
+        <div className="flex-col px-10 pt-10 md:px-20 md:pt-20">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               General Resources
@@ -306,6 +371,135 @@ function index() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+
+
+        <div className="bg-white pb-10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          
+            <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+              <div className="p-8 sm:p-10 lg:flex-auto">
+                <h3 className="text-3xl font-semibold tracking-tight text-gray-900">Project Focused</h3>
+                <p className="mt-6 text-justify text-md text-gray-600 tracking-tight">
+                Enhanced workflows with guided digital solutions for global optimization;
+                implement new processes faster, simplify data storage and improve productivity.
+                Easy and Secure Onboarding. Displaying the highest level of
+                Integrity in the way we conduct our business
+                </p>
+
+                <div className="flex mt-5 py-5 justify-between border-t border-gray-300">
+                  <div className="flex">
+                      <a href="#">
+                        <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-50 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-white text-gray-500 border-gray-400">
+                          <PlayIcon className="h-6" />
+                          <span className="inline-flex ml-2">Request Demo</span>
+                        </div>
+                      </a>
+                    </div>
+                  <div className="flex">
+                    <a href="/contact">
+                      <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-500 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-blue-600 text-white border-blue-600">
+                        <PhoneIcon className="h-6" />
+                        <span className="inline-flex ml-2">Contact Sales</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+              <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+                <div className="rounded-2xl bg-indigo-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center">
+                  <div className="mx-auto max-w-xs px-8">
+                    <p className="text-base font-semibold tracking-wide text-gray-600"> Flexible Capacity As Low As</p>
+                    <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                      <span className="text-5xl font-semibold tracking-tight text-gray-900">#3.00</span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">NGN</span>
+                    </p>
+                    <a
+                      href="https://cloud.nobus.io/"
+                      className="mt-10 cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    >
+                      Visit Cloud Console
+                    </a>
+                    <p className="mt-6 text-xs leading-5 tracking-wide text-gray-600">
+                      Start building your future
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-col p-5 sm:p-10 md:p-20 bg-gray-100">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
+            <div className="block lg:hidden px-5 pb-5 lg:p-5">
+              <img src="/faq.png" />
+            </div>
+
+            <div className="px-2 lg:px-5 bg-gray-100 flex flex-col lg:space-x-4">
+              <div className="">
+                {faqFilters.map((section) => (
+                  <div className="overflow-y-scroll scrollbar-hide px-3">
+                    <Disclosure as="div" key={section.id} className="py-6">
+                      {({ open }) => (
+                        <>
+                          <h3 className="-my-3 flow-root ">
+                            <Disclosure.Button className="flex w-full items-center justify-between bg-white border border-gray-500 p-3 text-base text-gray-600  focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                              <span className="font-medium text-left">
+                                {section.name}
+                              </span>
+                              <span className="flex items-center">
+                                {open ? (
+                                  <ChevronUpIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDownIcon
+                                    className="h-4 w-4"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </span>
+                            </Disclosure.Button>
+                          </h3>
+                          <Disclosure.Panel className="pt-6">
+                            <div className="space-y-4 p-3 bg-blue-100">
+                              {section.options.map((option) => (
+                                <div
+                                  key={option.value}
+                                  className="flex items-center"
+                                >
+                                  <a
+                                    href={option.href}
+                                    className="font-md text-md text-gray-700"
+                                  >
+                                    <span aria-hidden="true" />
+                                    {option.value}
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-2 lg:px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="hidden lg:block px-0 pb-5 lg:p-5 ">
+                <img src="/faq.png" />
+              </div>
+              <a href="/service-faq" className="lg:pl-2">
+                <button className="border border-gray-500 py-2 px-3 text-md font-semibold text-gray-500 ">
+                  View more FAQs <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

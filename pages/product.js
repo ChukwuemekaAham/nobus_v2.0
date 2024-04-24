@@ -290,7 +290,7 @@ function product() {
                 </div>
               </div>
               <div className="md:col-span-2">
-                <div className="grid gap-y-8 gap-x-6 grid-cols-2 lg:grid-cols-3 ">
+                <div className="grid gap-y-8 gap-x-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
                   {cardSample?.map((item) => (
                     <div className="p-5 bg-white flex flex-col space-x-4 shadow rounded border border-gray-400 group">
                       <a href={item.href}>
@@ -356,7 +356,7 @@ function product() {
           </div>
         </div>
 
-        <div className="p-10 md:py-20 max-w-7xl mx-auto bg-blue-50">
+        <div className="p-10 md:py-20 max-w-7xl mx-auto bg-indigo-50">
           <div id="building-cloud-operating-model" className="pt-10">
             <h1 className="pb-5 text-2xl text-center md:text-3xl xl:text-4xl font-semibold tracking-tight text-gray-900">
               What is the Cloud Operating Model?
@@ -386,14 +386,14 @@ function product() {
                 supporting global businesses across every industry and sector.
               </p>
 
-              <div className="py-10 ">
-                <img
+              <div className="py-1">
+                {/* <img
                   src="/cop1.png"
                   alt="Product screenshot"
                   className="rounded-xl shadow-xl ring-1 ring-gray-400/10"
                   width={2432}
                   height={1442}
-                />
+                /> */}
               </div>
               <p>
                 Your organization can unlock the fastest path to value in a
@@ -424,14 +424,14 @@ function product() {
                 with many cloud providers.
               </p>
 
-              <div className="py-10 ">
-                <img
+              <div className="py-1">
+                {/* <img
                   src="/cop2.png"
                   alt="Product screenshot"
                   className="rounded-xl shadow-xl ring-1 ring-gray-400/10 "
                   width={2432}
                   height={1442}
-                />
+                /> */}
               </div>
               <p>
                 This approach allows your organization to optimize your
@@ -465,14 +465,14 @@ function product() {
                 will require a transition in each of those areas.
               </p>
 
-              <div className="py-10 ">
-                <img
+              <div className="py-1">
+                {/* <img
                   src="/cop3.png"
                   alt="Product screenshot"
                   className="rounded-xl shadow-xl ring-1 ring-gray-400/10"
                   width={2432}
                   height={1442}
-                />
+                /> */}
               </div>
               <ul className="space-y-4 list-disc list-inside ">
                 <li className="">

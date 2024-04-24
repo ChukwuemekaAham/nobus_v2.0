@@ -10,7 +10,7 @@ function serviceterms() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="px-20 py-5">
+      <div className="px-10 md:px-20 py-5">
         <div class="my-10">
           <h1 class="text-3xl md:text-4xl lg:text-5xl">NCS Service Terms</h1>
 
@@ -174,14 +174,14 @@ function serviceterms() {
                 Service credit equal to any charged amounts for such period.
               </p>
               <p>
-                <b>1.13. </b>If you are a customer that is subject to any
+                <b>1.13. </b> If you are a customer that is subject to any
                 government regulation on information security, user data
                 security, PCI-DSS or any other related regulatory compliance
                 policies of any country, you agree that your use of the Services
                 complies with the relevant policies that apply to you.{" "}
               </p>
               <p>
-                <b>1.14. </b>Data Protection.
+                <b>1.14. </b> Data Protection.
                 <br />{" "}
               </p>
               <p>
@@ -206,10 +206,10 @@ function serviceterms() {
             </h4>
             <div class="">
               <p>
-                <b>2.1. </b>In conjunction with the Services, you may be allowed
-                to use certain software (including related documentation)
-                developed and owned by Microsoft Corporation or its licensors
-                (collectively, the “Microsoft Software”).
+                <b>2.1. </b> In conjunction with the Services, you may be
+                allowed to use certain software (including related
+                documentation) developed and owned by Microsoft Corporation or
+                its licensors (collectively, the “Microsoft Software”).
               </p>
               <p>
                 <b>2.1.1.</b> If you use the Microsoft Software, Microsoft and
@@ -302,7 +302,7 @@ function serviceterms() {
 
               <ul>
                 <p>
-                  <b>2.1.2.</b>For any instance running Microsoft Software
+                  <b>2.1.2.</b> For any instance running Microsoft Software
                   (each, a “Microsoft Instance”), you may not use nesting,
                   container, or similar technologies to sell or resell multiple
                   instances, portions of an instance, or containers running
@@ -313,7 +313,7 @@ function serviceterms() {
                   Microsoft Instance.
                 </p>
                 <p>
-                  <b>2.2.</b>In conjunction with the Services, you may be
+                  <b>2.2.</b> In conjunction with the Services, you may be
                   allowed to use certain software (including related support,
                   maintenance, and documentation) developed, owned, or provided
                   by third parties or their licensors. Use of third party
@@ -388,7 +388,7 @@ function serviceterms() {
             </h4>
             <div class="">
               <p>
-                <b>4.1.</b>&nbsp;We may change user credentials created by you
+                <b>4.1.</b> &nbsp; We may change user credentials created by you
                 using NAM if we determine in our reasonable discretion that a
                 change is necessary for the protection of your NCS account and
                 resources, and we will promptly notify you of any such change.
@@ -440,7 +440,7 @@ function serviceterms() {
               </p>
 
               <p>
-                <b> 6.3.</b>You are responsible for your separate relationship
+                <b> 6.3.</b> You are responsible for your separate relationship
                 with the data center operator or other service provider,
                 including compliance with your agreement with, and the policies
                 and procedures of, the data center operator or other service
@@ -472,7 +472,7 @@ function serviceterms() {
                 Services are “Services” for purposes of the Agreement.
               </p>
               <p>
-                <b>7.2. </b>NCS or any of its affiliates may enter into a SOW
+                <b>7.2. </b> NCS or any of its affiliates may enter into a SOW
                 with you to provide NCS Professional Services. For the purposes
                 of each SOW, the term “NOBUS” in the SOW and the Agreement
                 refers to the NCS entity that executes the SOW, and no other NCS
@@ -484,14 +484,14 @@ function serviceterms() {
                 of that SOW.
               </p>
               <p>
-                <b>7.3. </b>NCS will invoice you monthly for the NCS
+                <b>7.3. </b> NCS will invoice you monthly for the NCS
                 Professional Services. Payments for NCS Professional Services
                 are not refundable.
               </p>
               <p>
-                <b>7.4. </b>NCS does not provide legal or compliance advice. You
-                are responsible for making your own assessment of whether your
-                use of the Services meets applicable legal and regulatory
+                <b>7.4. </b> NCS does not provide legal or compliance advice.
+                You are responsible for making your own assessment of whether
+                your use of the Services meets applicable legal and regulatory
                 requirements.
               </p>
               <p>
@@ -502,7 +502,7 @@ function serviceterms() {
                 NCS.
               </p>
               <p>
-                <b>7.6</b>. NCS may develop Content consisting of either (a)
+                <b>7.6.</b> NCS may develop Content consisting of either (a)
                 documents and diagrams (“Documents”) or (b) software (in source
                 or object code form), sample code, or scripts (“Software”) for
                 you as part of the NCS Professional Services (such Documents and
@@ -531,14 +531,14 @@ function serviceterms() {
                 NCS Content or Third Party Content.
               </p>
               <p>
-                <b>7.8. </b>Any materials or information that you own or license
-                from a third party and provide to NCS for the purposes of the
-                NCS Professional Services are Your Content. If you choose to
-                provide access to Your Content to NCS, then you will ensure that
-                you have adequate rights and permissions to do so.
+                <b>7.8. </b> Any materials or information that you own or
+                license from a third party and provide to NCS for the purposes
+                of the NCS Professional Services are Your Content. If you choose
+                to provide access to Your Content to NCS, then you will ensure
+                that you have adequate rights and permissions to do so.
               </p>
               <p>
-                <b>7.9. </b>If there is a conflict between this Section 45 and
+                <b>7.9. </b> If there is a conflict between this Section 45 and
                 any NCS Implementation Services Addendum between you and NCS,
                 the terms of the NCS Implementation Services Addendum will
                 control, and references to “Implementation Services” in that

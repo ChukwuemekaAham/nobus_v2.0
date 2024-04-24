@@ -1,31 +1,23 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+
 const Product = require("../models/product");
 
-mongoose
-  .connect("mongodb://localhost:27017/testApp", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("MONGO CONNECTION OPEN!!!");
-  })
-  .catch((err) => {
-    console.log("OH NO MONGO CONNECTION ERROR!!!!");
-    console.log(err);
-  });
 
-// const p = new Product({
-//   name: "Ruby Grapefruit",
-//   price: 1.99,
-//   category: "fruit",
-// });
-// p.save()
-//   .then((p) => {
-//     console.log(p);
+// mongoose.set("strictQuery", false);
+
+// mongoose
+//   .connect('mongodb://127.0.0.1:27017/webadmin', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
 //   })
-//   .catch((e) => {
-//     console.log(e);
+//   .then(() => {
+//     console.log("MONGO CONNECTION OPEN!!!");
+//   })
+//   .catch((err) => {
+//     console.log("OH NO MONGO CONNECTION ERROR!!!!");
+//     console.log(err);
 //   });
+ 
 
 const seedProducts = [
   {

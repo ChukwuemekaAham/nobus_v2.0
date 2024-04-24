@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/flowbite-react/**/*.js",
   ],
   theme: {
     extend: {},
@@ -12,5 +13,6 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
     require('tailwind-scrollbar-hide'),
+    require('flowbite/plugin'),
   ],
 }

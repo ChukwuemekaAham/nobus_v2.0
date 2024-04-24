@@ -16,10 +16,10 @@ const cardData = [
   },
   {
     id: "2",
-    title: "Q&A",
-    description: "Find quick answers to resolve your issues",
+    title: "Knowledge Center",
+    description: "Find quick guide and productbase articles",
     image: "/qa.png",
-    href: "/service-faq",
+    href: "/documentation",
     icon: UserIcon,
   },
   {

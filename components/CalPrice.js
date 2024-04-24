@@ -1,6 +1,6 @@
 import { XIcon } from "@heroicons/react/outline";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CalPrice = () => {
   const vcpu_unit_price = 100;
@@ -8,12 +8,12 @@ const CalPrice = () => {
   const fos_unit_price = 2;
   const volume_unit_price = 3;
 
-  const [num_ram, setnum_ram] = useState("Ram(GB)");
-  const [local_disk, setlocal_disk] = useState("Local Disk(GB)");
-  const [num_cores, setnum_cores] = useState("VCPU(Cores)");
+  let [num_ram, setnum_ram] = useState("Ram(GB)");
+  let [local_disk, setlocal_disk] = useState("Local Disk(GB)");
+  let [num_cores, setnum_cores] = useState("VCPU(Cores)");
   const [inst_type, setinst_type] = useState("");
   const [os_type, setos_type] = useState("");
-  const [min_vol, setmin_vol] = useState("");
+  let [min_vol, setmin_vol] = useState("");
   const [inst_vol, setinst_vol] = useState("");
   const [FBS_vol_type, setFBS_vol_type] = useState("");
   const [FBS_vol_size, setFBS_vol_size] = useState(0);
@@ -358,7 +358,7 @@ const CalPrice = () => {
     }
   };
   return (
-    <div className="grid grid-cols-1 gap-y-20 sm:gap-x-4 lg:gap-x-20 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-y-20 sm:gap-x-4 lg:gap-x-20 md:grid-cols-2 ">
       <div id="fcs" className="group ">
         <div className="rounded-3xl border shadow-lg group-hover:scale-95 bg-white">
           <div className="rounded-t-3xl shadow-lg py-4 bg-blue-600">

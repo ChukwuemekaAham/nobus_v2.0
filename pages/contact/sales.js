@@ -25,9 +25,9 @@ function support() {
     };
     setIsPending(true);
 
-    const endpoint = process.env.CONTACT_ENDPOINT;
+    const BASE = process.env.NEXT_PUBLIC_BASE
 
-    fetch(endpoint, {
+    fetch(`${BASE}/contact`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -47,8 +47,6 @@ function support() {
         setEmail("");
         setSubject("");
         setMessage("");
-        console.log(res);
-        console.log("post successfull");
         setSuccess("Message Sent");
         setError(false);
         setIsPending(false);
@@ -58,22 +56,21 @@ function support() {
         setEmail("");
         setSubject("");
         setMessage("");
-        console.log(err);
-        console.log("Message Unsuccessfull");
         setSuccess(false);
-        setError(err.toString());
+        setIsPending(false);
+        setError("Unable to send message at this time.");
       });
   };
 
   return (
-    <div className="h-screen">
+    <div className="">
       <Head>
         <title>Nobus | Contact Sales</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
 
-      <div className="grid grid-cols-1 lg:gap-y-10 gap-x-4 lg:grid-cols-2 lg:p-20">
+      <div className="grid grid-cols-1 lg:gap-y-10 gap-x-4 md:gap-x-0 lg:grid-cols-2 lg:p-20">
         <div
           className="flex-col text-left justify-center p-10"
           style={{

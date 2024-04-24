@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function sophosxg() {
-  return (
-    <div>sophos-xg</div>
-  )
+  return <div>sophos-xg</div>;
 }
 
-export default sophosxg
+export default sophosxg;

@@ -5,9 +5,13 @@ import {
   PlusIcon,
   ChevronDownIcon,
   ChevronUpIcon,
+  PhoneIcon, 
+  VideoCameraIcon,
+  PlayIcon, 
 } from "@heroicons/react/outline";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
 
 const cardData = [
   {
@@ -30,12 +34,13 @@ const sections = [
     items: [
       {
         name: "Nobus Flexible Compute Service (FCS)",
-        href: "#",
+        href: "/pricing/fcs",
+        desc: "A web service that provides resizable compute capacity in the cloud"
       },
       {
-        name: "Nobus Flexible Compute Service Autoscaling (FCSA)",
+        name: "Dedicated Hosting",
         href: "#",
-        desc: "Resizable compute capacity in the cloud",
+        desc: "Worldwide hosting; instant ready with highest level of resource allocation, privacy, and control",
       },
     ],
   },
@@ -57,18 +62,24 @@ const sections = [
   },
   {
     id: "network",
-    name: "Networking and Content Delivery",
+    name: "Networking",
     items: [
+      {
+        name: "Bandwidth",
+        href: "#",
+        desc: "Exclusive allocated network connection",
+      },
       {
         name: "Nobus Fast Transit (NFT)",
         href: "#",
         desc: "Exclusive allocated network connection",
       },
       {
-        name: "Nobus Flexible Load Balancing (FLB)",
+        name: "Virtual Privat Network",
         href: "#",
-        desc: "Maximum performance scale load balancing",
+        desc: "Exclusive allocated network connection",
       },
+      
     ],
   },
 ];
@@ -180,7 +191,7 @@ function index() {
             </p>
           </div>
         </div>
-        <div className="flex-col px-20 py-5">
+        <div className="flex-col px-10 md:px-20 py-5">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Service Payment Options
@@ -201,13 +212,13 @@ function index() {
             ))}
           </div>
         </div>
-        <div className="flex-col px-20 py-5">
+        <div className="flex-col px-10 md:px-20 py-5">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Service Pricing
             </h1>
           </div>
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {sections.map((section) => (
               <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow border border-gray-300 hover:scale-95">
                 <div key={section.name} className="p-2">
@@ -245,26 +256,26 @@ function index() {
           </div>
         </div>
         <div
-          className="px-20 py-10"
+          className="px-10 md:px-20 py-10"
           style={{
             backgroundImage: "url('/backup.png')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
         >
-          <div className="flex flex-col lg:flex-row mx-auto ">
-            <div className="text-left lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
-              <h1 className="text-3xl xl:text-4xl font-semibold">
+          <div className="flex flex-col-reverse lg:flex-row mx-auto">
+            <div className="lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
+              <h1 className="text-3xl text-center tracking-tight lg:text-left font-semibold">
                 Nobus Simple monthly calculator
               </h1>
 
-              <p className="my-2 text-base tracking-wide leading-relaxed lg:mx-auto lg:pt-5 lg:pb-10">
+              <p className="my-2 text-base text-center lg:text-left tracking-wide leading-relaxed lg:mx-auto lg:pt-5 lg:pb-10">
                 You can estimate your monthly bill (individual and multiple
-                prices) using NCS Simple Monthly Calculator.
+                prices) using NCS Simple Monthly Calculator
               </p>
 
-              <div className="mt-10 pb-5 flex flex-col sm:flex-row md:justify-start">
-                <a href="/simple_monthly_calculator">
+              <div className="mt-10 pb-5 flex flex-col sm:flex-row justify-center lg:justify-start">
+                <a href="/simple-monthly-calculator">
                   <button className="w-full mt-2 sm:mt-0 sm:ml-2 sm:w-40 px-4 py-3 font-semibold text-md text-white rounded hover:shadow active:scale-90 cursor-pointer border border-white">
                     Calculate Cost
                   </button>
@@ -272,7 +283,7 @@ function index() {
               </div>
             </div>
 
-            <div className="hidden lg:block lg:w-1/2 mt-10 lg:mt-0">
+            <div className="lg:w-1/2 my-10 lg:my-0 mx-auto lg:mx-0">
               <div className="flex-col">
                 <img src="/analytics.png" />
               </div>
@@ -280,54 +291,70 @@ function index() {
           </div>
         </div>
 
-        <div className="flex-col px-20 py-8 lg:px-0 lg:mx-40">
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-            <div className="p-5 flex flex-col space-x-4 text-left group">
-              <div className="space-y-4">
-                <h1 className="text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
-                  Related links
-                </h1>
-                <div className="text-base font-semibold text-white tracking-tight leading-relaxed text-gray-800">
-                  <h6 className="hover:underline">
-                    <a href="/sla/">Service-level agreement (SLA)</a>
-                  </h6>
-                  <h6 className="hover:underline">
-                    <a href="/agreement/">Customer agreement (CA)</a>
-                  </h6>
-                  <h6 className="hover:underline">
-                    <a href="/service-terms">Service terms</a>
-                  </h6>
-                  <h6 className="hover:underline">
-                    <a href="/documentation/">Resources</a>
-                  </h6>
+      
+        <div className="bg-white pb-10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          
+            <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+              <div className="p-8 sm:p-10 lg:flex-auto">
+                <h3 className="text-3xl font-semibold tracking-tight text-gray-900">Project Focused</h3>
+                <p className="mt-6 text-justify text-md text-gray-600 tracking-tight">
+                Enhanced workflows with guided digital solutions for global optimization;
+                implement new processes faster, simplify data storage and improve productivity.
+                Easy and Secure Onboarding. Displaying the highest level of
+                Integrity in the way we conduct our business
+                </p>
+
+                <div className="flex mt-5 py-5 justify-between border-t border-gray-300">
+                  <div className="flex">
+                      <a href="#">
+                        <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-100 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-white text-gray-500 border-gray-400">
+                          <PlayIcon className="h-6" />
+                          <span className="inline-flex ml-2">Request Demo</span>
+                        </div>
+                      </a>
+                    </div>
+                  <div className="flex">
+                    <a href="/contact">
+                      <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-500 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-blue-600 text-white border-blue-600">
+                        <PhoneIcon className="h-6" />
+                        <span className="inline-flex ml-2">Contact Sales</span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
+
               </div>
-            </div>
-            <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow border group">
-              <div className="py-2">
-                <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
-                  Please note!
-                </h1>
-                <p className="pt-4 text-base tracking-wide leading-relaxed text-gray-800">
-                  Take advantage of our platform that supports applications and
-                  workloads across pools of physical infrastructure and
-                  multi-cloud environments. Data centers often host an
-                  organization's business-critical data and applications. Nobus
-                  understand the integral part played by data centers. The
-                  security and reliability of our data center and it information
-                  is our top priority.
-                </p>
-                <p className="text-base tracking-wide leading-relaxed text-gray-800">
-                  At nobus, you pay only for resources actually consumed and
-                  save more.{" "}
-                </p>
+              <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+                <div className="rounded-2xl bg-indigo-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center">
+                  <div className="mx-auto max-w-xs px-8">
+                    <p className="text-base font-semibold tracking-wide text-gray-600"> Flexible Capacity As Low As</p>
+                    <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                      <span className="text-5xl font-semibold tracking-tight text-gray-900">#3.00</span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">NGN</span>
+                    </p>
+                    <a
+                      href="https://cloud.nobus.io/"
+                      className="mt-10 cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    >
+                      Visit Cloud Console
+                    </a>
+                    <p className="mt-6 text-xs leading-5 tracking-wide text-gray-600">
+                      Start building your future
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex-col p-20 bg-gray-100">
+        <div className="flex-col p-5 sm:p-10 md:p-20 bg-gray-100">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
-            <div className="px-5 bg-gray-100 flex flex-col space-x-4">
+            <div className="block lg:hidden px-5 pb-5 lg:p-5">
+              <img src="/faq.png" />
+            </div>
+
+            <div className="px-2 lg:px-5 bg-gray-100 flex flex-col lg:space-x-4">
               <div className="">
                 {faqFilters.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
@@ -379,11 +406,11 @@ function index() {
                 ))}
               </div>
             </div>
-            <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
-              <div className="p-5">
+            <div className="px-2 lg:px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="hidden lg:block px-0 pb-5 lg:p-5 ">
                 <img src="/faq.png" />
               </div>
-              <a href="/service-faq" className="pl-2">
+              <a href="/service-faq" className="lg:pl-2">
                 <button className="border border-gray-500 py-2 px-3 text-md font-semibold text-gray-500 ">
                   View more FAQs <span aria-hidden="true"> &rarr;</span>
                 </button>

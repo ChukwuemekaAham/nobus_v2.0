@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function vpn() {
-  return (
-    <div>virtual private network</div>
-  )
+  return <div>virtual private network</div>;
 }
 
-export default vpn
+export default vpn;

@@ -1,0 +1,2096 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+      "title": "Nobus API",
+      "version": "1.0.0",
+      "description": ""
+    },
+    "paths": {
+      "/api/auth/user/create": {
+        "post": {
+          "operationId": "fd69fc33_controller_create_user_view",
+          "summary": "Create User View",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SignUpResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Create User"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterUserSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/auth/login/initiate": {
+        "post": {
+          "operationId": "c357a81b_controller_initiate_login_view",
+          "summary": "Initiate Login View",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InitiateLoginResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Login"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InitiateLoginSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/auth/login/complete": {
+        "post": {
+          "operationId": "c7207970_controller_complete_login_view",
+          "summary": "Complete Login View",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompleteLoginResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Login"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompleteLoginSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/auth/email/verify/initiate": {
+        "post": {
+          "operationId": "6f9f082e_controller_initiate_email_verification_view",
+          "summary": "Initiate Email Verification View",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InitiateEmailVerificationResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Verify Email"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InitiateEmailVerificationSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/auth/email/verify/complete": {
+        "post": {
+          "operationId": "41017133_controller_complete_email_verification_view",
+          "summary": "Complete Email Verification View",
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": "No Content",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompleteEmailVerificationResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Verify Email"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompleteEmailVerificationSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/auth/test": {
+        "get": {
+          "operationId": "253115df_controller_test_auth_controller_api",
+          "summary": "Test Auth Controller Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "Auth Controller"
+          ]
+        }
+      },
+      "/api/admin/": {
+        "post": {
+          "operationId": "206288ca_controller_create_admin_user_api",
+          "summary": "Create Admin User Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminUserResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdminUserSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "put": {
+          "operationId": "4f23e46d_controller_update_admin_user_api",
+          "summary": "Update Admin User Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminUserResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAdminUserSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin/login": {
+        "post": {
+          "operationId": "fbc18d5f_controller_admin_login_api",
+          "summary": "Admin Login Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminLoginResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminLoginSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin/password/reset/initiate": {
+        "post": {
+          "operationId": "38634363_controller_initiate_admin_reset_password_api",
+          "summary": "Initiate Admin Reset Password Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InitiatePasswordResetResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InitiateAdminResetPasswordSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin/password/reset/complete": {
+        "post": {
+          "operationId": "5bb0f4ee_controller_complete_admin_reset_password_api",
+          "summary": "Complete Admin Reset Password Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminUserResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompleteAdminResetPasswordSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin/password/change": {
+        "post": {
+          "operationId": "20646627_controller_change_admin_password_api",
+          "summary": "Change Admin Password Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminUserResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangeAdminPasswordSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin": {
+        "delete": {
+          "operationId": "13dec637_controller_delete_admin_api",
+          "summary": "Delete Admin Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdminUserResponseSchema"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAdminUserSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/admin/test": {
+        "get": {
+          "operationId": "d979f60a_controller_test_admin_controller_api",
+          "summary": "Test Admin Controller Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "Admin Endpoints"
+          ]
+        }
+      },
+      "/api/user/": {
+        "get": {
+          "operationId": "d2480cd3_controller_get_user_api",
+          "summary": "Get User Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GenericUserObjectResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "User Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserRequestSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/user/password/change": {
+        "post": {
+          "operationId": "a14663db_controller_change_password_api",
+          "summary": "Change Password Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GenericUserObjectResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "User Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangePasswordSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/user/test": {
+        "get": {
+          "operationId": "47265618_controller_test_user_controller_api",
+          "summary": "Test User Controller Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "User Endpoints"
+          ]
+        }
+      },
+      "/api/az/": {
+        "get": {
+          "operationId": "33091227_controller_get_az_api",
+          "summary": "Get Az Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AvailabilityZoneResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Availability Zone"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAZRequestSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "post": {
+          "operationId": "b7016003_controller_create_az_api",
+          "summary": "Create Az Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AvailabilityZoneResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Availability Zone"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAvailabilityZoneSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "put": {
+          "operationId": "6f3e9309_controller_update_az_api",
+          "summary": "Update Az Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AvailabilityZoneResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Availability Zone"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAvailabilityZoneSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "delete": {
+          "operationId": "f3a5a74a_controller_delete_az_api",
+          "summary": "Delete Az Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "title": "Response",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Availability Zone"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAvailabilityZoneSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/az/test": {
+        "get": {
+          "operationId": "7824f1e2_controller_test_az_controller_api",
+          "summary": "Test Az Controller Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "Availability Zone"
+          ]
+        }
+      },
+      "/api/service/": {
+        "get": {
+          "operationId": "9c524f01_controller_get_service_api",
+          "summary": "Get Service Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServiceResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Service(Node) Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetServiceRequestSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "post": {
+          "operationId": "375aa729_controller_create_service_api",
+          "summary": "Create Service Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServiceResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Service(Node) Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateServiceSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "put": {
+          "operationId": "ed92e6f0_controller_update_service_api",
+          "summary": "Update Service Api",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServiceResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Service(Node) Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateServiceSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        },
+        "delete": {
+          "operationId": "b08ef1f3_controller_delete_service_api",
+          "summary": "Delete Service Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ServiceResponseSchema"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "Service(Node) Endpoints"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteServiceSchema"
+                }
+              }
+            },
+            "required": true
+          }
+        }
+      },
+      "/api/service/test": {
+        "get": {
+          "operationId": "5cd8d891_controller_test_service_controller_api",
+          "summary": "Test Service Controller Api",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "Service"
+          ]
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "GetUserSchema": {
+          "title": "GetUserSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "email": {
+              "title": "Email",
+              "type": "string"
+            },
+            "first_name": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last_name": {
+              "title": "Last Name",
+              "type": "string"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "type": "boolean"
+            },
+            "is_admin": {
+              "title": "Is Admin",
+              "type": "boolean"
+            },
+            "email_verified": {
+              "title": "Email Verified",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "is_active",
+            "is_admin",
+            "email_verified"
+          ]
+        },
+        "GetCompanyResponseSchema": {
+          "title": "GetCompanyResponseSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "phone_number": {
+              "title": "Phone Number",
+              "type": "string"
+            },
+            "address": {
+              "title": "Address",
+              "type": "string"
+            },
+            "state": {
+              "title": "State",
+              "type": "string"
+            },
+            "country": {
+              "title": "Country",
+              "type": "string"
+            },
+            "billing": {
+              "title": "Billing",
+              "type": "string"
+            },
+            "payment_gateway": {
+              "title": "Payment Gateway",
+              "type": "string"
+            },
+            "discount": {
+              "title": "Discount",
+              "default": 0,
+              "type": "number"
+            },
+            "accepted_contract": {
+              "title": "Accepted Contract",
+              "type": "boolean"
+            },
+            "added_payment_details": {
+              "title": "Added Payment Details",
+              "type": "boolean"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "phone_number",
+            "address",
+            "state",
+            "country",
+            "billing",
+            "payment_gateway",
+            "accepted_contract",
+            "added_payment_details",
+            "is_active"
+          ]
+        },
+        "GetProjectSchema": {
+          "title": "GetProjectSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "swift_quota": {
+              "title": "Swift Quota",
+              "default": 1,
+              "type": "integer"
+            },
+            "current_swift_quota": {
+              "title": "Current Swift Quota",
+              "default": 1,
+              "type": "integer"
+            },
+            "bandwidth": {
+              "title": "Bandwidth",
+              "default": 1,
+              "type": "integer"
+            },
+            "current_bandwidth": {
+              "title": "Current Bandwidth",
+              "default": 1,
+              "type": "integer"
+            },
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "date_created": {
+              "title": "Date Created",
+              "type": "string",
+              "format": "date-time"
+            },
+            "updated_at": {
+              "title": "Updated At",
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "name",
+            "id",
+            "date_created",
+            "updated_at"
+          ]
+        },
+        "SignUpResponseSchema": {
+          "title": "SignUpResponseSchema",
+          "type": "object",
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/GetUserSchema"
+            },
+            "company": {
+              "$ref": "#/components/schemas/GetCompanyResponseSchema"
+            },
+            "project": {
+              "title": "Project",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetProjectSchema"
+              }
+            }
+          },
+          "required": [
+            "user",
+            "company",
+            "project"
+          ]
+        },
+        "Error": {
+          "title": "Error",
+          "type": "object",
+          "properties": {
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ]
+        },
+        "CompanySchema": {
+          "title": "CompanySchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "phone_number": {
+              "title": "Phone Number",
+              "type": "string"
+            },
+            "address": {
+              "title": "Address",
+              "type": "string"
+            },
+            "state": {
+              "title": "State",
+              "type": "string"
+            },
+            "country": {
+              "title": "Country",
+              "type": "string"
+            },
+            "billing": {
+              "title": "Billing",
+              "type": "string"
+            },
+            "payment_gateway": {
+              "title": "Payment Gateway",
+              "type": "string"
+            },
+            "discount": {
+              "title": "Discount",
+              "default": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "name",
+            "phone_number",
+            "address",
+            "state",
+            "country",
+            "billing",
+            "payment_gateway"
+          ]
+        },
+        "ProjectSchema": {
+          "title": "ProjectSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "swift_quota": {
+              "title": "Swift Quota",
+              "default": 1,
+              "type": "integer"
+            },
+            "current_swift_quota": {
+              "title": "Current Swift Quota",
+              "default": 1,
+              "type": "integer"
+            },
+            "bandwidth": {
+              "title": "Bandwidth",
+              "default": 1,
+              "type": "integer"
+            },
+            "current_bandwidth": {
+              "title": "Current Bandwidth",
+              "default": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "RegisterUserSchema": {
+          "title": "RegisterUserSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "first_name": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last_name": {
+              "title": "Last Name",
+              "type": "string"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "default": true,
+              "type": "boolean"
+            },
+            "is_root": {
+              "title": "Is Root",
+              "default": false,
+              "type": "boolean"
+            },
+            "email_verified": {
+              "title": "Email Verified",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_admin": {
+              "title": "Is Admin",
+              "default": false,
+              "type": "boolean"
+            },
+            "company": {
+              "$ref": "#/components/schemas/CompanySchema"
+            },
+            "project": {
+              "$ref": "#/components/schemas/ProjectSchema"
+            },
+            "password": {
+              "title": "Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "first_name",
+            "last_name",
+            "company",
+            "project",
+            "password"
+          ]
+        },
+        "InitiateLoginResponseSchema": {
+          "title": "InitiateLoginResponseSchema",
+          "type": "object",
+          "properties": {
+            "mail_sent": {
+              "title": "Mail Sent",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "mail_sent"
+          ]
+        },
+        "InitiateLoginSchema": {
+          "title": "InitiateLoginSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "title": "Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        },
+        "CompleteLoginResponseSchema": {
+          "title": "CompleteLoginResponseSchema",
+          "type": "object",
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/GetUserSchema"
+            },
+            "company": {
+              "$ref": "#/components/schemas/GetCompanyResponseSchema"
+            },
+            "project": {
+              "title": "Project",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetProjectSchema"
+              }
+            },
+            "token": {
+              "title": "Token",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user",
+            "company",
+            "project",
+            "token"
+          ]
+        },
+        "CompleteLoginSchema": {
+          "title": "CompleteLoginSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "code": {
+              "title": "Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "code"
+          ]
+        },
+        "InitiateEmailVerificationResponseSchema": {
+          "title": "InitiateEmailVerificationResponseSchema",
+          "type": "object",
+          "properties": {
+            "mail_sent": {
+              "title": "Mail Sent",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "mail_sent"
+          ]
+        },
+        "InitiateEmailVerificationSchema": {
+          "title": "InitiateEmailVerificationSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        },
+        "CompleteEmailVerificationResponseSchema": {
+          "title": "CompleteEmailVerificationResponseSchema",
+          "type": "object",
+          "properties": {
+  
+          }
+        },
+        "CompleteEmailVerificationSchema": {
+          "title": "CompleteEmailVerificationSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "code": {
+              "title": "Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "code"
+          ]
+        },
+        "AdminUserResponseSchema": {
+          "title": "AdminUserResponseSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "ID",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "email": {
+              "title": "Email Address",
+              "maxLength": 254,
+              "type": "string"
+            },
+            "first_name": {
+              "title": "firstName",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "last_name": {
+              "title": "lastName",
+              "maxLength": 200,
+              "type": "string"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_super_admin": {
+              "title": "Is Super Admin",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_reader_only": {
+              "title": "Is Reader Only",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_editor": {
+              "title": "Is Editor",
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        },
+        "CreateAdminUserSchema": {
+          "title": "CreateAdminUserSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "first_name": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last_name": {
+              "title": "Last Name",
+              "type": "string"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "default": true,
+              "type": "boolean"
+            },
+            "is_super_admin": {
+              "title": "Is Super Admin",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_reader_only": {
+              "title": "Is Reader Only",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_editor": {
+              "title": "Is Editor",
+              "default": false,
+              "type": "boolean"
+            },
+            "password": {
+              "title": "Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "first_name",
+            "last_name",
+            "password"
+          ]
+        },
+        "_UpdateAdminUserSchema": {
+          "title": "_UpdateAdminUserSchema",
+          "type": "object",
+          "properties": {
+            "first_name": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last_name": {
+              "title": "Last Name",
+              "type": "string"
+            }
+          }
+        },
+        "UpdateAdminUserSchema": {
+          "title": "UpdateAdminUserSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "data": {
+              "$ref": "#/components/schemas/_UpdateAdminUserSchema"
+            }
+          },
+          "required": [
+            "id",
+            "data"
+          ]
+        },
+        "GetAdminUserSchema": {
+          "title": "GetAdminUserSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "ID",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "email": {
+              "title": "Email Address",
+              "maxLength": 254,
+              "type": "string"
+            },
+            "first_name": {
+              "title": "firstName",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "last_name": {
+              "title": "lastName",
+              "maxLength": 200,
+              "type": "string"
+            },
+            "is_active": {
+              "title": "Is Active",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_super_admin": {
+              "title": "Is Super Admin",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_reader_only": {
+              "title": "Is Reader Only",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_editor": {
+              "title": "Is Editor",
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        },
+        "AdminLoginResponseSchema": {
+          "title": "AdminLoginResponseSchema",
+          "type": "object",
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/GetAdminUserSchema"
+            },
+            "token": {
+              "title": "Token",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user",
+            "token"
+          ]
+        },
+        "AdminLoginSchema": {
+          "title": "AdminLoginSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "title": "Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        },
+        "InitiatePasswordResetResponseSchema": {
+          "title": "InitiatePasswordResetResponseSchema",
+          "type": "object",
+          "properties": {
+            "mail_sent": {
+              "title": "Mail Sent",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "mail_sent"
+          ]
+        },
+        "InitiateAdminResetPasswordSchema": {
+          "title": "InitiateAdminResetPasswordSchema",
+          "type": "object",
+          "properties": {
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        },
+        "CompleteAdminResetPasswordSchema": {
+          "title": "CompleteAdminResetPasswordSchema",
+          "type": "object",
+          "properties": {
+            "password": {
+              "title": "Password",
+              "type": "string"
+            },
+            "email": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "code": {
+              "title": "Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "password",
+            "email",
+            "code"
+          ]
+        },
+        "ChangeAdminPasswordSchema": {
+          "title": "ChangeAdminPasswordSchema",
+          "type": "object",
+          "properties": {
+            "old_password": {
+              "title": "Old Password",
+              "type": "string"
+            },
+            "new_password": {
+              "title": "New Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "old_password",
+            "new_password"
+          ]
+        },
+        "DeleteAdminUserSchema": {
+          "title": "DeleteAdminUserSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "GenericUserObjectResponseSchema": {
+          "title": "GenericUserObjectResponseSchema",
+          "type": "object",
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/GetUserSchema"
+            }
+          },
+          "required": [
+            "user"
+          ]
+        },
+        "GetUserRequestSchema": {
+          "title": "GetUserRequestSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "email": {
+              "title": "Email",
+              "type": "string"
+            }
+          }
+        },
+        "ChangePasswordSchema": {
+          "title": "ChangePasswordSchema",
+          "type": "object",
+          "properties": {
+            "old_password": {
+              "title": "Old Password",
+              "type": "string"
+            },
+            "new_password": {
+              "title": "New Password",
+              "type": "string"
+            }
+          },
+          "required": [
+            "old_password",
+            "new_password"
+          ]
+        },
+        "AvailabilityZoneResponseSchema": {
+          "title": "AvailabilityZoneResponseSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "ID",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "name": {
+              "title": "Name",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "keystone_endpoint": {
+              "title": "Keystone Endpoint",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "keystone_admin_user": {
+              "title": "Keystone User",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "is_default": {
+              "title": "Is Default",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_swift_only": {
+              "title": "Is Swift Only",
+              "default": false,
+              "type": "boolean"
+            },
+            "synchronize": {
+              "title": "Synchronize",
+              "default": false,
+              "type": "boolean"
+            },
+            "date_created": {
+              "title": "Date Created",
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "name",
+            "keystone_endpoint",
+            "keystone_admin_user",
+            "date_created"
+          ]
+        },
+        "GetAZRequestSchema": {
+          "title": "GetAZRequestSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        },
+        "CreateAvailabilityZoneSchema": {
+          "title": "CreateAvailabilityZoneSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "keystone_endpoint": {
+              "title": "Keystone Endpoint",
+              "type": "string"
+            },
+            "keystone_admin_user": {
+              "title": "Keystone Admin User",
+              "type": "string"
+            },
+            "keystone_password": {
+              "title": "Keystone Password",
+              "type": "string"
+            },
+            "server_address": {
+              "title": "Server Address",
+              "type": "string"
+            },
+            "server_user_name": {
+              "title": "Server User Name",
+              "type": "string"
+            },
+            "server_password": {
+              "title": "Server Password",
+              "type": "string"
+            },
+            "admin_project_id": {
+              "title": "Admin Project Id",
+              "type": "string"
+            },
+            "admin_user_id": {
+              "title": "Admin User Id",
+              "type": "string"
+            },
+            "admin_user_password": {
+              "title": "Admin User Password",
+              "type": "string"
+            },
+            "domain_project_id": {
+              "title": "Domain Project Id",
+              "type": "string"
+            },
+            "domain_user_id": {
+              "title": "Domain User Id",
+              "type": "string"
+            },
+            "domain_user_password": {
+              "title": "Domain User Password",
+              "type": "string"
+            },
+            "user_domain_name": {
+              "title": "User Domain Name",
+              "type": "string"
+            },
+            "domain_id": {
+              "title": "Domain Id",
+              "type": "string"
+            },
+            "parent_region_name": {
+              "title": "Parent Region Name",
+              "type": "string"
+            },
+            "is_default": {
+              "title": "Is Default",
+              "default": false,
+              "type": "boolean"
+            },
+            "is_swift_only": {
+              "title": "Is Swift Only",
+              "default": false,
+              "type": "boolean"
+            },
+            "synchronize": {
+              "title": "Synchronize",
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "keystone_endpoint",
+            "keystone_admin_user",
+            "keystone_password",
+            "server_address",
+            "server_user_name",
+            "server_password",
+            "admin_project_id",
+            "admin_user_id",
+            "admin_user_password",
+            "domain_project_id",
+            "domain_user_id",
+            "domain_user_password",
+            "user_domain_name",
+            "domain_id"
+          ]
+        },
+        "_UpdateAvailabilityZoneSchema": {
+          "title": "_UpdateAvailabilityZoneSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "keystone_endpoint": {
+              "title": "Keystone Endpoint",
+              "type": "string"
+            },
+            "keystone_admin_user": {
+              "title": "Keystone Admin User",
+              "type": "string"
+            },
+            "keystone_password": {
+              "title": "Keystone Password",
+              "type": "string"
+            },
+            "server_address": {
+              "title": "Server Address",
+              "type": "string"
+            },
+            "server_user_name": {
+              "title": "Server User Name",
+              "type": "string"
+            },
+            "server_password": {
+              "title": "Server Password",
+              "type": "string"
+            },
+            "admin_project_id": {
+              "title": "Admin Project Id",
+              "type": "string"
+            },
+            "admin_user_id": {
+              "title": "Admin User Id",
+              "type": "string"
+            },
+            "admin_user_password": {
+              "title": "Admin User Password",
+              "type": "string"
+            },
+            "domain_project_id": {
+              "title": "Domain Project Id",
+              "type": "string"
+            },
+            "domain_user_id": {
+              "title": "Domain User Id",
+              "type": "string"
+            },
+            "domain_user_password": {
+              "title": "Domain User Password",
+              "type": "string"
+            },
+            "user_domain_name": {
+              "title": "User Domain Name",
+              "type": "string"
+            },
+            "domain_id": {
+              "title": "Domain Id",
+              "type": "string"
+            },
+            "is_default": {
+              "title": "Is Default",
+              "type": "boolean"
+            },
+            "is_swift_only": {
+              "title": "Is Swift Only",
+              "type": "boolean"
+            },
+            "synchronize": {
+              "title": "Synchronize",
+              "type": "boolean"
+            }
+          }
+        },
+        "UpdateAvailabilityZoneSchema": {
+          "title": "UpdateAvailabilityZoneSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "data": {
+              "$ref": "#/components/schemas/_UpdateAvailabilityZoneSchema"
+            }
+          },
+          "required": [
+            "id",
+            "data"
+          ]
+        },
+        "DeleteAvailabilityZoneSchema": {
+          "title": "DeleteAvailabilityZoneSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "ServiceResponseSchema": {
+          "title": "ServiceResponseSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "ID",
+              "type": "integer"
+            },
+            "name": {
+              "title": "Service Name",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "ip_address": {
+              "title": "Service IP",
+              "maxLength": 255,
+              "type": "string"
+            },
+            "is_enabled": {
+              "title": "Is Enabled",
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "ip_address"
+          ]
+        },
+        "GetServiceRequestSchema": {
+          "title": "GetServiceRequestSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        },
+        "CreateServiceSchema": {
+          "title": "CreateServiceSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "keystone_endpoint": {
+              "title": "Keystone Endpoint",
+              "type": "string"
+            },
+            "ip_address": {
+              "title": "Ip Address",
+              "type": "string"
+            },
+            "is_enabled": {
+              "title": "Is Enabled",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "keystone_endpoint",
+            "ip_address",
+            "is_enabled"
+          ]
+        },
+        "_UpdateServiceSchema": {
+          "title": "_UpdateServiceSchema",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "keystone_endpoint": {
+              "title": "Keystone Endpoint",
+              "type": "string"
+            },
+            "ip_address": {
+              "title": "Ip Address",
+              "type": "string"
+            },
+            "is_enabled": {
+              "title": "Is Enabled",
+              "type": "boolean"
+            }
+          }
+        },
+        "UpdateServiceSchema": {
+          "title": "UpdateServiceSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "data": {
+              "$ref": "#/components/schemas/_UpdateServiceSchema"
+            }
+          },
+          "required": [
+            "id",
+            "data"
+          ]
+        },
+        "DeleteServiceSchema": {
+          "title": "DeleteServiceSchema",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        }
+      }
+    },
+    "servers": null
+  }

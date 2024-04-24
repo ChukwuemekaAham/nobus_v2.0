@@ -10,7 +10,7 @@ function agreement() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="px-20 py-5">
+      <div className="px-10 md:px-20 py-5">
         <div className="my-10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl">
             NCS Customer Agreement

@@ -132,7 +132,7 @@ function Flexible_Compute_Services() {
                 </div>
               </div>
 
-              <p className="px-20 lg:px-0 lg:px-0 text-[15px] text-justify tracking-wide leading-relaxed py-5 text-gray-800">
+              <p className="px-10 md:px-20 lg:px-0 text-[15px] text-justify tracking-wide leading-relaxed py-5 text-gray-800">
                 Lorem ipsum dolor sit amet consectetur. Non commodo nec
                 convallis amet nec sed aliquam. Commodo mi ullamcorper viverra
                 est volutpat. Pellentesque pellentesque nisi est dolor tempus
@@ -178,7 +178,7 @@ function Flexible_Compute_Services() {
             </div>
           </div>
           <div class="md:col-span-1">
-            <div className="lg:mx-10 px-20 lg:px-0 pb-8">
+            <div className="lg:mx-10 px-10 md:px-20 lg:px-0 pb-8">
               <div>
                 <h5 className="text-left tracking-wide font-semibold lg:mt-0">
                   Other Posts
@@ -250,7 +250,7 @@ function Flexible_Compute_Services() {
         </div>
 
         <div
-          className="p-20"
+          className="p-10 md:p-20"
           style={{
             backgroundImage: "url('/backup.png')",
             backgroundRepeat: "no-repeat",
@@ -258,6 +258,11 @@ function Flexible_Compute_Services() {
           }}
         >
           <div className="flex flex-col lg:flex-row mx-auto">
+            <div className="block lg:hidden pb-10">
+              <div className="flex-col">
+                <img src="/backup2.png" />
+              </div>
+            </div>
             <div className="text-left lg:w-1/2 md:pr-20 pt-0 text-white">
               <h1 className="text-3xl sm:text-4xl font-semibold">
                 Start deploying your workload now
@@ -276,7 +281,7 @@ function Flexible_Compute_Services() {
               </a>
             </div>
 
-            <div className="lg:w-1/2 mt-10 lg:mt-0">
+            <div className="hidden lg:block lg:w-1/2 mt-10 lg:mt-0">
               <div className="flex-col">
                 <img src="/backup2.png" />
               </div>

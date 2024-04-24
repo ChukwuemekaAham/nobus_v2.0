@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import Script from "next/script";
+import { useRouter } from "next/router";
 import {
   Dialog,
   Disclosure,
@@ -22,7 +22,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/outline";
-import CookieConsent from "./CookieConsent";
+import { Router } from "next/router";
 
 const navigation = {
   productcategories: [
@@ -53,62 +53,117 @@ const navigation = {
       ],
 
       sections: [
-        {
-          id: "compute",
-          name: "Compute Services",
-          items: [
-            { name: "Flexible Clompute Service", href: "#" },
-            { name: "Server Groups", href: "#" },
-            { name: "Autoscaling Groups", href: "#" },
-          ],
-        },
-        {
-          id: "storage",
-          name: "Storage Services",
-          items: [
-            { name: "Flexible Block Storage", href: "#" },
-            { name: "Flexible Object Storage", href: "#" },
-          ],
-        },
-        {
-          id: "backup",
-          name: "Cloud Backups",
-          items: [
-            { name: "Flexible Object Storage", href: "#" },
-            { name: "Acronis Cloud Backup", href: "#" },
-          ],
-        },
+        
         {
           id: "networking",
           name: "Networking Services",
-          items: [
-            { name: "Virtual Private Cloud", href: "#" },
-            { name: "FastTransit", href: "#" },
-            { name: "Floating IPs", href: "#" },
-            { name: "Network Address Translation", href: "#" },
-            { name: "Virtual Private Gateway", href: "#" },
-          ],
+          sub: [{
+            name: "Networks",
+            items: [
+              { name: "Virtual Private Cloud", href: "#" },
+              { name: "FastTransit", href: "#" },
+              { name: "Cloud Router", href: "#" },
+              { name: "Domains and DNS", href: "#"}
+            ],
+          }, {
+            name: "Load Balancers",
+            items: [
+              { name: "PFSense", href: "#" },
+              { name: "HaProxy", href: "#" },
+            ],
+          }]
         },
         {
-          id: "image",
-          name: "Image Services",
-          items: [
-            { name: "Linux", href: "#" },
-            { name: "Windows", href: "#" },
+          id: "backup",
+          name: "Cloud Backup/Disaster Recovery",
+          sub: [{
+            name: "Backup Solutions",
+            items: [
+            { name: "Acronis Cloud Backup", href: "#" },
+            { name: "Flexible Object Storage", href: "#" },
           ],
+          }, {
+            name: "Disaster Recovery",
+            items: [
+            { name: "Cloud Backup", href: "#" },
+            { name: "Acronis", href: "#" },
+          ],
+          }]
         },
         {
           id: "security",
           name: "Cloud Security",
-          items: [
-            { name: "Security Groups", href: "#" },
-            { name: "XG Firewall", href: "#" },
-            { name: "Sophos Cyber Security", href: "#" },
-            { name: "Acronis Cyber Protect", href: "#" },
-            { name: "PFSense", href: "#" },
-            { name: "Virtual Private Network", href: "#" },
-          ],
+          sub: [{
+            name: "Security Services",
+            items: [
+              { name: "Security Groups", href: "#" },
+              { name: "Network Firewall", href: "#" },
+            ],
+          }, {
+            name: "Advanced Cyber Sercurity Service",
+            items: [
+              { name: "Sophos XG", href: "#" },
+              { name: "Acronis Cyber Protect", href: "#" },
+              { name: "Fortigate", href: "#" },
+            ],
+            }
+        ]
         },
+        {
+          id: "compute",
+          name: "Virtual Hosting",
+          sub: [{
+            name: "",
+            items: [
+              { name: "Flexible Clompute Service", href: "#" },
+              { name: "Dedicated Hosting", href: "#" },
+            ],
+          }
+        ]
+          
+        },
+        {
+          id: "storage",
+          name: "Storage Services",
+          sub: [{
+            name: "",
+            items: [
+              { name: "Flexible Block Storage", href: "#" },
+              { name: "Flexible Object Storage", href: "#" },
+            ],
+          }
+        ]
+          
+        },
+       
+        {
+          id: "image",
+          name: "Image Services",
+          sub: [{
+            name: "",
+            items: [
+              { name: "Nobus Public Images", href: "#" },
+              { name: "Custom Images", href: "#" },
+            ],
+          }
+        ]
+        },
+
+        {
+          id: "Database",
+          name: "Database Services",
+          sub: [{
+            name: "",
+            items: [
+              { name: "Microsoft SQL", href: "#" },
+              { name: "PostgreSQL", href: "#" },
+              { name: "MySQL", href: "#" },
+              { name: "MongoDB", href: "#" },
+            ],
+          }
+        ]
+        },
+       
       ],
     },
   ],
@@ -125,37 +180,10 @@ const navigation = {
           imageSrc: "/smccard.png",
           imageAlt: "Calculate your total savings",
         },
-
-        {
-          name: "Pricing FAQs",
-          text: "Pricing FAQs",
-          desc: "See answers to your pricing questions",
-          href: "/service-faq",
-          imageSrc: "pfaq.png",
-          imageAlt: "Pricing FAQs",
-        },
-        {
-          name: "Tee",
-          href: "#",
-          imageSrc: "Frame3.png",
-          imageAlt: "",
-        },
-        {
-          name: "Tes",
-          href: "#",
-          imageSrc: "Frame5.png",
-          imageAlt: "",
-        },
         {
           name: "Artwork Tees",
           href: "#",
           imageSrc: "Frame2.png",
-          imageAlt: "",
-        },
-        {
-          name: "Artwork",
-          href: "#",
-          imageSrc: "Frame1.png",
           imageAlt: "",
         },
         {
@@ -170,6 +198,27 @@ const navigation = {
           imageSrc: "Frame7.png",
           imageAlt: "",
         },
+        {
+          name: "Tee",
+          href: "#",
+          imageSrc: "Frame3.png",
+          imageAlt: "",
+        },
+        {
+          name: "Tes",
+          href: "#",
+          imageSrc: "Frame5.png",
+          imageAlt: "",
+        },
+        {
+          name: "Pricing FAQs",
+          text: "Pricing FAQs",
+          desc: "See answers to your pricing questions",
+          href: "/service-faq",
+          imageSrc: "pfaq.png",
+          imageAlt: "Pricing FAQs",
+        },
+            
       ],
     },
   ],
@@ -309,7 +358,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "News Blog", href: "/blogs" },
+    { name: "News Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
     { name: "Watch Demo", href: "/demo" },
     { name: "FAQs", href: "/service-faq" },
@@ -407,18 +456,12 @@ const pricefilters = [
 ];
 
 const mobilefilters = [
-  {
-    id: "product",
-    name: "Product",
-    options: [
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
-    ],
-  },
+
   {
     id: "solution",
     name: "Solution",
     options: [
+      { value: "See All", href: "/solutions" },
       { value: "Acronis Cloud Backup", href: "#" },
       { value: "Object Storage", href: "#" },
     ],
@@ -427,6 +470,7 @@ const mobilefilters = [
     id: "pricing",
     name: "Pricing",
     options: [
+      { value: "See All", href: "/pricing" },
       { value: "Bandwidth", href: "#" },
       { value: "FastTransit", href: "#" },
       { value: "Floating IPs", href: "#" },
@@ -437,6 +481,7 @@ const mobilefilters = [
     id: "documentation",
     name: "Documentation",
     options: [
+      { value: "See All", href: "/documentation" },
       { value: "PfSense", href: "#" },
       { value: "Sophos XG Security Services", href: "#" },
       { value: "Acronis cyber sercurity", href: "#" },
@@ -594,6 +639,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
+  const router = useRouter()
+
   return (
     <div className="bg-white">
       {/* Mobile menu */}
@@ -749,13 +796,13 @@ export default function Header() {
           </div>
         </Dialog>
       </Transition.Root>
-      <CookieConsent />
+      
 
       <header className="relative bg-white">
         <div
           id="discount"
           style={{ display: visible ? "block lg:hidden" : "none" }}
-          className="bg-blue-700 block lg:hidden"
+          className={`bg-blue-700 block lg:hidden ${router.pathname !== "/" ? `hidden` : "bg-blue-700 block lg:hidden"}`}
         >
           <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between">
@@ -769,20 +816,26 @@ export default function Header() {
                 <p className="ml-3 truncate font-medium text-white">
                   <span>30% off on migration</span>
                 </p>
+                <a
+                  href="/registration"
+                  className="flex-none ml-3 rounded-full text-gray-900 py-1 px-3.5 text-sm font-semibold bg-white shadow-sm hover:scale-105 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                >
+                  Register now <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
-              <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+              {/* <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                 <a
                   href="#"
                   className="flex items-center justify-center border border-transparent bg-white px-4 py-2 text-sm font-medium text-blue-600 shadow-sm hover:bg-indigo-50"
                 >
                   Learn more
                 </a>
-              </div>
+              </div> */}
               <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                 <button
                   type="button"
                   onClick={() => setVisible(!visible)}
-                  className="-mr-1 flex rounded-md p-2 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
+                  className="-mr-1 flex rounded-md p-2 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
                 >
                   <span className="sr-only">Dismiss</span>
                   <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -817,182 +870,7 @@ export default function Header() {
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
-                  {navigation.productcategories.map((category) => (
-                    <Popover key={category.name} className="flex">
-                      {({ open }) => (
-                        <>
-                          <div className="relative flex">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? "border-indigo-600 text-indigo-600 focus:scale-110"
-                                  : "border-transparent text-gray-700 hover:text-gray-800",
-                                "group relative z-10 -mb-px flex items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out outline-none"
-                              )}
-                            >
-                              <span>{category.name}</span>
-                              <ChevronDownIcon
-                                className={classNames(
-                                  open
-                                    ? "text-gray-600 rotate-180 tracking-widest transition duration-100 transform hover:scale-125"
-                                    : "text-gray-400 tracking-widest transition duration-100 transform hover:scale-125",
-                                  "ml-2 h-4 w-4 group-hover:text-gray-500"
-                                )}
-                                aria-hidden="true"
-                              />
-                            </Popover.Button>
-                          </div>
-
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                          >
-                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div
-                                className="absolute inset-0 top-1/2 bg-white shadow"
-                                aria-hidden="true"
-                              />
-
-                              <div className="relative bg-white">
-                                <div className="ml-auto max-w-7xl pl-2">
-                                  <div className="flex">
-                                    <div className="flex-col w-2/3 pr-10 pt-5">
-                                      <div className="hidden md:block">
-                                        <div className="border-b border-gray-200 pb-6">
-                                          <h3 className="text-lg font-medium text-gray-400 pb-4">
-                                            {" "}
-                                            OVERVIEW
-                                          </h3>
-                                          <h3 className="text-2xl font-medium text-gray-600 pb-4">
-                                            {" "}
-                                            Nobus Platform
-                                          </h3>
-                                          <p className="text-sm text-gray-500 pr-60 text-gray-700 text-justify tracking-wide leading-relaxed">
-                                            Nobus Cloud Services offers global
-                                            cloud-based products that help
-                                            organizations to minimize the time
-                                            and amount used to plan, procure,
-                                            and manage their infrastructure in a
-                                            scalable and secure way, over a
-                                            private WAN or the internet. You pay
-                                            only for resources actually consumed
-                                            and save more.
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div className="space-x-5 py-3">
-                                        <div className="flex-col mt-5">
-                                          <div className="flow-root ">
-                                            <ul
-                                              role="grid"
-                                              className="-my-6 grid grid-cols-2 gap-y-6 gap-x-8 "
-                                            >
-                                              {prodproducts.map((product) => (
-                                                <li
-                                                  key={product.id}
-                                                  className="flex py-6 hover:bg-gray-100"
-                                                >
-                                                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                    <img
-                                                      src={product.imageSrc}
-                                                      alt={product.imageAlt}
-                                                      className="h-full w-full object-cover object-center"
-                                                    />
-                                                  </div>
-
-                                                  <div className="ml-4 flex flex-1 flex-col">
-                                                    <a href={product.href}>
-                                                      <div>
-                                                        <div className="flex justify-between text-base font-medium text-gray-900">
-                                                          <h3>
-                                                            {product.name}
-                                                          </h3>
-                                                        </div>
-                                                        <p className="mt-1 text-sm text-gray-500">
-                                                          {product.color}
-                                                        </p>
-                                                      </div>
-                                                      <div className="flex flex-1 items-end justify-between text-sm">
-                                                        <p className="text-gray-500">
-                                                          {product.quantity}
-                                                        </p>
-                                                      </div>
-                                                    </a>
-                                                  </div>
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <div className="w-1/3 bg-gray-200 p-3">
-                                      <div className="flex-col">
-                                        {category.featured.map((item) => (
-                                          <div
-                                            key={item.name}
-                                            className="group relative text-base sm:text-sm"
-                                          >
-                                            <a href={item.href}>
-                                              <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-900 group-hover:opacity-75">
-                                                <img
-                                                  src={item.imageSrc}
-                                                  alt={item.imageAlt}
-                                                  className="object-cover object-center"
-                                                />
-                                              </div>
-                                            </a>
-                                          </div>
-                                        ))}
-                                      </div>
-
-                                      <div className="border border-gray-900 bg-white mt-2 p-2 text-center text-gray-900">
-                                        <div className="space-y-6 sm:flex sm:space-y-0 space-x-2">
-                                          {callsToAction.map((item) => (
-                                            <div
-                                              key={item.name}
-                                              className="flow-root group"
-                                            >
-                                              <a
-                                                href={item.href}
-                                                className="flex items-center text-gray-700 rounded-lg shadow-lg border bg-gray-50 lg:p-3 text-base font-medium group-hover:bg-gray-200 group-hover:text-blue-600 group-hover:scale-105"
-                                              >
-                                                <item.icon
-                                                  className="h-6 w-6 flex-shrink-0"
-                                                  aria-hidden="true"
-                                                />
-                                                <span className="ml-3">
-                                                  {item.name}
-                                                </span>
-                                              </a>
-                                            </div>
-                                          ))}
-                                        </div>
-
-                                        <p className="mt-2 text-md text-left px-4">
-                                          For general enquiry about the services
-                                          that we offer, you can contact our
-                                          sales team.
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                  ))}
-
+                 
                   {navigation.solutioncategories.map((category) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => (
@@ -1001,7 +879,7 @@ export default function Header() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600 focus:scale-110"
+                                  ? "border-blue-600 rounded-md text-blue-600 focus:scale-110"
                                   : "border-transparent text-gray-700 hover:text-gray-800",
                                 "group relative z-10 -mb-px flex items-center outline-none border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
@@ -1039,7 +917,7 @@ export default function Header() {
                                 <div className="ml-auto max-w-7xl pl-2">
                                   <div className="flex">
                                     <div className="flex-col w-2/3 pt-10">
-                                      <div className="grid grid-cols-3 gap-y-10 gap-x-8 pr-4 flex text-sm">
+                                      <div className="grid grid-cols-3 gap-y-3 gap-x-8 pr-4 text-sm h-[500px] overflow-visible overflow-y-scroll">
                                         {category.sections.map((section) => (
                                           <div
                                             key={section.name}
@@ -1047,29 +925,48 @@ export default function Header() {
                                           >
                                             <p
                                               id={`${section.name}-heading`}
-                                              className="text-xl font-medium text-gray-900 group-hover:text-blue-600"
+                                              className="text-xl font-medium text-gray-900 group-hover:text-gray-500"
                                             >
                                               {section.name}
                                             </p>
+                                            <hr className="mt-2 border-b-2 border-blue-400 rounded-md max-w-[16px]" />
+                                          
                                             <ul
                                               role="list"
                                               aria-labelledby={`${section.name}-heading`}
                                               className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                             >
-                                              {section.items.map((item) => (
+                                              {section.sub.map((item) => (
                                                 <li
                                                   key={item.name}
-                                                  className="flex"
+                                                  className="flex-col "
                                                 >
-                                                  <a
-                                                    href={item.href}
-                                                    className="text-gray-800 hover:underline group-hover:scale-110 text-base"
-                                                  >
-                                                    {item.name}
-                                                  </a>
+                                                  <p className="font-semibold">{item.name}</p>
+                                            
+                                                <ul
+                                                  role="list"
+                                                  aria-labelledby={`${section.name}-heading`}
+                                                  className="flex-col mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                                                >
+                                                  {item.items.map((item) => (
+                                                    <li
+                                                      key={item.name}
+                                                      className="flex"
+                                                    >
+                                                      <a
+                                                        href={item.href}
+                                                        className="text-gray-800 hover:underline group-hover:scale-105 text-base"
+                                                      >
+                                                        {item.name}
+                                                      </a>
+                                                    </li>
+                                                  ))}
+                                                </ul>
                                                 </li>
                                               ))}
                                             </ul>
+                                          
+                                           
                                           </div>
                                         ))}
                                       </div>
@@ -1143,7 +1040,7 @@ export default function Header() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600 focus:scale-110"
+                                  ? "border-blue-600 rounded-md text-blue-600 focus:scale-110"
                                   : "border-transparent text-gray-700 hover:text-gray-800",
                                 "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
@@ -1195,9 +1092,8 @@ export default function Header() {
                                             without requiring complex licensing.
                                           </p>
                                         </div>
-
-                                        {pricefilters.map((section) => (
-                                          <div className="overflow-y-scroll scrollbar-hide px-3">
+                                        <div className="h-[256px] overflow-y-scroll scrollbar-hide">
+                                          {pricefilters.map((section) => (
                                             <Disclosure
                                               as="div"
                                               key={section.id}
@@ -1205,7 +1101,7 @@ export default function Header() {
                                             >
                                               {({ open }) => (
                                                 <>
-                                                  <h3 className="-my-3 flow-root ">
+                                                  <h3 className="-my-3 flow-root px-4">
                                                     <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-base text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
                                                       <span className="font-medium ">
                                                         {section.name}
@@ -1225,13 +1121,13 @@ export default function Header() {
                                                       </span>
                                                     </Disclosure.Button>
                                                   </h3>
-                                                  <Disclosure.Panel className="pt-6">
-                                                    <div className="space-y-4 pt-4">
+                                                  <Disclosure.Panel className="pt-6 pl-4 pr-2">
+                                                    <div className="space-y-4 pt-4 h-[100px] overflow-y-scroll">
                                                       {section.options.map(
                                                         (option) => (
                                                           <div
                                                             key={option.value}
-                                                            className="flex items-center group"
+                                                            className="flex items-center group pl-4"
                                                           >
                                                             <a
                                                               href={option.href}
@@ -1248,13 +1144,13 @@ export default function Header() {
                                                 </>
                                               )}
                                             </Disclosure>
-                                          </div>
-                                        ))}
+                                          ))}
+                                        </div>
                                       </div>
                                     </div>
                                     <div className="flex w-2/3">
                                       <div className="grid grid-cols-1 gap-y-10">
-                                        <div className="flex -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scroll-smooth p-3">
+                                        <div className="flex -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scrollbar-hide p-3">
                                           {category.featured.map((item) => (
                                             <div
                                               key={item.name}
@@ -1266,6 +1162,7 @@ export default function Header() {
                                                   alt={item.imageAlt}
                                                   className="object-fill object-center"
                                                 />
+                                                
                                               </div>
                                               <a
                                                 href={item.href}
@@ -1320,7 +1217,7 @@ export default function Header() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600 focus:scale-110"
+                                  ? "border-blue-600 rounded-md text-blue-600 focus:scale-110"
                                   : "border-transparent text-gray-700 hover:text-gray-800",
                                 "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
@@ -1372,59 +1269,60 @@ export default function Header() {
                                             tutorials.
                                           </p>
                                         </div>
-
-                                        {docsfilters.map((section) => (
-                                          <Disclosure
-                                            as="div"
-                                            key={section.id}
-                                            className="border-b border-gray-200 py-6"
-                                          >
-                                            {({ open }) => (
-                                              <>
-                                                <h3 className="-my-3 flow-root">
-                                                  <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-base text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
-                                                    <span className="font-medium">
-                                                      {section.name}
-                                                    </span>
-                                                    <span className="ml-10 flex items-center">
-                                                      {open ? (
-                                                        <MinusIcon
-                                                          className="h-4 w-4"
-                                                          aria-hidden="true"
-                                                        />
-                                                      ) : (
-                                                        <PlusIcon
-                                                          className="h-4 w-4"
-                                                          aria-hidden="true"
-                                                        />
-                                                      )}
-                                                    </span>
-                                                  </Disclosure.Button>
-                                                </h3>
-                                                <Disclosure.Panel className="pt-6">
-                                                  <div className="space-y-4 pt-4">
-                                                    {section.options.map(
-                                                      (option) => (
-                                                        <div
-                                                          key={option.value}
-                                                          className="flex items-center group"
-                                                        >
-                                                          <a
-                                                            href={option.href}
-                                                            className="font-medium text-md text-gray-700 group-hover:bg-gray-200 group-hover:scale-105"
+                                        <div className="h-[220px] overflow-y-scroll scrollbar-hide">
+                                          {docsfilters.map((section) => (
+                                            <Disclosure
+                                              as="div"
+                                              key={section.id}
+                                              className="border-b border-gray-200 py-6"
+                                            >
+                                              {({ open }) => (
+                                                <>
+                                                  <h3 className="-my-3 flow-root px-4">
+                                                    <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-base text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-8">
+                                                      <span className="font-medium">
+                                                        {section.name}
+                                                      </span>
+                                                      <span className="ml-10 flex items-center">
+                                                        {open ? (
+                                                          <MinusIcon
+                                                            className="h-4 w-4"
+                                                            aria-hidden="true"
+                                                          />
+                                                        ) : (
+                                                          <PlusIcon
+                                                            className="h-4 w-4"
+                                                            aria-hidden="true"
+                                                          />
+                                                        )}
+                                                      </span>
+                                                    </Disclosure.Button>
+                                                  </h3>
+                                                  <Disclosure.Panel className="pt-6 pl-4 pr-2">
+                                                    <div className="space-y-4 pt-4 h-[300px] overflow-y-scroll">
+                                                      {section.options.map(
+                                                        (option) => (
+                                                          <div
+                                                            key={option.value}
+                                                            className="flex items-center group pl-4"
                                                           >
-                                                            <span aria-hidden="true" />
-                                                            {option.value}
-                                                          </a>
-                                                        </div>
-                                                      )
-                                                    )}
-                                                  </div>
-                                                </Disclosure.Panel>
-                                              </>
-                                            )}
-                                          </Disclosure>
-                                        ))}
+                                                            <a
+                                                              href={option.href}
+                                                              className="font-medium text-md text-gray-700 group-hover:bg-gray-200 group-hover:scale-105"
+                                                            >
+                                                              <span aria-hidden="true" />
+                                                              {option.value}
+                                                            </a>
+                                                          </div>
+                                                        )
+                                                      )}
+                                                    </div>
+                                                  </Disclosure.Panel>
+                                                </>
+                                              )}
+                                            </Disclosure>
+                                          ))}
+                                        </div>
                                       </div>
                                     </div>
                                     <div className="flex w-1/3 space-x-5 px-4">
@@ -1470,7 +1368,7 @@ export default function Header() {
                                         </div>
                                       </div>
                                     </div>
-                                    <div className="flex w-1/3 -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scroll-smooth p-3">
+                                    <div className="flex w-1/3 -ml-2 space-x-5 overflow-x-scroll overflow-y-hidden scrollbar-hide p-3">
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
@@ -1525,7 +1423,7 @@ export default function Header() {
                         <Popover.Button
                           className={classNames(
                             open
-                              ? "border-indigo-600 text-indigo-600 focus:scale-110"
+                              ? "border-blue-600 rounded-md text-blue-600 focus:scale-110"
                               : "border-transparent text-gray-700 hover:text-gray-800",
 
                             "group inline-flex relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
@@ -1624,10 +1522,10 @@ export default function Header() {
                   >
                     Sign in
                   </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  <span className="h-6 w-px bg-gray-400" aria-hidden="true" />
                   <a
                     href="/registration"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    className="relative z-10 shadow-md rounded-full bg-blue-600 px-4 py-2.5 font-medium text-sm text-white hover:text-white hover:bg-blue-500 hover:scale-105"
                   >
                     Create account
                   </a>
