@@ -1,9 +1,11 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+
+const DB_URL = process.env.NEXT_PUBLIC_DB_STRING?.toString() || "";
 
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(process.env.DB_STRING, {
+  .connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

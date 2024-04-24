@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 last_name: "Aham",
                 is_active: true,
                 is_admin: true,
-                email_verified: true;
+                email_verified: true
             },
             company: {
                 name: "Nobus",
