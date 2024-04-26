@@ -25,8 +25,8 @@ const index = () => {
     showPassword: false,
   });
   const [confirm, setConfirm] = useState({
-    confirmpassword: "",
-    showConfirmPassword: false,
+    confirm_password: "",
+    showConfirm_Password: false,
   });
  
   const [agree, setAgree] = useState(false);
@@ -194,40 +194,40 @@ const index = () => {
                       </div>
                       <div className="col-span-6 sm:col-span-3 ">
                         <label
-                          htmlFor="confirmpassword"
+                          htmlFor="confirm_password"
                           className="block text-sm font-medium text-gray-700"
                         >
                           Confirm Password
                         </label>
                         <div className={`flex mt-1 w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 
                           focus:ring-indigo-500 sm:text-sm ${
-                            errors.confirmpassword && "border-red-500"
+                            errors.confirm_password && "border-red-500"
                           }
                           `}>
 
                         <input
-                          type={confirm.showConfirmPassword ? "text" : "password"}
-                          id="confirmpassword"
+                          type={confirm.showConfirm_Password ? "text" : "password"}
+                          id="confirm_password"
                           required
                           className="border-none rounded-l-md w-96"
-                          {...register("confirmpassword")}
+                          {...register("confirm_password")}
                         >
                         </input>
                         
                         <div
                           className="cursor-pointer inline-flex flex-1 min-w-md pt-2 px-1"
-                          onClick={() => setConfirm({ ...confirm, showConfirmPassword: !confirm.showConfirmPassword })}
+                          onClick={() => setConfirm({ ...confirm, showConfirm_Password: !confirm.showConfirm_Password })}
                         >
-                          {confirm.showConfirmPassword ? (
+                          {confirm.showConfirm_Password ? (
                             <EyeIcon className="h-6 font-extralight" />
                           ) : (
                             <EyeOffIcon className="h-6 font-extralight" />
                           )}
                         </div>
                           </div>
-                          {errors.confirmpassword && (
+                          {errors.confirm_password && (
                           <span className='text-red-500 text-xs pt-1 block'>
-                            {errors.confirmpassword?.message as string}
+                            {errors.confirm_password?.message as string}
                           </span>
                         )}
                        

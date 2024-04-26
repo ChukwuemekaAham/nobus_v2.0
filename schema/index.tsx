@@ -34,8 +34,8 @@ export const registerSchema = object({
     .min(1, "Password is required")
     .min(16, "Password must be at least 16 characters; including numbers, uppercase, lowercase and special characters")
     .max(32, "Password must be less than 32 characters"),
-  confirmpassword: string().min(1, "Please confirm your password"),
-}).refine((data) => data.password === data.confirmpassword, {
+  confirm_password: string().min(1, "Please confirm your password"),
+}).refine((data) => data.password === data.confirm_password, {
   path: ["confirmpassword"],
   message: "Passwords do not match",
 });

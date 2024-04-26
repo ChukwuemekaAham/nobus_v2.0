@@ -22,12 +22,13 @@ const index = () => {
   const onSuccess = (reference) => {
    
     // Upon successful payment, retrieve the payment reference data
-    const transaction_reference = reference;
+    const trans_ref = reference;
   
-    // Handle successful payment
-    const paymentData = {
-      transaction_reference,
-    };
+    const transaction_reference = trans_ref.reference
+
+    const paymentData = { 
+      transaction_reference
+    }
 
     console.log('Payment reference stored:', paymentData);
 
@@ -115,7 +116,7 @@ const index = () => {
   useEffect(() => {
     console.log(store.authUser);
     if (!store.authUser) {
-      router.push("/login");
+      router.push("/payments/login");
     }
     if (authUser) {
       setIsClient(true)

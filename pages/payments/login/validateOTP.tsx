@@ -71,7 +71,7 @@ const Validate2faPage = () => {
           toast.success("Verification code has been resent. Please check your email", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          router.push("/login/validateOTP");
+          router.push("/payments/login/validateOTP");
         }
       })
 
@@ -109,7 +109,7 @@ const Validate2faPage = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
           store.setRequestLoading(false);
-          router.push("/login");
+          router.push("/payments/login");
         }
         if (response.status === 204) {
           toast.success("Login successful", {
@@ -141,7 +141,7 @@ const Validate2faPage = () => {
 
   useEffect(() => {
     if (!store.authUser) {
-      router.push("/login");
+      router.push("/payments/login");
     }
   }, []);
 

@@ -63,7 +63,7 @@ const index = () => {
         store.setAuthUser(responseData);
         store.setRequestLoading(false);
 
-        router.push("/login/validateOTP");
+        router.push("/payments/login/validateOTP");
       }
     } catch (error: any) {
       store.setRequestLoading(false);

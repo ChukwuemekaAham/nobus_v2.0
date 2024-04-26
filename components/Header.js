@@ -62,6 +62,7 @@ const navigation = {
             items: [
               { name: "Virtual Private Cloud", href: "#" },
               { name: "FastTransit", href: "#" },
+              { name: "Cloud NAT", href: "#" },
               { name: "Cloud Router", href: "#" },
               { name: "Domains and DNS", href: "#"}
             ],
