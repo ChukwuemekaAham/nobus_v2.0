@@ -10,7 +10,7 @@ function MediumCard({ img, title, description }) {
         <h1 className="py-2 text-xl font-semibold text-gray-800 text-center">
           {title}
         </h1>
-        <p className="text-base tracking-wide text-justify">
+        <p className="text-base text-justify">
           {description}
         </p>
       </div>

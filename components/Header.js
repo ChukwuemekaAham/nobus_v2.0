@@ -136,20 +136,6 @@ const navigation = {
         ]
           
         },
-       
-        {
-          id: "image",
-          name: "Image Services",
-          sub: [{
-            name: "",
-            items: [
-              { name: "Nobus Public Images", href: "#" },
-              { name: "Custom Images", href: "#" },
-            ],
-          }
-        ]
-        },
-
         {
           id: "Database",
           name: "Database Services",
@@ -160,6 +146,19 @@ const navigation = {
               { name: "PostgreSQL", href: "#" },
               { name: "MySQL", href: "#" },
               { name: "MongoDB", href: "#" },
+            ],
+          }
+        ]
+        },
+       
+        {
+          id: "image",
+          name: "Image Services",
+          sub: [{
+            name: "",
+            items: [
+              { name: "Nobus Public Images", href: "#" },
+              { name: "Custom Images", href: "#" },
             ],
           }
         ]
@@ -463,8 +462,13 @@ const mobilefilters = [
     name: "Solution",
     options: [
       { value: "See All", href: "/solutions" },
-      { value: "Acronis Cloud Backup", href: "#" },
-      { value: "Object Storage", href: "#" },
+      { value: "Networking Services", href: "#" },
+      { value: "Cloud Backup/Disaster Recovery", href: "#" },
+      { value: "Cloud Security", href: "#" },
+      { value: "Virtual Hosting", href: "#" },
+      { value: "Storage Services", href: "#" },
+      { value: "Database Services", href: "#" },
+      { value: "Image Services", href: "#" },
     ],
   },
   {
@@ -472,10 +476,14 @@ const mobilefilters = [
     name: "Pricing",
     options: [
       { value: "See All", href: "/pricing" },
+      { value: "Flexible Compute Service", href: "#" },
+      { value: "Dedicated Hosting", href: "#" },
+      { value: "Flexible Block Storage", href: "#" },
+      { value: "Flexible Object Storage", href: "#" },
       { value: "Bandwidth", href: "#" },
       { value: "FastTransit", href: "#" },
       { value: "Floating IPs", href: "#" },
-      { value: "Virtual Private Network", href: "#" },
+      { value: "IP Address", href: "#" },
     ],
   },
   {
@@ -797,9 +805,8 @@ export default function Header() {
           </div>
         </Dialog>
       </Transition.Root>
-      
-
-      <header className="relative bg-white">
+    
+      <header className="relative bg-white ">
         <div
           id="discount"
           style={{ display: visible ? "block lg:hidden" : "none" }}
@@ -847,7 +854,7 @@ export default function Header() {
         </div>
         <nav
           aria-label="Top"
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="mx-auto min-w-max px-4 sm:px-6 lg:px-16"
         >
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">

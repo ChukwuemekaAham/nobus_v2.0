@@ -14,6 +14,7 @@ import { emailVerificationSchema } from "../../schema";
 import Headerregister from '../../components/HeaderRegister';
 import Footer2 from '../../components/Footer2';
 import OtpInput from 'react-otp-input';
+import { ILoginTokenResponse } from "../../types";
 
 export type EmailVerificationInput = TypeOf<typeof emailVerificationSchema>;
 
@@ -93,28 +94,30 @@ export default function index() {
       }
 
       store.setRequestLoading(true);
-      await fetch(`${API_URL}/auth/email/verify/complete`, {
+      const response = await fetch(`${API_URL}/auth/email/verify/complete`, {
         method: "POST",
         headers: {
+          Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(verifyData),
-      }).then((response) => {
-        if (response.status !== 204) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          store.setRequestLoading(false);
-        }
-        if (response.status === 204) {
-          toast.success("Email verified", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          store.setRequestLoading(false);
-          router.push("/payments");
-        }
       })
-
+      const responseData: ILoginTokenResponse = await response.json();
+      console.log(responseData);
+      if (response.status !== 204) {
+        toast.error( response.statusText, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setRequestLoading(false);
+      }
+      if (response.status === 204) {
+        toast.success("Email verified", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setAuthUser(responseData);
+        store.setRequestLoading(false);
+        router.push("/payments");
+      }
     } catch (error: any) {
       store.setRequestLoading(false);
       const resMessage =
@@ -132,6 +135,15 @@ export default function index() {
   const onSubmitHandler: SubmitHandler<EmailVerificationInput> = (values) => {
     verifyEmail(values);
   };
+
+  useEffect(() => {
+    console.log(authUser);
+    if (store.authUser?.user.email_verified == true) {
+      router.push('/payments');
+    } else {
+      router.push('/verifyemail');
+    }
+  }, []);
 
   return (
     <section>

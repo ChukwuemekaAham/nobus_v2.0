@@ -9,6 +9,7 @@ import MigrateCard from "../components/MigrateCard";
 import Smc from "../components/Smc";
 import CloudBackup from "../components/CloudBackup";
 import Subscribe2 from "../components/Subscribe2";
+import Testimonials from "../components/Testimonials";
 
 const cardData = [
   {
@@ -58,6 +59,13 @@ const cardData = [
     description:
       "Customers' success and business productivity is our priority - whether for on-site assistance, technical, or remote support",
     image: "/support.png",
+  },
+  {
+    id: "8",
+    title: "World-Class Solutions",
+    description:
+      "Leverage our world-class solutions to improve performance and delivery for applications",
+    image: "/world.png",
   },
 ];
 
@@ -153,70 +161,72 @@ const Home = () => {
         <MigrateCard />
         <CloudBackup />
         <Smc />
+        <Testimonials />
         <Subscribe2 />
         
-    <div className="bg-white py-24 sm:py-32" style={{
-      backgroundImage: "url('/spiral.png')",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto text-center lg:text-left max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl"> Get recent updates</h2>
-          <p className="text-base text-justify mt-4 lg:max-w-lg font-small tracking-wide text-gray-900 pb-5">
-          Keep up with Nobus Cloud Blogs for new ideas, the latest news,
-          and discussion around cloud computing from industry experts.
-          </p>
-          <a
-            href="/blog"
-            className="mt-10 mx-auto lg:mx-0 max-w-xs cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            More news blog
-          </a>
-        </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => (
-            <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-              <div className="flex items-center gap-x-4 text-xs">
-                
-                <a
-                  href={post.category.href}
-                  className="relative z-10 shadow-sm rounded-full bg-blue-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                >
-                  {post.category.title}
-                </a>
-              </div>
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <a href={post.href} className="text-gray-900">
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
-              </div>
-              <div className="relative mt-8 flex items-center gap-x-4">
-                <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
-                
-                <div className="text-sm leading-6">
-                  <p className="font-semibold text-gray-900">
-                    <a href={post.author.href} className="text-gray-900">
-                      <span className="absolute inset-0" />
-                      {post.author.name}
+        <div className="bg-white py-24 sm:py-32" style={{
+          backgroundImage: "url('/spiral.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto text-center lg:text-left max-w-2xl lg:mx-0">
+              <h2 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl"> Get recent updates</h2>
+              <p className="text-base text-justify mt-4 lg:max-w-lg font-small tracking-wide text-gray-900 pb-5">
+              Keep up with Nobus Cloud Blogs for new ideas, the latest news,
+              and discussion around cloud computing from industry experts.
+              </p>
+              <a
+                href="/blog"
+                className="mt-10 mx-auto lg:mx-0 max-w-xs cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                More news blog
+              </a>
+            </div>
+            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+              {posts.map((post) => (
+                <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
+                  <div className="flex items-center gap-x-4 text-xs">
+                    
+                    <a
+                      href={post.category.href}
+                      className="relative z-10 shadow-sm rounded-full bg-blue-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    >
+                      {post.category.title}
                     </a>
-                  </p>
-                  <p>
-                  <time dateTime={post.datetime} className="text-gray-500">
-                  {post.date}
-                  </time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <a href={post.href} className="text-gray-900">
+                        <span className="absolute inset-0" />
+                        {post.title}
+                      </a>
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                    
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        <a href={post.author.href} className="text-gray-900">
+                          <span className="absolute inset-0" />
+                          {post.author.name}
+                        </a>
+                      </p>
+                      <p>
+                      <time dateTime={post.datetime} className="text-gray-500">
+                      {post.date}
+                      </time>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+        
       </main>
       <Footer />
     </div>

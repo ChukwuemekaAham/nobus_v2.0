@@ -151,6 +151,8 @@ const faqFilters = [
   },
 ];
 
+
+
 function faqs() {
   return (
     <section>
@@ -241,13 +243,10 @@ function faqs() {
                                   key={option.value}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
                                     {option.value}
-                                  </a>
+                                  </p>
                                 </div>
                               ))}
                             </div>

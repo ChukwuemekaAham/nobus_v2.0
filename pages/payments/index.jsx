@@ -10,7 +10,7 @@ import Footer2 from "../../components/Footer2";
 import PaystackButton from '../../components/PaystackButton';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_TEST_PAYSTACK_PUBLIC_KEY
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_LIVE_PAYSTACK_PUBLIC_KEY
 
 
 const index = () => {
@@ -59,7 +59,7 @@ const index = () => {
           toast.success( "Payment successful", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          router.push("/");
+          router.push("/payments/success");
         }
       
     } catch (error) {
@@ -112,13 +112,11 @@ const index = () => {
     ...config,
 };
 
-
   useEffect(() => {
     console.log(store.authUser);
     if (!store.authUser) {
-      router.push("/payments/login");
-    }
-    if (authUser) {
+      router.push("/registration/continue");
+    } else {
       setIsClient(true)
     }
   }, []);

@@ -38,9 +38,9 @@ export default function Content() {
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-2xl font-semibold tracking-wide text-gray-900">Experience Workflow Boost</h3>
-            <p className="mt-6 text-sm text-gray-600 tracking-wide max-w-lg">
+            <p className="mt-6 text-base text-gray-600 tracking-wide max-w-lg">
             Enhanced workflows with guided digital solutions for global optimization;
-            implement new processes faster, simplify data storage and improve productivity.
+            implement new processes faster, simplify data <br className='hidden md:block' /> storage and improve productivity.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-md font-semibold leading-6 text-blue-600">What’s available</h4>
@@ -48,7 +48,7 @@ export default function Content() {
             </div>
             <ul
               role="list"
-              className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+              className="mt-8 grid grid-cols-1 gap-4 text-base leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
             >
               {includedFeatures.map((feature) => (
                 <li key={feature} className="flex gap-x-3">

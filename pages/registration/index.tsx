@@ -442,7 +442,11 @@ const index = () => {
 
                 </div>
 
-                <p className="flex justify-center pb-5 text-sm font-medium text-gray-500">
+                  <p className="flex justify-center pb-5 text-sm font-medium text-gray-500">
+                      <span>Filled this form already?</span><a href="/registration/continue" className="font-medium pl-2 text-blue-500 hover:underline">Continue registration</a>
+                  </p>
+
+                  <p className="flex justify-center pb-5 text-sm font-medium text-gray-500">
                       <span>Already have an account?</span><a href="https://dashboard.nobus.io" className="font-medium pl-2 text-blue-500 hover:underline">Login here</a>
                   </p>
                 </div>

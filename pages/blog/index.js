@@ -246,7 +246,7 @@ function index() {
             <div class="md:col-span-1">
               <div className="mx-10 sm:mx-20 md:mx-2 pb-8">
                 <div>
-                  <h5 className="text-left tracking-wide font-semibold lg:mt-0">
+                  <h5 className="text-left tracking-wide font-semibold mt-10 lg:mt-0">
                     Recent Posts
                   </h5>
                   <hr className="max-w-[50px] my-2 border border-red-400" />

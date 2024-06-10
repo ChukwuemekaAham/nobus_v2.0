@@ -8,8 +8,8 @@ function Footer() {
     <CookieAccept />
      <footer className="flex justify-center w-full bg-gray-900 px-16">
       <div className="w-full mt-12 max-w-7xl">
-        <div className="flex flex-col flex-grow md:flex-row text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start w-full md:w-2/6 border-b border-gray-700 pb-5 md:pb-0 md:border-none">
+        <div className="flex flex-col flex-grow lg:flex-row text-center lg:text-left">
+          <div className="flex flex-col items-center lg:items-start w-full lg:w-1/6 border-b border-gray-700 pb-5 lg:pb-0 lg:border-none">
             <a href="/">
               <Image
                 className="mx-auto my-10 w-26 md:mb-4 md:mt-0"
@@ -18,7 +18,7 @@ function Footer() {
                 height={40}
               />
             </a>
-            <div className="hidden flex-col md:flex mt-10">
+            <div className="hidden flex-col lg:flex mt-10">
               <p className="text-sm font-semibold text-gray-100">
                 Call us: +2347057721442
               </p>
@@ -27,111 +27,112 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-10 text-left justify-center mx-auto pb-10 ">
-          <div className="flex flex-col w-full">
-            <p className="mt-6 md:mt-0 text-md text-white font-semibold">
-              Features
-            </p>
-            <a
-              href="/blog/"
-              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Blog
-            </a>
-            <a
-              href="/pricing/"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Pricing
-            </a>
-            <a
-              href="/documentation/"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Documentation
-            </a>
 
-            <a
-              href="/solutions"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Solutions
-            </a>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-10 text-left justify-center mx-auto mt-10 lg:mt-0 pb-10 lg:px-20">
+            <div className="flex flex-col w-full">
+              <p className="mt-6 md:mt-0 text-md text-white font-semibold">
+                Features
+              </p>
+              <a
+                href="/blog/"
+                className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Blog
+              </a>
+              <a
+                href="/pricing/"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Pricing
+              </a>
+              <a
+                href="/documentation/"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Documentation
+              </a>
 
-          </div>
+              <a
+                href="/solutions"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Solutions
+              </a>
 
-          <div className="flex flex-col w-full">
-            <p className="mt-6 md:mt-0 text-md text-white font-semibold">Legal</p>
-            <a
-              href="/agreement"
-              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Customer Agreement
-            </a>
-            <a
-              href="/policy"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Privacy Statement
-            </a>
+            </div>
 
-            <a
-              href="/service-terms"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Terms of Service
-            </a>
+            <div className="flex flex-col w-full">
+              <p className="mt-6 md:mt-0 text-md text-white font-semibold">Legal</p>
+              <a
+                href="/agreement"
+                className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Customer Agreement
+              </a>
+              <a
+                href="/policy"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Privacy Statement
+              </a>
 
-            <a
-              href="/sla"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              SLAs
-            </a>
-          </div>
-          <div className="flex flex-col w-full">
-            <p className="mt-6 md:mt-0 text-md text-white font-semibold">
-              Get Help
-            </p>
+              <a
+                href="/service-terms"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Terms of Service
+              </a>
 
-            <a
-              href="#"
-              className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Help Desk{" "}
-            </a>
+              <a
+                href="/sla"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                SLAs
+              </a>
+            </div>
+            <div className="flex flex-col w-full">
+              <p className="mt-6 md:mt-0 text-md text-white font-semibold">
+                Get Help
+              </p>
 
-            <a
-              href="/contact"
-              className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
-            >
-              Contact
-            </a>
-            <a className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
-              Up-Time
-              <span className="ml-1 px-1 font-semibold text-gray-900 text-xs bg-gray-300 rounded">
-                99.98%
-              </span>
-            </a>
-          </div>
+              <a
+                href="#"
+                className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Help Desk{" "}
+              </a>
 
+              <a
+                href="/contact"
+                className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+              >
+                Contact
+              </a>
+              <a className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
+                Up-Time
+                <span className="ml-1 px-1 font-semibold text-gray-900 text-xs bg-gray-300 rounded">
+                  99.982%
+                </span>
+              </a>
+            </div>
           </div>
           
 
-          <div className="flex flex-col items-center md:items-start w-full md:w-2/6 pb-0 pt-4 md:pl-4 md:pt-0">
-            <p className="mt-2 md:mt-0 text-md md:text-lg lg:text-xl font-semibold text-gray-100">
-              We accept the following payment systems
+          <div className="flex flex-col items-center w-full lg:w-2/6 pb-0 pt-4 lg:pl-4 lg:pt-0">
+            <p className="mt-2 lg:mt-0 text-xl font-semibold text-gray-100">
+              Our Certifications:
             </p>
-            <div className="flex justify-center space-x-2">
+            <div className="flex justify-center space-x-2 lg:space-x-1 px-12">
               <img
-                className="md:block my-10 w-16 p-1 shadow-lg"
-                src="/mastercard.png"
+                className="lg:block my-10 w-50 lg:w-auto p-1 pl-4 md:pl-0 shadow-lg"
+                src="/pcidss.png"
               />
-              <img className="md:block my-10 w-16 p-1 shadow-lg" src="/visa.png" />
+              <img className="lg:block my-10 w-50 lg:w-auto p-1 shadow-lg" src="/iso.png" />
+              <img className="lg:block my-10 w-50 lg:w-auto p-1 shadow-lg pr-2" src="/ndpr.png" />
             </div>
           </div>
         </div>
-        <div className="py-10 mt-0 md:mt-6 flex flex-col md:flex-row items-center justify-between md:py-4 w-full border-t border-gray-700">
+        <div className="py-10 mt-0 lg:mt-6 flex flex-col lg:flex-row items-center justify-between lg:py-4 w-full border-t border-gray-700">
           <div className="flex text-gray-400">
             <a className="text-gray-400" href="#">
               <svg
@@ -190,15 +191,15 @@ function Footer() {
               </svg>
             </a>
           </div>
-          <div className="flex flex-col md:flex-row text-center text-gray-400">
-            <div className="flex flex:inline mx-auto mt-4 md:mt-0">
+          <div className="flex flex-col lg:flex-row text-center text-gray-400">
+            <div className="flex flex:inline mx-auto mt-4 lg:mt-0">
               <img className="h-8 w-8" src="/favicon.ico" />
-              <p className="mt-2 md:mt-0 sm:ml-2 ml-1 text-sm md:pt-2 text-gray-300">
+              <p className="mt-2 lg:mt-0 sm:ml-2 ml-1 text-sm lg:pt-2 text-gray-300">
                 Native public cloud service.
               </p>
             </div>
 
-            <div className="md:hidden mt-10">
+            <div className="lg:hidden mt-10">
               <p className="text-md font-semibold text-gray-100">
                 Call us: +2347057721442
               </p>
@@ -206,7 +207,7 @@ function Footer() {
                 media.marketing@nobus.io
               </p>
             </div>
-            <p className="mt-4 md:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
+            <p className="mt-4 lg:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
               © 2024 Nkponani Ltd. All rights reserved.
             </p>
           </div>
