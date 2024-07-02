@@ -8,18 +8,17 @@ import { LoadingButton } from "../../../components/LoadingButton";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import useStore from "../../../store";
-import { ILoginTokenResponse } from "../../../types";
 
-import { loginSchema } from "../../../schema";
+import { emailSchema } from "../../../schema";
 
-export type LoginInput = TypeOf<typeof loginSchema>;
+export type EmailInput = TypeOf<typeof emailSchema>;
 
 const index = () => {
   const store = useStore();
   const router = useRouter();
 
-  const methods = useForm<LoginInput>({
-    resolver: zodResolver(loginSchema),
+  const methods = useForm<EmailInput>({
+    resolver: zodResolver(emailSchema),
   });
 
   const {
@@ -35,11 +34,11 @@ const index = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
 
-  const API_URL = process.env.NEXT_PUBLIC_BASE
-  const loginUser = async (data: LoginInput) => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  const ResetPassword = async (data: EmailInput) => {
     try {
       store.setRequestLoading(true);   
-      const response = await fetch(`${API_URL}/login`, {
+      const response = await fetch(`${API_URL}/auth/password/reset/initiate`, {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -47,9 +46,6 @@ const index = () => {
         },
         body: JSON.stringify(data),
       })
-
-      const responseData: ILoginTokenResponse = await response.json();
-      console.log(responseData);
       if (response.status !== 200) {
         toast.error( response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
@@ -57,13 +53,13 @@ const index = () => {
         store.setRequestLoading(false);
       }
       if (response.status === 200) {
-        toast.success( "Login Sucessful", {
+        toast.success( "OTP sent to your email", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        store.setAuthUser(responseData);
+        store.setRequestEmail(data.email);
         store.setRequestLoading(false);
 
-        router.push("/");
+        router.push("/login/reset-password/complete");
       }
     } catch (error: any) {
       store.setRequestLoading(false);
@@ -85,44 +81,48 @@ const index = () => {
     store.setAuthUser(null);
   };
 
-  const onSubmitHandler: SubmitHandler<LoginInput> = (values) => {
-    loginUser(values);
+  const onSubmitHandler: SubmitHandler<EmailInput> = (values) => {
+    ResetPassword(values);
   };
 
   return (
-    <section className="min-h-screen grid place-items-center">
+    <section className="min-h-screen grid place-items-center" style={{
+      backgroundImage: "url('/loginbg.png')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}>
       <div className="w-full">
        
         <FormProvider {...methods}>
           <form
             onSubmit={handleSubmit(onSubmitHandler)}
-            className="max-w-md w-full mx-auto overflow-hidden shadow-lg bg-dark-200 rounded-2xl p-8 space-y-5"
+            className="max-w-sm w-full mx-auto overflow-hidden shadow-lg bg-white rounded-2xl p-8 space-y-5"
           >
             <div className="mx-auto justify-center pt-5 flex">
               <a href="/">
-                <img className="h-12 w-auto" src="/logo.png" alt="" />
+                <img className="h-10 w-auto" src="/logo.png" alt="" />
               </a>
             </div>
-            <div className="py-5 text-center">
-              <h3 className="text-3xl font-semiboldm leading-relax text-gray-500 pt-4">
+            <div className="pb-5 text-center">
+            <p className="mt-4 text-lg text-gray-600 tracking-tight font-semibold">
                 Forgot Password?
-              </h3>
-              <p className="mt-4 text-sm text-gray-600">
+              </p>
+              <p className="mt-1 text-sm text-gray-600">
                 Verify your email to reset password.
               </p>
             </div>
-            <FormInput label="" placeholder="Enter email address" name="email" type="email" />
+            <FormInput label="" placeholder="Email Address" name="email" type="email" />
 
             <LoadingButton
               loading={store.requestLoading}
-              textColor="text-ct-blue-600"
+              textColor="text-ct-blue-600 "
             >
               Reset Password
             </LoadingButton>
-            <span className="block">
+            <span className="flex mx-auto text-center justify-center text-md">
               Remember password?{" "}
-              <Link href="/login" className="text-blue-600 hover:underline">
-                Login Here
+              <Link href="/login" className="text-blue-600 hover:underline pl-2">
+                Login 
               </Link>
             </span>
             

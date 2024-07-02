@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useEffect, useState } from "react";
 import { useRouter, useParams} from "next/navigation";
 import { useForm, FormProvider, SubmitHandler, Controller } from "react-hook-form";
-import FormInput from "../../components/FormInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TypeOf } from "zod";
 import { LoadingButton } from "../../components/LoadingButton";
@@ -13,8 +12,8 @@ import useStore from "../../store";
 import { emailVerificationSchema } from "../../schema";
 import Headerregister from '../../components/HeaderRegister';
 import Footer2 from '../../components/Footer2';
-import OtpInput from 'react-otp-input';
 import { ILoginTokenResponse } from "../../types";
+import OTPInput from '../../components/OTPInput';
 
 export type EmailVerificationInput = TypeOf<typeof emailVerificationSchema>;
 
@@ -22,6 +21,10 @@ export default function index() {
 
   const store = useStore();
   const authUser = store.authUser;
+
+  const [timer, setTimer] = useState<number>(3600); // 1 hour in seconds
+  const [isTimerActive, setIsTimerActive] = useState(false); // new state to track timer active
+
   const router = useRouter();
 
   const methods = useForm<EmailVerificationInput>({
@@ -59,16 +62,17 @@ export default function index() {
         },
         body: JSON.stringify(verifyData),
       }).then((response) => {
-        if (response.status !== 200) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        }
         if (response.status === 200) {
           toast.success("Verification code has been resent. Please check your email", {
             position: toast.POSITION.TOP_RIGHT,
           });
+          setIsTimerActive(true); // set timer active
+          setTimer(3600); // reset timer to 1 hour
           router.push("/verifyemail");
+        } else {
+          toast.error( response.statusText, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         }
       })
 
@@ -102,21 +106,17 @@ export default function index() {
         },
         body: JSON.stringify(verifyData),
       })
-      const responseData: ILoginTokenResponse = await response.json();
-      console.log(responseData);
-      if (response.status !== 204) {
-        toast.error( response.statusText, {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        store.setRequestLoading(false);
-      }
       if (response.status === 204) {
         toast.success("Email verified", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        store.setAuthUser(responseData);
         store.setRequestLoading(false);
         router.push("/payments");
+      } else {
+        toast.error( response.statusText, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setRequestLoading(false);
       }
     } catch (error: any) {
       store.setRequestLoading(false);
@@ -134,6 +134,32 @@ export default function index() {
 
   const onSubmitHandler: SubmitHandler<EmailVerificationInput> = (values) => {
     verifyEmail(values);
+  };
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | null = null;
+
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    } else {
+      if (interval) {
+        clearInterval(interval);
+      }
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isTimerActive, timer]);
+
+  const formatTime = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
   useEffect(() => {
@@ -163,11 +189,18 @@ export default function index() {
                     className="p-20"
                   >
                       <div className="overflow-hidden  sm:rounded-md ">
+                        <div className="mx-auto justify-center pb-5 flex">
+                          <a href="/">
+                            <img className="h-16 w-auto" src="/2fa.png" alt="" />
+                          </a>
+                        </div>
                         <div className="py-5 text-center mb-5">
                           <h3 className="text-xl font-medium leading-relaxed tracking-wider text-gray-500 pt-4">
                             PLEASE VERIFY YOUR EMAIL ADDRESS
                           </h3>                          
                         </div>
+
+
 
                         {/* <FormInput label="Verification Code" placeholder="Enter verification code" name="code" />
                          */}
@@ -182,20 +215,10 @@ export default function index() {
                         <Controller
                         name="code"
                         control={control}
-                        render={({ field: { onChange, value } }) => (                       
-                        <OtpInput
-                          value={value}
-                          onChange={onChange}
-                          placeholder="000000"
-                          numInputs={6}
-                          inputType="text"
-                          renderSeparator={<span>-</span>}
-                          renderInput={(props) => <input {...props} />}
-                          inputStyle={`overflow-hidden text-lg p-1 mx-1 sm:mx-2 rounded-full`}
-                          containerStyle={`flex mx-auto justify-center`}
-                        />
-                        
-                        
+                        render={({ field: { onChange } }) => ( 
+                          <div className='mx-auto max-w-md justify-center'>                     
+                            <OTPInput length={6} onComplete={onChange}/>
+                          </div> 
                         )}
                         />
                         {errors.code && (
@@ -203,8 +226,11 @@ export default function index() {
                             {errors.code?.message as string}
                           </span>
                         )}
+
+                        <p className='text-center py-2 text-md'>Time remaining: <span className='text-blue-600 font-semibold'>{formatTime(timer)}</span></p>
+
                         </div>
-                          <div className='my-5 p-2 max-w-7xl mx-auto justify-center'>
+                          <div className='my-5 p-2 max-w-sm mx-auto justify-center'>
                           <LoadingButton
                             loading={store.requestLoading}
                             textColor="text-ct-blue-600"
@@ -214,24 +240,24 @@ export default function index() {
                           </LoadingButton>
                         </div>
                     </div>
-
-                    <span className='mx-auto text-center text-md sm:text-lg'>
-                      
-                      Didn't get a code? {" "}
                     
-                      <button onClick={() => resendVerificationCode() }>
-                      <a className='hover:underline text-blue-600'>
+                    <div className='flex flex-col mx-auto text-center justify-center text-md'>
+                      <h6>
+                      Didn't get a code?
+                      </h6>
+                      <button className='' onClick={() => resendVerificationCode() }>
+                      <a className='hover:underline text-blue-600 font-semibold'>
                         Resend Verification Code
                       </a>
                       </button> 
-                    </span>
+                    </div>
                       
                   </form>
                 </FormProvider>          
             </div>
 
             <div className="hidden lg:block lg:col-span-1">
-              <img className="w-full h-full bg-contain" src="/reg.png" alt="" />
+              <img className="w-full h-full bg-contain" src="/k8s-ad.png" alt="" />
             </div>
           </div>
         </div>

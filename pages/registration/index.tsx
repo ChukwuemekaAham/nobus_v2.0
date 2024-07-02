@@ -430,7 +430,7 @@ const index = () => {
                       </div>
                   </div>
                   
-                <div className="bg-gray-50 px-4 pb-5 text-right sm:px-6">
+                <div className="bg-gray-50 px-4 pb-5 text-right sm:px-6 mx-auto max-w-md">
                  
                 <LoadingButton
                   loading={store.requestLoading}
@@ -456,7 +456,7 @@ const index = () => {
               
             </div>
             <div className="hidden lg:block lg:col-span-1">
-                <img className="w-full h-full bg-contain" src="/reg.png" alt="" />
+                <img className="w-full h-full bg-contain" src="/k8s-ad.png" alt="" />
             </div>
           </div>
         </div>

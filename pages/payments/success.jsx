@@ -7,7 +7,7 @@ function Success() {
         <div className="text-center">
           <div className="mx-auto justify-center py-5 flex">
             <a href="/">
-              <img className="h-12 w-auto" src="/logo.png" alt="" />
+              <img className="h-10 w-auto" src="/logo.png" alt="" />
             </a>
           </div>
 

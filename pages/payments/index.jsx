@@ -8,17 +8,25 @@ import Head from "next/head";
 import Headerregister from "../../components/HeaderRegister";
 import Footer2 from "../../components/Footer2";
 import PaystackButton from '../../components/PaystackButton';
+import { Buffer } from 'buffer';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_LIVE_PAYSTACK_PUBLIC_KEY
-
 
 const index = () => {
   
   const store = useStore();
   const authUser = store.authUser;
+
+  console.log({"unencrypted token": authUser?.token});
+  
+  const encryptedToken = Buffer.from(`${authUser?.token}`, 'utf-8').toString('base64');
+
+  console.log({"encrypted token": encryptedToken});
+
   const router = useRouter();
   const [isClient, setIsClient] = useState(false)
+
   const onSuccess = (reference) => {
    
     // Upon successful payment, retrieve the payment reference data
@@ -35,33 +43,25 @@ const index = () => {
     // Make API request to store payment reference in MongoDB  
     try {
       const response = fetch(`${API_URL}/user/card`, {
-          method: "POST",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${authUser?.token}`,
-          },
-          body: JSON.stringify(paymentData),         
-        })
-        if (response.status !== 200 || 400) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        }
-        if (response.status === 400) {
-          
-          toast.success( "Card already added", {
-            position: toast.POSITION.TOP_RIGHT,
-          });    
-          router.push("/");
-        }
-        if (response.status === 200) {
-          toast.success( "Payment successful", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          router.push("/payments/success");
-        }
-      
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authUser?.token}`,
+        },
+        body: JSON.stringify(paymentData),         
+      })
+      if (response.status !== 200) {
+        toast.error( response.statusText, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      } 
+      if (response.status === 200) {
+        toast.success( "Card added successfully", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        router.push(`/login/loginWithToken/?token=${encryptedToken}`);
+      }
     } catch (error) {
       console.error('Error storing payment reference:', error);
       const resMessage =
@@ -113,13 +113,20 @@ const index = () => {
 };
 
   useEffect(() => {
-    console.log(store.authUser);
     if (!store.authUser) {
+      toast.error( "Login required", {
+        position: toast.POSITION.TOP_RIGHT,
+      });  
       router.push("/registration/continue");
+    } else if (store.authUser?.company.added_payment_details == true) {
+        toast.success( "Card already added", {
+          position: toast.POSITION.TOP_RIGHT,
+        });    
+        router.push(`/login/loginWithToken/?token=${encryptedToken}`);
     } else {
       setIsClient(true)
     }
-  }, []);
+  }, [authUser, router, encryptedToken]);
 
   return (
     <section className="min-h-screen">
@@ -129,19 +136,23 @@ const index = () => {
       </Head>
       
       <div className="">
-        <div className="mt-10 sm:mt-0">
+        <div className="mt-0">
           <div className="lg:grid lg:grid-cols-3">
             <div className="mt-5 lg:col-span-2 md:mt-0 ">
               <Headerregister />
               <hr className="border-t " />
-
               {isClient &&
-                <div className="space-y-2 text-left justify-center px-10 py-20">
-                  <p className="text-lg font-semibold">PROFILE</p>
-                  <p>ProjectID: {authUser?.project[0].id}</p>
-                  <p>Email: {authUser?.user.email}</p>               
-
-                  <h3 className="text-xl text-center pt-20 font-medium leading-relax tracking-wider text-gray-500">
+                <div className="mx-auto text-center space-y-2 justify-center px-10 pt-20 pb-5">
+                  <div className="flex flex-col">
+                    <a href="/">
+                      <img className="h-16 w-auto mx-auto mb-5" src="/2fa.png" alt="" />
+                    </a>
+                    <p className="text-xl font-semibold">Hello 👋 {authUser?.user.first_name}</p>
+                    <p><span className="font-semibold">Date Registered:</span> {authUser?.project[0].date_created}</p>      
+                  
+                  </div>
+                 
+                  <h3 className="text-xl text-center pt-10 font-medium tracking-wider text-gray-500">
                      VERIFY YOUR DEBIT CARD INFORMATION
                   </h3>
                   
@@ -152,15 +163,13 @@ const index = () => {
                 </div>
                
               }
-             
-                  
-              <div className="bg-gray-50 px-4 pb-5 text-right sm:px-6">
+              <div className="bg-gray-50 max-w-sm mx-auto px-4 pb-20 text-right sm:px-6">
                 <PaystackButton className="bg-blue-600 w-full inline-flex justify-center tracking-wide leading-relax rounded-full border border-transparent py-2 px-4 text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" 
                 {...componentProps} onSuccess={onSuccess} onClose={onClose} />
               </div>
             </div>
             <div className="hidden lg:block lg:col-span-1">
-                <img className="w-full h-full bg-contain" src="/reg.png" alt="" />
+                <img className="w-full h-full bg-contain" src="/k8s-ad.png" alt="" />
             </div>
           </div>
         </div>

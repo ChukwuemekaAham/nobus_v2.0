@@ -88,3 +88,30 @@ export const paystackSchema = object({
   expiryYear: string(),
   cvc: string(),
 });
+
+export const tokenSchema  = object({
+  token: string(),
+});
+
+
+export const resetPasswordSchema  = object({
+  password: string()
+    .regex(new RegExp(".*[A-Z].*"), "must include uppercase character")
+    .regex(new RegExp(".*[a-z].*"), "must include lowercase character")
+    .regex(new RegExp(".*\\d.*"), "must include number")
+    .regex(
+      new RegExp(".*[`~<>?,./!@#$%^&*()\\-_+=\"'|{}\\[\\];:\\\\].*"),
+      "must include special character"
+    )
+    .min(1, "Password is required")
+    .min(16, "Password must be at least 16 characters; including numbers, uppercase, lowercase and special characters")
+    .max(32, "Password must be less than 32 characters"),
+  code: string().min(6, "6 digit email verification code is required"),
+});
+
+
+export const emailSchema = object({
+  email: string()
+    .min(1, "Email address is required")
+    .email("Email Address is invalid"),
+});

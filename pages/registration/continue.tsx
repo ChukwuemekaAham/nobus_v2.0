@@ -1,5 +1,5 @@
 import { TypeOf } from "zod";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,8 +9,9 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 import useStore from "../../store";
 import { ILoginTokenResponse } from "../../types";
-
 import { loginSchema } from "../../schema";
+import { EyeIcon, EyeOffIcon } from "@heroicons/react/outline";
+import Image from "next/image";
 
 export type LoginInput = TypeOf<typeof loginSchema>;
 
@@ -18,14 +19,24 @@ const continueRegistration = () => {
   const store = useStore();
   const router = useRouter();
 
+  const [pass, setPass] = useState({
+    password: "",
+    showPassword: false,
+  });
+
+  const handleClickShowPassword = () => {
+    setPass({ ...pass, showPassword: !pass.showPassword });
+  };
+
   const methods = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
   });
 
   const {
     reset,
+    register,
     handleSubmit,
-    formState: { isSubmitSuccessful },
+    formState: { isSubmitSuccessful, errors },
   } = methods;
 
   useEffect(() => {
@@ -35,21 +46,18 @@ const continueRegistration = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
 
-  const API_URL = process.env.NEXT_PUBLIC_BASE
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
   const loginUser = async (data: LoginInput) => {
     try {
       store.setRequestLoading(true);   
-      const response = await fetch(`${API_URL}/login`, {
+      const response = await fetch(`${API_URL}/auth/login/initiate`, {
         method: "POST",
         headers: {
-          Accept: "application/json, text/plain, */*",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       })
-
-      const responseData: ILoginTokenResponse = await response.json();
-      console.log(responseData);
       if (response.status !== 200) {
         toast.error( response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
@@ -57,13 +65,13 @@ const continueRegistration = () => {
         store.setRequestLoading(false);
       }
       if (response.status === 200) {
-        toast.success( "Completed Sucessfully", {
+        toast.success( "Continue", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        store.setAuthUser(responseData);
+        store.setRequestEmail(data.email);
         store.setRequestLoading(false);
 
-        router.push("/verifyemail");
+        router.push("/registration/validateOTP");
       }
     } catch (error: any) {
       store.setRequestLoading(false);
@@ -90,29 +98,62 @@ const continueRegistration = () => {
   };
 
   return (
-    <section className="min-h-screen grid place-items-center">
+    <section className="min-h-screen grid place-items-center bg-blue-500"  style={{
+      backgroundImage: "url('/loginbg.png')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}>
       <div className="w-full">
        
         <FormProvider {...methods}>
           <form
             onSubmit={handleSubmit(onSubmitHandler)}
-            className="max-w-md w-full mx-auto overflow-hidden shadow-lg bg-dark-200 rounded-2xl p-8 space-y-5"
+            className="max-w-sm w-full mx-auto my-10 overflow-hidden shadow-md bg-white rounded-lg p-8 space-y-5"
           >
-            <div className="mx-auto justify-center py-5 flex">
+            <div className="mx-auto justify-center pb-2 flex">
               <a href="/">
-                <img className="h-12 w-auto" src="/logo.png" alt="" />
+                <img className="h-10 w-auto" src="/logo.png" alt="" />
               </a>
             </div>
           
-            <h2 className="text-md text-center mb-4 text-ct-dark-200">
+            <h2 className="text-md text-center mb-4 text-gray-500">
               Please fill the form below to continue 
             </h2>
-            <FormInput label="" placeholder="Enter email address" name="email" type="email" />
-            <FormInput label="" placeholder="Enter password" name="password" type="password" />
-
-            <div className="text-right">
-              <Link href="/login/reset-password" className="text-blue-600">
-                Forgot Password?
+            <FormInput label="" placeholder="Email Address" name="email" type="email" />
+            <div className={`flex w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 
+                focus:ring-indigo-500 sm:text-sm ${
+                  errors.password && "border-red-500"
+                }
+                `}>
+              <input
+                type={pass.showPassword ? "text" : "password"}
+                id="password"
+                placeholder="Password"
+                required
+                className="border-none rounded-l-md w-96 text-sm"
+                {...register("password")}
+              ></input>
+              
+              <div
+                className="cursor-pointer inline-flex flex-1 min-w-md pt-2 px-1"
+                onClick={handleClickShowPassword}
+              >
+                {pass.showPassword ? (
+                  <EyeIcon className="h-6 font-extralight" />
+                ) : (
+                  <EyeOffIcon className="h-6 font-extralight" />
+                )}
+              </div>
+              </div>
+              {errors.password && (
+                <span className='text-red-500 text-xs pt-1 block'>
+                  {errors.password?.message as string}
+                </span>
+              )}
+            <div className="text-right text-md">
+              Forgot Password? {" "}
+              <Link href="/login/reset-password" className="text-blue-600 hover:underline">
+                Reset
               </Link>
             </div>
             <LoadingButton
@@ -121,10 +162,10 @@ const continueRegistration = () => {
             >
               Continue
             </LoadingButton>
-            <span className="block">
+            <span className="block text-md">
               Need another account?{" "}
-              <Link href="/registration" className="text-blue-600">
-                Sign Up Here
+              <Link href="/registration" className="text-blue-600 hover:underline">
+                Sign Up
               </Link>
             </span>
           </form>

@@ -1,19 +1,16 @@
 import React from 'react';
-import Head from 'next/head';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider, SubmitHandler, Controller } from "react-hook-form";
-import FormInput from "../../../components/FormInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TypeOf } from "zod";
-import { LoadingButton } from "../../../components/LoadingButton";
+import { LoadingButton } from "../../components/LoadingButton";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useStore from "../../../store";
-import { validate2faSchema  } from "../../../schema";
-import Headerregister from '../../../components/HeaderRegister';
-import Footer2 from '../../../components/Footer2';
-import OtpInput from 'react-otp-input';
+import useStore from "../../store";
+import { validate2faSchema  } from "../../schema";
+import { ILoginTokenResponse } from '../../types';
+import OTPInput from '../../components/OTPInput';
 
 
 export type Validate2faInput = TypeOf<typeof validate2faSchema>;
@@ -21,7 +18,12 @@ export type Validate2faInput = TypeOf<typeof validate2faSchema>;
 const Validate2faPage = () => {
 
   const store = useStore();
-  const authUser = store.authUser;
+  const requestEmail = store.requestEmail;
+  console.log(requestEmail);
+
+  const [timer, setTimer] = useState<number>(3600); // 1 hour in seconds
+  const [isTimerActive, setIsTimerActive] = useState(false); // new state to track timer active
+  
   const router = useRouter();
 
   const methods = useForm<Validate2faInput>({
@@ -48,7 +50,7 @@ const Validate2faPage = () => {
   }, [isSubmitSuccessful]);
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL
-  const UserID = `${authUser?.user.email}`
+  const UserID = `${requestEmail}`
 
   const resendVerificationCode = async () => {
     try {
@@ -62,16 +64,18 @@ const Validate2faPage = () => {
         },
         body: JSON.stringify(verifyData),
       }).then((response) => {
-        if (response.status !== 200) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        }
+        
         if (response.status === 200) {
           toast.success("Verification code has been resent. Please check your email", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          router.push("/payments/login/validateOTP");
+          setIsTimerActive(true); // set timer active
+          setTimer(3600); // reset timer to 1 hour
+          router.push("/login/validateOTP");
+        } else {
+          toast.error( response.statusText, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         }
       })
 
@@ -96,30 +100,32 @@ const Validate2faPage = () => {
         email: UserID
       }
       store.setRequestLoading(true);
-      await fetch(`${API_URL}/auth/login/complete`, {
+      const response = await fetch(`${API_URL}/auth/login/complete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(verifyData),
       
-      }).then((response) => {
-        if (response.status !== 204) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          store.setRequestLoading(false);
-          router.push("/payments/login");
-        }
-        if (response.status === 204) {
-          toast.success("Login successful", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          store.setRequestLoading(false);
-          router.push("/payments");
-        }
-        
       })
+
+      if (response.status !== 200) {
+        toast.error( response.statusText, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setRequestLoading(false);
+        router.push("/registration/continue");
+      }
+      if (response.status === 200) {
+        const responseData: ILoginTokenResponse = await response.json();
+        console.log(responseData);
+        toast.success("Login successful", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setAuthUser(responseData);
+        store.setRequestLoading(false);
+        router.push("/payments");
+      }
 
     } catch (error: any) {
       store.setRequestLoading(false);
@@ -140,29 +146,60 @@ const Validate2faPage = () => {
   };
 
   useEffect(() => {
-    if (!store.authUser) {
-      router.push("/payments/login");
+    let interval: ReturnType<typeof setInterval> | null = null;
+
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    } else {
+      if (interval) {
+        clearInterval(interval);
+      }
     }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isTimerActive, timer]);
+
+  const formatTime = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
+
+  useEffect(() => {
+    if (!store.requestEmail) {
+      router.push("/registration/continue");
+    } 
   }, []);
 
   return (
-    <section className="min-h-screen grid place-items-center">
+    <section className="min-h-screen grid place-items-center bg-gray-200">
+      <div className="mx-auto justify-center py-5 flex ">
+        <a href="/">
+          <img className="h-10 w-auto" src="/logo.png" alt="" />
+        </a>
+      </div>
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmitHandler)}
-          className="max-w-md w-full mx-auto overflow-hidden shadow-lg bg-dark-200 rounded-2xl p-8 space-y-5"
+          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-8 space-y-5"
         >
           <div className="w-full">
-            <div className="mx-auto justify-center py-5 flex">
+            <div className="mx-auto justify-center flex">
               <a href="/">
-                <img className="h-12 w-auto" src="/logo.png" alt="" />
+                <img className="h-16 w-auto" src="/2fa.png" alt="" />
               </a>
             </div>
             <div className="py-5 text-center">
-              <h3 className="text-3xl font-semiboldm leading-relax tracking-wide text-gray-500 pt-4">
+              <h3 className="text-3xl font-semibold tracking-tight text-gray-500 pt-4">
                 Two-Factor Authentication
               </h3>
-              <p className="mt-4 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600">
                 Verify the Authentication Code sent to your email
               </p>
             </div>
@@ -172,27 +209,14 @@ const Validate2faPage = () => {
               <label
                 htmlFor="code"
                 className="block text-md text-gray-700 my-5 mx-auto text-center">
-              
-                Enter verification code
               </label>
               
               <div>  
               <Controller
               name="code"
               control={control}
-              render={({ field: { onChange, value } }) => (                       
-              <OtpInput
-                value={value}
-                onChange={onChange}
-                placeholder="000000"
-                numInputs={6}
-                inputType="text"
-                renderSeparator={<span>-</span>}
-                renderInput={(props) => <input {...props} />}
-                inputStyle={`overflow-hidden text-lg p-1 mx-1 sm:mx-2 rounded-full`}
-                containerStyle={`flex mx-auto justify-center`}
-              />
-              
+              render={({ field: { onChange } }) => (                       
+                <OTPInput length={6} onComplete={onChange}/>
               )}
               />
               {errors.code && (
@@ -200,8 +224,11 @@ const Validate2faPage = () => {
                   {errors.code?.message as string}
                 </span>
               )}
+
+              <p className='text-center py-2 text-md'>Time remaining: <span className='text-blue-600 font-semibold'>{formatTime(timer)}</span></p>
+
               </div>
-                <div className='my-5 p-2 max-w-7xl mx-auto justify-center'>
+                <div className='mt-5 p-2 max-w-7xl mx-auto justify-center'>
                 <LoadingButton
                   loading={store.requestLoading}
                   textColor="text-ct-blue-600"
@@ -209,17 +236,15 @@ const Validate2faPage = () => {
                 >
                   Authenticate
                 </LoadingButton>
-                <a href="/login" className="block text-center text-blue-600 pt-5">
-                  Back to basic login
-                </a>
+                
               </div>
           </div>
-
-          <span className='mx-auto text-center text-md sm:text-lg'>
+          
+          <span className='flex mx-auto text-center justify-center text-md'>
             
             Didn't get a code? {" "}
                               
-            <button onClick={() => resendVerificationCode() }>
+            <button className='pl-2' onClick={() => resendVerificationCode() }>
             <a className='hover:underline text-blue-600'>
               Resend Verification Code
             </a>

@@ -4,18 +4,27 @@ import { useRouter } from "next/navigation";
 import { useForm, FormProvider, SubmitHandler, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TypeOf } from "zod";
-import { LoadingButton } from "../../components/LoadingButton";
+import { LoadingButton } from "../../../components/LoadingButton";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useStore from "../../store";
-import { validate2faSchema  } from "../../schema";
-import { ILoginTokenResponse } from '../../types';
-import OTPInput from '../../components/OTPInput';
+import useStore from "../../../store";
+import { resetPasswordSchema  } from "../../../schema";
+import OTPInput from '../../../components/OTPInput';
+import { EyeIcon, EyeOffIcon } from "@heroicons/react/outline";
 
 
-export type Validate2faInput = TypeOf<typeof validate2faSchema>;
+export type ResetPasswordInput = TypeOf<typeof resetPasswordSchema>;
 
-const Validate2faPage = () => {
+const Complete = () => {
+
+    const [pass, setPass] = useState({
+        password: "",
+        showPassword: false,
+      });
+    
+    const handleClickShowPassword = () => {
+    setPass({ ...pass, showPassword: !pass.showPassword });
+    };
 
   const store = useStore();
   const requestEmail = store.requestEmail;
@@ -26,20 +35,18 @@ const Validate2faPage = () => {
 
   const router = useRouter();
 
-  const methods = useForm<Validate2faInput>({
-    resolver: zodResolver(validate2faSchema),
+  const methods = useForm<ResetPasswordInput>({
+    resolver: zodResolver(resetPasswordSchema),
   });
 
   const {
     reset,
     handleSubmit,
-    setValue,
-    setFocus,
     register,
     formState: { isSubmitSuccessful, errors },
     control
-  } = useForm<Validate2faInput>({
-    resolver: zodResolver(validate2faSchema),
+  } = useForm<ResetPasswordInput>({
+    resolver: zodResolver(resetPasswordSchema),
   });
 
   useEffect(() => {
@@ -57,7 +64,7 @@ const Validate2faPage = () => {
       const verifyData = {
         email: UserID
       }
-      await fetch(`${API_URL}/auth/email/verify/initiate`, {
+      await fetch(`${API_URL}/auth/password/reset/initiate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,12 +72,12 @@ const Validate2faPage = () => {
         body: JSON.stringify(verifyData),
       }).then((response) => {
         if (response.status === 200) {
-          toast.success("Verification code has been resent. Please check your email", {
+          toast.success("OTP has been resent. Please check your email", {
             position: toast.POSITION.TOP_RIGHT,
           });
           setIsTimerActive(true); // set timer active
           setTimer(3600); // reset timer to 1 hour
-          router.push("/login/validateOTP");
+          router.push("/reset-password/complete");
         } else {
           toast.error( response.statusText, {
             position: toast.POSITION.TOP_RIGHT,
@@ -91,7 +98,7 @@ const Validate2faPage = () => {
     }
   };
 
-  const validate2fa = async (data: Validate2faInput) => {
+  const validate2fa = async (data: ResetPasswordInput) => {
     
     try {
       const verifyData = {
@@ -99,7 +106,7 @@ const Validate2faPage = () => {
         email: UserID
       }
       store.setRequestLoading(true);
-      const response = await fetch(`${API_URL}/auth/login/complete`, {
+      const response = await fetch(`${API_URL}/auth/password/reset/complete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,17 +116,14 @@ const Validate2faPage = () => {
       })
 
       if (response.status === 200) {
-        const responseData: ILoginTokenResponse = await response.json();
-        console.log(responseData);
-        toast.success("Login successful", {
+        toast.success("Password reset successful", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        // Store the user data in the client-side state or session
-        store.setAuthUser(responseData);
+       
         store.setRequestLoading(false);
 
         // login user to their dashboard 
-        router.push("/dashboard");
+        router.push("/login");
       } else {
         toast.error( response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
@@ -142,7 +146,7 @@ const Validate2faPage = () => {
     }
   };
 
-  const onSubmitHandler: SubmitHandler<Validate2faInput> = (values) => {
+  const onSubmitHandler: SubmitHandler<ResetPasswordInput> = (values) => {
     validate2fa(values);
   };
 
@@ -174,7 +178,7 @@ const Validate2faPage = () => {
 
   useEffect(() => {
     if (!store.requestEmail) {
-      router.push("/login");
+      router.push("/login/reset-password");
     }
   }, []);
 
@@ -190,56 +194,92 @@ const Validate2faPage = () => {
           onSubmit={handleSubmit(onSubmitHandler)}
           className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-8 space-y-5"
         >
-          <div className="w-full">
-            <div className="mx-auto justify-center flex">
-              <a href="/">
-                <img className="h-16 w-auto" src="/2fa.png" alt="" />
-              </a>
+            <div className="w-full">
+                <div className="mx-auto justify-center flex">
+                <a href="/">
+                    <img className="h-16 w-auto" src="/2fa.png" alt="" />
+                </a>
+                </div>
+                <div className="py-2 text-center">
+                <p className="mt-2 text-sm text-gray-600">
+                    Enter OTP sent to your email
+                </p>
+                </div>
             </div>
-            <div className="py-5 text-center">
-              <h3 className="text-3xl font-semibold tracking-tight text-gray-500 pt-4">
-                Two-Factor Authentication
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Verify the Authentication Code sent to your email
-              </p>
-            </div>
-          </div>
             <div className="overflow-hidden">
-              
-              <label
-                htmlFor="code"
-                className="block text-md text-gray-700 my-5 mx-auto text-center">
-              </label>
-              
-              <div>  
-              <Controller
-              name="code"
-              control={control}
-              render={({ field: { onChange } }) => (     
-              <OTPInput length={6} onComplete={onChange}/>
-              )}
-              />
-              {errors.code && (
-                <span className='text-red-500 text-xs pt-1 block text-center'>
-                  {errors.code?.message as string}
-                </span>
-              )}
-
-              <p className='text-center py-2 text-md'>Time remaining: <span className='text-blue-600 font-semibold'>{formatTime(timer)}</span></p>
-
+            <div className="">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  
+                </label>
+                <div className={`flex mt-1 w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 
+                  focus:ring-indigo-500 sm:text-sm ${
+                    errors.password && "border-red-500"
+                  }
+                  `}>
+                <input
+                  type={pass.showPassword ? "text" : "password"}
+                  id="password"
+                  placeholder="New Password"
+                  required
+                  className="border-none rounded-l-md w-96 text-sm"
+                  {...register("password")}
+                ></input>
+                
+                <div
+                  className="cursor-pointer inline-flex flex-1 min-w-md pt-2 px-1"
+                  onClick={handleClickShowPassword}
+                >
+                  {pass.showPassword ? (
+                    <EyeIcon className="h-6 font-extralight" />
+                  ) : (
+                    <EyeOffIcon className="h-6 font-extralight" />
+                  )}
+                </div>
+                </div>
+                {errors.password && (
+                  <span className='text-red-500 text-xs pt-1 block'>
+                    {errors.password?.message as string}
+                  </span>
+                )}
+                
               </div>
+              
+                <label
+                    htmlFor="code"
+                    className="block text-md text-gray-700 my-5 mx-auto text-center">
+                </label>
+              
+                <div>  
+                    <Controller
+                    name="code"
+                    control={control}
+                    render={({ field: { onChange } }) => (     
+                    <OTPInput length={6} onComplete={onChange}/>
+                    )}
+                    />
+                    {errors.code && (
+                        <span className='text-red-500 text-xs pt-1 block text-center'>
+                        {errors.code?.message as string}
+                        </span>
+                    )}
+
+                    <p className='text-center py-2 text-md'>Time remaining: <span className='text-blue-600 font-semibold'>{formatTime(timer)}</span></p>
+
+                </div>
                 <div className='mt-5 p-2 max-w-7xl mx-auto justify-center'>
                 <LoadingButton
                   loading={store.requestLoading}
                   textColor="text-ct-blue-600"
 
                 >
-                  Authenticate
+                  Submit
                 </LoadingButton>
                 
-              </div>
-          </div>
+                </div>
+            </div>
           
           <span className='flex mx-auto text-center justify-center text-md'>
             
@@ -258,4 +298,4 @@ const Validate2faPage = () => {
   );
 };
 
-export default Validate2faPage;
+export default Complete;
