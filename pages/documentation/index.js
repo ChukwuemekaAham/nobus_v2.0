@@ -27,13 +27,6 @@ const cardData = [
     href: "#",
     description: "Learn about how our active customers use NCS.",
   },
-  {
-    id: "4",
-    title: "Nobus FAQs",
-    href: "#",
-    description:
-      "Get all the answers to the frequently asked questions about Nobus cloud.",
-  },
 ];
 
 const resources = [
@@ -84,12 +77,17 @@ const sections = [
         name: "Nobus Flexible Compute Service (FCS)",
         href: "/documentation/fcs",
         desc: "A web service that provides resizable compute capacity in the cloud",
-      },
-   
+      }, 
       {
         name: "Dedicated Hosting",
         href: "/documentation/fcs",
         desc: "Worldwide hosting; instant ready with highest level of resource allocation, privacy, and control",
+      },
+
+      {
+        name: "Nobus FCS AutoScaling",
+        href: "/documentation/fcs#autoscaling",
+        desc: "Automatically add or remove FCS instances according to conditions you define.",
       },
     ],
   },
@@ -124,16 +122,19 @@ const sections = [
         desc: "Exclusive allocated network connection",
       },
       {
-        name: "Nobus Flexible Load Balancing (FLB)",
+        name: "Virtual Private Network (VPN)",
         href: "#",
-        desc: "Maximum performance scale load balancing",
+      },
+      {
+        name: "Cloud Router",
+        href: "#",
+      },
+      {
+        name: "Bandwidth",
+        href: "#",
       },
       {
         name: "Instance IP Addressing",
-        href: "#",
-      },
-      {
-        name: "Flexible Network Interfaces",
         href: "#",
       },
       {
@@ -141,27 +142,11 @@ const sections = [
         href: "/documentation/dns",
       },
       {
-        name: "Floating IPs",
-        href: "#",
-      },
-      {
-        name: "Network ACLs",
-        href: "#",
-      },
-      {
         name: "Network ACLs",
         href: "#",
       },
       {
         name: "Security Groups",
-        href: "#",
-      },
-      {
-        name: "Virtual Private Network (VPN)",
-        href: "#",
-      },
-      {
-        name: "Cloud Router",
         href: "#",
       },
     ],
@@ -312,7 +297,7 @@ function index() {
               Guides & API References
             </h1>
           </div>
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-4">
             {sections.map((section) => (
               <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border border-gray-400 hover:scale-95">
                 <div key={section.name} className="p-2">
@@ -350,13 +335,13 @@ function index() {
           </div>
         </div>
        
-        <div className="flex-col px-10 pt-10 md:px-20 md:pt-20">
+        <div className="flex-col px-10 pt-10 md:px-20">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               General Resources
             </h1>
           </div>
-          <div className="grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-2 lg:grid-cols-4 lg:mx-20">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-3 mx-auto lg:max-w-4xl">
             {cardData?.map((item) => (
               <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border border-gray-300 group">
                 <a href={item.href}>

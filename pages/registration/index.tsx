@@ -16,6 +16,9 @@ import { toast } from "react-toastify";
 import useStore from "../../store";
 import { registerSchema } from "../../schema";
 import { ILoginTokenResponse } from "../../types";
+import getBasePath from "../../lib/getBasePath";
+
+// console.log(`BASEPATH: ${getBasePath()}`);
 
 export type RegisterInput = TypeOf<typeof registerSchema>;
 
@@ -62,7 +65,7 @@ const index = () => {
   const registerUser = async (data: RegisterInput) => {
     try {
       store.setRequestLoading(true);
-      const response = await fetch(`${API_URL}/auth/user/create`, {
+      const response = await fetch(`${getBasePath()}/api/auth/user/create`, {
           method: "POST",
           headers: {
             Accept: "application/json, text/plain, */*",
@@ -72,35 +75,33 @@ const index = () => {
           
         })
 
-        const responseData: ILoginTokenResponse = await response.json();
-        console.log(responseData);
-        if (response.status !== 201 || 400) {
-          toast.error( response.statusText, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          store.setRequestLoading(false);
-        }
+      const responseData: ILoginTokenResponse = await response.json();
+      console.log(responseData);
+      if (response.status === 201) {
+        toast.success("An email with verification code has been sent to your mail box", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        store.setRequestLoading(false);
+        store.setAuthUser(responseData);
+        router.push("/verifyemail");
+      } else {
+        // Handle different error cases
         if (response.status === 400) {
-          
-          toast.success( "Email already exists", {
+          toast.error("Email already exists", {
             position: toast.POSITION.TOP_RIGHT,
           });
           store.setRequestLoading(false);
           store.setAuthUser(responseData);
     
           router.push("/registration/continue");
-        }
-        if (response.status === 201) {
-          
-          toast.success( "An email with verification code has been sent to your mail box", {
+        } else {
+          toast.error(response.statusText || "An error occurred", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          store.setRequestLoading(false);
-          store.setAuthUser(responseData);
-    
-          router.push("/verifyemail");
         }
-      
+        store.setRequestLoading(false);
+        // Handle potential errors in responseData
+      }
     } catch (error: any) {
       store.setRequestLoading(false);
       const resMessage =

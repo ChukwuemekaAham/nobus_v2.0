@@ -34,12 +34,12 @@ const sections = [
     items: [
       {
         name: "Nobus Flexible Compute Service (FCS)",
-        href: "/pricing/fcs",
+        href: "/pricing/fcs/price",
         desc: "A web service that provides resizable compute capacity in the cloud"
       },
       {
         name: "Dedicated Hosting",
-        href: "#",
+        href: "/pricing/fcs/price",
         desc: "Worldwide hosting; instant ready with highest level of resource allocation, privacy, and control",
       },
     ],
@@ -50,14 +50,20 @@ const sections = [
     items: [
       {
         name: "Nobus Flexible Block Storage (FBS)",
-        href: "#",
+        href: "/pricing/fbs/price",
         desc: "Block level storage volumes (1 GB to 1 TB ) for use with Nobus FC Instances",
       },
       {
         name: "Flexible Object Storage (FOS)",
-        href: "#",
+        href: "/pricing/fos/price",
         desc: "Extensive and Unlimited Storage in the cloud",
       },
+      {
+        name: "Acronis Cloud Backup",
+        href: "/pricing/acronis/price",
+        desc: "Cloud Backup and Disaster recovery for your entire workload",
+      },
+       
     ],
   },
   {
@@ -66,20 +72,72 @@ const sections = [
     items: [
       {
         name: "Bandwidth",
-        href: "#",
+        href: "/pricing/networking/price",
         desc: "Exclusive allocated network connection",
       },
       {
         name: "Nobus Fast Transit (NFT)",
-        href: "#",
+        href: "/pricing/networking/price",
         desc: "Exclusive allocated network connection",
       },
       {
-        name: "Virtual Privat Network",
-        href: "#",
+        name: "Floating IPs",
+        href: "/pricing/networking/price",
+        desc: "Take advantage of our reserved virtual ips to achieve high availability and fault tolerance",
+      },
+      {
+        name: "Cloud Router",
+        href: "/pricing/networking/price",
         desc: "Exclusive allocated network connection",
       },
-      
+      {
+        name: "Virtual Private Network",
+        href: "/pricing/networking/price",
+        desc: "Exclusive allocated network connection",
+      },
+    ],
+  },
+  {
+    id: "dns",
+    name: "Domains and DNS",
+    items: [
+      {
+        name: "Nobus DNS",
+        href: "/pricing/dns/price",
+        desc: "Block level storage volumes (1 GB to 1 TB ) for use with Nobus FC Instances",
+      },
+    ],
+  },
+  {
+    id: "database",
+    name: "Database",
+    items: [
+      {
+        name: "Cloud Database Services",
+        href: "/pricing/database-services/price",
+        desc: "Block level storage volumes (1 GB to 1 TB ) for use with Nobus FC Instances",
+      },
+    ],
+  },
+  {
+    id: "image",
+    name: "Image",
+    items: [
+      {
+        name: "Windows Distribution",
+        href: "/pricing/image-service/price",
+        desc: "Managed licensing services. As well as bring your own license (BYOL)",
+      },
+      {
+        name: "Opensource Linux Distribution",
+        href: "/pricing/image-service/price",
+        desc: "Get started quickly with opensource linux image distros",
+      },
+      {
+        name: "Nobus Machine Images (NMI)",
+        href: "/pricing/image-service/price",
+        desc: "Preconfigured templates for your instance",
+      },
     ],
   },
 ];

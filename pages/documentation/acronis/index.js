@@ -76,14 +76,14 @@ function index() {
             and recovery technology that is enhanced with cyber protection. See
             the{" "}
             <a
-              className="font-semibold"
+              className="hover:underline"
               href=" https://www.acronis.com/en-us/support/documentation/"
             >
               Customer support documentation{" "}
             </a>{" "}
             or download the
             <a
-              className="font-semibold"
+              className="hover:underline"
               href="https://dl.acronis.com/u/pdf/BackupCloud_adminguide_en-US.pdf"
             >
               {" "}
@@ -91,7 +91,7 @@ function index() {
             </a>
             and
             <a
-              className="font-semibold"
+              className="hover:underline"
               href="https://dl.acronis.com/u/pdf/AcronisBackupCloud_userguide_en-US.pdf"
             >
               {" "}

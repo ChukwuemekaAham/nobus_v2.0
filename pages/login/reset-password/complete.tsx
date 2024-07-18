@@ -11,6 +11,7 @@ import useStore from "../../../store";
 import { resetPasswordSchema  } from "../../../schema";
 import OTPInput from '../../../components/OTPInput';
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/outline";
+import getBasePath from '../../../lib/getBasePath';
 
 
 export type ResetPasswordInput = TypeOf<typeof resetPasswordSchema>;
@@ -64,7 +65,7 @@ const Complete = () => {
       const verifyData = {
         email: UserID
       }
-      await fetch(`${API_URL}/auth/password/reset/initiate`, {
+      await fetch(`${getBasePath()}/api/auth/password/reset/initiate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +107,7 @@ const Complete = () => {
         email: UserID
       }
       store.setRequestLoading(true);
-      const response = await fetch(`${API_URL}/auth/password/reset/complete`, {
+      const response = await fetch(`${getBasePath()}/api/auth/password/reset/complete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

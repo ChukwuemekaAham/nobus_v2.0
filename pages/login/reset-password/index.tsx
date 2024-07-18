@@ -10,6 +10,7 @@ import Link from "next/link";
 import useStore from "../../../store";
 
 import { emailSchema } from "../../../schema";
+import getBasePath from "../../../lib/getBasePath";
 
 export type EmailInput = TypeOf<typeof emailSchema>;
 
@@ -38,7 +39,7 @@ const index = () => {
   const ResetPassword = async (data: EmailInput) => {
     try {
       store.setRequestLoading(true);   
-      const response = await fetch(`${API_URL}/auth/password/reset/initiate`, {
+      const response = await fetch(`${getBasePath()}/api/auth/password/reset/initiate`, {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -53,7 +54,7 @@ const index = () => {
         store.setRequestLoading(false);
       }
       if (response.status === 200) {
-        toast.success( "OTP sent to your email", {
+        toast.success( "OTP has been sent to your email", {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestEmail(data.email);

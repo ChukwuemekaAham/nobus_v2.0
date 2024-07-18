@@ -8,10 +8,9 @@ import { LoadingButton } from "../../components/LoadingButton";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import useStore from "../../store";
-import { ILoginTokenResponse } from "../../types";
 import { loginSchema } from "../../schema";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/outline";
-import Image from "next/image";
+import getBasePath from "../../lib/getBasePath";
 
 export type LoginInput = TypeOf<typeof loginSchema>;
 
@@ -50,7 +49,7 @@ const continueRegistration = () => {
   const loginUser = async (data: LoginInput) => {
     try {
       store.setRequestLoading(true);   
-      const response = await fetch(`${API_URL}/auth/login/initiate`, {
+      const response = await fetch(`${getBasePath()}/api/auth/login/initiate`, {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -10,6 +10,7 @@ import Link from "next/link";
 import useStore from "../../store";
 import { loginSchema } from "../../schema";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/outline";
+import getBasePath from "../../lib/getBasePath";
 
 export type LoginInput = TypeOf<typeof loginSchema>;
 
@@ -48,7 +49,7 @@ const Index = () => {
   const loginUser = async (data: LoginInput) => {
     try {
       store.setRequestLoading(true);   
-      const response = await fetch(`${API_URL}/auth/login/initiate`, {
+      const response = await fetch(`${getBasePath}/auth/login/initiate`, {
         method: "POST",
         headers: {
           Accept: "application/json",

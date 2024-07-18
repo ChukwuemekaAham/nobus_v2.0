@@ -24,9 +24,10 @@ const docsfilters = [
         { value: "Quickstart", href: "/documentation/fcs#quickstart" },
         { value: "Best Practices", href: "/documentation/fcs#best-practices" },
         { value: "Instance", href: "/documentation/fcs#instance" },
-        { value: "Nobus Machine Images", href: "/documentation/fcs#nobus-machine-images" },
+        { value: "Autoscaling", href: "/documentation/fcs#autoscaling" },
       ],
     },
+    
     {
       name: "Image Service",
       href: "/documentation/images",

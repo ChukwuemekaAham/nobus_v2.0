@@ -14,6 +14,7 @@ import Headerregister from '../../components/HeaderRegister';
 import Footer2 from '../../components/Footer2';
 import { ILoginTokenResponse } from "../../types";
 import OTPInput from '../../components/OTPInput';
+import getBasePath from '../../lib/getBasePath';
 
 export type EmailVerificationInput = TypeOf<typeof emailVerificationSchema>;
 
@@ -55,7 +56,7 @@ export default function index() {
       const verifyData = {
         email: UserID
       }
-      await fetch(`${API_URL}/auth/email/verify/initiate`, {
+      await fetch(`${getBasePath()}/api/auth/email/verify/initiate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +99,7 @@ export default function index() {
       }
 
       store.setRequestLoading(true);
-      const response = await fetch(`${API_URL}/auth/email/verify/complete`, {
+      const response = await fetch(`${getBasePath()}/api/auth/email/verify/complete`, {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",

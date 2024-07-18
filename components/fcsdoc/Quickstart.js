@@ -5,7 +5,7 @@ function Quickstart() {
 
   return (
     <div id='quickstart' className='py-10'>
-      <h1 className='text-2xl md:text-3xl tracking-tight font-semibold pb-5'>
+      <h1 className='text-3xl md:text-4xl text-[#232f3e] tracking-tight font-semibold pb-5'>
         Quickstart Guide
       </h1>
 
@@ -13,9 +13,9 @@ function Quickstart() {
         You can set up and configure the operating system and applications that run on your instance using Nobus FCS.   
       </p>
         
-      <h4 className="py-2 text-xl font-bold">Launch and Manage an Instance</h4>
+      <h4 className="py-2 text-2xl text-[#232f3e] font-semibold ">Launch and Manage an Instance</h4>
       
-      <h6 className="font-bold py-2">Example with <span>Linux</span> Instances</h6>
+      <h6 className="font-semibold py-2">Example with <span>Linux</span> Instances</h6>
       
       <p>Ensure that you've completed the access and security configuration procedure for Nobus FCS.
       </p>
@@ -28,7 +28,7 @@ function Quickstart() {
         it enters <code className="text-red-400">running</code> state and receives a public DNS name. 
       </p>
     
-      <p className="font-bold py-2">To launch an instance using the Nobus Management Console</p>
+      <p className="font-semibold py-2">To launch an instance using the Nobus Management Console</p>
         
       <p>
       You can launch an instance from the following sources:
@@ -57,20 +57,24 @@ function Quickstart() {
 
           <div>
 
-            <h6 className='font-bold py-2'>Instance Name</h6>
+            <h6 className='font-semibold py-2'>Instance Name</h6>
             <div>
               <p>Assign a name to the virtual machine.</p>
-            
-              <p className="py-2 font-bold">Note</p>
-
-              <p>The name you assign here becomes the initial host name of the server.
-              </p>
+              <div className='border-l-2 border-l-blue-500 bg-blue-100 p-2 my-2 rounded-md'>
+              <span className='flex'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-blue-600">
+                <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
+              </svg> <span className='font-mono font-semibold text-blue-600 pl-2'>Note:</span> </span>
+                <p className='text-sm pt-2 pl-2'>
+                The name you assign here becomes the initial host name of the server.
+                </p>
+              </div>
             </div>
               
-            <h6 className='font-bold py-2'>Description</h6>
+            <h6 className='font-semibold py-2'>Description</h6>
             <p>You can assign a brief description of the virtual machine.</p>
             
-            <h6 className='font-bold py-2'>Availability Zone</h6>
+            <h6 className='font-semibold py-2'>Availability Zone</h6>
             <div>
               <p>By default
                 <code className='text-red-400'>
@@ -79,7 +83,7 @@ function Quickstart() {
               </p>
             </div>
 
-            <h6 className='font-bold py-2'>Count</h6>
+            <h6 className='font-semibold py-2'>Count</h6>
             <div>
               <p>To launch several instances, enter a value greater than <code className='text-red-400'><span className="pre"> 1</span></code> The default is <code className='text-red-400'><span className="pre"> 1</span></code></p>
             </div>
@@ -87,30 +91,30 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Source</span> tab</p>
             <div>
-              <h6 className='font-bold py-2'>Instance Boot Source</h6>
+              <h6 className='font-semibold py-2'>Instance Boot Source</h6>
               <div>
                 <p>Your options are:</p>
 
                 <div className="simple">
-                  <h6 className='font-bold py-2'>Boot from image</h6>
+                  <h6 className='font-semibold py-2'>Boot from image</h6>
                   <div><p>If you choose this option, a new field for 
                     <span className="italic font-semibold"> Image Name </span>
                     displays. You can select the image from the list.</p>
                   </div>
 
-                  <h6 className='font-bold py-2'>Boot from snapshot</h6>
+                  <h6 className='font-semibold py-2'>Boot from snapshot</h6>
                   <div>
                     <p>If you choose this option, a new field for 
                     <span className="italic font-semibold"> Instance Snapshot</span> displays. You can select the snapshot from the list.</p>
                   </div>
 
-                  <h6 className='font-bold py-2'>Boot from volume</h6>
+                  <h6 className='font-semibold py-2'>Boot from volume</h6>
                   <div><p>If you choose this option, a new field for 
                     <span className="italic font-semibold">Volume</span>
                     displays. You can select the volume from the list.</p>
                   </div>
                   
-                  <h6 className='font-bold py-2'>Boot from image (creates a new volume)</h6>
+                  <h6 className='font-semibold py-2'>Boot from image (creates a new volume)</h6>
                   <div>
                     <p>With this option, you can boot from an image and create a volume
                     by entering the <span className="italic font-semibold">Device Size</span> and 
@@ -121,7 +125,7 @@ function Quickstart() {
                     </p>
                   </div>
 
-                  <h6 className='font-bold py-2'>Boot from volume snapshot (creates a new volume)</h6>
+                  <h6 className='font-semibold py-2'>Boot from volume snapshot (creates a new volume)</h6>
                   <div>
                     <p>Using this option, you can boot from a volume snapshot and create
                     a new volume by choosing <span className="italic font-semibold">Volume Snapshot</span> from a list
@@ -132,14 +136,14 @@ function Quickstart() {
                 </div>
               </div>
 
-              <h6 className='font-bold py-2'>Image Name</h6>
+              <h6 className='font-semibold py-2'>Image Name</h6>
               <div>
                 <p>This field changes based on your previous selection. If you have
                 chosen to launch an instance using an image, the <span className="italic font-semibold"> Image Name </span>
                 field displays. Select the image name from the dropdown list.</p>
               </div>
 
-              <h6 className='font-bold py-2'>Instance Snapshot</h6>
+              <h6 className='font-semibold py-2'>Instance Snapshot</h6>
               <div>
                 <p>This field changes based on your previous selection. If you have
                 chosen to launch an instance using a snapshot, the
@@ -147,7 +151,7 @@ function Quickstart() {
                 Select the snapshot name from the dropdown list.</p>
               </div>
 
-              <h6 className='font-bold py-2'>Volume</h6>
+              <h6 className='font-semibold py-2'>Volume</h6>
               <div>
                 <p>This field changes based on your previous selection. If you have
                 chosen to launch an instance using a volume, the <span className="italic font-semibold"> Volume </span>
@@ -159,11 +163,11 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Flavor</span> tab</p>
             <div>
-              <h6 className='font-bold py-2'>Flavor</h6>
+              <h6 className='font-semibold py-2'>Flavor</h6>
               <div>
                 <p>Specify the size of the instance to launch.</p>
 
-                <p className="py-2 font-bold">Note</p>
+                <p className="py-2 font-semibold">Note</p>
                 <p>The flavor is selected based on the size of the image selected
                 for launching an instance.</p>
             
@@ -172,7 +176,7 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Networks</span> tab</p>
             <div className="simple">
-              <h6 className='font-bold py-2'>Selected Networks</h6>
+              <h6 className='font-semibold py-2'>Selected Networks</h6>
               <div><p>To add an existing network to the instance, click the <span className="italic font-semibold">+</span> in the
               <span className="italic font-semibold"> Available </span> field.</p>
               </div>
@@ -180,13 +184,13 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Network Ports</span> tab</p>
             <div className="simple">
-              <h6 className='font-bold py-2'>Ports</h6>
+              <h6 className='font-semibold py-2'>Ports</h6>
               <p>Activate the ports that you want to assign to the instance.</p>
             </div>
 
             <p><span className="italic font-semibold">Security Groups</span> tab</p>
             <div className="simple">
-              <h6 className='font-bold py-2'>Security Groups</h6>
+              <h6 className='font-semibold py-2'>Security Groups</h6>
               <div>
                 <p>Activate the security groups that you want to assign to the instance.</p>
                 <p>Security groups are a kind of cloud firewall that define which
@@ -198,7 +202,7 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Key Pair</span> tab</p>
             <div className="simple">
-              <h6 className='font-bold py-2'>Key Pair</h6>
+              <h6 className='font-semibold py-2'>Key Pair</h6>
               <div><p>Specify a key pair.</p>
               <p>When prompted for a key pair, select <b>Choose an existing key pair</b>, 
                   then select the key pair that you created when setting up.
@@ -231,7 +235,7 @@ function Quickstart() {
             <p><span className="italic font-semibold">Configuration</span> tab</p>
             
             <div className="simple">
-              <h6 className='font-bold py-2'>Customization Script Source</h6>
+              <h6 className='font-semibold py-2'>Customization Script Source</h6>
               <div>
                 <p>
                   Specify a customization script that runs after your instance
@@ -243,7 +247,7 @@ function Quickstart() {
 
             <p><span className="italic font-semibold">Metadata</span> tab</p>
             <div className="simple">
-              <h6 className='font-bold py-2'>Available Metadata</h6>
+              <h6 className='font-semibold py-2'>Available Metadata</h6>
               <div>
                 <p>Add Metadata items to your instance.</p>
               </div>
@@ -257,7 +261,7 @@ function Quickstart() {
           </li>
         </ol>
   
-        <p className="py-2 font-bold">Note</p>
+        <p className="py-2 font-semibold">Note</p>
 
         <p>
           If you did not provide a key pair, security groups, or rules, users
@@ -304,11 +308,11 @@ function Quickstart() {
       </div>
         
       <div className='py-3' id="connect-to-your-instance-by-using-ssh">
-        <h5 className='py-2 font-bold text-lg'>Connect to your instance by using SSH</h5>
+        <h5 className='py-2 font-semibold text-lg'>Connect to your instance by using SSH</h5>
         <p>To use SSH to connect to your instance, use the downloaded keypair
           file.
         </p>
-        <p className="font-bold py-2">Note</p>
+        <p className="font-semibold py-2">Note</p>
         <p>You can't connect to your instance unless you launched it with a key pair for
             which you have the <code className='text-red-400'>.pem</code> file and you launched it with a 
             security group that allows SSH access from your computer. 
@@ -338,7 +342,7 @@ function Quickstart() {
       </div>
         
       <div className='py-3' id="track-usage-for-instances">
-        <h5 className='py-2 font-bold text-lg'>Track usage for instances </h5>
+        <h5 className='py-2 font-semibold text-lg'>Track usage for instances </h5>
 
         <p>
           You can track usage for instances for each project. You can track costs
@@ -357,7 +361,7 @@ function Quickstart() {
       </div>
 
       <div className='py-3' id="create-an-instance-snapshot">
-        <h5 className='py-2 font-bold text-lg'>Create an instance snapshot</h5>
+        <h5 className='py-2 font-semibold text-lg'>Create an instance snapshot</h5>
 
         <ol className="pl-5 list-decimal space-y-2 py-2">
           <li><p>Log in to the dashboard.</p></li>
@@ -377,7 +381,7 @@ function Quickstart() {
       </div>
 
       <div className='py-3' id="manage-an-instance">
-        <h5 className='py-2 font-bold text-lg'>Manage an instance</h5>
+        <h5 className='py-2 font-semibold text-lg'>Manage an instance</h5>
         <ol className="pl-5 list-decimal space-y-2 py-2">
           <li><p>Log in to the dashboard.</p></li>
         

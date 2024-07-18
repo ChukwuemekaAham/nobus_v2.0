@@ -10,8 +10,8 @@ import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/
 import Access from "../../../components/fcsdoc/Access";
 import Quickstart from "../../../components/fcsdoc/Quickstart";
 import BestPractices from "../../../components/fcsdoc/BestPractices";
-import Nmi from "../../../components/fcsdoc/Nmi";
 import Instance from "../../../components/fcsdoc/Instance";
+import Autoscaling from "../../../components/fcsdoc/Autoscaling";
 import { Tab } from '@headlessui/react'
 
 function classNames(...classes) {
@@ -181,7 +181,7 @@ function index() {
                                 
                         </li>
                       </ul>
-                      <a className="hover:underline font-semibold" href="#">Visit to get started with Nobus FCS</a>
+                      <a className="hover:underline" href="#">Visit to get started with Nobus FCS</a>
                       
                     </div>
 
@@ -189,10 +189,10 @@ function index() {
                       <h2 class="py-2 text-2xl font-semibold text-[#232f3e]">Helpful services</h2>
                       
                       <p>Nobus FCS resources, such as instances and volumes, can be provisioned directly using
-                          Nobus FCS. See <a className="hover:underline font-semibold" href="#">Nobus FCS Auto Scaling User Guide</a> for more.</p>
+                          Nobus FCS. See <a className="hover:underline" href="#">Nobus FCS Auto Scaling User Guide</a> for more.</p>
 
                       <p>Spread incoming application traffic across several instances automatically 
-                        using Nobus Flexible Load Balancing. See <a class="hover:underline font-semibold" href="#">Flexible Load Balancing User Guide</a>, for more information.</p>
+                        using Nobus Flexible Load Balancing. See <a class="hover:underline" href="#">Flexible Load Balancing User Guide</a>, for more information.</p>
                         
                       <p>To import virtual machine (VM) images from your local environment into Nobus cloud and convert
                         them into ready-to-use NMIs or instances, use VM Import/Export.</p> 
@@ -204,16 +204,15 @@ function index() {
                       </p>
 
                       <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Nobus FCS Pricing</h2>
-                        <p>See <a class="hover:underline font-semibold" href="#">Nobus FCS Pricing</a>{" "} 
+                        <p>See <a class="hover:underline" href="#">Nobus FCS Pricing</a>{" "} 
                         for a comprehensive list of charges for Nobus FCS, 
                         </p>
 
-                        <p>Visit the <b>Billing and Cost Management Dashboard</b> to see your bill 
-                          in the <a class="hover:underline font-semibold" href="http://dashboard.nobus.io/">
-                            Nobus Billing and Cost Management console</a>.
+                        <p>Visit the <a class="hover:underline" href="http://dashboard.nobus.io/">
+                          Nobus Management Dashboard </a> to see your bill.
                         </p>
                         <p>If you have questions concerning Nobus billing and account 
-                          <a class="hover:underline font-semibold" href="/contact/"> contact Support</a>.
+                          <a class="hover:underline" href="/contact/"> contact Support</a>.
                         </p>
                     
                         <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Payment Card Industry (PCI) Data Security Standard (DSS) Compliance</h2>
@@ -260,7 +259,7 @@ function index() {
                                       capabilities. {" "} 
                                       <b>Important:</b>{" "} Select a Flavor based on the workload to be attached to your instance.
                                       
-                                      See <a className="font-semibold hover:underline" href="#">Nobus FCS Instance Types</a> for more information.  
+                                      See <a className="hover:underline" href="#">Nobus FCS Instance Types</a> for more information.  
                                           
                                   </p>
                                             
@@ -615,7 +614,7 @@ function index() {
                   <Quickstart />
                   <BestPractices />
                   <Instance />
-                  <Nmi />
+                  <Autoscaling />
                 </div>
                 
               </div>

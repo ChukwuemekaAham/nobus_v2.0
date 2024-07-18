@@ -11,6 +11,7 @@ import useStore from "../../store";
 import { validate2faSchema  } from "../../schema";
 import { ILoginTokenResponse } from '../../types';
 import OTPInput from '../../components/OTPInput';
+import getBasePath from '../../lib/getBasePath';
 
 
 export type Validate2faInput = TypeOf<typeof validate2faSchema>;
@@ -57,7 +58,7 @@ const Validate2faPage = () => {
       const verifyData = {
         email: UserID
       }
-      await fetch(`${API_URL}/auth/email/verify/initiate`, {
+      await fetch(`${getBasePath()}/api/auth/email/verify/initiate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,7 +100,7 @@ const Validate2faPage = () => {
         email: UserID
       }
       store.setRequestLoading(true);
-      const response = await fetch(`${API_URL}/auth/login/complete`, {
+      const response = await fetch(`${getBasePath()}/api/auth/login/complete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,7 +12,7 @@ export default function Access() {
 
   return (
       <div id='access-security-configurations' className='py-10'>
-          <h1 className='text-2xl md:text-3xl tracking-tight font-semibold pb-5'>
+          <h1 className='text-3xl md:text-4xl text-[#232f3e] tracking-tight font-semibold pb-5'>
           Access and Security Configuration
           </h1>
 
@@ -445,16 +445,21 @@ export default function Access() {
                         </li>
                         <li><p>Click <span className="italic font-semibold">Associate</span>.</p></li>
                       </ol>
-                      
-                        <b>Note</b>
-                        <p>To disassociate an IP address from an instance, click the
-                        <span className="italic font-semibold">Disassociate</span> button.</p>
+                    </div>
+                      <div className='border-l-2 border-l-blue-500 bg-blue-100 p-2 rounded-md my-5'>
+                        <span className='flex'>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-blue-600">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
+                        </svg> <span className='font-mono font-semibold text-blue-600 pl-2'>Note:</span> </span>
+                          
+                          <p className='text-sm pt-2 pl-2'>
+                            To disassociate an IP address from an instance, click the <span className="italic font-semibold">Disassociate</span> button.
+                          </p>
+                          <p className='text-sm pt-2 pl-2'>To release the floating IP address back into the floating IP pool, click 
+                            the <span className="italic font-semibold"> Release Floating IP</span> option in the 
+                            <span className="italic font-semibold"> Actions</span> column.
+                          </p>
                       </div>
-                      
-                      <p>To release the floating IP address back into the floating IP pool, click
-                      the <span className="italic font-semibold">Release Floating IP</span> option in the <span className="italic font-semibold">Actions</span> column.</p>
-                     
-                    
                   </Tab.Panel>
                   <Tab.Panel>
                     <h3 className="py-2 text-2xl font-semibold text-[#232f3e]">

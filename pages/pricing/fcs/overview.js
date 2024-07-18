@@ -6,16 +6,15 @@ import Footer from "../../../components/Footer";
 import {
   PhoneIcon,
 } from "@heroicons/react/outline";
-import SidebarPrice from "../../../components/SidebarPrice";
-import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/solid";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Spinner from "../../../components/Spinner";
 
 function index() {
   const router = useRouter()
 
-  const categories = ["overview","server-group","instance","autoscaling-group"]
+  const categories = ["overview","features","price","instance-types"]
 
   return (
     <section>
@@ -71,156 +70,122 @@ function index() {
               
               <Tab.Panels className="flex flex-col col-span-1 md:col-span-2 lg:col-span-3 py-10 md:py-20 md:pl-20 h-[600px] overflow-y-scroll scrollbar-hide">
           
-              <Tab.Panel data-headlessui-state="selected">
-               <section id="overview" className="mx-auto text-justify">
-                    <p>Nobus Flexible Compute Service is a web service that provides 
-                    {" "}<b>resizable compute capacity</b>{" "} in the cloud.
-                        FCS allows {" "}<b>creating Virtual Machines (VM) on-demand</b>, {" "} 
-                        configure security and networking, and manage storage.
-                        Provide tools to{" "} <b>build failure resilient applications</b> {" "}
-                        by launching application instances inseparate Availability Zone.
-                        {" "}<b>Auto Scaling</b> {" "}allows automatical scaling of the capacity up 
-                        during demand spikes to maintain performance, and scales 
-                        down during demand lulls to minimize costs.
-                        {" "} <b>Flexible Load Balancing</b>{" "} automatically distributes incoming 
-                        application traffic across multiple FCS instances.
-                        Pay only for resources actually consumed, in{" "} <b>instance-hours</b>.
-                    </p>
-
-                    <div className="py-4">
-                      <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Features of Nobus FCS</h2>
-                      <h5 className="text-md">Nobus FCS provides the following features:</h5>
-                      <ul className="py-2 pl-5 list-disc space-y-2">
-                        <li>
-                                  
-                          <p>Virtual computing environments, known as <u>instances</u></p>
-                                
-                        </li>
+              <Tab.Panel>
+                <section id="overview" className="mx-auto text-justify">
+                  <h2 className="pb-5 text-3xl font-semibold text-[#232f3e]">Resizable compute capacity in the cloud</h2>
                       
-                        <li>
-                                  
-                          <p>Several configurations of CPU, memory, storage, and networking capacity for
-                            your instances, known as <u>Instance type</u></p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Preconfigured templates for your instances, known as <u>Nobus Machine
-                            Images (NMIs)</u>.
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Secure login details for your instances using <u>key
-                            pairs</u>  
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Storage volumes which behave like raw, unformatted block devices, 
-                            allowing users to create a file system on top of FBS volumes,
-                          or use them in any other way you would use a block device (like a hard drive).
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Storage volumes for your data, 
-                            refered to as <u>Nobus FBS volumes</u>.
+                  <p>
+                  Nobus FCS allows creating Virtual Machines (VM) on-demand. Customers can get running 
+                  immediately with pre-configured template Machine Image and generic images of windows and linux distributions.
+                  Provide tools to build failure resilient applications by launching application instances.
+                  In separate Availability Zones (Coming Soon).
+                  </p>
+                  <p className="pt-2">
+                  Nobus FCS compute console provides you with complete control of your 
+                  computing resources and lets you run on Nobus’s dependable computing environment thus,
+                  allowing you to obtain and configure capacity with less conflict. 
+                  Nobus FCS reduces the time required to obtain and boot new server instances to minutes, 
+                  allowing you to quickly scale capacity, both up and down, as your computing requirements
+                  change. With Nobus FCS you to pay only for capacity that you actually use.
+                  </p>
+                  <h6 className="py-5 text-2xl font-semibold text-[#232f3e]">
+                        Benefits:
+                  </h6>
 
-                            Nobus FBS volumes ( derived from Nobus block store ) are network-attached, and persist independently from the life of an instance.
-
-                            Provides block level storage volumes (1 GB to 1 TB ) for use with Nobus FCS instances. 
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Physical location for your resources, such as instances and NobusFBS volumes,
-                              refered to as <u>Availability Zones</u>
-                          </p>
-                                      
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Firewall which aide the specifying of ports, protocols, and source IP
-                            ranges that can get to your instances using <u>security
-                            groups</u>
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Static IPv4 addresses for dynamic cloud computing, refered to as <u>Flexible
-                            IP addresses</u></p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Metadata that can be created and assigned
-                            to Nobus FCS resources refered to as <u>tags</u>
-                          </p>
-                                
-                        </li>
-                        <li>
-                                  
-                          <p>Nobus cloud Logically isolated virtual networks
-                            which can be optionally connected to your own network refered to
-                              as <u>Data center</u> 
-                                        
-                          </p>
-                                
-                        </li>
-                      </ul>
-                      <a className="hover:underline font-semibold" href="#">Visit to get started with Nobus FCS</a>
-                      
-                    </div>
-
-                    <div>
-                      <h2 class="py-2 text-2xl font-semibold text-[#232f3e]">Helpful services</h2>
-                      
-                      <p>Nobus FCS resources, such as instances and volumes, can be provisioned directly using
-                          Nobus FCS. See <a className="hover:underline font-semibold" href="#">Nobus FCS Auto Scaling User Guide</a> for more.</p>
-
-                      <p>Spread incoming application traffic across several instances automatically 
-                        using Nobus Flexible Load Balancing. See <a class="hover:underline font-semibold" href="#">Flexible Load Balancing User Guide</a>, for more information.</p>
-                        
-                      <p>To import virtual machine (VM) images from your local environment into Nobus cloud and convert
-                        them into ready-to-use NMIs or instances, use VM Import/Export.</p> 
-
-                      <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Nobus FCS Console (Nobus FCS web-based user interface)</h2>
-                      
-                      <p>If you've signed up for a Nobus account, you can access the Nobus FCS console by signing into the Nobus Management
-                        Console homepage and then select {" "}<b>Compute</b>{" "} from Projects.
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                    
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Flexible Computing
+                      </h6>
+                      <p> 
+                      Nobus FCS enables you to customize capacity and set up several server 
+                      instances at a go. In order to maximize performance and minimize cost 
+                      you can also use <a className="hover:underline" href="https://www.nobus.io/fcs/autoscaling/">Nobus FCS Auto Scaling</a>  to maintain availability of 
+                      your FCS fleet and automatically resize depending on its needs.
                       </p>
 
-                      <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Nobus FCS Pricing</h2>
-                        <p>See <a class="hover:underline font-semibold" href="#">Nobus FCS Pricing</a>{" "} 
-                        for a comprehensive list of charges for Nobus FCS, 
-                        </p>
-
-                        <p>Visit the <b>Billing and Cost Management Dashboard</b> to see your bill 
-                          in the <a class="hover:underline font-semibold" href="http://dashboard.nobus.io/">
-                            Nobus Billing and Cost Management console</a>.
-                        </p>
-                        <p>If you have questions concerning Nobus billing and account 
-                          <a class="hover:underline font-semibold" href="/contact/">contact Support</a>.
-                        </p>
-                    
-                        <h2 className="py-2 text-2xl font-semibold text-[#232f3e]">Payment Card Industry (PCI) Data Security Standard (DSS) Compliance</h2>
-                        <p>Nobus FCS supports the processing, storage, and transmission 
-                            of credit card data by a merchant or service provider.                                                
-                        </p>
+                    </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Reliable
+                      </h6>
+                      <p> 
+                      Nobus FCS environment is very reliable and permits a quick set up of 
+                      substitute instances, all running within a trustworthy and stable 
+                      network infrastructure and data centers
+                      </p>
 
                     </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Complete Control
+                      </h6>
+                      <p> 
+                      You have complete control of your instances. You can stop any instance 
+                      while retaining the data on the boot partition, and then subsequently 
+                      restart the same instance from the dashboard.
+                      </p>
+
+                    </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Adaptable Cloud Hosting Service
+                      </h6>
+                      <p> 
+                      Choose from multiple operating systems, instance types, and software packages. 
+                      Optimized configuration of memory, CPU, instance storage, and partition size 
+                      for your application and operating system.
+                      </p>
+
+                    </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Secure
+                      </h6>
+                      <p> 
+                      The utmost priority at Nobus is cloud security. Our customer can benefit 
+                      from a secure and firm networking functionality for their compute resources.
+                      </p>
+
+                    </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Cheap
+                      </h6>
+                      <p> 
+                       As a Nobus customer, payment for compute capacity actually consumed is
+                       at a very cheap rate. You accept payment in Nigerian Naira.
+                      </p>
+
+                    </div>
+                    <div className="">
+                      <h6 className="pb-2 text-lg font-semibold text-[#232f3e]">
+                        Easy to start with
+                      </h6>
+                      <p> 
+                      To get started with Nobus FCS you can use the <a className="hover:underline" href="https://www.dashoard.nobus.io/"> Nobus Management dashboard</a>
+                      </p>
+
+                    </div>
+                    
+                    
+                   
+                   
+                  
+                  </div>  
                 </section>
+
               </Tab.Panel>
-              <Tab.Panel>Content 2</Tab.Panel>
-              <Tab.Panel>Content 3</Tab.Panel>
-              <Tab.Panel>Content 4</Tab.Panel>
+              <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">
+                <Spinner width={10} height={10} />
+              </Tab.Panel>
+              <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">
+                <Spinner width={10} height={10} />
+              </Tab.Panel>
+              <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">
+                <Spinner width={10} height={10} />
+              </Tab.Panel>
             
               </Tab.Panels>
             

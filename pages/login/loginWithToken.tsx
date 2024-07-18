@@ -7,6 +7,7 @@ import useStore from "../../store";
 import { Buffer } from 'buffer';
 import Spinner from '../../components/Spinner';
 import { ILoginTokenResponse } from '../../types';
+import getBasePath from '../../lib/getBasePath';
 
 interface LoginPageProps {}
 
@@ -29,7 +30,7 @@ const LoginPage: NextPage<LoginPageProps> = () => {
       if (token) {
         try {
           setIsLoading(true);
-          const response = await fetch(`${API_URL}/user/`, {
+          const response = await fetch(`${getBasePath()}/api/user/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

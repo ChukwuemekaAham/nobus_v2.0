@@ -9,6 +9,7 @@ import Headerregister from "../../components/HeaderRegister";
 import Footer2 from "../../components/Footer2";
 import PaystackButton from '../../components/PaystackButton';
 import { Buffer } from 'buffer';
+import getBasePath from "../../lib/getBasePath";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_LIVE_PAYSTACK_PUBLIC_KEY
@@ -42,7 +43,7 @@ const index = () => {
 
     // Make API request to store payment reference in MongoDB  
     try {
-      const response = fetch(`${API_URL}/user/card`, {
+      const response = fetch(`${getBasePath()}/api/user/card`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -148,7 +149,9 @@ const index = () => {
                       <img className="h-16 w-auto mx-auto mb-5" src="/2fa.png" alt="" />
                     </a>
                     <p className="text-xl font-semibold">Hello 👋 {authUser?.user.first_name}</p>
-                    <p><span className="font-semibold">Date Registered:</span> {authUser?.project[0].date_created}</p>      
+                    <p className="font-semibold text-sm pb-2 text-gray-400">We're thrilled to have you on board! ✨</p>
+                    <p><span className="font-semibold">Date Registered:</span> {authUser?.project[0].date_created}</p>    
+                      
                   
                   </div>
                  
