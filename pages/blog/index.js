@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer1";
 import { ArrowRightIcon, UserIcon, ClockIcon } from "@heroicons/react/outline";
 
 const blogCard = [
@@ -38,7 +38,6 @@ const blogCard2 = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    
   },
   {
     id: 2,
@@ -49,7 +48,6 @@ const blogCard2 = [
     img: "network.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the vital role played by networks in supporting various kind of workloads thus, we are keen to deliver the...",
-    
   },
 
   {
@@ -61,7 +59,6 @@ const blogCard2 = [
     img: "/compute.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus offers standard compute services that allows you to develop, deploy, run, and scale your applications and...",
-    
   },
   {
     id: 4,
@@ -72,7 +69,6 @@ const blogCard2 = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    
   },
   {
     id: 5,
@@ -83,7 +79,6 @@ const blogCard2 = [
     img: "/storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Cloud storage plays an important role in cloud computing since it is more reliable, scalable and secure than traditional...",
-    
   },
   {
     id: 6,
@@ -94,7 +89,6 @@ const blogCard2 = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    
   },
   {
     id: 7,
@@ -105,7 +99,6 @@ const blogCard2 = [
     img: "storage.png",
     imgalt: "Front of men's Basic Tee in black.",
     desc: "Nobus understands the integral part played by Data centers. The security and reliability of our data center and its information...",
-    
   },
 ];
 
@@ -200,7 +193,6 @@ function index() {
                     className="group relative bg-white border shadow hover:scale-102 hover:shadow-xl"
                   >
                     <div className="aspect-w-1 aspect-h-1 w-26 overflow-hidden bg-gray-200 group-hover:opacity-75 lg:aspect-none ">
-                      
                       <img
                         src={blog.img}
                         alt={blog.imgalt}
@@ -317,42 +309,38 @@ function index() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-6 mx-10 sm:mx-20 my-20">
-                {blogCard2.map((blog) => (
-                  <div
-                    key={blog.id}
-                    className="group bg-white border shadow hover:scale-102 hover:shadow-xl"
-                  >
-                    
-                    <div className="py-5 px-4">
-                    <div className="">
-                      <div className="flex text-xs py-3 font-semibold text-gray-400">
-                        <hr className="w-full flex:inline my-2 mr-4" />
-                        <span className="flex:inline">{blog.tagname}</span>
-                      </div>
-                      <h3 className="text-md text-gray-900 font-semibold">
-                        {blog.name}
-                      </h3>
-                      <span className="flex py-2">
-                        <ClockIcon className="h-5 text-xs font-medium bg-gray-200 rounded-full p-1 mr-1" />
-                        <p className="font-md text-sm">{blog.date}</p>
-                      </span>
-                      <p className="text-sm tracking-wide leading-relaxed py-5 text-gray-800">
-                        {blog.desc}
-                      </p>
+            {blogCard2.map((blog) => (
+              <div
+                key={blog.id}
+                className="group bg-white border shadow hover:scale-102 hover:shadow-xl"
+              >
+                <div className="py-5 px-4">
+                  <div className="">
+                    <div className="flex text-xs py-3 font-semibold text-gray-400">
+                      <hr className="w-full flex:inline my-2 mr-4" />
+                      <span className="flex:inline">{blog.tagname}</span>
                     </div>
-
-                      <h3 className="font-semibold text-sm text-gray-700">
-                        <a href={blog.href}>
-                        
-                          <ArrowRightIcon className="h-5 text-sm font-medium bg-gray-200 group-hover:bg-gray-600 group-hover:text-white rounded-full p-1" />
-                  
-                        </a>
-                      </h3>
-                    </div>
-                  
+                    <h3 className="text-md text-gray-900 font-semibold">
+                      {blog.name}
+                    </h3>
+                    <span className="flex py-2">
+                      <ClockIcon className="h-5 text-xs font-medium bg-gray-200 rounded-full p-1 mr-1" />
+                      <p className="font-md text-sm">{blog.date}</p>
+                    </span>
+                    <p className="text-sm tracking-wide leading-relaxed py-5 text-gray-800">
+                      {blog.desc}
+                    </p>
                   </div>
-                ))}
+
+                  <h3 className="font-semibold text-sm text-gray-700">
+                    <a href={blog.href}>
+                      <ArrowRightIcon className="h-5 text-sm font-medium bg-gray-200 group-hover:bg-gray-600 group-hover:text-white rounded-full p-1" />
+                    </a>
+                  </h3>
+                </div>
               </div>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

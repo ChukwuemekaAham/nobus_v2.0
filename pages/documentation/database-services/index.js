@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import Footer from "../../../components/Footer1";
 import { ArrowRightIcon, UserIcon } from "@heroicons/react/outline";
 
 function index() {
   return (
     <section>
-      <title> Nobus | Acronis Cloud Backup </title>
+      <title> Nobus | Nobus Database Services </title>
       <link rel="icon" href="/favicon.ico" />
 
       <Header />
@@ -22,14 +22,11 @@ function index() {
         >
           <div className="py-20 px-8 lg:pt-40 sm:px-20">
             <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Nobus Cloud Backup
+              Nobus Database Services
             </h1>
-            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
-              Cyber Security Protection, Data Recovery
-            </p>
           </div>
         </div>
-        <div className="flex-col px-10 py-10 lg:px-20">
+        <div id="overview" className="flex-col px-10 py-10 lg:px-20">
           <p className="">
             Protect your mission critical Systems from Servers to
             desktops/Laptops with Nobus Cloud Backup (NCB). With NCS, Our cloud
@@ -98,6 +95,18 @@ function index() {
               Admin guide.
             </a>
           </p>
+        </div>
+        <div id="mssql" className="flex-col px-10 py-10 lg:px-20">
+          MS SQL Server
+        </div>
+        <div id="mysql" className="flex-col px-10 py-10 lg:px-20">
+          MySQL Server
+        </div>
+        <div id="postgresql" className="flex-col px-10 py-10 lg:px-20">
+          PostgreSQL Server
+        </div>
+        <div id="mongodb" className="flex-col px-10 py-10 lg:px-20">
+          MongoDB Server
         </div>
       </div>
       <Footer />

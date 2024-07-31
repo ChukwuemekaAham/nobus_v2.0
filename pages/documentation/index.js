@@ -1,10 +1,16 @@
 import Head from "next/head";
 import React from "react";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer1";
 import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, PlayIcon, UserIcon } from "@heroicons/react/outline";
-
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  PhoneIcon,
+  PlayIcon,
+  UserIcon,
+} from "@heroicons/react/outline";
+import Image from "next/image";
 
 const cardData = [
   {
@@ -77,7 +83,7 @@ const sections = [
         name: "Nobus Flexible Compute Service (FCS)",
         href: "/documentation/fcs",
         desc: "A web service that provides resizable compute capacity in the cloud",
-      }, 
+      },
       {
         name: "Dedicated Hosting",
         href: "/documentation/fcs",
@@ -106,16 +112,26 @@ const sections = [
         desc: "Extensive and unlimited storage in the cloud",
       },
       {
-        name: "Acronis Cloud Backup",
-        href: "/documentation/acronis",
-        desc: "Disaster recovery",
+        name: "Nobus Cloud Backup",
+        href: "/documentation/cloud-backup#cloud",
+        desc: "Reliable backup solution for the cloud",
+      },
+      {
+        name: "FOS Backup Solution",
+        href: "/documentation/cloud-backup#fos",
+        desc: "Extensive and unlimited storage in the cloud",
       },
     ],
   },
   {
     id: "network",
-    name: "Networking and Content Delivery",
+    name: "Networking",
     items: [
+      {
+        name: "Virtual Private Cloud",
+        href: "/documentation/networking",
+        desc: "Network suited for various workloads",
+      },
       {
         name: "Nobus Fast Transit (NFT)",
         href: "#",
@@ -130,19 +146,33 @@ const sections = [
         href: "#",
       },
       {
-        name: "Bandwidth",
-        href: "#",
-      },
-      {
-        name: "Instance IP Addressing",
-        href: "#",
-      },
-      {
         name: "Domains and DNS",
         href: "/documentation/dns",
       },
       {
+        name: "Network Firewall",
+        href: "#",
+      },
+      {
         name: "Network ACLs",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "security",
+    name: "Security Services",
+    items: [
+      {
+        name: "Sophos XG Firewall",
+        href: "#",
+      },
+      {
+        name: "Acronis Cyber Protect",
+        href: "#",
+      },
+      {
+        name: "Fortigates",
         href: "#",
       },
       {
@@ -152,23 +182,37 @@ const sections = [
     ],
   },
   {
-    id: "security",
-    name: "Advanced Security",
+    id: "container",
+    name: "Container & Orchestration",
     items: [
       {
-        name: "Sophos Cyber Protect",
+        name: "Cloud Containers",
         href: "#",
       },
       {
-        name: "Sophos XG Firewall",
+        name: "Cloud Kubernetes Engine",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "database",
+    name: "Database Service",
+    items: [
+      {
+        name: "Microsoft SQL Server",
         href: "#",
       },
       {
-        name: "PFSense",
+        name: "MySQL",
         href: "#",
       },
       {
-        name: "Acronis Cyber Security Protection ",
+        name: "PostgreSQL",
+        href: "#",
+      },
+      {
+        name: "MongoDB",
         href: "#",
       },
     ],
@@ -254,14 +298,14 @@ const faqFilters = [
 ];
 
 const includedFeatures = [
-  'Virtual Hosting',
-  'Storage Services',
-  'Cloud Backup/Disaster Recovery',
-  'Networking Services',
-  'Cloud Security',
-  'Advanced Cyber Sercurity Service',
-  'Image Services',
-]
+  "Virtual Hosting",
+  "Storage Services",
+  "Cloud Backup/Disaster Recovery",
+  "Networking Services",
+  "Cloud Security",
+  "Advanced Cyber Sercurity Service",
+  "Image Services",
+];
 
 function index() {
   return (
@@ -271,35 +315,33 @@ function index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
       <div className="top-0 grid gap-y-10">
-        <div
-          className="flex-col justify-center text-center"
-          style={{
-            backgroundImage: "url('/doc.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
-            <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Nobus Documentation
-            </h1>
-            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
+        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+          <Image
+            src="/herobg.png"
+            layout="fill"
+            objectFit="container"
+            objectPosition="left"
+            className="animate-fadeIn"
+          />
+          <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+            <h1 className="hero-h">Nobus Documentation</h1>
+            <p className="hero-p">
               Find user guides, developer guides, API references, tutorials, and
               more.
             </p>
           </div>
         </div>
+
         <div className="flex-col py-5 px-10 md:px-20">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
               Guides & API References
             </h1>
           </div>
-          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow-xl border border-gray-400 hover:scale-95">
+              <div className="p-5 bg-white flex flex-col space-x-4 shadow rounded border border-gray-300 text-left hover:scale-95">
                 <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
@@ -310,7 +352,7 @@ function index() {
                   <ul
                     role="list"
                     aria-labelledby={`${section.name}-heading`}
-                    className="mt-6 space-y-2 sm:mt-4 sm:space-y-4"
+                    className="mt-6 space-y-2 sm:mt-4 sm:space-y-4 list-none pl-0"
                   >
                     {section.items.map((item) => (
                       <li key={item.name} className="flex-col">
@@ -334,7 +376,7 @@ function index() {
             ))}
           </div>
         </div>
-       
+
         <div className="flex-col px-10 pt-10 md:px-20">
           <div className="py-5 text-center">
             <h1 className="pb-3 text-3xl tracking-tight leading-relaxed font-semibold text-gray-800">
@@ -343,7 +385,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-3 mx-auto lg:max-w-4xl">
             {cardData?.map((item) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border border-gray-300 group">
+              <div className="p-5 bg-white flex flex-col space-x-4 text-left shadow rounded border border-gray-300 group">
                 <a href={item.href}>
                   <div className="py-5 cursor-pointer text-center">
                     <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800 group-hover:underline group-hover:scale-105">
@@ -356,64 +398,6 @@ function index() {
                 </a>
               </div>
             ))}
-          </div>
-        </div>
-
-
-        <div className="bg-white pb-10">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
-            <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-              <div className="p-8 sm:p-10 lg:flex-auto">
-                <h3 className="text-3xl font-semibold tracking-tight text-gray-900">Project Focused</h3>
-                <p className="mt-6 text-justify text-md text-gray-600 tracking-tight">
-                Enhanced workflows with guided digital solutions for global optimization;
-                implement new processes faster, simplify data storage and improve productivity.
-                Easy and Secure Onboarding. Displaying the highest level of
-                Integrity in the way we conduct our business
-                </p>
-
-                <div className="flex mt-5 py-5 justify-between border-t border-gray-300">
-                  <div className="flex">
-                      <a href="#">
-                        <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-50 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-white text-gray-500 border-gray-400">
-                          <PlayIcon className="h-6" />
-                          <span className="inline-flex ml-2">Request Demo</span>
-                        </div>
-                      </a>
-                    </div>
-                  <div className="flex">
-                    <a href="/contact">
-                      <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-500 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-blue-600 text-white border-blue-600">
-                        <PhoneIcon className="h-6" />
-                        <span className="inline-flex ml-2">Contact Sales</span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-              <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                <div className="rounded-2xl bg-indigo-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center">
-                  <div className="mx-auto max-w-xs px-8">
-                    <p className="text-base font-semibold tracking-wide text-gray-600"> Flexible Capacity As Low As</p>
-                    <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-semibold tracking-tight text-gray-900">#3.00</span>
-                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">NGN</span>
-                    </p>
-                    <a
-                      href="https://cloud.nobus.io/"
-                      className="mt-10 cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    >
-                      Visit Cloud Console
-                    </a>
-                    <p className="mt-6 text-xs leading-5 tracking-wide text-gray-600">
-                      Start building your future
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -488,6 +472,7 @@ function index() {
           </div>
         </div>
       </div>
+
       <Footer />
     </section>
   );

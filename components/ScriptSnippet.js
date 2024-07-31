@@ -12,13 +12,13 @@ const ScriptSnippet = ({ script, language }) => {
   };
 
   return (
-    <div className="relative my-4">
-      <pre className="rounded-lg px-4 py-2 bg-blue-100 border-l border-l-blue-500 ">
+    <div className="relative my-4 overflow-x-scroll scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent mr-auto max-w-3xl text-justify">
+      <pre className="rounded-lg px-4 py-2 bg-slate-300 border-l border-l-blue-500 ">
         <code className={`language-${language}`}>{script}</code>
       </pre>
       <CopyToClipboard text={script} onCopy={handleCopy}>
         <button
-          className="absolute top-2 right-2 px-2 py-1 bg-blue-200 text-gray-600 text-xs rounded "
+          className="absolute top-2 right-2 px-2 py-1 font-semibold bg-white text-gray-600 text-xs rounded "
           onClick={handleCopy}
         >
           {copied ? "Copied!" : "Copy"}

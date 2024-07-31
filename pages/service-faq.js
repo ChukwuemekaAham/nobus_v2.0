@@ -7,7 +7,8 @@ import {
   ChevronUpIcon,
 } from "@heroicons/react/outline";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer1";
+import Image from "next/image";
 
 const cardData = [
   {
@@ -151,8 +152,6 @@ const faqFilters = [
   },
 ];
 
-
-
 function faqs() {
   return (
     <section>
@@ -163,27 +162,22 @@ function faqs() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div
-          className="flex-col justify-center text-center"
-          style={{
-            backgroundImage: "url('/backup.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
-            <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Nobus Service FAQs
-            </h1>
-            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
-              Get all the answers to your questions
-            </p>
+        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+          <Image
+            src="/herobg.png"
+            layout="fill"
+            objectFit="container"
+            objectPosition="left"
+            className="animate-fadeIn"
+          />
+          <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+            <h1 className="hero-h">Nobus Service FAQs</h1>
+            <p className="hero-p">Get all the answers to your questions</p>
           </div>
         </div>
 
         <div className="px-10 md:px-20 py-10">
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
-            
             <div className="px-5 md:py-5 lg:py-20 justify-self-center flex-col space-x-4">
               <div>
                 <p className="pb-2 text-3xl md:text-4xl font-bold text-blue-500">

@@ -5,13 +5,14 @@ import {
   PlusIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-  PhoneIcon, 
+  PhoneIcon,
   VideoCameraIcon,
-  PlayIcon, 
+  PlayIcon,
 } from "@heroicons/react/outline";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-
+import Footer from "../../components/Footer1";
+import Image from "next/image";
+import SimpleMonthlyCalculator from "../../components/Smc";
 
 const cardData = [
   {
@@ -35,7 +36,7 @@ const sections = [
       {
         name: "Nobus Flexible Compute Service (FCS)",
         href: "/pricing/fcs/price",
-        desc: "A web service that provides resizable compute capacity in the cloud"
+        desc: "A web service that provides resizable compute capacity in the cloud",
       },
       {
         name: "Dedicated Hosting",
@@ -63,7 +64,6 @@ const sections = [
         href: "/pricing/acronis/price",
         desc: "Cloud Backup and Disaster recovery for your entire workload",
       },
-       
     ],
   },
   {
@@ -230,19 +230,17 @@ function index() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div
-          className="flex-col justify-center text-center"
-          style={{
-            backgroundImage: "url('/pricing.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
-            <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold text-white">
-              Nobus Pricing
-            </h1>
-            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
+        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+          <Image
+            src="/herobg.png"
+            layout="fill"
+            objectFit="container"
+            objectPosition="left"
+            className="animate-fadeIn"
+          />
+          <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+            <h1 className="hero-h">Nobus Pricing</h1>
+            <p className="hero-p">
               Low Ongoing Cost; pay-as-you-use pricing with flexible expenses,
               of short or long term commitments, without requiring complex
               licensing.
@@ -257,7 +255,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2">
             {cardData?.map((item) => (
-              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded-3xl text-left shadow-lg border border-gray-300 group">
+              <div className="p-5 bg-gray-100 flex flex-col space-x-4 rounded text-left shadow border border-gray-300 group">
                 <div className="py-5">
                   <h1 className="pb-3 text-2xl text-center tracking-wide leading-relaxed font-semibold text-gray-800">
                     {item.title}
@@ -278,7 +276,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-3xl text-left shadow border border-gray-300 hover:scale-95">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded text-left shadow border border-gray-300 hover:scale-95">
                 <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
@@ -289,7 +287,7 @@ function index() {
                   <ul
                     role="list"
                     aria-labelledby={`${section.name}-heading`}
-                    className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                    className="mt-6 space-y-6 list-none pl-0 sm:mt-4 sm:space-y-4"
                   >
                     {section.items.map((item) => (
                       <li key={item.name} className="flex-col">
@@ -313,65 +311,32 @@ function index() {
             ))}
           </div>
         </div>
-        <div
-          className="px-10 md:px-20 py-10"
-          style={{
-            backgroundImage: "url('/backup.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="flex flex-col-reverse lg:flex-row mx-auto">
-            <div className="lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
-              <h1 className="text-3xl text-center tracking-tight lg:text-left font-semibold">
-                Nobus Simple monthly calculator
-              </h1>
+        <SimpleMonthlyCalculator />
 
-              <p className="my-2 text-base text-center lg:text-left tracking-wide leading-relaxed lg:mx-auto lg:pt-5 lg:pb-10">
-                You can estimate your monthly bill (individual and multiple
-                prices) using NCS Simple Monthly Calculator
-              </p>
-
-              <div className="mt-10 pb-5 flex flex-col sm:flex-row justify-center lg:justify-start">
-                <a href="/simple-monthly-calculator">
-                  <button className="w-full mt-2 sm:mt-0 sm:ml-2 sm:w-40 px-4 py-3 font-semibold text-md text-white rounded hover:shadow active:scale-90 cursor-pointer border border-white">
-                    Calculate Cost
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 my-10 lg:my-0 mx-auto lg:mx-0">
-              <div className="flex-col">
-                <img src="/analytics.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-      
         <div className="bg-white pb-10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
             <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
               <div className="p-8 sm:p-10 lg:flex-auto">
-                <h3 className="text-3xl font-semibold tracking-tight text-gray-900">Project Focused</h3>
+                <h3 className="text-3xl font-semibold tracking-tight text-gray-900">
+                  Project Focused
+                </h3>
                 <p className="mt-6 text-justify text-md text-gray-600 tracking-tight">
-                Enhanced workflows with guided digital solutions for global optimization;
-                implement new processes faster, simplify data storage and improve productivity.
-                Easy and Secure Onboarding. Displaying the highest level of
-                Integrity in the way we conduct our business
+                  Enhanced workflows with guided digital solutions for global
+                  optimization; implement new processes faster, simplify data
+                  storage and improve productivity. Easy and Secure Onboarding.
+                  Displaying the highest level of Integrity in the way we
+                  conduct our business
                 </p>
 
                 <div className="flex mt-5 py-5 justify-between border-t border-gray-300">
                   <div className="flex">
-                      <a href="#">
-                        <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-100 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-white text-gray-500 border-gray-400">
-                          <PlayIcon className="h-6" />
-                          <span className="inline-flex ml-2">Request Demo</span>
-                        </div>
-                      </a>
-                    </div>
+                    <a href="#">
+                      <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-100 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-white text-gray-500 border-gray-400">
+                        <PlayIcon className="h-6" />
+                        <span className="inline-flex ml-2">Request Demo</span>
+                      </div>
+                    </a>
+                  </div>
                   <div className="flex">
                     <a href="/contact">
                       <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-500 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-blue-600 text-white border-blue-600">
@@ -381,15 +346,21 @@ function index() {
                     </a>
                   </div>
                 </div>
-
               </div>
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-indigo-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center">
                   <div className="mx-auto max-w-xs px-8">
-                    <p className="text-base font-semibold tracking-wide text-gray-600"> Flexible Capacity As Low As</p>
+                    <p className="text-base font-semibold tracking-wide text-gray-600">
+                      {" "}
+                      Flexible Capacity As Low As
+                    </p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-semibold tracking-tight text-gray-900">#3.00</span>
-                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">NGN</span>
+                      <span className="text-5xl font-semibold tracking-tight text-gray-900">
+                        #3.00
+                      </span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                        NGN
+                      </span>
                     </p>
                     <a
                       href="https://cloud.nobus.io/"

@@ -6,8 +6,8 @@ const CalPrice = () => {
   const ram_unit_price = 88;
   const fos_unit_price = 2;
   const volume_unit_price = 4;
-  const internet_bandwidth = 200
-  const floating_ip_price = 1500
+  const internet_bandwidth = 200;
+  const floating_ip_price = 1500;
 
   let [num_ram, setnum_ram] = useState("Ram(GB)");
   let [local_disk, setlocal_disk] = useState("30");
@@ -23,7 +23,8 @@ const CalPrice = () => {
   const [daily_total_price, setdaily_total_price] = useState("");
   const [total_price, settotal_price] = useState("");
   const [inst_total_price, setinst_total_price] = useState("");
-  const [inst_daily_price_with_add, setinst_daily_price_with_add] = useState("")
+  const [inst_daily_price_with_add, setinst_daily_price_with_add] =
+    useState("");
   const [inst_total_with_add_vol, setinst_total_with_add_vol] = useState("");
   const [FBS_total_price, setFBS_total_price] = useState("");
   const [FBS_price, setFBS_price] = useState("");
@@ -52,93 +53,82 @@ const CalPrice = () => {
   const [flt_runtime, setFlt_runtime] = useState("30");
 
   const os = os_type;
-  const run = runtime
+  const run = runtime;
 
   if (os === "windows" && run === "30") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 1  //1 month
-    license = lics.toString()
-
+    const lics = 35000 * 1; //1 month
+    license = lics.toString();
   } else if (os === "windows" && run === "90") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 3
-    license = lics.toString() //3 month
-
+    const lics = 35000 * 3;
+    license = lics.toString(); //3 month
   } else if (os === "windows" && run === "186") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 6 
-    license = lics.toString() //6 month
-
+    const lics = 35000 * 6;
+    license = lics.toString(); //6 month
   } else if (os === "windows" && run === "366") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 12
-    license = lics.toString() //12month
-
+    const lics = 35000 * 12;
+    license = lics.toString(); //12month
   } else if (os === "windows" && run === "1098") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 36
-    license = lics.toString() //36 month
-
+    const lics = 35000 * 36;
+    license = lics.toString(); //36 month
   } else if (os === "windows" && run === "1830") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
+    min_license = "0";
 
-    const lics = 35000 * 60
-    license = lics.toString() //60 month
-
+    const lics = 35000 * 60;
+    license = lics.toString(); //60 month
   } else if (os === "windows" && run === "3660") {
     min_vol = "50";
     local_disk = "50";
-    min_license = "0"
-    
-    const lics = 35000 * 120
-    license = lics.toString() //120 month 
+    min_license = "0";
 
+    const lics = 35000 * 120;
+    license = lics.toString(); //120 month
   } else if (os === "ubuntu" && run) {
     min_vol = "30";
     local_disk = "30";
-    min_license = "0"
-    license = "0"
-
+    min_license = "0";
+    license = "0";
   } else if (os === "redhat" && run) {
     min_vol = "30";
     local_disk = "30";
-    min_license = "0"
-    license = "0"
-
+    min_license = "0";
+    license = "0";
   } else if (os === "fedora" && run) {
     min_vol = "30";
     local_disk = "30";
-    min_license = "0"
-    license = "0"
-
+    min_license = "0";
+    license = "0";
   } else if (os === "debian" && run) {
     min_vol = "30";
     local_disk = "30";
-    min_license = "0"
-    license = "0"
-
+    min_license = "0";
+    license = "0";
   } else if (os === "suse" && run) {
     min_vol = "30";
     local_disk = "30";
-    min_license = "0"
-    license = "0"
+    min_license = "0";
+    license = "0";
   }
 
   const instance_type = inst_type;
@@ -148,61 +138,51 @@ const CalPrice = () => {
     num_ram = "1";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si1230l") {
     num_cores = "1";
     num_ram = "2";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si2230l") {
     num_cores = "2";
     num_ram = "2";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si2430l") {
     num_cores = "2";
     num_ram = "4";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si2630l") {
     num_cores = "2";
     num_ram = "6";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si4430l") {
     num_cores = "4";
     num_ram = "4";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si2830l") {
     num_cores = "2";
     num_ram = "8";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si4630l") {
     num_cores = "4";
     num_ram = "6";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si4830l") {
     num_cores = "4";
     num_ram = "8";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si41630l") {
     num_cores = "4";
     num_ram = "16";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si41230l") {
     num_cores = "4";
     num_ram = "12";
@@ -213,152 +193,128 @@ const CalPrice = () => {
     num_ram = "24";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si43230l") {
     num_cores = "4";
     num_ram = "32";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si81630l") {
     num_cores = "8";
     num_ram = "16";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si82430l") {
     num_cores = "8";
     num_ram = "24";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si83230l") {
     num_cores = "8";
     num_ram = "32";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si86430l") {
     num_cores = "8";
     num_ram = "64";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si166430l") {
     num_cores = "16";
     num_ram = "64";
     min_vol = "30";
     local_disk = "30";
-    
   } else if (instance_type === "si1150w") {
     num_cores = "1";
     num_ram = "1";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si2250w") {
     num_cores = "2";
     num_ram = "2";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si2450w") {
     num_cores = "2";
     num_ram = "4";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si2650w") {
     num_cores = "2";
     num_ram = "6";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si4450w") {
     num_cores = "4";
     num_ram = "4";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si2850w") {
     num_cores = "2";
     num_ram = "8";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si4650w") {
     num_cores = "4";
     num_ram = "6";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si4850w") {
     num_cores = "4";
     num_ram = "8";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si41250w") {
     num_cores = "4";
     num_ram = "12";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si41650w") {
     num_cores = "4";
     num_ram = "16";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si42450w") {
     num_cores = "4";
     num_ram = "24";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si43250w") {
     num_cores = "4";
     num_ram = "32";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si81650w") {
     num_cores = "8";
     num_ram = "16";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si82450w") {
     num_cores = "8";
     num_ram = "24";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si83250w") {
     num_cores = "8";
     num_ram = "32";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si86450w") {
     num_cores = "8";
     num_ram = "64";
     min_vol = "50";
     local_disk = "50";
-    
   } else if (instance_type === "si166450w") {
     num_cores = "16";
     num_ram = "64";
     min_vol = "50";
     local_disk = "50";
-    
   }
 
   const calc_price = (e) => {
     e.preventDefault();
     let cores = parseInt(num_cores);
     let ram = parseInt(num_ram);
-  
+
     console.log(typeof cores);
     console.log(typeof ram);
 
@@ -376,17 +332,20 @@ const CalPrice = () => {
 
     FBS_price = FBS_price;
 
-    let inst_daily_price = core_price + ram_price + instance_volume_price + internet_bandwidth 
+    let inst_daily_price =
+      core_price + ram_price + instance_volume_price + internet_bandwidth;
     inst_daily_price = inst_daily_price;
 
     let flt_data = parseInt(fltip_count);
     let flt_price = flt_data * floating_ip_price;
     flt_price = flt_price;
-    
-    let daily_total_price = inst_daily_price + FBS_price + FOS_price + flt_price;
+
+    let daily_total_price =
+      inst_daily_price + FBS_price + FOS_price + flt_price;
     daily_total_price = daily_total_price;
 
-    let inst_total_price = ((inst_daily_price) * parseInt(runtime)) + parseInt(license)
+    let inst_total_price =
+      inst_daily_price * parseInt(runtime) + parseInt(license);
     let FBS_total_price = FBS_price * parseInt(FBS_runtime);
     let FOS_total_price = FOS_price * parseInt(FOS_runtime);
     let flt_total_price = flt_price * parseInt(flt_runtime);
@@ -396,13 +355,14 @@ const CalPrice = () => {
     FOS_total_price = FOS_total_price;
     flt_total_price = flt_total_price;
 
-    let total_price = inst_total_price + FBS_total_price + FOS_total_price + flt_total_price;
+    let total_price =
+      inst_total_price + FBS_total_price + FOS_total_price + flt_total_price;
     total_price = total_price;
 
     setdaily_total_price(daily_total_price);
     setinst_total_price(inst_total_price);
     setFBS_total_price(FBS_total_price);
-    setFOS_total_price(FOS_total_price)
+    setFOS_total_price(FOS_total_price);
     setFlt_total_price(flt_total_price);
     settotal_price(total_price);
 
@@ -433,17 +393,28 @@ const CalPrice = () => {
     let ram_price = ram * ram_unit_price;
     let instance_volume_price = instance_vol_data * volume_unit_price;
 
-    let inst_daily_price = core_price + ram_price + instance_volume_price + internet_bandwidth
+    let inst_daily_price =
+      core_price + ram_price + instance_volume_price + internet_bandwidth;
 
-    let inst_total_price = (inst_daily_price * parseInt(runtime)) + parseInt(license)
+    let inst_total_price =
+      inst_daily_price * parseInt(runtime) + parseInt(license);
 
-    let inst_daily_price_with_add = core_price + ram_price + instance_volume_price + FBS_price_daily + internet_bandwidth
+    let inst_daily_price_with_add =
+      core_price +
+      ram_price +
+      instance_volume_price +
+      FBS_price_daily +
+      internet_bandwidth;
 
-    let inst_total_with_add_vol= (((core_price + ram_price + instance_volume_price + internet_bandwidth) * parseInt(runtime)) + FBS_price + parseInt(license))
+    let inst_total_with_add_vol =
+      (core_price + ram_price + instance_volume_price + internet_bandwidth) *
+        parseInt(runtime) +
+      FBS_price +
+      parseInt(license);
 
     inst_total_price = inst_total_price;
     inst_daily_price = inst_daily_price;
-    inst_total_with_add_vol = inst_total_with_add_vol
+    inst_total_with_add_vol = inst_total_with_add_vol;
     setinst_total_price(inst_total_price);
     setinst_daily_price(inst_daily_price);
     setinst_daily_price_with_add(inst_daily_price_with_add);
@@ -498,7 +469,7 @@ const CalPrice = () => {
       This is mainly due to incomplete data. \n
       The minimum object storage is 1GB.`);
     }
-  }
+  };
 
   const calc_flt_price = (e) => {
     e.preventDefault();
@@ -519,7 +490,7 @@ const CalPrice = () => {
       This is mainly due to incomplete data. \n
       The minimum floating ip is 1.`);
     }
-  }
+  };
   return (
     <section className="mx-10 md:mx-auto max-w-5xl bg-slate-300 rounded-t-3xl">
       <div className="grid grid-cols-1 gap-y-10 sm:gap-x-4 lg:gap-x-10 md:grid-cols-2">
@@ -613,7 +584,7 @@ const CalPrice = () => {
                   <option value="si166450w">si.16.64.50w</option>
                 </select>
               </div>
-              <div className="flex mb-5"> 
+              <div className="flex mb-5">
                 <div className="bg-gray-700 rounded-l-2xl shadow-lg py-2 px-4">
                   <span className="font-semibold text-white" id="basic-addon1">
                     VCPU(Cores)
@@ -690,19 +661,18 @@ const CalPrice = () => {
               <div className="flex mb-5 ">
                 <div className="bg-gray-700 rounded-l-2xl shadow-lg py-2 px-4">
                   <span className="font-semibold text-white" id="basic-addon1">
-                    Daily Bandwidth(N)
+                    Bandwidth(N)
                   </span>
                 </div>
-                
+
                 <input
                   type="number"
                   className="outline-none shadow-lg rounded-r-2xl bg-gray-200"
-                  placeholder="200"
+                  placeholder="6000"
                   aria-label="bandwidth"
                   aria-describedby="basic-addon1"
                   disabled
                 />
-        
               </div>
               <div className="flex mb-5">
                 <div className="bg-gray-700 rounded-l-2xl shadow-lg py-2 px-4">
@@ -762,12 +732,14 @@ const CalPrice = () => {
                     )}
                     {inst_daily_price_with_add && (
                       <li className="list-group-item">
-                        FCS Daily Price with Additional Volume: {inst_daily_price_with_add}
+                        FCS Daily Price with Additional Volume:{" "}
+                        {inst_daily_price_with_add}
                       </li>
                     )}
                     {inst_total_with_add_vol && (
                       <li className="list-group-item">
-                        Total FCS Price with Additional Volume: {inst_total_with_add_vol}
+                        Total FCS Price with Additional Volume:{" "}
+                        {inst_total_with_add_vol}
                       </li>
                     )}
                   </ul>
@@ -832,7 +804,9 @@ const CalPrice = () => {
                   id="inputGroupSelect02"
                 >
                   {/* <option selected>Choose OS...</option> */}
-                  <option selected="selected">General Purpose SSD Drives</option>
+                  <option selected="selected">
+                    General Purpose SSD Drives
+                  </option>
                 </select>
               </div>
               <div className="flex mb-5">
@@ -1197,92 +1171,95 @@ const CalPrice = () => {
             </div>
           </div>
         </div>
-        
       </div>
       <div id="total" className="group mt-10">
-          <div className="text-right">
-            <form onSubmit={calc_price}>
-              <button
-                type="submit"
-                className="w-full inline-flex justify-center rounded-t-lg tracking-wide leading-relaxed-md border border-transparent bg-blue-600 py-2 px-4 text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                Calculate Total Estimate
-              </button>
-            </form>
-          </div>
+        <div className="text-right">
+          <form onSubmit={calc_price}>
+            <button
+              type="submit"
+              className="w-full inline-flex justify-center rounded-t-lg tracking-wide leading-relaxed-md border border-transparent bg-blue-600 py-2 px-4 text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Calculate Total Estimate
+            </button>
+          </form>
+        </div>
 
-          <div class="result">
-            {success && (
-              <div id="fcs_success" className="text-white bg-gray-600 p-3">
-                <h2 className="text-lg text-center font-semibold ">Result</h2>
+        <div class="result">
+          {success && (
+            <div id="fcs_success" className="text-white bg-gray-600 p-3">
+              <h2 className="text-lg text-center font-semibold ">Result</h2>
 
-                <ul className="">
-                  {daily_total_price && (
-                    <li className="list-group-item">
-                      Daily Total Price: {daily_total_price}
-                    </li>
-                  )}
-                  <li>
-                    <span className="py-2 text-white">+-------------------------------------------------------+</span>
+              <ul className="">
+                {daily_total_price && (
+                  <li className="list-group-item">
+                    Daily Total Price: {daily_total_price}
                   </li>
-                  {inst_total_price && (
-                      <li className="list-group-item">
-                        Total FCS Price: {inst_total_price}
-                      </li>
-                    )}
-                  {FBS_total_price && (
-                      <li className="list-group-item">
-                        Total FBS Price: {FBS_total_price}
-                      </li>
-                    )}
-                  {FOS_total_price && (
-                    <li className="list-group-item">
-                      Total FOS Price: {FOS_total_price}
-                    </li>
-                  )}
-                  {flt_total_price && (
-                      <li className="list-group-item">
-                        Total Floating IP(s) Price: {flt_total_price}
-                      </li>
-                    )}
-                  <li>
-                    <span className="py-2 text-white">+-------------------------------------------------------+</span>
+                )}
+                <li>
+                  <span className="py-2 text-white">
+                    +-------------------------------------------------------+
+                  </span>
+                </li>
+                {inst_total_price && (
+                  <li className="list-group-item">
+                    Total FCS Price: {inst_total_price}
                   </li>
-                  {total_price && (
-                    <li className="list-group-item">
-                      Total Price: {total_price}
-                    </li>
-                  )}
-                </ul>
-              </div>
-            )}
-            <div id="fcs_error" className="">
-              <div className="shadow-lg">
-                <div style={{ display: visible ? "block" : "none" }} className="">
-                  {error && (
-                    <div className="flex flex-wrap bg-red-500 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
-                      <div className="flex w-0 flex-1 p-2">{error}</div>{" "}
-                      <div className="order-2 flex-shrink-0 sm:order-3">
-                        <button
-                          type="button"
-                          onClick={() => setVisible(!visible)}
-                          className="-mr-1 p-2 bg-red-500 focus:outline-none sm:-mr-2"
-                        >
-                          <span className="sr-only">Dismiss</span>
-                          <XIcon
-                            className="h-6 w-6 text-white hover:scale-95"
-                            aria-hidden="true"
-                          />
-                        </button>
-                      </div>
+                )}
+                {FBS_total_price && (
+                  <li className="list-group-item">
+                    Total FBS Price: {FBS_total_price}
+                  </li>
+                )}
+                {FOS_total_price && (
+                  <li className="list-group-item">
+                    Total FOS Price: {FOS_total_price}
+                  </li>
+                )}
+                {flt_total_price && (
+                  <li className="list-group-item">
+                    Total Floating IP(s) Price: {flt_total_price}
+                  </li>
+                )}
+                <li>
+                  <span className="py-2 text-white">
+                    +-------------------------------------------------------+
+                  </span>
+                </li>
+                {total_price && (
+                  <li className="list-group-item">
+                    Total Price: {total_price}
+                  </li>
+                )}
+              </ul>
+            </div>
+          )}
+          <div id="fcs_error" className="">
+            <div className="shadow-lg">
+              <div style={{ display: visible ? "block" : "none" }} className="">
+                {error && (
+                  <div className="flex flex-wrap bg-red-500 w-50 px-3 py-2 text-md text-white font-semibold justify-between">
+                    <div className="flex w-0 flex-1 p-2">{error}</div>{" "}
+                    <div className="order-2 flex-shrink-0 sm:order-3">
+                      <button
+                        type="button"
+                        onClick={() => setVisible(!visible)}
+                        className="-mr-1 p-2 bg-red-500 focus:outline-none sm:-mr-2"
+                      >
+                        <span className="sr-only">Dismiss</span>
+                        <XIcon
+                          className="h-6 w-6 text-white hover:scale-95"
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
+        </div>
       </div>
     </section>
   );
-}
+};
 export default CalPrice;

@@ -134,3 +134,131 @@ animation-duration: .15s;
 --tw-enter-translate-x: -50%;
 --tw-enter-translate-y: -48%;
 pointer-events: auto;
+
+
+
+    <div className='my-5 border-l-2 border-l-blue-500 bg-blue-100 p-2 rounded-md mr-auto max-w-lg text-justify'>
+    <span className='flex'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-blue-600">
+      <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
+    </svg> <span className='font-mono font-semibold text-blue-600 pl-2'>Note:</span> </span>
+      <p className='text-sm pt-2 px-2'>
+      </p>
+    </div>
+  
+    <div className='mt-5 border-l-2 border-l-red-500 bg-red-100 p-2 rounded-md mr-auto max-w-lg text-justify'>
+    <span className='flex'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-red-600">
+      <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
+    </svg> <span className='font-mono font-semibold text-red-600 pl-2'>Warning:</span> </span>
+      <p className='text-sm pt-2 px-2'>
+      
+      </p>
+    
+    </div>
+
+  aria-hidden="true"
+
+    
+    {" "}<span className="flex mt-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-blue-400">
+      <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
+      </svg><span className='font-mono font-semibold text-blue-400 pl-2'>Important: </span> {" "}     
+    </span>{" "} 
+
+
+    import ScriptSnippet from '../ScriptSnippet'
+
+    <li><p>To make the key pair known to SSH, run the <strong>ssh-add</strong> command.</p>                  
+                         
+      <ScriptSnippet script="$ssh-add yourPrivateKey.pem" language="bash" />
+
+    </li>
+    space-y-4 pt-4 h-[100px] overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-300
+    scrollbar-track-transparent
+
+    className="h-[180px] overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent"
+                                          
+    <div className='mr-auto max-w-sm bg-slate-100 p-4 border-l-2 border-l-slate-400'>
+      <h5>Items</h5>
+      <ul className='list-none pl-0'>
+        <li className='hover:scale-105'><a className='hover:bg-white rounded-md p-1' href="#"></a></li>
+        <li className='hover:scale-105'><a className='hover:bg-white rounded-md p-1' href="#"></a></li>
+        <li className='hover:scale-105'><a className='hover:bg-white rounded-md p-1' href="#"></a></li>
+        <li className='hover:scale-105'><a className='hover:bg-white rounded-md p-1' href="#"></a></li>
+      </ul>
+    </div>
+
+    <div className='bg-slate-600 text-white rounded-xl p-8 mr-auto max-w-md'>
+      <p></p>
+    </div>
+
+    <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+      <Image src="/herobg.png" layout="fill" objectFit="container" objectPosition="left" className="animate-fadeIn" />
+      <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+        <h1 className="text-white"></h1>
+        <p className="text-sm text-white font-bold sm:text-lg animate-slideIn">
+          
+        </p>
+      <div className="flex justify-center place-items-center">
+        <button
+          className="my-3 rounded-full bg-white px-10 py-4 font-bold text-purple-500 shadow-md transition duration-50 hover:bg-purple-500 hover:text-white hover:shadow-xl active:scale-90 animate-bounce">
+          I'm flexible
+        </button>
+        <button
+          className="my-3 ml-4 rounded-full bg-white px-10 py-4 font-bold text-purple-500 shadow-md transition duration-50 hover:bg-purple-500 hover:text-white hover:shadow-xl active:scale-90 animate-bounce">
+          I'm flexible
+        </button>
+      </div>
+      </div>
+    </div>
+
+
+    /* styles/Home.module.css */
+    
+    .testFont {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: green;
+    font-size: 3rem;
+    }
+
+    // pages/index.js
+    
+    import styles from "../styles/Home.module.css";
+    
+    export default function Home() {
+    return <h1 className={styles.testFont}>Hello Geeks</h1>;
+    }
+*********************************************************
+
+TODO:
+
+Solution:
+- virtual hosting should be no. 1
+- Remove Cloud NAT
+- Cloud NAT is Cloud Router
+- remove Nobus name servers are dns2.nobus.io, dns.google.com, and dns1.nobus.io.
+- replace with ns1.nobus.com, ns2.nobus.com
+- remove disaster recovery
+- remove acronis cloud backup, call it nobus cloud backup
+- remove PFSense
+- Nobus Notification Service
+- remove image services. add it to fcs
+- Cloud Orchestration
+- Identity and Access Management
+
+
+
+- bandwith - 6000
+- floating ip - 1500 x 1
+- si.2.2.30.l - 19980
+- si.2.4.50.w - 62660
+- 5gb vol - 600
+- 100gb vol - 12000
+- fos 100gb - 6000
+- fos 25gb - 1500
+
+
+
+

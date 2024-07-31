@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { React, useState } from "react";
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
-import {
-  PhoneIcon,
-} from "@heroicons/react/outline";
+import Footer from "../../../components/Footer1";
+import { PhoneIcon } from "@heroicons/react/outline";
 import SidebarDocs from "../../../components/SidebarDocs";
-import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/solid";
+import {
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+} from "@heroicons/react/solid";
 
 function index() {
   const [open, setOpen] = useState(true);
@@ -21,31 +22,36 @@ function index() {
       <main>
         <div className="flex px-5 py-3 justify-between shadow-2xl border-y border-gray-300">
           <div className="flex">
-          <div className="flex">
-          {!open ? (
-              <button
-                type="button"
-                className="rounded-full bg-gray-100 p-2 text-gray-400 shadow-md"
-                onClick={() => setOpen(true)}
+            <div className="flex">
+              {!open ? (
+                <button
+                  type="button"
+                  className="rounded-full bg-gray-100 p-2 text-gray-400 shadow-md"
+                  onClick={() => setOpen(true)}
                 >
-                <span className="sr-only">Open menu</span>
-                <ChevronDoubleRightIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            ) : ( <button
-              type="button"
-              className="rounded-full bg-gray-100 p-2 text-gray-400 shadow-md"
-              onClick={() => setOpen(false)}
-              >
-              <span className="sr-only">Close menu</span>
-              <ChevronDoubleLeftIcon className="h-6 w-6" aria-hidden="true" />
-            </button> 
-            )
-          }
-             <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-             Domains and DNS Documentation
-            </h1>
+                  <span className="sr-only">Open menu</span>
+                  <ChevronDoubleRightIcon
+                    className="h-6 w-6"
+                    aria-hidden="true"
+                  />
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="rounded-full bg-gray-100 p-2 text-gray-400 shadow-md"
+                  onClick={() => setOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <ChevronDoubleLeftIcon
+                    className="h-6 w-6"
+                    aria-hidden="true"
+                  />
+                </button>
+              )}
+              <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
+                Domains and DNS Documentation
+              </h1>
             </div>
-            
           </div>
           <div className="flex">
             <a href="/contact/support">
@@ -57,18 +63,20 @@ function index() {
           </div>
         </div>
         <div className={`grid grid-cols-1 lg:grid-cols-4`}>
-          <div className={`${!open && "hidden"}`}> 
+          <div className={`${!open && "hidden"}`}>
             <SidebarDocs open={open} setOpen={setOpen} />
           </div>
-        
-          <div className={`lg:col-span-3 bg-gray-200 h-[600px] overflow-y-scroll scrollbar-hide ${!open && "lg:col-span-4"}`}>
+
+          <div
+            className={`lg:col-span-3 bg-gray-200 h-[600px] overflow-y-scroll scrollbar-hide ${
+              !open && "lg:col-span-4"
+            }`}
+          >
             <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
                 <div className="flex-col p-5 lg:p-10">
                   <h1 className="text-3xl">Nobus Domains and DNS</h1>
-
                 </div>
-                
               </div>
               <div className="p-5 text-sm tracking-wide leading-relaxed">
                 <p>Except otherwise...</p>

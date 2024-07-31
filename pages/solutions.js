@@ -2,7 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer1";
 
 import {
   DatabaseIcon,
@@ -15,6 +15,8 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/outline";
+import Image from "next/image";
+import SimpleMonthlyCalculator from "../components/Smc";
 
 const card = [
   {
@@ -333,22 +335,33 @@ function solution() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div
-          className="flex-col justify-center text-center"
-          style={{
-            backgroundImage: "url('/solutions.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
-            <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wide leading-relaxed font-bold text-white">
-              Nobus Solution
-            </h1>
-            <p className="text-sm sm:text-md font-semibold text-white tracking-wide leading-relaxed pb-4">
+        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+          <Image
+            src="/herobg.png"
+            layout="fill"
+            objectFit="container"
+            objectPosition="left"
+            className="animate-fadeIn"
+          />
+          <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+            <h1 className="hero-h">Nobus Cloud Solution</h1>
+            <p className="hero-p">
               Start utilizing our cloud solutions for your diverse workloads
               today.
             </p>
+            <div className="flex flex-col sm:flex-row justify-center place-items-center mt-4">
+              <a href="/registration">
+                <button className="my-3 rounded-md px-10 py-4 font-bold border border-white text-white shadow-md transition duration-10 hover:bg-blue-800 hover:text-white hover:shadow-xl active:scale-90 animate-pulse">
+                  Get Started <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </a>
+              <a href="/contact/sales">
+                <button className="my-3 ml-0 sm:ml-4 flex rounded-md px-10 py-4 font-bold border border-white text-white shadow-md hover:bg-blue-800 hover:text-white hover:shadow-xl active:scale-90">
+                  <img src="/phone.svg" />{" "}
+                  <span className="pl-2">Contact Sales</span>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex-col">
@@ -385,41 +398,40 @@ function solution() {
             </div>
           </div>
           <div className="flex-col px-10 py-10 md:px-20">
-          <div className="">
-            <div>
-              <h1 className="pb-5 text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-                Explore Categories
-              </h1>
-              <hr className="border-b-2 border-blue-400 max-w-[96px]" />
-            </div>
-            <div className="grid gap-y-8 gap-x-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-8">
-              {card?.map((item) => (
-                <div className="p-5 bg-white space-x-4 shadow rounded border border-gray-300 group">
-                  <a href={item.href}>
-                    <div className="py-2 cursor-pointer ">
-                      <p className="pb-3">
-                        <item.icon
-                          className="h-[56px] w-[56px] flex-shrink-0 text-gray-600"
-                          aria-hidden="true"
-                        />
-                      </p>
-                      <h1 className="pb-3 text-lg tracking-tight leading-relaxed font-semibold text-gray-800 group-hover:text-blue-700  group-hover:scale-105">
-                        {item.title}
-                      </h1>
-                    </div>
-                  </a>
-                </div>
-              ))}
+            <div className="">
+              <div>
+                <h1 className="pb-5 text-xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+                  Explore Categories
+                </h1>
+                <hr className="border-b-2 border-blue-400 max-w-[96px]" />
+              </div>
+              <div className="grid gap-y-8 gap-x-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-8">
+                {card?.map((item) => (
+                  <div className="p-5 bg-white space-x-4 shadow rounded border border-gray-300 group">
+                    <a href={item.href}>
+                      <div className="py-2 cursor-pointer ">
+                        <p className="pb-3">
+                          <item.icon
+                            className="h-[56px] w-[56px] flex-shrink-0 text-gray-600"
+                            aria-hidden="true"
+                          />
+                        </p>
+                        <h1 className="pb-3 text-lg tracking-tight leading-relaxed font-semibold text-gray-800 group-hover:text-blue-700  group-hover:scale-105">
+                          {item.title}
+                        </h1>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          
-        </div>
           <div className="pt-20 px-10 md:p-20">
             <div className="lg:grid lg:grid-cols-3 lg:gap-4 mt-8">
               <div className="lg:col-span-1 hidden lg:block">
                 <div className="pb-20 md:pb-0 md:mr-10 ">
                   <a href="https://dashboard.nobus.io/">
-                    <div className="p-2 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded ">
+                    <div className="p-2 text-center text-gray-600 bg-slate-300  hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded ">
                       Sign In to the Dashboard
                     </div>
                   </a>
@@ -431,7 +443,7 @@ function solution() {
                       {resData?.map((item) => (
                         <div>
                           <a href={item.href}>
-                            <span className="flex justify-between hover:p-2 hover:bg-blue-100">
+                            <span className="flex justify-between hover:p-2 hover:bg-slate-200">
                               <p className="text-gray-600">{item.title} </p>
                               <item.icon
                                 className="h-4 w-4 flex-shrink-0 text-gray-600"
@@ -447,14 +459,14 @@ function solution() {
                     <hr className="border-t py-5" />
 
                     <a href="/registration">
-                      <div className="px-2 py-3 mx-10 md:mx-5 lg:mx-10 xl:mx-20 text-center text-gray-600 bg-blue-50 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded-50 ">
+                      <div className="px-2 py-3 mx-10 md:mx-5 lg:mx-10 xl:mx-20 text-center text-gray-600 bg-slate-300 hover:scale-95 font-semibold cursor-pointer border border-b-black shadow-md rounded-50 ">
                         Create an Account
                       </div>
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-2 pb-10 md:pb-0">
+              <div className="lg:col-span-2 pb-10 md:pb-0 h-[580px] overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent">
                 <div className="grid gap-y-8 gap-x-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
                   {cardSample?.map((item) => (
                     <div className="p-5 bg-white flex flex-col shadow space-x-4 rounded border border-gray-400 group">
@@ -515,77 +527,57 @@ function solution() {
               </div>
             </div>
           </div>
-
-          <div
-            className="px-10 md:px-20 py-10"
-            style={{
-              backgroundImage: "url('/backup.png')",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-            <div className="flex flex-col lg:flex-row mx-auto ">
-              <div className="text-left lg:w-1/2 md:pr-20 pt-0 md:py-5 text-white">
-                <h1 className="text-3xl xl:text-4xl font-semibold">
-                  Nobus Simple monthly calculator
-                </h1>
-
-                <p className="my-2 text-base tracking-wide leading-relaxed max-w-7xl lg:mx-auto lg:pt-5 lg:pb-10">
-                  You can estimate your monthly bill (individual and multiple
-                  prices) using NCS Simple Monthly Calculator.
-                </p>
-
-                <div className="mt-10 pb-5 flex flex-col sm:flex-row md:justify-start">
-                  <a href="/simple-monthly-calculator">
-                    <button className="w-full mt-2 sm:mt-0 sm:ml-2 sm:w-40 px-4 py-3 font-semibold text-md text-white rounded hover:shadow active:scale-90 cursor-pointer border border-white">
-                      Calculate Cost
-                    </button>
-                  </a>
-                </div>
-              </div>
-
-              <div className="hidden lg:block lg:w-1/2 mt-10 lg:mt-0">
-                <div className="flex-col">
-                  <img src="/analytics.png" />
-                </div>
-              </div>
-            </div>
+          <div className="relative">
+            <SimpleMonthlyCalculator />
           </div>
-
           <div className="flex-col px-10 py-10 md:px-20 lg:px-0 lg:mx-40">
             <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
               <div className="p-0 lg:p-5 flex flex-col space-x-4 text-left group">
                 <img src="/adv.png" />
               </div>
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded-xl text-left shadow-lg border border-gray-300 group">
-                <div className="py-2">
-                  <h1 className="pb-3 text-2xl tracking-tight leading-relaxed font-semibold text-gray-800">
-                    Please note!
-                  </h1>
-                  <p className="pt-4 text-base tracking-tight leading-relaxed text-gray-800">
-                    Take advantage of our platform that supports applications
-                    and workloads across pools of physical infrastructure and
-                    multi-cloud environments. Data centers often host an
-                    organization's business-critical data and applications.
-                    Nobus understand the integral part played by data centers.
-                    The security and reliability of our data center and it
-                    information is our top priority.
-                  </p>
-                  <p className="text-base tracking-wide leading-relaxed text-gray-800">
-                    At nobus, you pay only for resources actually consumed and
-                    save more.{" "}
-                  </p>
-                </div>
+
+              <div className="my-5 border-l-2 border-l-blue-500 bg-blue-100 p-2 rounded-md  text-justify">
+                <span className="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-6 w-6 text-blue-600"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>{" "}
+                  <span className="font-mono font-semibold text-blue-600 pl-2">
+                    Note:
+                  </span>{" "}
+                </span>
+                <p className="text-base tracking-tight leading-relaxed pt-2 px-2">
+                  Take advantage of our platform that supports applications and
+                  workloads across pools of physical infrastructure and
+                  multi-cloud environments. Data centers often host an
+                  organization's business-critical data and applications. Nobus
+                  understand the integral part played by data centers. The
+                  security and reliability of our data center and it information
+                  is our top priority.
+                </p>
+                <p className="text-base tracking-tight leading-relaxed pt-2 px-2">
+                  {" "}
+                  At nobus, you pay only for resources actually consumed and
+                  save more.{" "}
+                </p>
               </div>
             </div>
           </div>
-          <div className="flex-col p-5 sm:p-10 md:p-20 bg-gray-100">
+          <div className="flex-col p-5 sm:p-10">
             <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
               <div className="block lg:hidden px-5 pb-5 lg:p-5">
                 <img src="/faq.png" />
               </div>
 
-              <div className="px-2 lg:px-5 bg-gray-100 flex flex-col lg:space-x-4">
+              <div className="px-2 lg:px-5 flex flex-col lg:space-x-4">
                 <div className="">
                   {faqFilters.map((section) => (
                     <div className="overflow-y-scroll scrollbar-hide px-3">
@@ -637,7 +629,7 @@ function solution() {
                   ))}
                 </div>
               </div>
-              <div className="px-2 lg:px-5 bg-gray-100 flex flex-col space-x-4 group">
+              <div className="px-2 lg:px-5 flex flex-col space-x-4 group">
                 <div className="hidden lg:block px-0 pb-5 lg:p-5 ">
                   <img src="/faq.png" />
                 </div>

@@ -12,7 +12,11 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar'),
     require('tailwind-scrollbar-hide'),
     require('flowbite/plugin'),
   ],
+  // variants: {
+  //   scrollbar: ["dark"]
+  // }
 }

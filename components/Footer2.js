@@ -14,13 +14,6 @@ function Footer2() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row text-center text-gray-600">
-          <div className="flex flex:inline mx-auto mt-4 md:mt-0">
-            <img className="" src="/favicon.ico" width={35} height={10} />
-            <p className="mt-2 md:mt-0 ml-2 text-sm md:pt-2 ">
-              Native public cloud service.
-            </p>
-          </div>
-
           <p className="mt-4 md:mt-0 ml-2 text-sm font-semibold pt-2">
             © 2024 Nkponani Ltd. All rights reserved.
           </p>
