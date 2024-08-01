@@ -163,18 +163,6 @@ const docsfilters = [
       { value: "DevOps and Agile", href: "#" },
     ],
   },
-  {
-    name: "Use Cases",
-    href: "#",
-    options: [
-      { value: "", href: "#" },
-      { value: "Overview", href: "#" },
-      { value: "Create your Nobus account", href: "#" },
-      { value: "How to provision a Linux instance", href: "#" },
-      { value: "How to provision a Windows instance", href: "#" },
-      { value: "SSH into your nobus instance", href: "#" },
-    ],
-  },
 ];
 
 function SidebarDocs({ open, setOpen }) {

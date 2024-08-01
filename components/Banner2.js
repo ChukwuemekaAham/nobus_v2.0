@@ -6,7 +6,7 @@ const Banner2 = () => {
     <section className="relative bg-[#000026] min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
         <Image
-          src="/line.png"
+          src="/line2.png"
           alt="Line design"
           layout="fill"
           objectFit="cover"

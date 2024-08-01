@@ -8,7 +8,6 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
-import Quickstart from "../../../components/fosdoc/Quickstart";
 
 function index() {
   const [open, setOpen] = useState(true);
@@ -76,13 +75,11 @@ function index() {
             <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
                 <div id="overview" className="flex-col p-5 lg:p-10">
-                  <h5 className="pb-5">Nobus Cloud Backup</h5>
+                  <h1 className="pb-5 text-center">
+                    {" "}
+                    Nobus Cloud Backup Solution
+                  </h1>
                   <section className="mx-auto text-justify">
-                    <h2 className="pb-5">
-                      {" "}
-                      Cyber Security Protection, Data Recovery
-                    </h2>
-
                     <div className="">
                       <p className="">
                         Protect your mission critical Systems from Servers to
@@ -170,7 +167,7 @@ function index() {
                         </a>
                       </p>
                     </div>
-                    <div className="p-4 border border-green-400 bg-green-100 rounded-md">
+                    <div className="mt-10 p-4 border border-green-400 bg-green-100 rounded-md">
                       <p className="text-md textgray-800">
                         Nobus offers free backup of your entire infrastructure
                         for now. This is subject to the terms and conditions of

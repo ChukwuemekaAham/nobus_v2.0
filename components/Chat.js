@@ -100,49 +100,40 @@ function Chat() {
                   leaveTo="opacity-0 translate-y-1"
                 >
                   <Popover.Panel
-                    className="absolute rounded-3xl right-10 md:right-20 left-5 sm:left-auto z-10 top-2 md:top-5 lg:top-20 md:w-screen max-w-sm -translate-x-2/5 transform"
+                    className="fixed p-4 bottom-[95px] right-4 bg-white rounded-xl shadow-lg w-full max-w-sm z-50 "
                     style={{
                       backgroundImage: "url('/cont6.jpg')",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
                   >
-                    <div className="flex min-h-full items-center justify-center pb-5 md:pb-10">
-                      <div className="w-full max-w-md space-y-8">
-                        <div className="flex rounded-t-2xl shadow-lg pl-4 pr-2 py-2 md:py-3 bg-white justify-between">
+                    <div className="flex items-center justify-between text-white">
+                      <div className="w-full max-w-md text-center">
+                        <div className="flex justify-between">
                           <div className="flex-col">
-                            <span className="flex">
-                              <img
-                                className="h-6 w-auto"
-                                src="/logo.png"
-                                alt="nobus cloud"
-                              />
-                              {/* <p className="text-lg text-stone-700 italic font-bold tracking-tight leading-relaxed ml-4">
-                                Support
-                              </p> */}
-                            </span>
+                            <p className="text-xl italic ">Support</p>
                           </div>
 
                           <div className="flex-col">
-                            <button className="bg-white">
+                            <button className="">
                               <DotsVerticalIcon
                                 aria-hidden="true"
-                                className="h-6 w-6 text-gray-800 font-bold"
+                                className="h-6 w-6 text-white font-bold"
                               />
                             </button>
                           </div>
                         </div>
-                        <div>
-                          <h2 className="mt-6 text-center text-base font-bold tracking-wide leading-relaxed text-gray-100">
-                            Chat unavailable right now
-                          </h2>
-                          <p className="mt-2 px-2 md:px-0 text-center text-sm tracking-wide leading-relaxed font-medium text-gray-100">
-                            please take some time to tell us about your project
-                          </p>
-                        </div>
+
+                        <h4 className="text-white mt-4">
+                          Chat unavailable right now
+                        </h4>
+                        <p className="text-white">
+                          please tell us about your project
+                        </p>
+
                         <form
                           onSubmit={handleSubmit}
-                          className="mt-8 space-y-8 px-4 sm:px-6 lg:px-8"
+                          className="mt-8 space-y-4"
                         >
                           <input
                             type="hidden"
