@@ -76,7 +76,7 @@ function index() {
                     <section id="price" className="mx-auto text-justify">
                       <h2 className="pb-5 font-semibold">
                         {" "}
-                        Flexible Compute Service Term Pricing
+                        Nobus FOS Term Pricing
                       </h2>
 
                       <p>
@@ -313,6 +313,8 @@ function index() {
                         cycle starts, even if the instance stays idle and you
                         don't connect to it.
                       </p>
+                      <p>FCS VCPU Unit Price = ₦ 85.00 NGN </p>
+                      <p>FCS Memory Unit Price = ₦ 88.00 NGN</p>
                     </section>
                   </Tab.Panel>
                   <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">

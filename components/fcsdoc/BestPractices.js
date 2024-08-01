@@ -15,9 +15,7 @@ function BestPractices() {
 
   return (
     <div id="best-practices" className="py-10">
-      <h1 className="text-2xl md:text-3xl text-[#232f3e] tracking-tight font-semibold pb-5">
-        Best Practices
-      </h1>
+      <h2 className="pb-5">Best Practices</h2>
 
       <div className="w-full px-2 py-16 sm:px-0">
         <Tab.Group vertical>

@@ -4,9 +4,9 @@ import ScriptSnippet from "../ScriptSnippet";
 function DedicatedHosting() {
   return (
     <div id="dedicated-hosting" className="py-10">
-      <h1 className="pb-5">
+      <h2 className="pb-5">
         Dedicated hardware to support existing software licenses
-      </h1>
+      </h2>
 
       <div className="space-y-5">
         <p>

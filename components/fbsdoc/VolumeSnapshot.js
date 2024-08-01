@@ -3,7 +3,7 @@ import React from "react";
 function VolumeSnapshot() {
   return (
     <div id="volume-snapshots" className="py-10">
-      <h1 className=" pb-5">FBS Volume Snapshots</h1>
+      <h2 className=" pb-5">FBS Volume Snapshots</h2>
 
       <div className="space-y-5">
         <p>

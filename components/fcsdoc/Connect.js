@@ -12,9 +12,7 @@ function Connect() {
   ];
   return (
     <div id="connecting-to-instance" className="py-10">
-      <h1 className="text-2xl md:text-3xl tracking-tight text-[#232f3e] font-semibold pb-5">
-        Connecting to Your FCS Instance
-      </h1>
+      <h2 className="pb-5">Connecting to Your FCS Instance</h2>
       <div className="space-y-5">
         <p>
           Your nobus fcs instance are managed using a terminal and ssh. You'll

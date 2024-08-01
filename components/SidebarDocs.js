@@ -57,14 +57,24 @@ const docsfilters = [
     href: "/documentation/networking",
     options: [
       { value: "", href: "/documentation/networking" },
-      { value: "Overview", href: "/documentation/networking#overview" },
-      { value: "Virtual Private Cloud", href: "#" },
-      { value: "FastTransit Network", href: "#" },
-      { value: "Virtual Private Network", href: "#" },
-      { value: "Cloud Router", href: "#" },
-      { value: "Network Firewall", href: "#" },
-      { value: "Network ACLs", href: "#" },
-      { value: "Cloud Load Balancer", href: "#" },
+      {
+        value: "Data Center as a Service",
+        href: "/documentation/networking#data-center-as-a-service",
+      },
+      { value: "Quickstart", href: "/documentation/networking#quickstart" },
+      {
+        value: "FastTransit Network",
+        href: "/documentation/networking#fasttransit",
+      },
+      {
+        value: "Virtual Private Network",
+        href: "/documentation/networking#cloud-vpn",
+      },
+      { value: "Cloud Router", href: "/documentation/networking#cloud-router" },
+      {
+        value: "Cloud Load Balancer",
+        href: "/documentation/networking#cloud-loadbalancer",
+      },
     ],
   },
   {
@@ -73,7 +83,33 @@ const docsfilters = [
     options: [
       { value: "", href: "/documentation/dns" },
       { value: "Overview", href: "/documentation/dns#overview" },
-      { value: "Quickstart", href: "#" },
+      { value: "Quickstart", href: "/documentation/dns#quickstart" },
+    ],
+  },
+  {
+    name: "Cloud Backup",
+    href: "/documentation/cloud-backup",
+    options: [
+      { value: "", href: "/documentation/cloud-backup" },
+      {
+        value: "Nobus Cloud Backup",
+        href: "/documentation/cloud-backup#overview",
+      },
+      { value: "FOS Backup Solution", href: "/documentation/fos" },
+    ],
+  },
+  {
+    name: "Cloud Security",
+    href: "#",
+    options: [
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
+      { value: "Network firewall", href: "#" },
+      { value: "Security Groups", href: "#" },
+      { value: "Network ACL", href: "#" },
+      { value: "Sophos XG Firewall", href: "#" },
+      { value: "Acronis Cyber Protect", href: "#" },
+      { value: "Fortigate", href: "#" },
     ],
   },
   {
@@ -108,33 +144,7 @@ const docsfilters = [
       { value: "Nobus Kubernetes Engine", href: "#" },
     ],
   },
-  {
-    name: "Cloud Security",
-    href: "#",
-    options: [
-      { value: "", href: "#" },
-      { value: "Overview", href: "#" },
-      { value: "Network firewall", href: "#" },
-      { value: "Security Groups", href: "#" },
-      { value: "Network ACL", href: "#" },
-      { value: "Sophos XG Firewall", href: "#" },
-      { value: "Acronis Cyber Protect", href: "#" },
-      { value: "Fortigate", href: "#" },
-    ],
-  },
-  {
-    name: "Cloud Backup",
-    href: "#",
-    options: [
-      { value: "", href: "#" },
-      { value: "Overview", href: "#" },
-      {
-        value: "Nobus Cloud Backup",
-        href: "#",
-      },
-      { value: "FOS Backup Solution", href: "#" },
-    ],
-  },
+
   {
     name: "Tutorials",
     href: "#",

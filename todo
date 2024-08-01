@@ -159,7 +159,6 @@ pointer-events: auto;
 
   aria-hidden="true"
 
-    
     {" "}<span className="flex mt-2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 text-blue-400">
       <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clipRule="evenodd" />
@@ -212,6 +211,128 @@ pointer-events: auto;
       </div>
       </div>
     </div>
+
+    import { Tab } from "@headlessui/react";
+   
+    function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+    }
+    
+    const categories = ["", "", "", "", "",];
+   
+    <div className="w-full px-2 py-16 sm:px-0">
+      <Tab.Group vertical>
+        <div className="grid grid-cols-1">
+          <Tab.List className="flex-col max-w-sm rounded-xl bg-gray-100">
+            <h4 className="py-2 pl-2">STEPS</h4>
+            {categories.map((category) => (
+            <Tab key={category} className={({ selected })=>
+              classNames(
+              "w-full py-2.5 pl-2 text-md text-left font-medium leading-5",
+              "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none",
+              selected
+              ? "bg-white text-blue-500 shadow"
+              : "text-gray-800 hover:bg-white/[0.12] hover:text-gray-400"
+              )
+              }
+              >
+              {category}
+            </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels className="flex-col py-10">
+            <Tab.Panel>
+              <h3></h3>
+              <p>
+                
+              </p>
+              <div className="space-y-5">
+                <h6> </h6>
+                
+            
+              </div>
+            </Tab.Panel>
+            
+              <h3>Deleting a Container</h3>
+              <p>
+                When you no longer need an object or a container, we recommend
+                that you delete them to prevent further charges. Before you
+                delete your container, you must delete the objects in the
+                container. After you delete your objects and container, they
+                are no longer available.
+              </p>
+              <div className="my-5 border-l-2 border-l-red-500 bg-red-100 p-2 rounded-md mr-auto max-w-lg text-justify">
+                <span className="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    className="h-6 w-6 text-red-600">
+                    <path fillRule="evenodd"
+                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z"
+                      clipRule="evenodd" />
+                  </svg>{" "}
+                  <span className="font-mono font-semibold text-red-600 pl-2">
+                    Warning:
+                  </span>{" "}
+                </span>
+                <p className="text-sm pt-2 px-2">
+                  Deleting a container cannot be reversed. If you delete your
+                  container, the name can be used another Nobus user. To
+                  continue to use the same container name, don't delete your
+                  container. Instead, empty and keep the container.
+                </p>
+              </div>
+  
+              <p>
+                If you want to continue to use the same container name, we
+                recommend that you delete the objects but do not delete the
+                container. After you delete a container, you can reuse the
+                name. However, another account might create a container with
+                the same name before you have a chance to reuse it.
+              </p>
+  
+              <div className="space-y-5">
+                <h6>Deleting an object</h6>
+                <p>
+                  To delete an object, click the menu button and select{" "}
+                  <span className="step-item">Delete Object</span>.
+                </p>
+  
+                <h6>Deleting your container</h6>
+  
+                <ol>
+                  <li>
+                    <p>
+                      To delete a container, in the{" "}
+                      <span className="step-item">containers</span> list,
+                      select the container.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Choose <span className="step-item">Delete</span>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      To confirm deletion, in{" "}
+                      <span className="step-item">Delete container</span>,
+                      enter the name of the container.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      To delete your container, select{" "}
+                      <span className="step-item">Delete container</span>.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            
+          </Tab.Panels>
+        </div>
+      </Tab.Group>
+    </div>
+  
+
 
   &lt; name &gt
 

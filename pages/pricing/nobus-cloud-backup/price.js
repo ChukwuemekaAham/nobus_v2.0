@@ -16,7 +16,7 @@ function index() {
   return (
     <section>
       <Head>
-        <title> Pricing - Acronis Cloud Backup </title>
+        <title> Pricing - Nobus Cloud Backup </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
@@ -24,7 +24,7 @@ function index() {
         <div className="flex px-5 md:px-10 py-3 justify-between shadow-md border-y border-gray-300">
           <div className="flex">
             <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-              Acronis Cloud Backup
+              Nobus Cloud Backup
             </h1>
           </div>
           <div className="flex">
@@ -48,7 +48,7 @@ function index() {
                     <Tab
                       key={category}
                       as={Link}
-                      href={`/pricing/acronis/${category}`}
+                      href={`/pricing/nobus-cloud-backup/${category}`}
                       className={({ selected }) =>
                         classNames(
                           "w-full py-2.5 pl-4 text-md text-left font-medium leading-5",

@@ -16,7 +16,7 @@ export default function Access() {
 
   return (
     <div id="access-security-configurations" className="py-10">
-      <h2 className="tracking-tight pb-5">Access and Security Configuration</h2>
+      <h2 className="pb-5">Access and Security Configuration</h2>
 
       <p>
         If you are yet to sign up for Nobus, or require support to launch your

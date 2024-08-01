@@ -1,9 +1,9 @@
 import React from "react";
 
-function Quickstart() {
+function CloudVpn() {
   return (
-    <div id="quickstart" className="py-10">
-      <h2 className="pb-5">Quickstart Guide</h2>
+    <div id="cloud-vpn" className="py-10">
+      <h2 className="pb-5">Nobus Cloud Virtual Private Network (VPN)</h2>
 
       <div className="pt-10 space-y-5">
         <h3></h3>
@@ -17,4 +17,4 @@ function Quickstart() {
   );
 }
 
-export default Quickstart;
+export default CloudVpn;

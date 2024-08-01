@@ -128,34 +128,30 @@ const sections = [
     name: "Networking",
     items: [
       {
-        name: "Virtual Private Cloud",
+        name: "Nobus Datacenter as a Service (DaaS)",
         href: "/documentation/networking",
         desc: "Network suited for various workloads",
       },
       {
         name: "Nobus Fast Transit (NFT)",
-        href: "#",
+        href: "/documentation/networking#fasttransit",
         desc: "Exclusive allocated network connection",
       },
       {
         name: "Virtual Private Network (VPN)",
-        href: "#",
+        href: "/documentation/networking#cloud-vpn",
       },
       {
-        name: "Cloud Router",
-        href: "#",
+        name: "Nobus Cloud Router",
+        href: "/documentation/networking#cloud-router",
       },
       {
-        name: "Domains and DNS",
+        name: "Nobus Domains and DNS",
         href: "/documentation/dns",
       },
       {
-        name: "Network Firewall",
-        href: "#",
-      },
-      {
-        name: "Network ACLs",
-        href: "#",
+        name: "Floating IPs",
+        href: "/documentation/networking#floating-ips",
       },
     ],
   },

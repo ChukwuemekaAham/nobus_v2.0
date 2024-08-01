@@ -15,7 +15,7 @@ function Quickstart() {
   ];
   return (
     <div id="quickstart" className="py-10">
-      <h1>FOS Quickstart Guide</h1>
+      <h2 className="pb-5">FOS Quickstart Guide</h2>
 
       <div className="w-full px-2 py-16 sm:px-0">
         <Tab.Group vertical>

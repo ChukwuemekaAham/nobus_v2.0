@@ -108,7 +108,7 @@ function index() {
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                  ₦2.00 per GB
+                                  ₦ 60.00 NGN per GB
                                 </td>
                               </tr>
                               <tr>
@@ -117,7 +117,7 @@ function index() {
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                  ₦2.00 per GB
+                                  ₦ 60.00 NGN per GB
                                 </td>
                               </tr>
                               <tr>
@@ -126,12 +126,136 @@ function index() {
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                  ₦2.00 per GB
+                                  ₦ 60.00 NGN per GB
                                 </td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
+                        <h6>
+                          You pay for requests made against your FOS buckets and
+                          objects.{" "}
+                        </h6>
+                        <p>
+                          FOS request costs are based on the request type, and
+                          are charged on the quantity of requests as listed in
+                          the table below. Reference the FOS developer guide for
+                          technical details on the following request types: PUT,
+                          COPY, POST, LIST, GET, SELECT, and Data Retrievals.
+                          DELETE and CANCEL requests are free.
+                        </p>
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  PUT, COPY, POST, LIST requests (per 1,000
+                                  requests)
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  GET, SELECT, and all other requests (per 1,000
+                                  requests)
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  Data Retrieval requests (per 1,000 requests)
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  Data retrievals (per GB)
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  FOS Standard
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦ 2.00 NGN
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦ 2.00 NGN
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">n/a</td>
+                                <td class="px-6 py-4 whitespace-nowrap">n/a</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div className="space-y-5">
+                          <h6>
+                            You pay for monthly bandwidth of ₦ 6,000 NGN into
+                            and out of Nobus FOS, except for the following:
+                          </h6>
+                          <ul>
+                            <li>Data transferred in from the internet.</li>
+                            <li>
+                              Data transferred out to an Nobus Flexible Compute
+                              Service (Nobus FCS) instance, when the instance is
+                              in the same zone as the FOS bucket.
+                            </li>
+                          </ul>
+                          <p>
+                            The pricing below is based on data transferred "in"
+                            and "out" of Nobus FOS, over the public Internet.{" "}
+                          </p>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  price ( Naira )
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                              <tr>
+                                <td
+                                  colspan="6"
+                                  class="px-6 py-4 whitespace-nowrap"
+                                >
+                                  <p className="font-semibold">
+                                    Data Transfer IN To Nobus FOS From Internet
+                                  </p>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"></td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  All data transfer in
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦ 0.00 NGN per GB
+                                </td>
+                              </tr>
+                              <tr>
+                                <td
+                                  colspan="6"
+                                  class="px-6 py-4 whitespace-nowrap"
+                                >
+                                  <p className="font-semibold">
+                                    Data Transfer OUT From Nobus FOS To Internet
+                                  </p>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"></td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  Up to 1 GB / Month
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦ 2.00 NGN per GB
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
                         <p>
                           Except as otherwise noted, our prices are exclusive of
                           applicable taxes and duties, including VAT and

@@ -60,9 +60,9 @@ const sections = [
         desc: "Extensive and Unlimited Storage in the cloud",
       },
       {
-        name: "Acronis Cloud Backup",
-        href: "/pricing/acronis/price",
-        desc: "Cloud Backup and Disaster recovery for your entire workload",
+        name: "Nobus Cloud Backup",
+        href: "/pricing/nobus-cloud-backup/price",
+        desc: "Durable Cloud Backup for your entire workload",
       },
     ],
   },

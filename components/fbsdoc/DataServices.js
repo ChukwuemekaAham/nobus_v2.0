@@ -3,7 +3,7 @@ import React from "react";
 function DataServices() {
   return (
     <div id="data-services" className="py-10">
-      <h1 className="pb-5">Data Services</h1>
+      <h2 className="pb-5">Data Services</h2>
 
       <div className="pt-5 space-y-5">
         <h4>Nobus FBS extendable volumes</h4>

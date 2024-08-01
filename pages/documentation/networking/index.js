@@ -8,9 +8,27 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
+import Quickstart from "../../../components/networkingdoc/Quickstart";
+import FastTransit from "../../../components/networkingdoc/fastTransit";
+import CloudRouter from "../../../components/networkingdoc/CloudRouter";
+import CloudLoadBalancer from "../../../components/networkingdoc/CloudLoadBalancer";
+import CloudVpn from "../../../components/networkingdoc/CloudVpn";
+
+import { Tab } from "@headlessui/react";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function index() {
   const [open, setOpen] = useState(true);
+  const categories = [
+    "Instance IP Addressing",
+    "Flexible Network Interface",
+    "Floating IPs",
+    "Network Firewall",
+    "Network ACLs",
+  ];
 
   return (
     <section>
@@ -74,11 +92,87 @@ function index() {
           >
             <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
-                <div id="overview" className="flex-col p-5 lg:p-10">
-                  <h1 className="pb-10 text-3xl md:text-4xl font-bold text-center">
-                    Nobus Networking Services
+                <div
+                  id="data-center-as-a-service"
+                  className="flex-col p-5 lg:p-10"
+                >
+                  <h1 className="pb-10 text-center">
+                    Nobus Data Center as a Service (DaaS)
                   </h1>
-                  <section className="mx-auto text-justify"></section>
+
+                  <section className="mx-auto text-justify">
+                    <div className="pt-5 space-y-5">
+                      <p>
+                        Nobus understand the integral part played by Data
+                        centers. The security and reliability of our data center
+                        and it information is our top priority. DaaS allows
+                        connection to public or private network infrastructure
+                        with an encrypted VPN (MPLS or Internet) connection.
+                        Take advantage of the our platform that supports
+                        applications and workloads across pools of physical
+                        infrastructure and multi-cloud environments. Data
+                        centers often host an organization's business-critical
+                        data and applications.
+                      </p>
+                      <p>
+                        Nobus ensures that both facility and equipment are
+                        secured against intruders, while providing
+                        round-the-clock access to information thus, securely
+                        sustaining the highest availability possible. Services
+                        such as Security Groups, Firewall as a Service (Faas),
+                        Network ACLs, Loadbalancer, Auto-Scaling of resources
+                        and workloads, Software defined Network infrastructure
+                        such as switches and routers, are available for
+                        provisioning.
+                      </p>
+                      <p>
+                        You have complete control over your virtual networking
+                        environment, including; selection of your own IP address
+                        range, creation of subnets, and configuration of route
+                        tables and network gateways.
+                      </p>
+                    </div>
+
+                    <div className="w-full px-2 py-16 sm:px-0">
+                      <Tab.Group vertical>
+                        <div className="grid grid-cols-1">
+                          <Tab.List className="flex-col max-w-sm rounded-xl bg-gray-100">
+                            <h4 className="py-2 pl-2">TOPICS</h4>
+                            {categories.map((category) => (
+                              <Tab
+                                key={category}
+                                className={({ selected }) =>
+                                  classNames(
+                                    "w-full py-2.5 pl-2 text-md text-left font-medium leading-5",
+                                    "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none",
+                                    selected
+                                      ? "bg-white text-blue-500 shadow"
+                                      : "text-gray-800 hover:bg-white/[0.12] hover:text-gray-400"
+                                  )
+                                }
+                              >
+                                {category}
+                              </Tab>
+                            ))}
+                          </Tab.List>
+                          <Tab.Panels className="flex-col py-10">
+                            <Tab.Panel>
+                              <h3></h3>
+                              <p></p>
+                              <div className="space-y-5">
+                                <h6> </h6>
+                              </div>
+                            </Tab.Panel>
+                          </Tab.Panels>
+                        </div>
+                      </Tab.Group>
+                    </div>
+                  </section>
+                  <Quickstart />
+                  <FastTransit />
+                  <CloudVpn />
+                  <CloudRouter />
+                  <CloudLoadBalancer />
                 </div>
               </div>
               <div className="p-5 text-sm tracking-wide leading-relaxed">

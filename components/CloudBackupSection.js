@@ -21,7 +21,7 @@ const CloudBackupSection = () => {
             applications at a fractional monthly cost.
           </p>
           <a
-            href="/documentation/acronis"
+            href="/documentation/cloud-backup"
             className="inline-flex items-center justify-center border border-white text-white rounded-md py-3 px-12 hover:bg-white hover:text-blue-600 transition-colors duration-200"
           >
             <span className="mr-2">Learn More</span>
