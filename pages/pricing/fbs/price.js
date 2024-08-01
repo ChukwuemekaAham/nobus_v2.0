@@ -106,16 +106,16 @@ function index() {
                             </tr>
                             <tr>
                               <td class="p-4">
-                                N120 per GB-month of provisioned storage
+                                ₦120 per GB-month of provisioned storage
                               </td>
                               <td class="p-4">
-                                N120 per GB-month of data stored
+                                ₦120 per GB-month of data stored
                               </td>
                             </tr>
                             <tr>
                               <td></td>
                               <td class="p-4">
-                                N120 per provisioned IOPS-month
+                                ₦120 per provisioned IOPS-month
                               </td>
                             </tr>
                           </tbody>

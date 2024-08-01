@@ -73,27 +73,88 @@ function index() {
                     <Spinner width={10} height={10} />
                   </Tab.Panel>
                   <Tab.Panel data-headlessui-state="selected">
-                    Content 3
                     <section id="price" className="mx-auto text-justify">
-                      <p>
-                        Nobus FOS allows creating Virtual Machines (VM)
-                        on-demand. Customers can get running immediately with
-                        pre-configured template Machine Image. Provide tools to
-                        build failure resilient applications by launching
-                        application instances. In separate Availability Zones
-                        (Coming Soon).
-                      </p>
-                      <p>
-                        Nobus FOS simple web service interface provides you with
-                        complete control of your computing resources and lets
-                        you run on Nobus’s dependable computing environment
-                        thus, allowing you to obtain and configure capacity with
-                        less conflict. Nobus FCS reduces the time required to
-                        obtain and boot new server instances to minutes,
-                        allowing you to quickly scale capacity, both up and
-                        down, as your computing requirements change. With Nobus
-                        FCS you to pay only for capacity that you actually use.
-                      </p>
+                      <h2 className="pb-10">Nobus FOS Price</h2>
+                      <div className="space-y-5">
+                        <p>
+                          You pay for storing objects in your FOS buckets. The
+                          rate you’re charged depends on your objects' size, and
+                          time frame of monthly objects storage.
+                        </p>
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  Storage price (Naira)
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  <div class="text-sm font-medium text-gray-900">
+                                    <b>FOS Standard -</b> Standard storage for
+                                    any type of data, typically used for
+                                    frequently accessed data
+                                  </div>
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap"></td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  First 50 TB / Month
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦2.00 per GB
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  Next 450 TB / Month
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦2.00 per GB
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  Over 500 TB / Month
+                                </td>
+
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                  ₦2.00 per GB
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <p>
+                          Except as otherwise noted, our prices are exclusive of
+                          applicable taxes and duties, including VAT and
+                          applicable sales tax.
+                        </p>
+                        <p>
+                          Nobus FOS storage usage is calculated in binary
+                          gigabytes (GB); in the context of digital storage and
+                          memory, 1 GB is often considered to be equal to
+                          1,073,741,824 bytes (2^30 bytes).
+                        </p>
+                        <p>
+                          <span className="font-semibold">To summarize:</span>{" "}
+                          <br />
+                          1 GB (Gigabyte) = 1,000,000,000 bytes (based on the
+                          metric system) <br />1 GiB (Gibibyte) = 1,073,741,824
+                          bytes (based on the binary system)
+                        </p>
+
+                        <p>
+                          You pay for all bandwidth into and out of Nobus FOS
+                        </p>
+                      </div>
                     </section>
                   </Tab.Panel>
                   <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">
