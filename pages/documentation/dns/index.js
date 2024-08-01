@@ -75,7 +75,7 @@ function index() {
           >
             <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
-                <div className="flex-col p-5 lg:p-10">
+                <div id="overview" className="flex-col p-5 lg:p-10">
                   <h1 className="pb-10 text-center">Nobus Domains and DNS</h1>
                   <section className="mx-auto text-justify">
                     <div className="pt-5 space-y-5">
