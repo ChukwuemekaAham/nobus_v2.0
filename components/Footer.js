@@ -34,7 +34,7 @@ function Footer() {
                   Features
                 </p>
                 <a
-                  href="/blog/"
+                  href="#"
                   className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Blog

@@ -1587,7 +1587,7 @@ export default function Header() {
                         <input
                           type="text"
                           placeholder="Search"
-                          className="w-full text-sm font-semibold rounded-sm outline-none border-none focus:outline-none focus:ring-0 focus:border-0"
+                          className="w-full text-sm rounded-sm outline-none border-none focus:outline-none focus:ring-0 focus:border-0"
                         />
                         <button
                           className=" text-white hover:text-slate-300 hover:scale-105 px-1"

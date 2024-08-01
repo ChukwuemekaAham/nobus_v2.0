@@ -7,28 +7,28 @@ const updates = [
     date: "September 15, 2024",
     category: "Security & Data",
     title: "New Sophos reinforcement for...",
-    link: "/blog",
+    link: "#",
     image: "/ISO-blog.png",
   },
   {
     date: "May 12, 2024",
     category: "New Features",
     title: "Kubernetes features now available.",
-    link: "/blog",
+    link: "#",
     image: "/kubernetes.png",
   },
   {
     date: "June 2, 2024",
     category: "Compliance & Legal",
     title: "We are now fully certified by the international...",
-    link: "/blog",
+    link: "#",
     image: "/Link.png",
   },
   {
     date: "August 2, 2023",
     category: "Policies & Laws",
     title: "Top 10 international payroll tax mistakes and how to avoid...",
-    link: "/blog",
+    link: "#",
     image: "/isoImg.png",
   },
 ];
@@ -115,7 +115,7 @@ const RecentUpdates = () => {
         </div>
         <div className="flex justify-center mt-12">
           <a
-            href="/blog"
+            href="#"
             className="bg-[#03A731] hover:bg-[#03A731] text-white hover:text-white font-semibold py-3 px-6 rounded-md transition-colors duration-200 flex items-center"
           >
             <span className="mr-2">See other articles</span>
