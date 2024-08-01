@@ -68,25 +68,93 @@ function index() {
                 <Tab.Panels className="flex flex-col col-span-1 md:col-span-2 lg:col-span-3 py-10 md:py-20 md:pl-20 h-[600px] overflow-y-scroll scrollbar-hide">
                   <Tab.Panel>
                     <section id="overview" className="mx-auto text-justify">
+                      <h2 className="pb-5">
+                        {" "}
+                        Extensive and Unlimited Storage in the cloud
+                      </h2>
                       <p>
-                        Nobus FOS allows creating Virtual Machines (VM)
-                        on-demand. Customers can get running immediately with
-                        pre-configured template Machine Image. Provide tools to
-                        build failure resilient applications by launching
-                        application instances. In separate Availability Zones
-                        (Coming Soon).
+                        Nobus Flexible Object Storage (Nobus FOS) is a long-term
+                        storage system for large amounts of static data which
+                        can be retrieved and updated. It ensures data
+                        availability, scalability, security, and performance. It
+                        stores and secures customer data containing multiple
+                        applications ranging from websites, mobile applications,
+                        enterprise applications, backup and restore, and
+                        archive. Nobus Flexible Object Storage is cost
+                        effective.
                       </p>
-                      <p>
-                        Nobus FOS simple web service interface provides you with
-                        complete control of your computing resources and lets
-                        you run on Nobus’s dependable computing environment
-                        thus, allowing you to obtain and configure capacity with
-                        less conflict. Nobus FCS reduces the time required to
-                        obtain and boot new server instances to minutes,
-                        allowing you to quickly scale capacity, both up and
-                        down, as your computing requirements change. With Nobus
-                        FCS you to pay only for capacity that you actually use.
-                      </p>
+                      <h3 className="py-5">Benefits:</h3>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <div className="">
+                          <h6 className="pb-2">
+                            High performance, scalability and availability
+                          </h6>
+                          <p>
+                            Nobus FOS automatically creates and stores copies of
+                            all FOS objects across several systems. Your data is
+                            available when needed and secured against failures
+                            and intruders. Storage resources can be scaled up
+                            and down to meet workload demands.
+                          </p>
+                        </div>
+                        <div className="">
+                          <h6 className="pb-2">Cost-effective</h6>
+                          <p>
+                            Nobus FOS automatically ensure cost savings. You
+                            save costs by storing data in FOS storage.
+                          </p>
+                        </div>
+                        <div className="">
+                          <h6 className="pb-2">Security</h6>
+                          <p>
+                            By Storing your data in Nobus FOS, you can prevent
+                            unauthorized public access.
+                          </p>
+                        </div>
+                        <div className="">
+                          <h6 className="pb-2">Easy data management</h6>
+                          <p>
+                            FOS enable users to manage access, cost and
+                            replication. Users can also manage the security of
+                            their data. large scale changes across multiple
+                            objects can be manage by FOS.
+                          </p>
+                        </div>
+                      </div>
+                      <h3 className="py-5">Use Cases:</h3>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <div className="">
+                          <h6 className="pb-2">Backup</h6>
+                          <p>
+                            Create scalable and secure backup and restore
+                            solutions with Nobus FOS and other Nobus web
+                            services services like Nobus FBS to augment or
+                            replace existing on-premises capabilities. With
+                            Nobus web services, you can back up data already in
+                            the Nobus web services Cloud.
+                          </p>
+                        </div>
+                        <div className="">
+                          <h6 className="pb-2">
+                            Cloud-native application data
+                          </h6>
+                          <p>
+                            With Nobus FOS you can store production data, you
+                            can upload any amount of data and access it where
+                            ever ensuring the deployment of applications in
+                            quick time and available to more end users.
+                          </p>
+                        </div>
+                        <div className="">
+                          <h6 className="pb-2">Static Web Hosting</h6>
+                          <p>
+                            You can host your staic website and files using fos,
+                            and access it through the public internet
+                          </p>
+                        </div>
+                      </div>
                     </section>
                   </Tab.Panel>
                   <Tab.Panel className="mx-auto text-center justify-center max-w-sm my-auto">

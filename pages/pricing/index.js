@@ -240,7 +240,7 @@ function index() {
           />
           <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
             <h1 className="hero-h">Nobus Pricing</h1>
-            <p className="hero-p">
+            <p className="hero-p lg:max-w-xl">
               Low Ongoing Cost; pay-as-you-use pricing with flexible expenses,
               of short or long term commitments, without requiring complex
               licensing.
@@ -350,27 +350,32 @@ function index() {
               <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
                 <div className="rounded-2xl bg-indigo-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center">
                   <div className="mx-auto max-w-xs px-8">
-                    <p className="text-base font-semibold tracking-wide text-gray-600">
-                      {" "}
+                    <p className="text-base font-semibold tracking-tight text-gray-600">
                       Flexible Capacity As Low As
                     </p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                      <span className="text-5xl font-semibold tracking-tight text-gray-900">
-                        #3.00
+                      <span className="text-4xl font-extrabold tracking-tight text-gray-900">
+                        ₦ 293.00
                       </span>
                       <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
                         NGN
                       </span>
+                      <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                        / Daily
+                      </span>
                     </p>
                     <a
                       href="https://cloud.nobus.io/"
-                      className="mt-10 cursor-pointer block w-full rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                      className="mt-20 cursor-pointer block w-full rounded-md bg-[#03A731] px-3 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#03A731] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                     >
                       Visit Cloud Console
                     </a>
-                    <p className="mt-6 text-xs leading-5 tracking-wide text-gray-600">
-                      Start building your future
-                    </p>
+                    <div className="mt-12 flex items-center space-x-2 px-3 rounded-lg border border-gray-200 py-2 bg-[#3F3F461A]">
+                      <img src="/naria.png" alt="Naira" className="h-6 w-6" />
+                      <p className="text-xs leading-5 tracking-wide text-gray-600">
+                        Make all your payments in naira!
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

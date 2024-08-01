@@ -68,7 +68,7 @@ function index() {
                 <Tab.Panels className="flex flex-col col-span-1 md:col-span-2 lg:col-span-3 py-10 md:py-20 md:pl-20 h-[600px] overflow-y-scroll scrollbar-hide">
                   <Tab.Panel>
                     <section id="overview" className="mx-auto text-justify">
-                      <h2 className="pb-5 text-3xl font-semibold text-[#232f3e]">
+                      <h2 className="pb-5">
                         Block level storage volumes (1 GB to 1 TB ) for use with
                         Nobus FC instances
                       </h2>

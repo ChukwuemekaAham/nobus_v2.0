@@ -736,6 +736,14 @@ export default function Header() {
 
                 {/* Links */}
                 <Tab.Group as="div" className="mt-2">
+                  <div className="flex px-4 mt-5">
+                    <a
+                      href="#"
+                      className="flex text-base font-semibold cursor-pointer text-gray-600 hover:text-gray-500 "
+                    >
+                      About Us
+                    </a>
+                  </div>
                   {/* Filters */}
                   <div className="block space-y-2 pt-10 pb-8 px-4">
                     {mobilefilters.map((section) => (
@@ -891,6 +899,13 @@ export default function Header() {
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:mx-auto lg:block lg:self-stretch">
                 <div className="flex space-x-6 pt-6">
+                  <a
+                    href="#"
+                    className="flex text-sm font-semibold -my-2px  cursor-pointer text-white hover:text-white hover:shadow-lg"
+                  >
+                    About Us
+                  </a>
+
                   {navigation.solutioncategories.map((category) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => (
@@ -1060,7 +1075,7 @@ export default function Header() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-slate-300 rounded-md text-white focus:scale-110"
+                                  ? "border-slate-400 rounded-md text-white focus:scale-110"
                                   : "border-transparent text-white hover:text-white",
                                 "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
@@ -1237,7 +1252,7 @@ export default function Header() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-slate-300 rounded-md text-white focus:scale-110"
+                                  ? "border-slate-400 rounded-md text-white focus:scale-110"
                                   : "border-transparent text-white hover:text-white",
                                 "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
@@ -1446,7 +1461,7 @@ export default function Header() {
                         <Popover.Button
                           className={classNames(
                             open
-                              ? "border-slate-300 rounded-md text-white focus:scale-110"
+                              ? "border-slate-400 rounded-md text-white focus:scale-110"
                               : "border-transparent text-white hover:text-white",
 
                             "group inline-flex relative z-10 -mb-px outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"

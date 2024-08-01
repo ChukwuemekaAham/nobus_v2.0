@@ -31,9 +31,62 @@ function Quickstart() {
           </p>
         </div>
       </div>
+      <div className="mr-auto my-5 max-w-sm bg-slate-100 p-4 border-l-2 border-l-slate-400">
+        <h5>Items</h5>
+        <ul className="list-none pl-0">
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#creating-nobus-fbs-volume"
+            >
+              Creating a Nobus FBS Volume
+            </a>
+          </li>
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#attaching-nobus-fbs-volume-to-instance"
+            >
+              Attaching a Nobus FBS Volume to an Instance
+            </a>
+          </li>
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#see-nobus-fbs-volume-information"
+            >
+              See Nobus FBS Volume Information
+            </a>
+          </li>
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#edit-nobus-fbs-volume"
+            >
+              Edit a Nobus FBS Volume
+            </a>
+          </li>
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#detaching-nobus-fbs-volume-from-instance"
+            >
+              Detach a Nobus FBS Volume from an Instance
+            </a>
+          </li>
+          <li className="hover:scale-105">
+            <a
+              className="hover:bg-white rounded-md p-1"
+              href="#deleting-nobus-fbs-volume"
+            >
+              Deleting a Nobus FBS Volume
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div className="pt-10">
-        <h3>Creating a Nobus FBS Volume</h3>
+        <h3 id="creating-nobus-fbs-volume">Creating a Nobus FBS Volume</h3>
         <div className="pt-5 space-y-5">
           <h4>Method of Creating a Volume</h4>
           <ol>
@@ -137,7 +190,9 @@ function Quickstart() {
       </div>
 
       <div className="pt-5">
-        <h3>Attaching a Nobus FBS Volume to an Instance</h3>
+        <h3 id="attaching-nobus-fbs-volume-to-instance">
+          Attaching a Nobus FBS Volume to an Instance
+        </h3>
         <p>
           You can attach an available FBS volume to one of your instances that
           is in the same Availability Zone as the volume.
@@ -223,7 +278,9 @@ function Quickstart() {
         </div>
       </div>
       <div className="pt-5">
-        <h3>See Nobus FBS Volume Information</h3>
+        <h3 id="see-nobus-fbs-volume-information">
+          See Nobus FBS Volume Information
+        </h3>
         <div className="pt-5 space-y-5">
           <h4>To view information about a FBS volume using the console</h4>
           <ol>
@@ -262,7 +319,7 @@ function Quickstart() {
         </div>
       </div>
       <div className="pt-5">
-        <h3>Edit a Nobus FBS Volume</h3>
+        <h3 id="edit-nobus-fbs-volume">Edit a Nobus FBS Volume</h3>
         <div className="pt-5 space-y-5">
           <h4>To edit a Nobus FBS volumes</h4>
           <ol>
@@ -298,7 +355,9 @@ function Quickstart() {
         </div>
       </div>
       <div className="pt-5 space-y-5">
-        <h3>Detaching a Nobus FBS Volume from an Instance</h3>
+        <h3 id="detaching-nobus-fbs-volume-from-instance">
+          Detaching a Nobus FBS Volume from an Instance
+        </h3>
         <p>
           Nobus FBS volume may be expressly detached from an instance or the
           instance can be terminated. Unmount the volume from the instance if
@@ -316,7 +375,7 @@ function Quickstart() {
           <ol>
             <li>
               <h6>
-                Open the Nobus FCS console at
+                Open the Nobus FCS console at{" "}
                 <a href="https://cloud.nobus.io/project/">
                   https://cloud.nobus.io/
                 </a>
@@ -346,7 +405,7 @@ function Quickstart() {
         </div>
       </div>
       <div className="pt-5">
-        <h3>Deleting a Nobus FBS Volume</h3>
+        <h3 id="deleting-nobus-fbs-volume">Deleting a Nobus FBS Volume</h3>
         <p>
           when you no longer need a Nobus FBS volume, you can delete it. After
           deletion, the volume can't be attached to any instance because the
@@ -358,28 +417,22 @@ function Quickstart() {
           <h4>To delete a FBS volume using the console</h4>
           <ol>
             <li>
-              <h6>
-                Open the Nobus FCS console at
-                <a href="https://cloud.nobus.io/">https://cloud.nobus.io/</a>.
-              </h6>
+              Open the Nobus FCS console at{" "}
+              <a href="https://cloud.nobus.io/">https://cloud.nobus.io/</a>.
             </li>
             <li>
-              <h6>
-                In the navigation pane, choose{" "}
-                <span className="step-item">Volumes</span>.
-              </h6>
+              In the navigation pane, choose{" "}
+              <span className="step-item">Volumes</span>.
             </li>
             <li>
-              <h6>
-                Select a volume and choose{" "}
-                <span className="step-item">Actions</span>,{" "}
-                <span className="step-item">Delete Volume</span>.
-              </h6>
+              Select a volume and choose{" "}
+              <span className="step-item">Actions</span>,{" "}
+              <span className="step-item">Delete Volume</span>.
             </li>
 
             <li>
               <p>
-                Click <span class="guilabel">Delete Volumes</span> and confirm
+                Click <span class="step-item">Delete Volumes</span> and confirm
                 your choice.
               </p>
             </li>

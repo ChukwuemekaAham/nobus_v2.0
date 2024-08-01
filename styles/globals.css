@@ -4,7 +4,7 @@
 
 @layer components {
     a {
-      @apply text-blue-600 hover:text-blue-800
+      @apply text-blue-600 hover:text-blue-500
     }
     .button {
       @apply transform cursor-pointer rounded-full border px-4 hover:no-underline

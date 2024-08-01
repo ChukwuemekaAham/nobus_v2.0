@@ -20,24 +20,22 @@ export default function Content() {
     // }}>
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl sm:mt-0 lg:mt-16 lg:mx-auto lg:flex lg:max-w-none lg:justify-center lg:px-28">
-        <div className="p-8 sm:p-10 lg:flex-auto">
-          <h3 className="text-2xl font-bold tracking-wide text-gray-900">
-            Experience Workflow Boost
-          </h3>
+        <div className="p-8 sm:px-10 lg:flex-auto">
+          <h3 className="font-bold">Experience Workflow Boost</h3>
           <p className="mt-6 text-base text-gray-600 tracking-wide max-w-lg">
             Enhanced workflows with guided digital solutions for global
             optimization; implement new processes faster, simplify data{" "}
             <br className="hidden md:block" /> storage and improve productivity.
           </p>
-          <div className="mt-10 flex items-center gap-x-4">
-            <h4 className="flex-none text-md font-semibold leading-6 text-blue-600">
+          <div className="mt-5 flex items-center gap-x-4">
+            <h5 className="flex-none font-semibold leading-4 text-blue-600">
               What’s available
-            </h4>
+            </h5>
             {/* <div className="h-px flex-auto bg-gray-100" /> */}
           </div>
           <ul
             role="list"
-            className="mt-8 grid grid-cols-1 gap-4 text-base leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+            className="mt-8 pl-0 grid grid-cols-1 space-y-4 text-base leading-6 text-gray-600 sm:grid-cols-2"
           >
             {includedFeatures.map((feature) => (
               <li key={feature} className="flex gap-x-3">
@@ -48,29 +46,17 @@ export default function Content() {
                 {feature}
               </li>
             ))}
-            <li className="text-[#0568FD] flex items-center">
-              See all solutions
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-5 ml-1"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                />
-              </svg>
+            <li className="text-[#0568FD] inline-flex items-center">
+              <a href="/solutions">
+                See all solutions <span aria-hidden="true"> &rarr;</span>
+              </a>
             </li>
           </ul>
         </div>
         <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
           <div className="bg-indigo-50 py-10 text-center lg:flex lg:flex-col lg:justify-center lg:py-16 rounded-xl border">
             <div className="mx-auto max-w-xs px-8">
-              <p className="text-base font-semibold tracking-wide text-gray-600">
+              <p className="text-base font-semibold tracking-tight text-gray-600">
                 Flexible Capacity As Low As
               </p>
               <p className="mt-6 flex items-baseline justify-center gap-x-2">
@@ -81,7 +67,7 @@ export default function Content() {
                   NGN
                 </span>
                 <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                  / daily
+                  / Daily
                 </span>
               </p>
               <a

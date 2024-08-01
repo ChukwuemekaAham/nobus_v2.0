@@ -8,6 +8,7 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
+import Quickstart from "../../../components/fosdoc/Quickstart";
 
 function index() {
   const [open, setOpen] = useState(true);
@@ -75,10 +76,56 @@ function index() {
             <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
                 <div id="overview" className="flex-col p-5 lg:p-10">
-                  <h1 className="pb-10 text-3xl md:text-4xl font-bold text-center">
+                  <h1 className="pb-10 text-center">
                     Nobus Flexible Object Storage
                   </h1>
-                  <section className="mx-auto text-justify"></section>
+                  <section className="mx-auto text-justify">
+                    <div className="space-y-5">
+                      <p>
+                        Nobus Flexible Object Storage (Nobus FOS) is an
+                        extensive storage system for large amounts of data which
+                        can be retrieved and updated. Nobus Flexible Object
+                        Storage provides a distributed storage platform that can
+                        be used to store any type or amount of file, including
+                        backups, archives, or media files. In the Nobus console,
+                        you can only manage containers and objects.
+                      </p>
+                      <p>
+                        In Nobus Flexible Object Storage, containers provide
+                        storage for objects like a directory, though not nested
+                        and you can have multiple containers. To store an object
+                        in Nobus FOS, you have to upload the file you want to
+                        store to a container. When you upload a file, you can
+                        create restrictions on the object and any metadata. For
+                        each container, you can determine who can create,
+                        delete, and list objects in the container, view access
+                        logs for it and its objects, and select zone where the
+                        the container and its contents will be stored.
+                      </p>
+                      <p>
+                        An object in Nobus Flexible consists of the file to be
+                        stored in the container and associated metadata. Nobus
+                        Flexible Object Storage (Nobus FOS) is suited for the
+                        internet. Storage of data in FOS can be accomplish using
+                        the Nobus FOS Console.
+                      </p>
+                      <h4>Setting up Nobus FOS</h4>
+                      <p>
+                        When you sign up for Nobus, your Nobus account is
+                        automatically signed up for all services in Nobus,
+                        including Nobus FOS. You are charged only for the
+                        services that you use. With Nobus FOS, you pay only for
+                        what you use. For more information about Nobus FOS
+                        features and pricing, see{" "}
+                        <a href="#">Nobus FOS Pricing</a>
+                      </p>
+                      <p>
+                        To get started with Nobus FOS, see{" "}
+                        <a href="#">FOS Quickstart Guide</a>
+                      </p>
+                    </div>
+                  </section>
+                  <Quickstart />
                 </div>
               </div>
               <div className="p-5 text-sm tracking-wide leading-relaxed">

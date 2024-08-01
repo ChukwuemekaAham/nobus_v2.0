@@ -76,30 +76,42 @@ function index() {
                     <Spinner width={10} height={10} />
                   </Tab.Panel>
                   <Tab.Panel data-headlessui-state="selected">
-                    Content 4
                     <section
                       id="storage-category"
                       className="mx-auto text-justify"
                     >
+                      <h2 className="pb-10">Nobus FOS Categories</h2>
+                      <h4 className="pb-5">FOS (Standard) Tier</h4>
                       <p>
-                        Nobus FOS allows creating Virtual Machines (VM)
-                        on-demand. Customers can get running immediately with
-                        pre-configured template Machine Image. Provide tools to
-                        build failure resilient applications by launching
-                        application instances. In separate Availability Zones
-                        (Coming Soon).
+                        FOS Standard offers general-purpose, high durability,
+                        availability, and performance object storage for
+                        frequently accessed data, long-term archive and digital
+                        preservation. it is suitable for a several scenerios,
+                        including dynamic websites, content distribution, mobile
+                        and gaming applications, and big data analytics
                       </p>
-                      <p>
-                        Nobus FOS simple web service interface provides you with
-                        complete control of your computing resources and lets
-                        you run on Nobus’s dependable computing environment
-                        thus, allowing you to obtain and configure capacity with
-                        less conflict. Nobus FCS reduces the time required to
-                        obtain and boot new server instances to minutes,
-                        allowing you to quickly scale capacity, both up and
-                        down, as your computing requirements change. With Nobus
-                        FCS you to pay only for capacity that you actually use.
-                      </p>
+                      <h6>Properties:</h6>
+                      <ul>
+                        <li>Highly available</li>
+                        <li>Suitable for frequently accessed data</li>
+                        <li>Low latency and high performance</li>
+                        <li>
+                          Durability of objects across multiple Availability
+                          Zones
+                        </li>
+                        <li>
+                          Solid to events that strike an entire Availability
+                          Zone
+                        </li>
+                        <li>
+                          Supports SSL for data in transit and encryption of
+                          data.
+                        </li>
+                        <li>
+                          Backed by the Nobus FOS Service Level Agreement for
+                          availability
+                        </li>
+                      </ul>
                     </section>
                   </Tab.Panel>
                 </Tab.Panels>

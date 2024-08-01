@@ -50,13 +50,14 @@ const docsfilters = [
       { value: "", href: "/documentation/fos" },
       { value: "Overview", href: "/documentation/fos#overview" },
       { value: "Quickstart", href: "/documentation/fos#quickstart" },
-      { value: "Data Services", href: "/documentation/fos#data-services" },
     ],
   },
   {
     name: "Networking",
     href: "/documentation/networking",
     options: [
+      { value: "", href: "/documentation/networking" },
+      { value: "Overview", href: "/documentation/networking#overview" },
       { value: "Virtual Private Cloud", href: "#" },
       { value: "FastTransit Network", href: "#" },
       { value: "Virtual Private Network", href: "#" },
@@ -70,46 +71,49 @@ const docsfilters = [
     name: "Domains and DNS",
     href: "/documentation/dns",
     options: [
-      { value: "Create your Nobus account", href: "#" },
-      { value: "How to provision a Linux instance", href: "#" },
-      { value: "How to provision a Windows instance", href: "#" },
-      { value: "SSH into your nobus instance", href: "#" },
+      { value: "", href: "/documentation/dns" },
+      { value: "Overview", href: "/documentation/dns#overview" },
+      { value: "Quickstart", href: "#" },
     ],
   },
   {
     name: "Database Services",
-    href: "/documentation/database-services",
+    href: "#",
     options: [
-      { value: "", href: "/documentation/database-services" },
-      { value: "Overview", href: "/documentation/database-services#overview" },
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
       {
         value: "Microsoft SQL Server",
-        href: "/documentation/database-services#mssql",
+        href: "#",
       },
       {
         value: "MySQL Database",
-        href: "/documentation/database-services#mysql",
+        href: "#",
       },
       {
         value: "PostgreSQL Database",
-        href: "/documentation/database-services#postgresql",
+        href: "#",
       },
-      { value: "MongoDB", href: "/documentation/database-services#mongodb" },
+      { value: "MongoDB", href: "#" },
     ],
   },
 
   {
     name: "Container Services",
-    href: "/documentation",
+    href: "#",
     options: [
-      { value: "Nobus Cloud Container", href: "/documentation" },
-      { value: "Nobus Kubernetes Engine", href: "/documentation" },
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
+      { value: "Nobus Cloud Container", href: "#" },
+      { value: "Nobus Kubernetes Engine", href: "#" },
     ],
   },
   {
     name: "Cloud Security",
-    href: "/documentation/cloud-security",
+    href: "#",
     options: [
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
       { value: "Network firewall", href: "#" },
       { value: "Security Groups", href: "#" },
       { value: "Network ACL", href: "#" },
@@ -120,15 +124,15 @@ const docsfilters = [
   },
   {
     name: "Cloud Backup",
-    href: "/documentation/cloud-backup",
+    href: "#",
     options: [
-      { value: "", href: "/documentation/cloud-backup" },
-      { value: "Overview", href: "/documentation/cloud-backup#overview" },
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
       {
         value: "Nobus Cloud Backup",
-        href: "/documentation/cloud-backup#cloud",
+        href: "#",
       },
-      { value: "FOS Backup Solution", href: "/documentation/cloud-backup#fos" },
+      { value: "FOS Backup Solution", href: "#" },
     ],
   },
   {
@@ -153,6 +157,8 @@ const docsfilters = [
     name: "Use Cases",
     href: "#",
     options: [
+      { value: "", href: "#" },
+      { value: "Overview", href: "#" },
       { value: "Create your Nobus account", href: "#" },
       { value: "How to provision a Linux instance", href: "#" },
       { value: "How to provision a Windows instance", href: "#" },

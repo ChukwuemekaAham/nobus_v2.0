@@ -213,6 +213,7 @@ pointer-events: auto;
       </div>
     </div>
 
+  &lt; name &gt
 
     /* styles/Home.module.css */
     

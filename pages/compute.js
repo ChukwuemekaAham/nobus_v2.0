@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer1";
+import Image from "next/image";
 
 const cardData = [
   {
@@ -46,34 +47,40 @@ function compute() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div
-          className="flex-col justify-center text-center"
-          style={{
-            backgroundImage: "url('/cmpt.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="py-20 px-8 lg:pt-40 sm:px-20">
-            <h1 className="pb-4 text-3xl md:text-4xl lg:text-5xl tracking-wider leading-relaxed font-bold">
-              Nobus Cloud Compute
-            </h1>
-            <p className="text-sm sm:text-md font-semibold tracking-wide leading-relaxed pb-4">
+        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+          <Image
+            src="/herobg.png"
+            layout="fill"
+            objectFit="container"
+            objectPosition="left"
+            className="animate-fadeIn"
+          />
+          <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
+            <h1 className="hero-h">Nobus Cloud Compute</h1>
+            <p className="hero-p">
               Virtual Machine Hosting and Compute Resources.
             </p>
+            <div className="flex flex-col sm:flex-row justify-center place-items-center mt-4">
+              <a href="/solutions">
+                <button className="my-3 rounded-md px-10 py-4 font-bold border border-white text-white shadow-md transition duration-10 hover:bg-blue-800 hover:text-white hover:shadow-xl active:scale-90 animate-pulse">
+                  Get Started with Our Compute Solutions{" "}
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="p-10 md:p-20">
-          <p className="pb-5">
+        <div className="p-10 md:px-20 space-y-5">
+          <p>
             Nobus offers standard compute services that allows you to develop,
             deploy, run, and scale your applications and workloads in a secure,
             powerful, and progressive compute cloud.
           </p>
 
-          <h4 className="font-semibold text-2xl">Nobus Compute as a Choice</h4>
+          <h3>Nobus Compute as a Choice</h3>
 
-          <p className="py-2">
+          <p>
             You are safe with Nobus, as we continue to facilitate speed and
             efficiency on our platform. We progressively try to make our
             plarform support any workload and business need.
@@ -83,9 +90,7 @@ function compute() {
               {cardData?.map((item) => (
                 <div className="p-5 bg-gray-100 flex flex-col space-x-4 text-left shadow-3xl border group">
                   <div className="py-5">
-                    <h1 className="pb-3 text-2xl tracking-wide leading-relaxed font-semibold text-gray-800">
-                      {item.title}
-                    </h1>
+                    <h4>{item.title}</h4>
                     <p className="text-base text-gray-700 text-justify tracking-tight leading-relaxed">
                       {item.description}
                     </p>
