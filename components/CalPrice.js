@@ -1,5 +1,7 @@
 import { XIcon } from "@heroicons/react/outline";
 import { useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 const CalPrice = () => {
   const vcpu_unit_price = 85;
@@ -51,6 +53,7 @@ const CalPrice = () => {
   const [flt_total_price, setFlt_total_price] = useState("");
   const [flt_price, setFlt_price] = useState("");
   const [flt_runtime, setFlt_runtime] = useState("30");
+  const [result, setResult] = useState(0);
 
   const os = os_type;
   const run = runtime;
@@ -373,6 +376,61 @@ const CalPrice = () => {
       setError(`Error Occurred Couldn't Calculate Total Price \n
             This is mainly due to incomplete data`);
     }
+  };
+
+  const printToPdf = () => {
+    const img = new Image();
+    img.src = "/logo2.png";
+
+    console.log(img);
+
+    const doc = new jsPDF();
+    const imgProps = doc.getImageProperties(img);
+    const pdfWidth = doc.internal.pageSize.getWidth() - 180;
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    const marginTop = 5;
+    const marginRight = 5;
+
+    doc.addImage(
+      img,
+      "PNG",
+      doc.internal.pageSize.getWidth() - pdfWidth - marginRight,
+      marginTop,
+      pdfWidth,
+      pdfHeight
+    );
+
+    const elements = [
+      { label: "Daily Total Price", value: daily_total_price },
+      { label: "Instance Total Price", value: inst_total_price },
+      { label: "FBS Total Price", value: FBS_total_price },
+      { label: "FOS Total Price", value: FOS_total_price },
+      { label: "Floating IP(s) Total Price", value: flt_total_price },
+      { label: "Total Price", value: total_price },
+    ];
+
+    let currentY = 20;
+    doc.setFontSize(18);
+    doc.text("Cloud Pricing Calculator Results (NGN)", 20, 10);
+    doc.setFontSize(14);
+
+    elements.forEach((element) => {
+      const currencySymbol = "#";
+      doc.text(
+        `${element.label}: ${currencySymbol}${element.value}`,
+        20,
+        currentY
+      );
+      currentY += 10;
+    });
+
+    const currentDateTime = new Date().toLocaleString();
+    const footerText = `Generated on ${currentDateTime} --  © 2024 Nkponani Ltd. All rights reserved.`;
+    doc.setFontSize(10);
+    const footerY = doc.internal.pageSize.getHeight() - 10;
+    doc.text(footerText, 20, footerY);
+
+    doc.save("nobus-pricing-calculator-results.pdf");
   };
 
   const calc_fcs_price = (e) => {
@@ -719,7 +777,7 @@ const CalPrice = () => {
                 >
                   <h2 className="text-lg text-center font-semibold ">Result</h2>
 
-                  <ul className="">
+                  <ul className="list-none">
                     {inst_daily_price && (
                       <li className="list-group-item">
                         Daily FCS Price: {inst_daily_price}
@@ -889,7 +947,7 @@ const CalPrice = () => {
                 >
                   <h2 className="text-lg text-center font-semibold ">Result</h2>
 
-                  <ul className="">
+                  <ul className="list-none">
                     {FBS_price && (
                       <li className="list-group-item">
                         Daily FBS Price: {FBS_price}
@@ -1008,7 +1066,7 @@ const CalPrice = () => {
                 >
                   <h2 className="text-lg text-center font-semibold ">Result</h2>
 
-                  <ul className="">
+                  <ul className="list-none">
                     {FOS_price && (
                       <li className="list-group-item">
                         Daily FOS Price: {FOS_price}
@@ -1127,7 +1185,7 @@ const CalPrice = () => {
                 >
                   <h2 className="text-lg text-center font-semibold ">Result</h2>
 
-                  <ul className="">
+                  <ul className="list-none">
                     {flt_price && (
                       <li className="list-group-item">
                         Daily Floating IP(s) Price: {flt_price}
@@ -1185,54 +1243,72 @@ const CalPrice = () => {
         </div>
 
         <div class="result">
-          {success && (
-            <div id="fcs_success" className="text-white bg-gray-600 p-3">
-              <h2 className="text-lg text-center font-semibold ">Result</h2>
+          <div>
+            {success && (
+              <div id="fcs_success" className="text-white bg-gray-800 p-3">
+                <h2 className="text-lg text-center text-white font-semibold ">
+                  Result
+                </h2>
 
-              <ul className="">
-                {daily_total_price && (
-                  <li className="list-group-item">
-                    Daily Total Price: {daily_total_price}
+                <ul className="list-none">
+                  {daily_total_price && (
+                    <li className="list-group-item">
+                      Daily Total Price: {daily_total_price}
+                    </li>
+                  )}
+                  <li>
+                    <span className="py-2 text-white">
+                      +-------------------------------------------------------+
+                    </span>
                   </li>
-                )}
-                <li>
-                  <span className="py-2 text-white">
-                    +-------------------------------------------------------+
-                  </span>
-                </li>
-                {inst_total_price && (
-                  <li className="list-group-item">
-                    Total FCS Price: {inst_total_price}
+                  {inst_total_price && (
+                    <li className="list-group-item">
+                      Total FCS Price: {inst_total_price}
+                    </li>
+                  )}
+                  {FBS_total_price && (
+                    <li className="list-group-item">
+                      Total FBS Price: {FBS_total_price}
+                    </li>
+                  )}
+                  {FOS_total_price && (
+                    <li className="list-group-item">
+                      Total FOS Price: {FOS_total_price}
+                    </li>
+                  )}
+                  {flt_total_price && (
+                    <li className="list-group-item">
+                      Total Floating IP(s) Price: {flt_total_price}
+                    </li>
+                  )}
+                  <li>
+                    <span className="py-2 text-white">
+                      +-------------------------------------------------------+
+                    </span>
                   </li>
-                )}
-                {FBS_total_price && (
-                  <li className="list-group-item">
-                    Total FBS Price: {FBS_total_price}
-                  </li>
-                )}
-                {FOS_total_price && (
-                  <li className="list-group-item">
-                    Total FOS Price: {FOS_total_price}
-                  </li>
-                )}
-                {flt_total_price && (
-                  <li className="list-group-item">
-                    Total Floating IP(s) Price: {flt_total_price}
-                  </li>
-                )}
-                <li>
-                  <span className="py-2 text-white">
-                    +-------------------------------------------------------+
-                  </span>
-                </li>
-                {total_price && (
-                  <li className="list-group-item">
-                    Total Price: {total_price}
-                  </li>
-                )}
-              </ul>
-            </div>
-          )}
+                  {total_price && (
+                    <li className="list-group-item">
+                      Total Price: {total_price}
+                    </li>
+                  )}
+                </ul>
+                {daily_total_price &&
+                  inst_total_price &&
+                  FBS_total_price &&
+                  FOS_total_price &&
+                  flt_total_price &&
+                  total_price && (
+                    <button
+                      onClick={printToPdf}
+                      className="bg-green-500 ml-4 mt-4 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    >
+                      Print to PDF
+                    </button>
+                  )}
+              </div>
+            )}
+          </div>
+
           <div id="fcs_error" className="">
             <div className="shadow-lg">
               <div style={{ display: visible ? "block" : "none" }} className="">
