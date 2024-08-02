@@ -65,13 +65,8 @@ const index = () => {
       }
     } catch (error) {
       console.error('Error storing payment reference:', error);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }
@@ -139,7 +134,7 @@ const index = () => {
       <div className="">
         <div className="mt-0">
           <div className="lg:grid lg:grid-cols-3">
-            <div className="mt-5 lg:col-span-2 md:mt-0 ">
+            <div className="lg:col-span-2">
               <Headerregister />
               <hr className="border-t " />
               {isClient &&

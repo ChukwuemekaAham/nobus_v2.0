@@ -20,6 +20,10 @@ import getBasePath from "../../lib/getBasePath";
 
 export type Validate2faInput = TypeOf<typeof validate2faSchema>;
 
+interface Response {
+  data: { message: string };
+}
+
 const Validate2faPage = () => {
   const store = useStore();
   const requestEmail = store.requestEmail;
@@ -85,13 +89,7 @@ const Validate2faPage = () => {
         }
       });
     } catch (error) {
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }
@@ -133,13 +131,8 @@ const Validate2faPage = () => {
       }
     } catch (error) {
       store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }

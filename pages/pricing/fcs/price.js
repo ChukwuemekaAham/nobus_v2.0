@@ -76,7 +76,7 @@ function index() {
                     <section id="price" className="mx-auto text-justify">
                       <h2 className="pb-5 font-semibold">
                         {" "}
-                        Nobus FOS Term Pricing
+                        Nobus FCS Term Pricing
                       </h2>
 
                       <p>

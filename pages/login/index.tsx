@@ -15,6 +15,8 @@ import getBasePath from "../../lib/getBasePath";
 export type LoginInput = TypeOf<typeof loginSchema>;
 
 const Index = () => {
+  console.log(getBasePath());
+
   const store = useStore();
   const router = useRouter();
 
@@ -49,7 +51,7 @@ const Index = () => {
   const loginUser = async (data: LoginInput) => {
     try {
       store.setRequestLoading(true);
-      const response = await fetch(`${getBasePath}/auth/login/initiate`, {
+      const response = await fetch(`${getBasePath()}/api/auth/login/initiate`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -74,14 +76,7 @@ const Index = () => {
       }
     } catch (error) {
       store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.response.data.detail ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }

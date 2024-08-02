@@ -167,29 +167,7 @@ function index() {
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.1.1.10.l
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  1
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  1
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  10
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.2.2.10.l
+                                                  si.2.2.30.l
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -204,80 +182,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  10
+                                                  30
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.1.1.20.l
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  1
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  1
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  20
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.1.2.20.l
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  1
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  2
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  20
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.2.2.40.l
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  2
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  2
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  40
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.2.4.40.l
+                                                  si.2.4.30.l
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -292,36 +204,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  40
+                                                  30
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.4.4.40.l
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  4
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  4
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  40
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.2.8.60.lw
+                                                  si.2.8.30.l
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -336,14 +226,36 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  60
+                                                  30
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.4.8.60.lw
+                                                  si.4.4.30.l
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  4
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  4
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  30
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.4.8.30.l
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -358,14 +270,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  60
+                                                  30
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.4.16.60.lw
+                                                  si.4.16.30.l
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -380,14 +292,124 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  60
+                                                  30
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.4.32.80.lw
+                                                  si.8.16.30.l
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  8
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  16
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  30
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.2.4.50.w
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  2
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  4
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  50
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.2.8.50.w
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  2
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  8
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  50
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.4.8.50.w
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  4
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  8
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  50
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.4.16.50.w
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  4
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  16
+                                                </div>
+                                              </td>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  50
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">
+                                                  si.4.32.50.w
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -402,14 +424,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  80
+                                                  50
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.8.16.80.lw
+                                                  si.8.16.50.w
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -424,14 +446,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  80
+                                                  50
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.8.32.80.lw
+                                                  si.8.32.50.w
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -446,14 +468,14 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  80
+                                                  50
                                                 </div>
                                               </td>
                                             </tr>
                                             <tr>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  si.8.64.80.lw
+                                                  si.8.64.50.w
                                                 </div>
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
@@ -468,29 +490,7 @@ function index() {
                                               </td>
                                               <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-900">
-                                                  80
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  si.16.64.80.lw
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  16
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  64
-                                                </div>
-                                              </td>
-                                              <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm text-gray-900">
-                                                  80
+                                                  50
                                                 </div>
                                               </td>
                                             </tr>

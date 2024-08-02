@@ -9,7 +9,7 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
 import Quickstart from "../../../components/networkingdoc/Quickstart";
-import FastTransit from "../../../components/networkingdoc/fastTransit";
+import FastTransit from "../../../components/networkingdoc/FastTransit";
 import CloudRouter from "../../../components/networkingdoc/CloudRouter";
 import CloudLoadBalancer from "../../../components/networkingdoc/CloudLoadBalancer";
 import CloudVpn from "../../../components/networkingdoc/CloudVpn";

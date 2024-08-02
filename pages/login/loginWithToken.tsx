@@ -1,29 +1,31 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useStore from "../../store";
-import { Buffer } from 'buffer';
-import Spinner from '../../components/Spinner';
-import { ILoginTokenResponse } from '../../types';
-import getBasePath from '../../lib/getBasePath';
+import { Buffer } from "buffer";
+import Spinner from "../../components/Spinner";
+import { ILoginTokenResponse } from "../../types";
+import getBasePath from "../../lib/getBasePath";
 
 interface LoginPageProps {}
 
 const LoginPage: NextPage<LoginPageProps> = () => {
   const router = useRouter();
   const { token } = router.query as { token: string | undefined };
-  const decryptedToken = token ? Buffer.from(token, 'base64').toString('utf-8') : '';
+  const decryptedToken = token
+    ? Buffer.from(token, "base64").toString("utf-8")
+    : "";
 
-  console.log({"decrypted token": decryptedToken})
+  console.log({ "decrypted token": decryptedToken });
 
   const store = useStore();
 
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     const loginWithToken = async () => {
@@ -31,46 +33,41 @@ const LoginPage: NextPage<LoginPageProps> = () => {
         try {
           setIsLoading(true);
           const response = await fetch(`${getBasePath()}/api/user/`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${decryptedToken}`
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${decryptedToken}`,
             },
             body: JSON.stringify({}),
           });
           if (response.status !== 200) {
             const { message } = await response.json();
-            toast.error( response.statusText, {
-                position: toast.POSITION.TOP_RIGHT,
-              });
-            setError(message);
-            setIsLoading(false);
-           
-            router.push('/login');
-          }
-          if (response.status === 200) {
-          const responseData: ILoginTokenResponse = await response.json();
-          toast.success( "Login Successful", {
+            toast.error(response.statusText, {
               position: toast.POSITION.TOP_RIGHT,
             });
-          // Store the user data in the client-side state or session
-          store.setAuthUser(responseData);
-          // and redirect the user to the dashboard
-          router.push('/dashboard');
-          }
-        } catch (error: any) {
-            setError('An error occurred during login. Please try again later.');
+            setError(message);
             setIsLoading(false);
-            const resMessage =
-              (error.response &&
-                error.response.data &&
-                error.response.data.message) ||
-              error.message ||
-              error.toString();
-            toast.error(resMessage, {
-              position: "top-right",
-            });
+
+            router.push("/login");
           }
+          if (response.status === 200) {
+            const responseData: ILoginTokenResponse = await response.json();
+            toast.success("Login Successful", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+            // Store the user data in the client-side state or session
+            store.setAuthUser(responseData);
+            // and redirect the user to the dashboard
+            router.push("/dashboard");
+          }
+        } catch (error) {
+          setError("An error occurred during login. Please try again later.");
+          setIsLoading(false);
+
+          toast.error(`${error}`, {
+            position: "top-right",
+          });
+        }
       }
     };
 
@@ -83,9 +80,15 @@ const LoginPage: NextPage<LoginPageProps> = () => {
         <div className="mx-auto justify-center py-10 flex">
           <img className="h-12 w-auto" src="/favicon.ico" alt="" />
         </div>
-        <h1 className='text-sm pb-5'>Attempting dashboard login</h1>
-        {error && <div className='text-gray-400 font-semibold text-md'>{error}</div>}
-        {isLoading && <div className='mx-auto justify-center flex pt-4'><Spinner /></div>}
+        <h1 className="text-sm pb-5">Attempting dashboard login</h1>
+        {error && (
+          <div className="text-gray-400 font-semibold text-md">{error}</div>
+        )}
+        {isLoading && (
+          <div className="mx-auto justify-center flex pt-4">
+            <Spinner />
+          </div>
+        )}
       </div>
     </div>
   );

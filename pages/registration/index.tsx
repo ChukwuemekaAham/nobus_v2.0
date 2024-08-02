@@ -22,6 +22,7 @@ import useStore from "../../store";
 import { registerSchema } from "../../schema";
 import { ILoginTokenResponse } from "../../types";
 import getBasePath from "../../lib/getBasePath";
+import { errorResponse } from "../../types";
 
 // console.log(`BASEPATH: ${getBasePath()}`);
 
@@ -111,13 +112,7 @@ const index = () => {
       }
     } catch (error) {
       store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }

@@ -75,3 +75,9 @@ export interface IUser {
     ],
     token: string
   }
+
+   export interface errorResponse {
+    error: any
+  }
+
+  

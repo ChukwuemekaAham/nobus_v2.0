@@ -85,13 +85,7 @@ const Validate2faPage = () => {
         }
       });
     } catch (error) {
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }
@@ -131,13 +125,7 @@ const Validate2faPage = () => {
       }
     } catch (error) {
       store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }

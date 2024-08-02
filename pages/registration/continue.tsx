@@ -74,14 +74,7 @@ const continueRegistration = () => {
       }
     } catch (error) {
       store.setRequestLoading(false);
-      const resMessage =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.response.data.detail ||
-        error.message ||
-        error.toString();
-      toast.error(resMessage, {
+      toast.error(`${error}`, {
         position: "top-right",
       });
     }
