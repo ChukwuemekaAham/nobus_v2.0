@@ -1,23 +1,26 @@
-import React from 'react';
+import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useForm, FormProvider, SubmitHandler, Controller } from "react-hook-form";
+import {
+  useForm,
+  FormProvider,
+  SubmitHandler,
+  Controller,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TypeOf } from "zod";
 import { LoadingButton } from "../../components/LoadingButton";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useStore from "../../store";
-import { validate2faSchema  } from "../../schema";
-import { ILoginTokenResponse } from '../../types';
-import OTPInput from '../../components/OTPInput';
-import getBasePath from '../../lib/getBasePath';
-
+import { validate2faSchema } from "../../schema";
+import { ILoginTokenResponse } from "../../types";
+import OTPInput from "../../components/OTPInput";
+import getBasePath from "../../lib/getBasePath";
 
 export type Validate2faInput = TypeOf<typeof validate2faSchema>;
 
 const Validate2faPage = () => {
-
   const store = useStore();
   const requestEmail = store.requestEmail;
   console.log(requestEmail);
@@ -38,7 +41,7 @@ const Validate2faPage = () => {
     setFocus,
     register,
     formState: { isSubmitSuccessful, errors },
-    control
+    control,
   } = useForm<Validate2faInput>({
     resolver: zodResolver(validate2faSchema),
   });
@@ -50,14 +53,14 @@ const Validate2faPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL
-  const UserID = `${requestEmail}`
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const UserID = `${requestEmail}`;
 
   const resendVerificationCode = async () => {
     try {
       const verifyData = {
-        email: UserID
-      }
+        email: UserID,
+      };
       await fetch(`${getBasePath()}/api/auth/email/verify/initiate`, {
         method: "POST",
         headers: {
@@ -66,20 +69,22 @@ const Validate2faPage = () => {
         body: JSON.stringify(verifyData),
       }).then((response) => {
         if (response.status === 200) {
-          toast.success("Verification code has been resent. Please check your email", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
+          toast.success(
+            "Verification code has been resent. Please check your email",
+            {
+              position: toast.POSITION.TOP_RIGHT,
+            }
+          );
           setIsTimerActive(true); // set timer active
           setTimer(3600); // reset timer to 1 hour
           router.push("/login/validateOTP");
         } else {
-          toast.error( response.statusText, {
+          toast.error(response.statusText, {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
-      })
-
-    } catch (error: any) {
+      });
+    } catch (error) {
       const resMessage =
         (error.response &&
           error.response.data &&
@@ -93,12 +98,11 @@ const Validate2faPage = () => {
   };
 
   const validate2fa = async (data: Validate2faInput) => {
-    
     try {
       const verifyData = {
         ...data,
-        email: UserID
-      }
+        email: UserID,
+      };
       store.setRequestLoading(true);
       const response = await fetch(`${getBasePath()}/api/auth/login/complete`, {
         method: "POST",
@@ -106,8 +110,7 @@ const Validate2faPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(verifyData),
-      
-      })
+      });
 
       if (response.status === 200) {
         const responseData: ILoginTokenResponse = await response.json();
@@ -119,17 +122,16 @@ const Validate2faPage = () => {
         store.setAuthUser(responseData);
         store.setRequestLoading(false);
 
-        // login user to their dashboard 
+        // login user to their dashboard
         router.push("/dashboard");
       } else {
-        toast.error( response.statusText, {
+        toast.error(response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestLoading(false);
         router.push("/login");
       }
-
-    } catch (error: any) {
+    } catch (error) {
       store.setRequestLoading(false);
       const resMessage =
         (error.response &&
@@ -170,7 +172,9 @@ const Validate2faPage = () => {
   const formatTime = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes
+      .toString()
+      .padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   useEffect(() => {
@@ -182,9 +186,9 @@ const Validate2faPage = () => {
   return (
     <section className="min-h-screen grid place-items-center bg-gray-200">
       <div className="mx-auto justify-center py-5 flex">
-          <a href="/">
-            <img className="h-10 w-auto" src="/logo.png" alt="" />
-          </a>
+        <a href="/">
+          <img className="h-10 w-auto" src="/logo2.png" alt="" />
+        </a>
       </div>
       <FormProvider {...methods}>
         <form
@@ -206,55 +210,53 @@ const Validate2faPage = () => {
               </p>
             </div>
           </div>
-            <div className="overflow-hidden">
-              
-              <label
-                htmlFor="code"
-                className="block text-md text-gray-700 my-5 mx-auto text-center">
-              </label>
-              
-              <div>  
+          <div className="overflow-hidden">
+            <label
+              htmlFor="code"
+              className="block text-md text-gray-700 my-5 mx-auto text-center"
+            ></label>
+
+            <div>
               <Controller
-              name="code"
-              control={control}
-              render={({ field: { onChange } }) => (     
-              <OTPInput length={6} onComplete={onChange}/>
-              )}
+                name="code"
+                control={control}
+                render={({ field: { onChange } }) => (
+                  <OTPInput length={6} onComplete={onChange} />
+                )}
               />
               {errors.code && (
-                <span className='text-red-500 text-xs pt-1 block text-center'>
+                <span className="text-red-500 text-xs pt-1 block text-center">
                   {errors.code?.message as string}
                 </span>
               )}
 
-              <p className='text-center py-2 text-md'>Time remaining: <span className='text-blue-600 font-semibold'>{formatTime(timer)}</span></p>
-
-              </div>
-                <div className='mt-5 p-2 max-w-7xl mx-auto justify-center'>
-                <LoadingButton
-                  loading={store.requestLoading}
-                  textColor="text-ct-blue-600"
-
-                >
-                  Authenticate
-                </LoadingButton>
-                
-              </div>
+              <p className="text-center py-2 text-md">
+                Time remaining:{" "}
+                <span className="text-blue-600 font-semibold">
+                  {formatTime(timer)}
+                </span>
+              </p>
+            </div>
+            <div className="mt-5 p-2 max-w-7xl mx-auto justify-center">
+              <LoadingButton
+                loading={store.requestLoading}
+                textColor="text-ct-blue-600"
+              >
+                Authenticate
+              </LoadingButton>
+            </div>
           </div>
-          
-          <span className='flex mx-auto text-center justify-center text-md'>
-            
-            Didn't get a code? {" "}
-                              
-            <button className='pl-2' onClick={() => resendVerificationCode() }>
-            <a className='hover:underline text-blue-600'>
-              Resend Verification Code
-            </a>
-            </button> 
+
+          <span className="flex mx-auto text-center justify-center text-md">
+            Didn't get a code?{" "}
+            <button className="pl-2" onClick={() => resendVerificationCode()}>
+              <a className="hover:underline text-blue-600">
+                Resend Verification Code
+              </a>
+            </button>
           </span>
-            
         </form>
-      </FormProvider> 
+      </FormProvider>
     </section>
   );
 };

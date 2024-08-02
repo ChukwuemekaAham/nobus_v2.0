@@ -136,16 +136,12 @@ const index = () => {
       </Head>
 
       <div className="">
-        <div className="mt-10 sm:mt-0">
+        <div>
           <div className="lg:grid lg:grid-cols-3">
-            <div className="mt-5 lg:col-span-2 py-10">
+            <div className="lg:col-span-2">
+              <HeaderRegister />
               <FormProvider {...methods}>
                 <form onSubmit={handleSubmit(onSubmitHandler)} className="px-4">
-                  <div className="mx-auto justify-center flex">
-                    <a href="/">
-                      <img className="h-10 w-auto" src="/logo.png" alt="" />
-                    </a>
-                  </div>
                   <div className="overflow-hidden sm:rounded-md">
                     <div className="my-5 text-center">
                       <h3 className="text-xl font-medium leading-relax tracking-wider text-gray-500 pt-4">

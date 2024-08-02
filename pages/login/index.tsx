@@ -45,10 +45,10 @@ const Index = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const loginUser = async (data: LoginInput) => {
     try {
-      store.setRequestLoading(true);   
+      store.setRequestLoading(true);
       const response = await fetch(`${getBasePath}/auth/login/initiate`, {
         method: "POST",
         headers: {
@@ -56,15 +56,15 @@ const Index = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
+      });
       if (response.status !== 200) {
-        toast.error( response.statusText, {
+        toast.error(response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestLoading(false);
       }
       if (response.status === 200) {
-        toast.success( "Login successful", {
+        toast.success("Login successful", {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestEmail(data.email);
@@ -72,7 +72,7 @@ const Index = () => {
 
         router.push("/login/validateOTP");
       }
-    } catch (error: any) {
+    } catch (error) {
       store.setRequestLoading(false);
       const resMessage =
         (error.response &&
@@ -97,13 +97,15 @@ const Index = () => {
   };
 
   return (
-    <section className="min-h-screen grid place-items-center bg-blue-500"  style={{
-      backgroundImage: "url('/loginbg.png')",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    }}>
+    <section
+      className="min-h-screen grid place-items-center bg-blue-500"
+      style={{
+        backgroundImage: "url('/loginbg.png')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="w-full">
-       
         <FormProvider {...methods}>
           <form
             onSubmit={handleSubmit(onSubmitHandler)}
@@ -111,19 +113,26 @@ const Index = () => {
           >
             <div className="mx-auto justify-center pb-2 flex">
               <a href="/">
-                <img className="h-10 w-auto" src="/logo.png" alt="" />
+                <img className="h-10 w-auto" src="/logo2.png" alt="" />
               </a>
             </div>
-          
-            <h2 className="text-md text-center mb-4 text-gray-500">
-              Please fill the form below to continue 
-            </h2>
-            <FormInput label="" placeholder="Email Address" name="email" type="email" />
-            <div className={`flex w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 
+
+            <h6 className="text-md text-center mb-4 text-gray-500">
+              Please fill the form below to continue
+            </h6>
+            <FormInput
+              label=""
+              placeholder="Email Address"
+              name="email"
+              type="email"
+            />
+            <div
+              className={`flex w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 
                 focus:ring-indigo-500 sm:text-sm ${
                   errors.password && "border-red-500"
                 }
-                `}>
+                `}
+            >
               <input
                 type={pass.showPassword ? "text" : "password"}
                 id="password"
@@ -132,7 +141,7 @@ const Index = () => {
                 className="border-none rounded-l-md w-96 text-sm"
                 {...register("password")}
               ></input>
-              
+
               <div
                 className="cursor-pointer inline-flex flex-1 min-w-md pt-2 px-1"
                 onClick={handleClickShowPassword}
@@ -143,15 +152,18 @@ const Index = () => {
                   <EyeOffIcon className="h-6 font-extralight" />
                 )}
               </div>
-              </div>
-              {errors.password && (
-                <span className='text-red-500 text-xs pt-1 block'>
-                  {errors.password?.message as string}
-                </span>
-              )}
+            </div>
+            {errors.password && (
+              <span className="text-red-500 text-xs pt-1 block">
+                {errors.password?.message as string}
+              </span>
+            )}
             <div className="text-right">
               Forgot Password?{" "}
-              <Link href="/login/reset-password" className="text-blue-600 hover:underline" >
+              <Link
+                href="/login/reset-password"
+                className="text-blue-600 hover:underline"
+              >
                 Reset
               </Link>
             </div>
@@ -163,7 +175,10 @@ const Index = () => {
             </LoadingButton>
             <span className="block text-md">
               Need another account?{" "}
-              <Link href="/registration" className="text-blue-600 hover:underline">
+              <Link
+                href="/registration"
+                className="text-blue-600 hover:underline"
+              >
                 Sign Up
               </Link>
             </span>

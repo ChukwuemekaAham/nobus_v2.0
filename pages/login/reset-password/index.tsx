@@ -35,26 +35,29 @@ const index = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitSuccessful]);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const ResetPassword = async (data: EmailInput) => {
     try {
-      store.setRequestLoading(true);   
-      const response = await fetch(`${getBasePath()}/api/auth/password/reset/initiate`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+      store.setRequestLoading(true);
+      const response = await fetch(
+        `${getBasePath()}/api/auth/password/reset/initiate`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (response.status !== 200) {
-        toast.error( response.statusText, {
+        toast.error(response.statusText, {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestLoading(false);
       }
       if (response.status === 200) {
-        toast.success( "OTP has been sent to your email", {
+        toast.success("OTP has been sent to your email", {
           position: toast.POSITION.TOP_RIGHT,
         });
         store.setRequestEmail(data.email);
@@ -62,7 +65,7 @@ const index = () => {
 
         router.push("/login/reset-password/complete");
       }
-    } catch (error: any) {
+    } catch (error) {
       store.setRequestLoading(false);
       const resMessage =
         (error.response &&
@@ -87,13 +90,15 @@ const index = () => {
   };
 
   return (
-    <section className="min-h-screen grid place-items-center" style={{
-      backgroundImage: "url('/loginbg.png')",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    }}>
+    <section
+      className="min-h-screen grid place-items-center"
+      style={{
+        backgroundImage: "url('/loginbg.png')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="w-full">
-       
         <FormProvider {...methods}>
           <form
             onSubmit={handleSubmit(onSubmitHandler)}
@@ -101,18 +106,23 @@ const index = () => {
           >
             <div className="mx-auto justify-center pt-5 flex">
               <a href="/">
-                <img className="h-10 w-auto" src="/logo.png" alt="" />
+                <img className="h-10 w-auto" src="/logo2.png" alt="" />
               </a>
             </div>
             <div className="pb-5 text-center">
-            <p className="mt-4 text-lg text-gray-600 tracking-tight font-semibold">
+              <p className="mt-4 text-lg text-gray-600 tracking-tight font-semibold">
                 Forgot Password?
               </p>
               <p className="mt-1 text-sm text-gray-600">
                 Verify your email to reset password.
               </p>
             </div>
-            <FormInput label="" placeholder="Email Address" name="email" type="email" />
+            <FormInput
+              label=""
+              placeholder="Email Address"
+              name="email"
+              type="email"
+            />
 
             <LoadingButton
               loading={store.requestLoading}
@@ -122,11 +132,13 @@ const index = () => {
             </LoadingButton>
             <span className="flex mx-auto text-center justify-center text-md">
               Remember password?{" "}
-              <Link href="/login" className="text-blue-600 hover:underline pl-2">
-                Login 
+              <Link
+                href="/login"
+                className="text-blue-600 hover:underline pl-2"
+              >
+                Login
               </Link>
             </span>
-            
           </form>
         </FormProvider>
       </div>
