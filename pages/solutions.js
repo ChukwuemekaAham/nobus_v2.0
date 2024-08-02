@@ -22,19 +22,19 @@ const card = [
   {
     id: "1",
     title: "Compute",
-    href: "#",
+    href: "/compute",
     icon: ChipIcon,
   },
   {
     id: "2",
     title: "Storage",
-    href: "#",
+    href: "/storage",
     icon: FolderOpenIcon,
   },
   {
     id: "3",
     title: "Networking",
-    href: "#",
+    href: "/networking",
     icon: GlobeAltIcon,
   },
   {
@@ -82,14 +82,14 @@ const cardSample = [
     id: "1",
     tag: "Compute",
     title: "Nobus FCS",
-    href: "#",
+    href: "/pricing/fcs/",
     description: "Let's talk about how we can help your business",
   },
   {
     id: "2",
     tag: "Storage",
     title: "Nobus Flexible Block Storage (FBS)",
-    href: "#",
+    href: "/pricing/fbs/",
     description: "Find quick answers to resolve your issues",
   },
   {
@@ -110,13 +110,13 @@ const cardSample = [
     id: "5",
     tag: "Storage",
     title: "Nobus Flexible Object Storage (FOS)",
-    href: "#",
+    href: "/pricing/fos/",
     description: "Let's help you resolve all the technical issues",
   },
   {
     id: "6",
     tag: "Networking",
-    title: "Nobus VPC",
+    title: "Nobus DaaS",
     href: "#",
     description: "Let's help you resolve all the technical issues",
   },
@@ -124,7 +124,7 @@ const cardSample = [
     id: "7",
     tag: "Compute",
     title: "Nobus FCS Autoscaling",
-    href: "#",
+    href: "/pricing/fcs/",
     description: "Let's talk about how we can help your business",
   },
   {
@@ -141,15 +141,6 @@ const cardSample = [
     href: "#",
     description: "Let's talk about how we can help your business",
   },
-
-  {
-    id: "10",
-    tag: "Compute",
-    title: "Nobus Server Groups",
-    href: "#",
-    description: "Let's talk about how we can help your business",
-  },
-
   {
     id: "11",
     tag: "Networking",
@@ -160,7 +151,7 @@ const cardSample = [
   {
     id: "12",
     tag: "Cloud Backups",
-    title: "Acronis Cloud Backup",
+    title: "Nobus Cloud Backup",
     href: "#",
     description: "Let's talk about how we can help your business",
   },
