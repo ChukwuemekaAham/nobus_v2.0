@@ -105,14 +105,8 @@ function index() {
                             Nobus FCS enables you to customize capacity and set
                             up several server instances at a go. In order to
                             maximize performance and minimize cost you can also
-                            use{" "}
-                            <a
-                              className="hover:underline"
-                              href="https://www.nobus.io/fcs/autoscaling/"
-                            >
-                              Nobus FCS Auto Scaling
-                            </a>{" "}
-                            to maintain availability of your FCS fleet and
+                            use <a href="#">Nobus FCS Auto Scaling</a> to
+                            maintain availability of your FCS fleet and
                             automatically resize depending on its needs.
                           </p>
                         </div>
@@ -177,10 +171,7 @@ function index() {
                           </h6>
                           <p>
                             To get started with Nobus FCS you can use the{" "}
-                            <a
-                              className="hover:underline"
-                              href="https://www.dashoard.nobus.io/"
-                            >
+                            <a href="https://www.dashoard.nobus.io/">
                               {" "}
                               Nobus Management dashboard
                             </a>
