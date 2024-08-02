@@ -60,8 +60,14 @@ const navigation = {
             {
               name: "",
               items: [
-                { name: "Flexible Clompute Service", href: "#" },
-                { name: "Dedicated Hosting", href: "#" },
+                {
+                  name: "Flexible Clompute Service",
+                  href: "/documentation/fcs",
+                },
+                {
+                  name: "Dedicated Hosting",
+                  href: "/documentation/fcs#dedicated-hosting",
+                },
               ],
             },
           ],
@@ -73,8 +79,8 @@ const navigation = {
             {
               name: "",
               items: [
-                { name: "Flexible Block Storage", href: "#" },
-                { name: "Flexible Object Storage", href: "#" },
+                { name: "Flexible Block Storage", href: "/documentation/fbs" },
+                { name: "Flexible Object Storage", href: "/documentation/fos" },
               ],
             },
           ],
@@ -99,14 +105,24 @@ const navigation = {
             {
               name: "Networks",
               items: [
-                { name: "Virtual Private Cloud", href: "#" },
+                {
+                  name: "Datacenter as a Service",
+                  href: "/documentation/networking",
+                },
                 { name: "FastTransit", href: "#" },
                 { name: "Cloud Router", href: "#" },
-                { name: "Domains and DNS", href: "#" },
+                { name: "Domains and DNS", href: "/documentation/dns" },
               ],
             },
             {
               name: "Load Balancers",
+              items: [
+                // { name: "PFSense", href: "#" },
+                { name: "HaProxy", href: "#" },
+              ],
+            },
+            {
+              name: "Cloud VPN",
               items: [
                 { name: "PFSense", href: "#" },
                 // { name: "HaProxy", href: "#" },
@@ -121,8 +137,11 @@ const navigation = {
             {
               name: "Backup Solutions",
               items: [
-                { name: "Nobus Cloud Backup", href: "#" },
-                { name: "Flexible Object Storage", href: "#" },
+                {
+                  name: "Nobus Cloud Backup",
+                  href: "/documentation/cloud-backup",
+                },
+                { name: "Flexible Object Storage", href: "/documentation/fos" },
               ],
             },
             // {
@@ -431,25 +450,28 @@ const pricefilters = [
     id: "compute",
     name: "Compute",
     options: [
-      { value: "Flexible Compute Services", href: "#" },
-      { value: "Server Groups", href: "#" },
-      { value: "Autoscaling Groups", href: "#" },
+      { value: "Flexible Compute Services", href: "/pricing/fcs/price" },
+      { value: "Dedicated Hosting", href: "/pricing/fcs/price" },
+      { value: "Autoscaling", href: "/pricing/fcs/price" },
     ],
   },
   {
     id: "storage",
     name: "Storage",
     options: [
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
+      { value: "Flexible Block Storage", href: "/pricing/fbs/price" },
+      { value: "Flexible Object Storage", href: "/pricing/fos/price" },
     ],
   },
   {
     id: "backup",
     name: "Cloud Backup",
     options: [
-      { value: "Acronis Cloud Backup", href: "#" },
-      { value: "Object Storage", href: "#" },
+      {
+        value: "Nobus Cloud Backup",
+        href: "/pricing/nobus-cloud-backup/price",
+      },
+      { value: "FOS Backup Solution", href: "/pricing/fos/price" },
     ],
   },
   {
@@ -457,8 +479,10 @@ const pricefilters = [
     name: "Networking",
     options: [
       { value: "Bandwidth", href: "#" },
+      { value: "Cloud Router", href: "#" },
       { value: "FastTransit", href: "#" },
       { value: "Floating IPs", href: "#" },
+      { value: "Load Balancing", href: "#" },
       { value: "Virtual Private Network", href: "#" },
     ],
   },
@@ -466,11 +490,9 @@ const pricefilters = [
     id: "security",
     name: "Security",
     options: [
-      { value: "PfSense", href: "#" },
       { value: "Sophos XG Security Services", href: "#" },
       { value: "Acronis cyber sercurity", href: "#" },
       { value: "Security Groups", href: "#" },
-      { value: "Virtual Private Gateway", href: "#" },
     ],
   },
 ];

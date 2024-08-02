@@ -74,10 +74,8 @@ function smc() {
             className="animate-fadeIn"
           />
           <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
-            <h1 className="text-white">Simple Monthly Calculator</h1>
-            <p className="text-sm text-white font-bold sm:text-lg animate-slideIn">
-              Calculate your savings
-            </p>
+            <h1 className="hero-h">Simple Monthly Calculator</h1>
+            <p className="hero-p">Calculate your savings</p>
           </div>
         </div>
         <section className="md:px-20 md:py-5">
