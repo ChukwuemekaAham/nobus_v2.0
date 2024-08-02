@@ -273,7 +273,7 @@ const navigation = {
       featured: [
         {
           name: "Visit news blog",
-          href: "/blog/",
+          href: "#",
           imageSrc: "/blogcard.png",
           imageAlt: "",
         },
@@ -402,9 +402,9 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "News Blog", href: "/blog" },
+    { name: "News Blog", href: "#" },
     { name: "Contact Support", href: "/contact" },
-    { name: "Request Demo", href: "/demo" },
+    { name: "Request Demo", href: "#" },
     { name: "FAQs", href: "/service-faq" },
   ],
 };
@@ -635,7 +635,7 @@ const docsproducts = [
   {
     id: 2,
     name: "Explore our Use Cases",
-    href: "/documentation",
+    href: "#",
     color: "Learn about how our active customers use Nobus",
     quantity: "",
     imageSrc: "/cases.png",
@@ -644,7 +644,7 @@ const docsproducts = [
   {
     id: 3,
     name: "Knowledge Center",
-    href: "/helpcenter",
+    href: "/documentation",
     color:
       "Get answers to the most frequent questions from customers across every Nobus service.",
     quantity: "",
