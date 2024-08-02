@@ -389,7 +389,7 @@ const CalPrice = () => {
     const pdfWidth = doc.internal.pageSize.getWidth() - 180;
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
     const marginTop = 5;
-    const marginRight = 5;
+    const marginRight = 10;
 
     doc.addImage(
       img,
