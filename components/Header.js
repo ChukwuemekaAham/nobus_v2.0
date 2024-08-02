@@ -899,10 +899,13 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => setVisible(!visible)}
-                  className="-mr-1 flex rounded-md p-2 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
+                  className="-mr-1 flex rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
                 >
                   <span className="sr-only">Dismiss</span>
-                  <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                  <XIcon
+                    className="h-6 w-6 text-white hover:text-gray-300"
+                    aria-hidden="true"
+                  />
                 </button>
               </div>
             </div>
