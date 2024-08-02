@@ -1253,7 +1253,7 @@ const CalPrice = () => {
                 <ul className="list-none">
                   {daily_total_price && (
                     <li className="list-group-item">
-                      Daily Total Price: {daily_total_price}
+                      Daily Total Price: ₦{daily_total_price}
                     </li>
                   )}
                   <li>
@@ -1263,22 +1263,22 @@ const CalPrice = () => {
                   </li>
                   {inst_total_price && (
                     <li className="list-group-item">
-                      Total FCS Price: {inst_total_price}
+                      Total FCS Price: ₦{inst_total_price}
                     </li>
                   )}
                   {FBS_total_price && (
                     <li className="list-group-item">
-                      Total FBS Price: {FBS_total_price}
+                      Total FBS Price: ₦{FBS_total_price}
                     </li>
                   )}
                   {FOS_total_price && (
                     <li className="list-group-item">
-                      Total FOS Price: {FOS_total_price}
+                      Total FOS Price: ₦{FOS_total_price}
                     </li>
                   )}
                   {flt_total_price && (
                     <li className="list-group-item">
-                      Total Floating IP(s) Price: {flt_total_price}
+                      Total Floating IP(s) Price: ₦{flt_total_price}
                     </li>
                   )}
                   <li>
@@ -1288,7 +1288,7 @@ const CalPrice = () => {
                   </li>
                   {total_price && (
                     <li className="list-group-item">
-                      Total Price: {total_price}
+                      Total Price: ₦{total_price}
                     </li>
                   )}
                 </ul>
