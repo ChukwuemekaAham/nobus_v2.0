@@ -873,18 +873,28 @@ export default function Header() {
           }`}
         >
           <div className="mx-auto max-w-7xl py-[px] px-6 xl:px-0">
-            <div className="flex flex-wrap items-center justify-between">
-              <div className="flex w-0 flex-1 items-center animate-marquee">
-                <p className="truncate font-semibold text-sm text-white">
+            <div className="flex flex-wrap items-center justify-between animate-marquee">
+              <div className="flex w-0 flex-1">
+                <p className="truncate font-semibold text-xs text-white">
                   <span> 📣 30% off on migration</span>
                 </p>
                 <a
                   href="/registration"
-                  className="animate-bounce flex-none ml-3 rounded-full text-gray-900 py-[2px] px-[8px] text-xs font-semibold bg-white shadow-sm hover:scale-105 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                  className="animate-bounce flex-none ml-3 rounded-full text-gray-900 py-[1px] px-[6px] text-xs font-semibold bg-white shadow-sm hover:scale-105 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                 >
                   Register now <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
+              <div className="flex space-x-2 text-xs">
+                <a href="#" className="text-white hover:text-gray-400">
+                  Blog
+                </a>
+
+                <a href="/policy" className="text-white hover:text-gray-400">
+                  Privacy Statement
+                </a>
+              </div>
+
               <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
                 <button
                   type="button"
