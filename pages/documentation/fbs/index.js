@@ -108,8 +108,8 @@ function index() {
                         storage for file systems and databases.
                       </p>
                       <p>
-                        See <a href="#">FBS pricing</a> for information about
-                        pricing.
+                        See <a href="/pricing/fbs/price">FBS pricing</a> for
+                        information about pricing.
                       </p>
                     </div>
                     <div className="my-5 border-l-2 border-l-blue-500 bg-blue-100 p-2 rounded-md mr-auto max-w-lg">

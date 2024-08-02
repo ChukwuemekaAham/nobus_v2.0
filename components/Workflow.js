@@ -87,8 +87,8 @@ export default function Content() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-2xl sm:text-center mt-16">
-        <div className="inline-flex items-center justify-center sm:justify-center sm:mx-auto bg-blue-100 px-4 py-1.5 rounded-md mx-auto">
+      <div className="mx-auto max-w-2xl text-center mt-16">
+        <div className="inline-flex items-center justify-center mx-auto place-items-center bg-blue-100 px-4 py-1.5 rounded-md">
           <GlobeAltIcon className="h-5 w-5 text-blue-600" />
           <span className="ml-2 text-blue-600 font-semibold">
             GLOBAL OFFERING

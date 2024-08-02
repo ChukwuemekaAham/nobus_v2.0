@@ -332,8 +332,10 @@ pointer-events: auto;
       </Tab.Group>
     </div>
   
-
-
+<span className="pl-2" aria-hidden="true">
+  {" "}
+  &rarr;
+</span>
   &lt; name &gt
 
     /* styles/Home.module.css */

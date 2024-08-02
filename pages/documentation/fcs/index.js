@@ -256,8 +256,8 @@ function index() {
 
                       <h4>Nobus FCS Pricing</h4>
                       <p>
-                        See <a href="#">Nobus FCS Pricing</a> for a
-                        comprehensive list of charges for Nobus FCS,
+                        See <a href="/pricing/fcs/price">Nobus FCS Pricing</a>{" "}
+                        for a comprehensive list of charges for Nobus FCS,
                       </p>
 
                       <p>

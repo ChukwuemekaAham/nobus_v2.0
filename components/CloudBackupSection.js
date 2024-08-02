@@ -22,23 +22,13 @@ const CloudBackupSection = () => {
           </p>
           <a
             href="/documentation/cloud-backup"
-            className="inline-flex items-center justify-center border border-white text-white rounded-md py-3 px-12 hover:bg-white hover:text-blue-600 transition-colors duration-200"
+            className="inline-flex cursor-pointer items-center justify-center border border-white text-white rounded-md py-3 px-12 hover:bg-white hover:text-blue-600 transition-colors duration-200"
           >
-            <span className="mr-2">Learn More</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-              />
-            </svg>
+            Learn More
+            <span className="pl-2" aria-hidden="true">
+              {" "}
+              &rarr;
+            </span>
           </a>
         </div>
         <div className="relative lg:w-1/2 flex items-center justify-center lg:justify-end mt-8 lg:mt-0">

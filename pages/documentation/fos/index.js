@@ -117,11 +117,13 @@ function index() {
                         services that you use. With Nobus FOS, you pay only for
                         what you use. For more information about Nobus FOS
                         features and pricing, see{" "}
-                        <a href="#">Nobus FOS Pricing</a>
+                        <a href="/pricing/fos/price">Nobus FOS Pricing</a>
                       </p>
                       <p>
                         To get started with Nobus FOS, see{" "}
-                        <a href="#">FOS Quickstart Guide</a>
+                        <a href="/documentation/fos#quickstart">
+                          FOS Quickstart Guide
+                        </a>
                       </p>
                     </div>
                   </section>
