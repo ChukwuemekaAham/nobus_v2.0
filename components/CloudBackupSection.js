@@ -6,7 +6,7 @@ const CloudBackupSection = () => {
       className="flex items-center justify-center h-3/4 lg:h-auto pt-8 lg:pt-0"
       style={{ background: "linear-gradient(90deg, #0664F7 0%, #180D77 100%)" }}
     >
-      <div className="container mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto max-w-5xl px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
         <div className="text-white lg:w-1/2 text-center lg:text-left">
           <h1 className="text-3xl text-white lg:text-4xl font-bold mb-4">
             Nobus Cloud Backup
@@ -14,7 +14,7 @@ const CloudBackupSection = () => {
           <h2 className="text-base text-white lg:text-2xl mb-4">
             Cyber Security Protection, Data Recovery
           </h2>
-          <p className="text-base text-white lg:text-lg mb-8">
+          <p className="text-base text-white lg:text-lg mb-8 text-justify px-10 md:px-0 max-w-md">
             Protect your mission critical Systems from Servers to desktops or
             Laptops with Nobus Cloud Backup (NCB). With NCB, customers can now
             provide an extra layer of backup & Cyber security for their
@@ -22,7 +22,7 @@ const CloudBackupSection = () => {
           </p>
           <a
             href="/documentation/cloud-backup"
-            className="inline-flex cursor-pointer items-center justify-center border border-white text-white rounded-md py-3 px-12 hover:bg-white hover:text-blue-600 transition-colors duration-200"
+            className="inline-flex cursor-pointer items-center justify-center border border-white text-white rounded-md py-3 px-12 hover:text-white transition-colors duration-200"
           >
             Learn More
             <span className="pl-2" aria-hidden="true">

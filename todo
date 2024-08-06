@@ -340,6 +340,8 @@ pointer-events: auto;
   
 git push https://github.com/ChukwuemekaAham/nobus_v2.0.git
 
+git commit -am "Added files"
+
     /* styles/Home.module.css */
     
     .testFont {
@@ -348,6 +350,10 @@ git push https://github.com/ChukwuemekaAham/nobus_v2.0.git
     color: green;
     font-size: 3rem;
     }
+
+    text-[#232f3e]
+    000026
+    033BC0
 
     // pages/index.js
     

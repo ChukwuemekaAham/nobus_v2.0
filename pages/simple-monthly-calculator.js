@@ -58,7 +58,7 @@ const pricingData = [
 
 function smc() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <title> Nobus | Simple Monthly Calculator </title>
       <link rel="icon" href="/favicon.ico" />
 

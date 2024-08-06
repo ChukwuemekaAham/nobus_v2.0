@@ -12,7 +12,7 @@ import {
 import Header from "../../components/Header";
 import Footer from "../../components/Footer1";
 import Image from "next/image";
-import SimpleMonthlyCalculator from "../../components/Smc";
+import SimpleMonthlyCalculator from "../../components/SimpleMonthlyCalculator";
 
 const cardData = [
   {
@@ -222,7 +222,7 @@ const faqFilters = [
 
 function index() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus | Pricing </title>
         <link rel="icon" href="/favicon.ico" />
@@ -276,7 +276,7 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 rounded text-left shadow border border-gray-300 hover:scale-95">
+              <div className="p-5 bg-white flex flex-col space-x-4 rounded-lg text-left shadow border border-gray-300 hover:scale-95">
                 <div key={section.name} className="p-2">
                   <p
                     id={`${section.name}-heading`}
@@ -291,10 +291,11 @@ function index() {
                   >
                     {section.items.map((item) => (
                       <li key={item.name} className="flex-col">
-                        <p>
+                        <p className="flex">
+                          <img className="flex w-2 h-2" src="/arr-doc.png" />
                           <a
                             href={item.href}
-                            className="hover:underline group-hover:scale-110 text-base"
+                            className="hover:underline -my-2 pl-2 group-hover:scale-110 text-base"
                           >
                             {item.name}
                           </a>
@@ -340,7 +341,7 @@ function index() {
                   <div className="flex">
                     <a href="/contact">
                       <div className="flex justify-center px-2 py-2 sm:w-40 hover:bg-blue-500 hover:shadow-md active:scale-90 rounded cursor-pointer border font-semibold text-md bg-blue-600 text-white border-blue-600">
-                        <PhoneIcon className="h-6" />
+                        <img src="/phone.svg" />
                         <span className="inline-flex ml-2">Contact Sales</span>
                       </div>
                     </a>
@@ -364,12 +365,14 @@ function index() {
                         / Daily
                       </span>
                     </p>
-                    <a
-                      href="https://cloud.nobus.io/"
-                      className="mt-20 cursor-pointer block w-full rounded-md bg-[#03A731] px-3 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#03A731] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    >
-                      Visit Cloud Console
-                    </a>
+                    <div className="mx-auto max-w-[180px]">
+                      <a
+                        href="https://cloud.nobus.io/"
+                        className="mt-20 cursor-pointer block w-full rounded-md bg-[#03A731] px-3 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#03A731] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                      >
+                        Visit Cloud Console
+                      </a>
+                    </div>
                     <div className="mt-12 flex items-center space-x-2 px-3 rounded-lg border border-gray-200 py-2 bg-[#3F3F461A]">
                       <img src="/naria.png" alt="Naira" className="h-6 w-6" />
                       <p className="text-xs leading-5 tracking-wide text-gray-600">

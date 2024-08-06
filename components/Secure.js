@@ -10,35 +10,35 @@ const Secure = () => {
               className="w-full h-full object-cover rounded-2xl sm:object-contain sm:w-full"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 sm:h-full">
-              <h2 className="lg:text-3xl text-2xl font-bold text-green-500 mb-4 lg:-mt-32 sm:-mt-2">
+              <h2 className="lg:text-3xl text-2xl font-bold text-green-500 mb-2 lg:-mt-32 sm:-my-[54px]">
                 Secure platform,{" "}
                 <span className="text-white">Protected data.</span>
               </h2>
-              <p className="text-base mb-4 lg:mb-12 sm:text-lg">
+              <p className="text-sm md:text-base mt-10 sm:text-lg">
                 We are constantly improving our compliance, audit, and security
                 with you in mind.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 pt-5 overflow-x-auto scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
                 <img
                   src="/pci-logo.png"
                   alt="PCI Logo"
-                  width={100}
-                  height={100}
-                  className="object-contain border-2 border-[#03A731] rounded-full bg-white p-1"
+                  width={124}
+                  height={46}
+                  className="object-contain w-29 border-2 border-[#03A731] rounded-full bg-white p-1"
                 />
                 <img
                   src="/iso-logo.png"
                   alt="ISO Logo"
-                  width={70}
-                  height={70}
-                  className="object-contain"
+                  width={115}
+                  height={46}
+                  className="object-contain w-25"
                 />
                 <img
-                  src="/npdr-logo.png"
+                  src="/ndpr-logo.png"
                   alt="NPDR Logo"
-                  width={100}
-                  height={100}
-                  className="object-contain"
+                  width={166}
+                  height={66}
+                  className="object-contain w-46"
                 />
               </div>
             </div>

@@ -16,7 +16,7 @@ import {
   ChevronUpIcon,
 } from "@heroicons/react/outline";
 import Image from "next/image";
-import SimpleMonthlyCalculator from "../components/Smc";
+import SimpleMonthlyCalculator from "../components/SimpleMonthlyCalculator";
 
 const card = [
   {
@@ -318,7 +318,7 @@ const faqFilters = [
 ];
 function solution() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus | Solution </title>
         <link rel="icon" href="/favicon.ico" />

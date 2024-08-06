@@ -305,7 +305,7 @@ const includedFeatures = [
 
 function index() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus | Documentation </title>
         <link rel="icon" href="/favicon.ico" />
@@ -337,25 +337,26 @@ function index() {
           </div>
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {sections.map((section) => (
-              <div className="p-5 bg-white flex flex-col space-x-4 shadow rounded border border-gray-300 text-left hover:scale-95">
-                <div key={section.name} className="p-2">
-                  <p
+              <div className="p-5 bg-white flex flex-col space-x-4 shadow rounded-lg border border-gray-300 text-left hover:scale-95">
+                <div key={section.name} className="p-2 ">
+                  <h4
                     id={`${section.name}-heading`}
                     className="text-xl font-medium text-gray-900"
                   >
                     {section.name}
-                  </p>
+                  </h4>
                   <ul
                     role="list"
                     aria-labelledby={`${section.name}-heading`}
-                    className="mt-6 space-y-2 sm:mt-4 sm:space-y-4 list-none pl-0"
+                    className="mt-6  space-y-2 sm:mt-4 sm:space-y-4 list-none pl-0"
                   >
                     {section.items.map((item) => (
                       <li key={item.name} className="flex-col">
-                        <p>
+                        <p className="flex">
+                          <img className="flex w-2 h-2" src="/arr-doc.png" />
                           <a
                             href={item.href}
-                            className="hover:underline group-hover:scale-110 text-base"
+                            className="hover:underline pl-2 -my-2 group-hover:scale-110 text-base"
                           >
                             {item.name}
                           </a>

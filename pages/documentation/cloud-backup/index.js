@@ -13,7 +13,7 @@ function index() {
   const [open, setOpen] = useState(true);
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Documentation - Nobus Cloud Backup </title>
         <link rel="icon" href="/favicon.ico" />
@@ -48,9 +48,7 @@ function index() {
                   />
                 </button>
               )}
-              <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-                Cloud Backup Documentation
-              </h1>
+              <h4 className="pl-2 pt-3">Cloud Backup Documentation</h4>
             </div>
           </div>
           <div className="flex">

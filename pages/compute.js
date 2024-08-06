@@ -38,7 +38,7 @@ const cardData = [
 
 function compute() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus | Compute </title>
         <link rel="icon" href="/favicon.ico" />
@@ -63,7 +63,7 @@ function compute() {
             <div className="flex flex-col sm:flex-row justify-center place-items-center mt-4">
               <a href="/solutions">
                 <button className="my-3 rounded-md px-10 py-4 font-bold border border-white text-white shadow-md transition duration-10 hover:bg-blue-800 hover:text-white hover:shadow-xl active:scale-90 animate-pulse">
-                  Get Started with Our Compute Solutions{" "}
+                  Get Started with Compute Solutions{" "}
                   <span aria-hidden="true"> &rarr;</span>
                 </button>
               </a>

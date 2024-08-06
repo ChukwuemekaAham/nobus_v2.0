@@ -3,7 +3,7 @@ import { PhoneIcon } from "@heroicons/react/outline";
 
 const Banner2 = () => {
   return (
-    <section className="relative bg-[#000026] min-h-screen flex items-center justify-center">
+    <section className="relative bg-clip-content bg-gradient-to-l from-[#000026] to-[#0332a0] min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
         <Image
           src="/line2.png"
@@ -21,7 +21,7 @@ const Banner2 = () => {
           Start deploying your workload on Africa’s fastest-growing cloud
           platform!
         </p>
-        <div className="flex flex-col mt-10 sm:flex-row justify-center place-items-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 ">
+        <div className="flex flex-col mx-auto max-w-[220px] sm:max-w-none mt-10 sm:flex-row justify-center place-items-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 ">
           <a
             href="/registration"
             className="bg-blue-600 hover:bg-blue-700 hover:text-white text-white font-semibold py-4 px-6 w-full max-w-xs sm:w-auto rounded-md shadow-md text-center"
@@ -35,29 +35,6 @@ const Banner2 = () => {
             <img src="/phone.svg" /> <span className="pl-2">Request Demo</span>
           </a>
         </div>
-
-        {/* <div className="mt-8">
-          <a
-            href="#"
-            className="text-orange-500 hover:text-orange-600 flex items-center justify-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-5 w-5 mr-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-              />
-            </svg>
-            Learn more about Nobus cloud migration deals
-          </a>
-        </div> */}
       </div>
     </section>
   );

@@ -402,6 +402,7 @@ const navigation = {
     },
   ],
   pages: [
+    { name: "Simple Monthly Calculator", href: "/simple-monthly-calculator" },
     { name: "News Blog", href: "#" },
     { name: "Contact Support", href: "/contact" },
     { name: "Request Demo", href: "#" },
@@ -503,14 +504,14 @@ const mobilefilters = [
     name: "Solution",
     options: [
       { value: "View All", href: "/solutions" },
-      { value: "Flexible Compute Services", href: "#" },
-      { value: "Dedicated Hosting", href: "#" },
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
-      { value: "Networking Services", href: "#" },
-      { value: "Domains & DNS", href: "#" },
+      { value: "Flexible Compute Services", href: "/compute" },
+      { value: "Dedicated Hosting", href: "/compute" },
+      { value: "Flexible Block Storage", href: "/storage" },
+      { value: "Flexible Object Storage", href: "/storage" },
+      { value: "Networking Services", href: "/networking" },
+      { value: "Domains & DNS", href: "/networking" },
       { value: "Container Services", href: "#" },
-      { value: "Cloud Backup", href: "#" },
+      { value: "Nobus Cloud Backup", href: "/pricing/nobus-cloud-backup" },
       { value: "Cloud Security", href: "#" },
       { value: "Database Services", href: "#" },
     ],
@@ -520,13 +521,21 @@ const mobilefilters = [
     name: "Pricing",
     options: [
       { value: "View All", href: "/pricing" },
-      { value: "Flexible Compute Service", href: "#" },
-      { value: "Dedicated Hosting", href: "#" },
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
+      { value: "Flexible Compute Service", href: "/pricing/fcs/price" },
+      { value: "Dedicated Hosting", href: "/pricing/fcs/price" },
+      { value: "Flexible Block Storage", href: "/pricing/fbs/price" },
+      { value: "Flexible Object Storage", href: "/pricing/fos/price" },
       { value: "Bandwidth", href: "#" },
       { value: "FastTransit", href: "#" },
       { value: "Floating IPs", href: "#" },
+      { value: "Nobus DNS", href: "#" },
+      { value: "Database Services", href: "#" },
+      {
+        value: "Nobus Cloud Backup",
+        href: "/pricing/nobus-cloud-backup/price",
+      },
+      { value: "Cloud Security", href: "#" },
+      { value: "Nobus Cloud Container", href: "#" },
     ],
   },
   {
@@ -534,15 +543,18 @@ const mobilefilters = [
     name: "Documentation",
     options: [
       { value: "View All", href: "/documentation" },
-      { value: "Flexible Compute Services", href: "#" },
-      { value: "FCS Autoscaling", href: "#" },
-      { value: "Dedicated Hosting", href: "#" },
-      { value: "Flexible Block Storage", href: "#" },
-      { value: "Flexible Object Storage", href: "#" },
+      { value: "Flexible Compute Services", href: "/documentation/fcs" },
+      { value: "FCS Autoscaling", href: "/documentation/fcs/#autoscaling" },
+      {
+        value: "Dedicated Hosting",
+        href: "/documentation/fcs/#dedicated-hosting",
+      },
+      { value: "Flexible Block Storage", href: "/documentation/fbs" },
+      { value: "Flexible Object Storage", href: "/documentation/fos" },
       { value: "Networking Services", href: "#" },
-      { value: "Domains & DNS", href: "#" },
+      { value: "Domains & DNS", href: "/documentation/dns" },
       { value: "Container Services", href: "#" },
-      { value: "Cloud Backup", href: "#" },
+      { value: "Cloud Backup", href: "/documentation/cloud-backup" },
       { value: "Cloud Security", href: "#" },
       { value: "Database Services", href: "#" },
       { value: "PfSense", href: "#" },
@@ -713,7 +725,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="bg-clip-content bg-gradient-to-t bg-[#000026] to-blue-900">
+    <div className="bg-clip-content bg-gradient-to-l from-[#000026] to-[#0332a0]">
       {/* Mobile menu */}
 
       <Transition.Root show={open} as={Fragment}>
@@ -741,33 +753,51 @@ export default function Header() {
               leaveTo="-translate-x-full"
             >
               <Dialog.Panel className="relative flex w-full max-w-xs flex-col pb-12 shadow-md bg-white overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent">
-                <div className="flex justify-between bg-clip-content bg-gradient-to-t bg-[#000026] to-blue-800 ">
+                <div className="flex justify-between bg-clip-content bg-gradient-to-l from-[#000026] to-[#0332a0]">
                   <div className="py-4 flex pl-2">
                     <a href="/">
                       <span className="sr-only">Workflow</span>
-                      <img className="h-8 w-auto" src="/logo.png" alt="" />
+                      <img className="h-6 w-auto" src="/logo.png" alt="" />
                     </a>
                   </div>
                   <div className="flex flex-shrink px-3 bg-slate-200 scale-50 rounded-full text-gray-500">
                     <button onClick={() => setOpen(false)}>
                       <span className="sr-only">Close menu</span>
-                      <XIcon className="h-10 w-10" aria-hidden="true" />
+                      <XIcon className="h-10 w-8" aria-hidden="true" />
                     </button>
                   </div>
                 </div>
 
                 {/* Links */}
                 <Tab.Group as="div" className="mt-2">
-                  <div className="flex px-4 mt-5">
+                  <div className="flex my-5 text-center justify-center mx-auto max-w-lg">
+                    <div className="flow-root hover:scale-105">
+                      <a
+                        href="https://dashboard.nobus.io"
+                        className="font-epilogue py-3 px-5 text-sm button-outline text-blue-600"
+                      >
+                        Sign In
+                      </a>
+                    </div>
+                    <div className="flow-root hover:scale-105 ml-2">
+                      <a
+                        href="/registration"
+                        className="font-epilogue py-[14px] px-5 text-sm button bg-[#03A731] hover:bg-[#03A731]"
+                      >
+                        Create Account <span aria-hidden="true"> &rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex px-4 mt-10">
                     <a
                       href="#"
-                      className="flex text-base font-semibold cursor-pointer text-gray-600 hover:text-gray-500 "
+                      className="flex font-epilogue text-base font-semibold cursor-pointer text-gray-600 hover:text-gray-500 "
                     >
                       About Us
                     </a>
                   </div>
                   {/* Filters */}
-                  <div className="block space-y-2 pt-10 pb-8 px-4">
+                  <div className="block space-y-2 pt-4 pb-5 px-4">
                     {mobilefilters.map((section) => (
                       <div className="">
                         <Disclosure
@@ -835,25 +865,6 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-
-                <div className="space-y-6 py-6 text-center mx-auto max-w-lg">
-                  <div className="flow-root py-2 hover:scale-105">
-                    <a
-                      href="https://dashboard.nobus.io"
-                      className="-m-2 block button-outline text-blue-600 py-3 px-4 font-medium"
-                    >
-                      Sign In
-                    </a>
-                  </div>
-                  <div className="flow-root py-2 hover:scale-105">
-                    <a
-                      href="/registration"
-                      className="-m-2 block button bg-[#03A731] hover:bg-[#03A731]  py-3 px-4 font-medium"
-                    >
-                      Create Account <span aria-hidden="true"> &rarr;</span>
-                    </a>
-                  </div>
-                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -880,7 +891,7 @@ export default function Header() {
                 </p>
                 <a
                   href="/registration"
-                  className="animate-bounce flex-none ml-3 rounded-full text-gray-900 py-[1px] px-[6px] text-xs font-semibold bg-white shadow-sm hover:scale-105 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                  className="animate-bounce flex-none mx-2  rounded-full text-gray-900 py-[1px] px-[6px] text-xs font-semibold bg-white shadow-sm hover:scale-105 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                 >
                   Register now <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -891,7 +902,7 @@ export default function Header() {
                 </a>
 
                 <a href="/policy" className="text-white hover:text-gray-400">
-                  Privacy Statement
+                  Privacy
                 </a>
               </div>
 
@@ -914,20 +925,11 @@ export default function Header() {
         <nav aria-label="Top" className="mx-auto min-w-max px-4 sm:px-6">
           <div className="">
             <div className="flex h-16 items-center justify-between">
-              <button
-                type="button"
-                className="rounded-full text-white shadow hover:scale-110 p-2 lg:hidden"
-                onClick={() => setOpen(true)}
-              >
-                <span className="sr-only">Open menu</span>
-                <MenuAlt3Icon className="h-6 w-6" aria-hidden="true" />
-              </button>
-
               {/* Logo */}
               <div className="flex lg:ml-0">
                 <a href="/">
                   <span className="sr-only">Workflow</span>
-                  <img className="h-8 w-auto" src="/logo.png" alt="" />
+                  <img className="h-6 sm:h-8 w-auto" src="/logo.png" alt="" />
                 </a>
               </div>
 
@@ -993,12 +995,12 @@ export default function Header() {
                                             key={section.name}
                                             className="hover:bg-gray-100 p-2 group h-[180px] overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-transparent"
                                           >
-                                            <p
+                                            <h5
                                               id={`${section.name}-heading`}
-                                              className="text-xl font-medium text-gray-900 group-hover:text-gray-500"
+                                              className="group-hover:text-gray-500"
                                             >
                                               {section.name}
-                                            </p>
+                                            </h5>
                                             <hr className="mt-2 border-b-2 border-blue-400 rounded-md max-w-[16px]" />
 
                                             <ul
@@ -1151,7 +1153,7 @@ export default function Header() {
                                       {/* Filters */}
                                       <div className="hidden md:block">
                                         <div className="border-b border-gray-200 pb-6">
-                                          <h3 className="text-2xl font-medium text-gray-600 justify pb-4">
+                                          <h3 className="text-2xl font-medium justify pb-4">
                                             {" "}
                                             Nobus Pricing
                                           </h3>
@@ -1253,16 +1255,14 @@ export default function Header() {
                                             </div>
                                           ))}
                                         </div>
-                                        <div className="flex text-center justify-between">
-                                          <a></a>
-
+                                        <div className="flex-1 text-right justify-between">
+                                          <a> </a>
                                           <a
                                             href="/pricing"
-                                            className="font-medium mr-4 text-base text-gray-600 hover:text-gray-400 "
+                                            className="font-semibold font-epilogue mr-4 bg-slate-300 rounded-full py-1 px-2 text-base text-[#232f3e] hover:text-gray-500 "
                                           >
                                             View all pricing
                                             <span aria-hidden="true">
-                                              {" "}
                                               &rarr;
                                             </span>
                                           </a>
@@ -1327,7 +1327,7 @@ export default function Header() {
                                     <div className="flex w-1/3 pr-10">
                                       <div className="hidden md:block">
                                         <div className="border-b border-gray-200 pb-6">
-                                          <h3 className="text-2xl font-medium text-gray-600 justify pb-4">
+                                          <h3 className="text-2xl font-medium justify pb-4">
                                             {" "}
                                             Nobus Documentation
                                           </h3>
@@ -1475,7 +1475,7 @@ export default function Header() {
 
                                     <a
                                       href="/documentation"
-                                      className="font-medium mr-4 text-base text-gray-600 hover:text-gray-400 "
+                                      className="font-semibold font-epilogue bg-slate-300 rounded-full pt-1 px-2 text-base mr-4 text-[#232f3e] hover:text-gray-500 "
                                     >
                                       View all documentation
                                       <span aria-hidden="true"> &rarr;</span>
@@ -1536,18 +1536,16 @@ export default function Header() {
                                       className="h-6 w-6 flex-shrink-0 text-gray-400"
                                       aria-hidden="true"
                                     />
-                                    <div className="ml-4">
-                                      <p className="text-base font-medium text-gray-900">
-                                        {item.name}
-                                      </p>
-                                      <p className="mt-1 text-sm text-gray-500">
+                                    <div className="ml-4 -my-1">
+                                      <h5 className="text-base">{item.name}</h5>
+                                      <p className="text-sm text-gray-500">
                                         {item.description}
                                       </p>
                                     </div>
                                   </a>
                                 ))}
                               </div>
-                              <div className="bg-gray-50 px-5 sm:px-8 pb-8">
+                              <div className="bg-slate-100 px-5 sm:px-8 pb-8">
                                 <div>
                                   <h3 className="text-base font-medium text-gray-500">
                                     Recent Posts
@@ -1574,7 +1572,7 @@ export default function Header() {
                                 <div className="mt-5 text-sm">
                                   <a
                                     href="#"
-                                    className="font-medium rounded-full py-1 px-2 bg-slate-300 text-gray-800 hover:text-gray-600"
+                                    className="font-medium font-epilogue rounded-full py-2 px-2 bg-slate-300 text-gray-800 hover:text-gray-600"
                                   >
                                     View all blog posts
                                     <span aria-hidden="true"> &rarr;</span>
@@ -1598,14 +1596,14 @@ export default function Header() {
                       <>
                         <a
                           href="https://dashboard.nobus.io"
-                          className="text-base cursor-pointer rounded-md border border-white px-3 py-1 text-white hover:text-white hover:shadow-lg active:scale-105 hover:scale-105"
+                          className="text-sm cursor-pointer font-epilogue rounded-md border border-white px-3 pt-2 text-white hover:text-white hover:shadow-lg active:scale-105 hover:scale-105"
                         >
                           Sign In
                         </a>
 
                         <a
                           href="/registration"
-                          className="relative z-10 shadow-md rounded-md bg-[#03A731] px-3 py-[7px] text-base text-white hover:text-white hover:scale-105"
+                          className="relative z-10 font-epilogue shadow-md rounded-md bg-[#03A731] px-3 py-[8px] text-sm text-white hover:text-white hover:scale-105"
                         >
                           Create Account
                         </a>
@@ -1615,14 +1613,14 @@ export default function Header() {
                 </div>
 
                 {/* Search */}
-                <div className="flex items-center lg:ml-6">
+                <div className="flex items-center ml-2 lg:ml-6">
                   {isSearchOpen ? (
                     <div className="w-full">
                       <div className="flex">
                         <input
                           type="text"
                           placeholder="Search"
-                          className="w-full text-sm rounded-sm outline-none border-none focus:outline-none focus:ring-0 focus:border-0"
+                          className="w-full text-sm font-epilogue rounded-sm outline-none border-none focus:outline-none focus:ring-0 focus:border-0"
                         />
                         <button
                           className=" text-white hover:text-slate-300 hover:scale-105 px-1"
@@ -1643,6 +1641,14 @@ export default function Header() {
                     </a>
                   )}
                 </div>
+                <button
+                  type="button"
+                  className="rounded-full text-white shadow hover:scale-110 p-2 lg:hidden"
+                  onClick={() => setOpen(true)}
+                >
+                  <span className="sr-only">Open menu</span>
+                  <MenuAlt3Icon className="h-6 w-6" aria-hidden="true" />
+                </button>
               </div>
             </div>
           </div>

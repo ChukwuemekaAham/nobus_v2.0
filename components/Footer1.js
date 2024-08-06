@@ -6,140 +6,161 @@ function Footer() {
   return (
     <>
       <CookieAccept />
-      <footer className="flex justify-center w-full bg-[#000026] px-16">
-        <div className="w-full mt-12 max-w-7xl">
-          <div className="flex flex-col flex-grow lg:flex-row text-center lg:text-left">
-            <div className="flex flex-col items-center lg:items-start w-full lg:w-1/6 border-b border-gray-700 pb-5 lg:pb-0 lg:border-none">
-              <a href="/">
-                <Image
-                  className="mx-auto my-10 w-26 md:mb-4 md:mt-0"
-                  src="/logo.png"
-                  width={105}
-                  height={40}
-                />
-              </a>
-              <div className="hidden flex-col lg:flex mt-10">
-                <p className="text-sm font-semibold text-gray-100">
-                  support@nobus.io
-                </p>
-                <p className="text-sm font-semibold text-gray-100">
-                  media.marketing@nobus.io
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-10 text-left justify-center mx-auto mt-10 lg:mt-0 pb-10 lg:px-20">
+      <footer className="flex justify-center w-full bg-[#000026]">
+        <div className="w-full mt-12 mx-auto  max-w-7xl">
+          <div className="flex flex-col flex-grow lg:flex-row text-left ">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-[100px] mx-auto justify-center lg:text-left mt-10 lg:mt-0 pb-10">
               <div className="flex flex-col w-full">
-                <p className="mt-6 md:mt-0 text-md text-white font-semibold">
+                <p className="mt-6 md:mt-0 font-epilogue text-md text-white font-semibold">
                   Features
                 </p>
                 <a
                   href="#"
-                  className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-4 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Blog
                 </a>
                 <a
                   href="/pricing/"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Pricing
                 </a>
                 <a
                   href="/documentation/"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Documentation
                 </a>
 
                 <a
                   href="/solutions"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Solutions
                 </a>
               </div>
-
               <div className="flex flex-col w-full">
-                <p className="mt-6 md:mt-0 text-md text-white font-semibold">
+                <p className="mt-6 md:mt-0 font-epilogue text-md text-white font-semibold">
                   Legal
                 </p>
                 <a
                   href="/agreement"
-                  className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-4 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Customer Agreement
                 </a>
                 <a
                   href="/policy"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Privacy Statement
                 </a>
 
                 <a
                   href="/service-terms"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Terms of Service
                 </a>
 
                 <a
                   href="/sla"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   SLAs
                 </a>
               </div>
               <div className="flex flex-col w-full">
-                <p className="mt-6 md:mt-0 text-md text-white font-semibold">
+                <p className="mt-6 md:mt-0 font-epilogue text-md text-white font-semibold">
                   Get Help
                 </p>
 
                 <a
                   href="#"
-                  className="mt-4 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-4 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Help Desk{" "}
                 </a>
 
                 <a
                   href="/contact"
-                  className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300"
+                  className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300"
                 >
                   Contact
                 </a>
-                <a className="mt-2 text-sm font-semibold text-gray-400 hover:text-gray-300">
+                <a className="mt-2 text-xs font-semibold text-gray-400 hover:text-gray-300">
                   Up-Time
                   <span className="ml-1 px-1 font-semibold text-white text-xs bg-[#03A731] rounded">
                     99.982%
                   </span>
                 </a>
               </div>
+              <div className="flex flex-col w-full">
+                <p className="mt-6 md:mt-0 font-epilogue text-md text-white font-semibold">
+                  Contact Us
+                </p>
+                <p className="mt-4 text-xs font-semibold text-gray-100">
+                  {" "}
+                  +2347057721442{" "}
+                </p>
+                <p className="text-xs mt-2 font-semibold text-gray-100">
+                  support@nobus.io
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center w-full lg:w-2/6 pb-0 pt-4 lg:pl-4 lg:pt-0">
-              <p className="mt-2 lg:mt-0 text-xl font-semibold text-gray-100">
+            <div className="flex flex-col w-full lg:w-2/6 pb-0 pt-4 lg:pl-10 lg:pt-0">
+              <p className="mt-2 lg:mt-0 text-lg font-epilogue mx-auto justify-center lg:mx-0 lg:text-left font-semibold text-gray-100">
                 Our Certifications:
               </p>
-              <div className="flex justify-center space-x-2 lg:space-x-1 px-12">
+              <div className="flex px-5 space-x-1 sm:px-0 items-center justify-center sm:space-x-2">
                 <img
-                  className="lg:block my-10 w-50 lg:w-auto p-1 pl-4 md:pl-0 shadow-lg"
-                  src="/pcidss.png"
+                  width={146}
+                  height={46}
+                  className="block mt-5 sm:my-10 w-29 shadow-lg"
+                  src="/pcidss-logo.png"
                 />
                 <img
-                  className="lg:block my-10 w-50 lg:w-auto p-1 shadow-lg"
-                  src="/iso.png"
+                  width={120}
+                  height={46}
+                  className="block mt-5 sm:my-10 w-25 shadow-lg"
+                  src="/iso-logo.png"
                 />
+
                 <img
-                  className="lg:block my-10 w-50 lg:w-auto p-1 shadow-lg pr-2"
-                  src="/ndpr.png"
+                  width={160}
+                  height={46}
+                  className="hidden sm:block my-10 w-46 shadow-lg"
+                  src="/ndpr-logo.png"
+                />
+              </div>
+              <div className="sm:hidden mx-auto justify-center">
+                <img
+                  width={160}
+                  height={46}
+                  className="block mt-2 mb-10 w-46 shadow-lg"
+                  src="/ndpr-logo.png"
                 />
               </div>
             </div>
           </div>
-          <div className="py-10 mt-0 lg:mt-6 flex flex-col lg:flex-row items-center justify-between lg:py-4 w-full border-t border-gray-700">
+          <hr className="border-t-1 border-t-slate-500 hidden md:block" />
+          <div className="py-10 px-2 sm:px-10 mt-0 md:mt-4 flex flex-col md:flex-row items-center justify-between md:py-4 w-full">
             <div className="flex flex-1 space-x-4">
+              <a href="/">
+                <Image
+                  className="mx-auto w-26 -my-1"
+                  src="/logo.png"
+                  width={66}
+                  height={26}
+                />
+              </a>
+              <p className="ml-2 text-sm font-semibold text-gray-100">
+                © 2024 Nkponani Ltd. All rights reserved.
+              </p>
+            </div>
+            <div className="flex flex-1 space-x-4 mt-4 md:mt-0">
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <svg
                   width="17"
@@ -172,19 +193,6 @@ function Footer() {
                   />
                 </svg>
               </a>
-            </div>
-            <div className="flex flex-col lg:flex-row text-center text-gray-400">
-              <div className="lg:hidden mt-10">
-                <p className="text-md font-semibold text-gray-100">
-                  support@nobus.io
-                </p>
-                <p className="text-md font-semibold text-gray-100">
-                  media.marketing@nobus.io
-                </p>
-              </div>
-              <p className="mt-4 lg:mt-0 ml-2 text-sm font-semibold pt-2 text-gray-100">
-                © 2024 Nkponani Ltd. All rights reserved.
-              </p>
             </div>
           </div>
         </div>

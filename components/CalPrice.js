@@ -550,7 +550,7 @@ const CalPrice = () => {
     }
   };
   return (
-    <section className="mx-10 md:mx-auto max-w-5xl bg-slate-300 rounded-t-3xl">
+    <section className="mx-2 md:mx-auto max-w-5xl bg-slate-300 rounded-t-3xl">
       <div className="grid grid-cols-1 gap-y-10 sm:gap-x-4 lg:gap-x-10 md:grid-cols-2">
         <div id="fcs" className="group ">
           <div className="rounded-3xl border shadow-lg group-hover:scale-95 bg-white">

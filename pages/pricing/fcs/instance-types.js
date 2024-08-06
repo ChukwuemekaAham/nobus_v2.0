@@ -22,7 +22,7 @@ function index() {
   ];
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Pricing - Nobus Flexible Compute Service </title>
         <link rel="icon" href="/favicon.ico" />
@@ -48,7 +48,7 @@ function index() {
           <div className="w-full px-2  sm:px-0">
             <Tab.Group defaultIndex={3}>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-                <Tab.List className="flex flex-col col-span-1 my-16 overflow-y-scroll">
+                <Tab.List className="flex flex-col col-span-1 my-4 md:my-16 overflow-y-scroll">
                   <h2 className="pb-5 text-2xl font-semibold text-[#232f3e]">
                     PRICING
                   </h2>

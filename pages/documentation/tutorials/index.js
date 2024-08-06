@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function index() {
-  return (
-    <div>index</div>
-  )
+  return <section className="overflow-hidden">index</section>;
 }
 
-export default index
+export default index;

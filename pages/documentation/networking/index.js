@@ -31,7 +31,7 @@ function index() {
   ];
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Documentation - Nobus Networking Services </title>
         <link rel="icon" href="/favicon.ico" />
@@ -66,9 +66,7 @@ function index() {
                   />
                 </button>
               )}
-              <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-                Networking Documentation
-              </h1>
+              <h4 className="pl-2 pt-3">Networking Documentation</h4>
             </div>
           </div>
           <div className="flex">

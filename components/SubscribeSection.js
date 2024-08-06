@@ -1,13 +1,16 @@
-import { MailIcon } from '@heroicons/react/outline';
+import { MailIcon } from "@heroicons/react/outline";
 
 const SubscribeSection = () => {
   return (
     <section className=" items-center justify-center bg-[#0A0A23] pt-16  overflow-hidden z-0">
       <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center">
         <MailIcon className="h-12 w-12 text-white mx-auto mb-4" />
-        <h2 className="text-3xl font-bold text-white mb-4">Subscribe to our newsletter</h2>
-        <p className="text-lg text-gray-300 mb-8">
-          Sign up to our newsletter to receive our latest news and products. Stay updated on the latest developments and special offers!
+        <h2 className="text-3xl font-bold text-white mb-4">
+          Subscribe to our newsletter
+        </h2>
+        <p className="text-lg text-gray-300 mb-8 md:mx-auto md:mx-w-md lg:max-w-xl">
+          Sign up to our newsletter to receive our latest news and products.
+          Stay updated on the latest developments and special offers!
         </p>
         <div className="flex justify-center">
           <a
@@ -33,7 +36,8 @@ const SubscribeSection = () => {
         </div>
       </div>
       <p className="text-xs sm:text-sm text-gray-400 mt-5 text-center mb-3">
-        *Interesting news headlines and educating contents to boost your cloud initiative.
+        *Interesting news headlines and educating contents to boost your cloud
+        initiative.
       </p>
     </section>
   );

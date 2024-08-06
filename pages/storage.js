@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function storage() {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus | Storage </title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,7 @@ function storage() {
             <div className="flex flex-col sm:flex-row justify-center place-items-center mt-4">
               <a href="/solutions">
                 <button className="my-3 rounded-md px-10 py-4 font-bold border border-white text-white shadow-md transition duration-10 hover:bg-blue-800 hover:text-white hover:shadow-xl active:scale-90 animate-pulse">
-                  Get Started with Our Storage Solutions{" "}
+                  Get Started with Storage Solutions{" "}
                   <span aria-hidden="true"> &rarr;</span>
                 </button>
               </a>

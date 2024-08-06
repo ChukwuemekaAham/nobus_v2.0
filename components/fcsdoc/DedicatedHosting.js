@@ -27,7 +27,7 @@ function DedicatedHosting() {
           for host allocation and host capacity utilization. Once setup, Nobus
           takes care of these administrative tasks on your behalf, so that you
           can seamlessly launch virtual machines (instances) on Dedicated Hosts
-          just like you would launch an EC2 instance with Nobus provided
+          just like you would launch an FCS instance with Nobus provided
           licenses.
         </p>
         <p>
@@ -75,7 +75,7 @@ function DedicatedHosting() {
             Nobus to reduce your operational burden, while controlling your
             maintenance event schedules to suit your business’s operational
             needs. In the rare event of a host degradation, or for planned
-            maintenances, Nobus will automatically move the EC2 instances
+            maintenances, Nobus will automatically move the FCS instances
             running on your affected host to a newly allocated dedicated host to
             ensure your workload’s high availability.
           </p>

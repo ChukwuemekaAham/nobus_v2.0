@@ -217,7 +217,7 @@ function SidebarDocs({ open, setOpen }) {
                                 <span className="px-2 text-md font-medium">
                                   {section.name}
                                 </span>
-                                <span className="ml-20 flex items-center">
+                                <span className="ml-[55px] flex items-center">
                                   {open ? (
                                     <ChevronUpIcon
                                       className="h-4 w-4"

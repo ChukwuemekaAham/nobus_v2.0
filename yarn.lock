@@ -670,6 +670,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
+"@fontsource/epilogue@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.npmjs.org/@fontsource/epilogue/-/epilogue-5.0.13.tgz"
+  integrity sha512-4le/H6kDUtYVEiXa1oqCKiz3wm0rr5XFGnRzKX+8ErcIj30/UpuUAbmojOUZk+STe1X+Px53lUxAc9qZpJwRbg==
+
 "@grpc/grpc-js@^1.7.1":
   version "1.10.10"
   resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.10.10.tgz"
@@ -4564,7 +4569,7 @@ node-releases@^2.0.5:
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.6.tgz"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
-nodemailer@^6.9.0:
+nodemailer@^6.9.14:
   version "6.9.14"
   resolved "https://registry.npmjs.org/nodemailer/-/nodemailer-6.9.14.tgz"
   integrity sha512-Dobp/ebDKBvz91sbtRKhcznLThrKxKt97GI2FAlAyy+fk19j73Uz3sBXolVtmcXjaorivqsbbbjDY+Jkt4/bQA==

@@ -14,7 +14,7 @@ function index() {
   const [open, setOpen] = useState(true);
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Nobus Domains and DNS Documentation </title>
         <link rel="icon" href="/favicon.ico" />
@@ -49,9 +49,8 @@ function index() {
                   />
                 </button>
               )}
-              <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-                Domains and DNS Documentation
-              </h1>
+
+              <h4 className="pl-2 pt-3">DNS Documentation</h4>
             </div>
           </div>
           <div className="flex">

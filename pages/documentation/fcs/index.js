@@ -32,7 +32,7 @@ function index() {
   ];
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <Head>
         <title> Documentation - Nobus Flexible Compute Service </title>
         <link rel="icon" href="/favicon.ico" />
@@ -67,9 +67,7 @@ function index() {
                   />
                 </button>
               )}
-              <h1 className="pl-2 pt-2 text-lg font-medium text-gray-500 ">
-                FCS Documentation
-              </h1>
+              <h4 className="pl-2 pt-3">FCS Documentation</h4>
             </div>
           </div>
           <div className="flex">
@@ -91,7 +89,7 @@ function index() {
               !open && "lg:col-span-4"
             }`}
           >
-            <div className="px-6 py-4">
+            <div className="p-5">
               <div className={`bg-white shadow-lg border border-gray-300`}>
                 <div id="overview" className="flex-col p-5 lg:p-10">
                   <h1 className="pb-10 text-center">

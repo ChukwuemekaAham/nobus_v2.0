@@ -91,7 +91,7 @@ const RecentUpdates = () => {
                     className={`text-gray-900 ${
                       isSmallScreen
                         ? "text-sm font-medium"
-                        : "text-lg font-semibold"
+                        : "text-base font-semibold"
                     } mb-2`}
                   >
                     {update.title}
