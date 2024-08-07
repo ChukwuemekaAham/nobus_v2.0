@@ -51,9 +51,9 @@
       @apply pl-5 list-decimal space-y-2
     }
     .hero-h {
-      @apply text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight
+      @apply text-white text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight
     }
     .hero-p {
-      @apply text-sm text-white font-semibold sm:text-lg transition ease-in mx-auto max-w-md md:max-w-lg
+      @apply text-sm text-white font-semibold sm:text-base transition ease-in mx-auto max-w-md md:max-w-lg
     }
   }

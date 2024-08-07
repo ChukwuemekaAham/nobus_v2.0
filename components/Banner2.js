@@ -14,10 +14,10 @@ const Banner2 = () => {
         />
       </div>
       <div className="relative z-10 text-center text-white px-6 lg:px-8 -mt-40">
-        <h1 className="text-4xl text-white sm:text-5xl md:text-6xl font-extrabold mb-4 lg:px-12">
+        <h1 className="text-4xl text-white sm:text-5xl md:text-6xl font-extrabold mb-2 lg:px-12">
           Explore Your Native Cloud Platform
         </h1>
-        <p className="text-base max-w-sm mx-auto md:max-w-none sm:text-lg mb-4 sm:mb-8">
+        <p className="text-base max-w-sm mx-auto md:max-w-none mb-4 sm:mb-8">
           Start deploying your workload on Africa’s fastest-growing cloud
           platform!
         </p>

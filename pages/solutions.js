@@ -326,7 +326,7 @@ function solution() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+        <div className="lg:[300px] xl:[300px] relative h-[300px] sm:h-[300px] 2xl:h-[400px]">
           <Image
             src="/herobg.png"
             layout="fill"
@@ -335,7 +335,7 @@ function solution() {
             className="animate-fadeIn"
           />
           <div className="absolute top-1/2 w-full text-center transform -translate-y-1/2">
-            <h1 className="hero-h">Nobus Cloud Solution</h1>
+            <h2 className="hero-h">Nobus Cloud Solution</h2>
             <p className="hero-p">
               Start utilizing our cloud solutions for your diverse workloads
               today.

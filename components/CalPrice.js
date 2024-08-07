@@ -1292,19 +1292,14 @@ const CalPrice = () => {
                     </li>
                   )}
                 </ul>
-                {daily_total_price &&
-                  inst_total_price &&
-                  FBS_total_price &&
-                  FOS_total_price &&
-                  flt_total_price &&
-                  total_price && (
-                    <button
-                      onClick={printToPdf}
-                      className="bg-green-500 ml-4 mt-4 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    >
-                      Print to PDF
-                    </button>
-                  )}
+                {total_price && (
+                  <button
+                    onClick={printToPdf}
+                    className="bg-green-500 ml-4 mt-4 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Print to PDF
+                  </button>
+                )}
               </div>
             )}
           </div>

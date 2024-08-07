@@ -20,7 +20,7 @@ const testimonials = [
     title: "Paay.ng",
     quote:
       "As a startup, moving to a local cloud provider like Nobus Cloud has allowed us to access premium service at very affordable cost. we are truly happy with the service so far.",
-    name: "Nonso Ohakwe.",
+    name: "Nonso Ohakwe",
     company: "Paay.ng",
     logo: "/paay.png",
   },
@@ -146,14 +146,14 @@ const TestimonialSection = () => {
               <img
                 src={testimonials[currentIndex].logo}
                 alt={testimonials[currentIndex].company}
-                className="h-12 w-12 mr-4 "
+                className="h-12 w-50 mr-4"
               />
               <div>
                 <p className="text-gray-900 font-semibold">
                   {testimonials[currentIndex].name}
                 </p>
                 <p className="text-gray-600">
-                  {testimonials[currentIndex].position},{" "}
+                  {testimonials[currentIndex].position}{" "}
                   {testimonials[currentIndex].company}
                 </p>
               </div>

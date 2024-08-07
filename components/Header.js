@@ -883,7 +883,7 @@ export default function Header() {
             router.pathname !== "/" ? `hidden` : "bg-[#00009E] block"
           }`}
         >
-          <div className="mx-auto max-w-7xl py-[px] px-6 xl:px-0">
+          <div className="mx-auto min-w-max py-[px] px-4 sm:px-6">
             <div className="flex flex-wrap items-center justify-between animate-marquee">
               <div className="flex w-0 flex-1">
                 <p className="truncate font-semibold text-xs text-white">
@@ -935,10 +935,10 @@ export default function Header() {
 
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:mx-auto lg:block lg:self-stretch">
-                <div className="flex space-x-6 pt-6">
+                <div className="flex space-x-6 pt-6 pl-[160px]">
                   <a
                     href="#"
-                    className="flex text-sm z-10 font-semibold my-px  cursor-pointer text-white hover:text-white hover:shadow-lg"
+                    className="flex text-base z-10 font-semibold my-px  cursor-pointer text-white hover:text-white hover:shadow-lg"
                   >
                     About Us
                   </a>
@@ -953,7 +953,7 @@ export default function Header() {
                                 open
                                   ? "border-slate-400 rounded-md text-white focus:scale-110"
                                   : "border-transparent text-white",
-                                "group relative z-10 -mb-px flex items-center outline-none border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                "group relative z-10 -mb-px flex items-center outline-none border-b-4 pt-px text-base font-medium transition-colors duration-200 ease-out"
                               )}
                             >
                               <span>{category.name}</span>
@@ -1114,7 +1114,7 @@ export default function Header() {
                                 open
                                   ? "border-slate-400 rounded-md text-white focus:scale-110"
                                   : "border-transparent text-white hover:text-white",
-                                "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-base font-medium transition-colors duration-200 ease-out"
                               )}
                             >
                               <span>{category.name}</span>
@@ -1289,7 +1289,7 @@ export default function Header() {
                                 open
                                   ? "border-slate-400 rounded-md text-white focus:scale-110"
                                   : "border-transparent text-white hover:text-white",
-                                "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                "group relative z-10 -mb-px flex outline-none items-center border-b-4 pt-px text-base font-medium transition-colors duration-200 ease-out"
                               )}
                             >
                               <span>{category.name}</span>
@@ -1499,7 +1499,7 @@ export default function Header() {
                               ? "border-slate-400 rounded-md text-white focus:scale-110"
                               : "border-transparent text-white hover:text-white",
 
-                            "group inline-flex relative z-10 -my-px outline-none items-center border-b-4 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                            "group inline-flex relative z-10 -my-px outline-none items-center border-b-4 pt-px text-base font-medium transition-colors duration-200 ease-out"
                           )}
                         >
                           <span>More</span>

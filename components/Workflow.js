@@ -32,7 +32,7 @@ export default function Content() {
           </p>
           <div className="mt-10 flex items-center gap-x-4">
             <h6 className="flex-none text-base text-blue-600">
-              What’s available
+              What’s available?
             </h6>
             {/* <div className="h-px flex-auto bg-gray-100" /> */}
           </div>
@@ -94,7 +94,7 @@ export default function Content() {
       <div className="mx-auto max-w-2xl text-center mt-16">
         <div className="inline-flex items-center justify-center mx-auto place-items-center bg-blue-100 px-4 py-1.5 rounded-md">
           <img src="/global.png" />
-          <span className="ml-2 text-blue-600 text-base sm:text-lg font-semibold">
+          <span className="ml-2 text-blue-500 tracking-tight text-xs font-bold">
             GLOBAL OFFERING
           </span>
         </div>

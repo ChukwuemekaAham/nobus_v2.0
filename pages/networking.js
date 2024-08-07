@@ -35,7 +35,7 @@ function networking() {
       <Header />
 
       <div className="top-0 grid gap-y-10">
-        <div className="lg:[500px] xl:[600px] relative h-[300px] sm:h-[400px] 2xl:h-[700px]">
+        <div className="lg:[300px] xl:[300px] relative h-[300px] sm:h-[300px] 2xl:h-[400px]">
           <Image
             src="/herobg.png"
             layout="fill"
