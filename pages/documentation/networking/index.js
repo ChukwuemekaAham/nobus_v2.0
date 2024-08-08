@@ -15,6 +15,7 @@ import CloudLoadBalancer from "../../../components/networkingdoc/CloudLoadBalanc
 import CloudVpn from "../../../components/networkingdoc/CloudVpn";
 
 import { Tab } from "@headlessui/react";
+import Footer2 from "../../../components/Footer2";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -31,14 +32,14 @@ function index() {
   ];
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden bg-gray-300">
       <Head>
         <title> Documentation - Nobus Networking Services </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main>
-        <div className="flex px-5 py-3 justify-between shadow-2xl border-y border-gray-300">
+        <div className="flex px-5 py-3 justify-between shadow border-y border-gray-300 bg-white">
           <div className="flex">
             <div className="flex">
               {!open ? (
@@ -78,14 +79,14 @@ function index() {
             </a>
           </div>
         </div>
-        <div className={`grid grid-cols-1 lg:grid-cols-4`}>
-          <div className={`${!open && "hidden"}`}>
+        <div className={`grid`}>
+          <div className={`${!open && "hidden"}`} aria-hidden="true">
             <SidebarDocs open={open} setOpen={setOpen} />
           </div>
 
           <div
-            className={`lg:col-span-3 bg-gray-200 h-[600px] overflow-y-scroll scrollbar-hide ${
-              !open && "lg:col-span-4"
+            className={`ml-0 lg:ml-auto lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl h-[580px] overflow-y-scroll scrollbar scrollbar-hide ${
+              !open && "ml-0 lg:ml-auto lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl"
             }`}
           >
             <div className="p-5">
@@ -176,9 +177,9 @@ function index() {
               <div className="p-5 text-sm tracking-wide leading-relaxed">
                 <p>Except otherwise...</p>
               </div>
-            </div>
-            <div className="overflow-hidden">
-              <Footer />
+              <div>
+                <Footer2 />
+              </div>
             </div>
           </div>
         </div>

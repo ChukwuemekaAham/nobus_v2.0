@@ -25,7 +25,7 @@ function support() {
     };
     setIsPending(true);
 
-    const BASE = process.env.NEXT_PUBLIC_BASE
+    const BASE = process.env.NEXT_PUBLIC_BASE;
 
     fetch(`${BASE}/contact`, {
       method: "POST",
@@ -62,18 +62,18 @@ function support() {
   };
 
   return (
-    <div className="h-screen">
+    <div>
       <Head>
         <title>Nobus | Technical Support</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
 
-      <div className="grid grid-cols-1 lg:gap-y-10 gap-x-4 md:gap-x-0 lg:grid-cols-2 lg:p-20">
+      <div className="h-full relative grid grid-cols-1 lg:gap-y-10 gap-x-4 md:gap-x-0 lg:grid-cols-2 lg:p-20">
         <div
-          className="flex-col text-left justify-center p-10"
+          className="flex-col text-left justify-center p-8"
           style={{
-            backgroundImage: "url('/help.png')",
+            backgroundImage: "url('/cont6.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -99,8 +99,8 @@ function support() {
             </span>{" "}
           </p>
         </div>
-        <div className="flex-col">
-          <div className="w-full lg:max-w-md space-y-8 bg-gray-200 p-8">
+        <div className="flex-col p-8">
+          <div className="w-full mx-auto sm:max-w-md space-y-8">
             <div>
               <h2 className="mt-6 text-center text-xl font-semibold tracking-wide text-gray-800">
                 Make an appointment
@@ -253,9 +253,8 @@ function support() {
           )}
         </div>
       </div>
-      <div className="px-10">
-        <Footer2 />
-      </div>
+
+      <Footer2 />
     </div>
   );
 }

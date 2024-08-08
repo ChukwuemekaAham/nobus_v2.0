@@ -719,7 +719,7 @@ export default function Header() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 30000); // 2 minutes
+    }, 60000); // 2 minutes
 
     return () => clearTimeout(timer);
   }, []);
@@ -935,7 +935,7 @@ export default function Header() {
 
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:mx-auto lg:block lg:self-stretch">
-                <div className="flex space-x-6 pt-6 pl-[160px]">
+                <div className="flex space-x-6 pt-5 lg:pl-[50px] xl:pl-[160px]">
                   <a
                     href="#"
                     className="flex text-base z-10 font-semibold my-px  cursor-pointer text-white hover:text-white hover:shadow-lg"
@@ -986,8 +986,8 @@ export default function Header() {
                               />
 
                               <div className="relative bg-white">
-                                <div className="ml-auto max-w-7xl pl-2">
-                                  <div className="flex">
+                                <div className="ml-auto max-w-7xl xl:max-w-max pl-6">
+                                  <div className="flex lg:h-[500px] xl:h-[570px] scrollbar scrollbar-hide overflow-y-scroll">
                                     <div className="flex-col w-2/3 pt-10">
                                       <div className="grid grid-cols-3 gap-y-3 gap-x-8 pr-4 text-sm h-[500px] scrollbar scrollbar-hide overflow-y-scroll hover:scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-transparent">
                                         {category.sections.map((section) => (
@@ -1065,7 +1065,7 @@ export default function Header() {
                                       </div>
 
                                       <div className="border border-gray-900 bg-white mt-2 p-2 text-center text-gray-900">
-                                        <div className="space-y-6 sm:flex sm:space-y-0 space-x-2">
+                                        <div className="space-y-6 sm:flex sm:space-y-0 space-x-2 justify-between">
                                           {callsToAction.map((item) => (
                                             <div
                                               key={item.name}
@@ -1073,7 +1073,7 @@ export default function Header() {
                                             >
                                               <a
                                                 href={item.href}
-                                                className="flex items-center text-gray-700 rounded-lg shadow-lg border bg-gray-50 lg:p-3 text-base font-medium group-hover:bg-gray-200 group-hover:text-blue-600 group-hover:scale-105"
+                                                className="flex items-center text-gray-700 rounded-lg shadow-lg border bg-gray-50 py-2 px-4 xl:py-3 xl:px-6 lg:text-sm xl:text-base font-medium group-hover:bg-gray-200 group-hover:text-blue-600 group-hover:scale-105"
                                               >
                                                 <item.icon
                                                   className="h-6 w-6 flex-shrink-0"
@@ -1087,7 +1087,7 @@ export default function Header() {
                                           ))}
                                         </div>
 
-                                        <p className="mt-2 text-md text-left px-4">
+                                        <p className="mt-2 text-base tracking-tight text-justify px-2">
                                           For general enquiry about the services
                                           that we offer, you can contact our
                                           sales team.
@@ -1147,7 +1147,7 @@ export default function Header() {
                               />
 
                               <div className="relative bg-white">
-                                <div className="mx-auto max-w-7xl px-8 py-10">
+                                <div className="mx-auto max-w-7xl xl:max-w-max px-8 py-10">
                                   <div className="pb-10 flex">
                                     <div className="flex w-1/3 pr-10">
                                       {/* Filters */}
@@ -1322,7 +1322,7 @@ export default function Header() {
                               />
 
                               <div className="relative bg-white">
-                                <div className="mx-auto max-w-7xl px-8 py-10">
+                                <div className="mx-auto max-w-7xl xl:max-w-max px-8 py-10">
                                   <div className="pb-10 flex">
                                     <div className="flex w-1/3 pr-10">
                                       <div className="hidden md:block">
@@ -1395,7 +1395,7 @@ export default function Header() {
                                         </div>
                                       </div>
                                     </div>
-                                    <div className="flex w-1/3 space-x-5 px-4">
+                                    <div className="flex w-1/3 space-x-5 justify-start mr-5">
                                       <div className="">
                                         <div className="flow-root ">
                                           <ul

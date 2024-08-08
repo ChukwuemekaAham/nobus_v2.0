@@ -16,6 +16,7 @@ import Autoscaling from "../../../components/fcsdoc/Autoscaling";
 import { Tab } from "@headlessui/react";
 import DedicatedHosting from "../../../components/fcsdoc/DedicatedHosting";
 import Connect from "../../../components/fcsdoc/Connect";
+import Footer2 from "../../../components/Footer2";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -32,14 +33,14 @@ function index() {
   ];
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden bg-gray-300">
       <Head>
         <title> Documentation - Nobus Flexible Compute Service </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main>
-        <div className="flex px-5 py-3 justify-between shadow-2xl border-y border-gray-300">
+        <div className="flex px-5 py-3 justify-between shadow border-y border-gray-300 bg-white">
           <div className="flex">
             <div className="flex">
               {!open ? (
@@ -79,18 +80,18 @@ function index() {
             </a>
           </div>
         </div>
-        <div className={`grid grid-cols-1 lg:grid-cols-4`}>
+        <div className={`grid`}>
           <div className={`${!open && "hidden"}`} aria-hidden="true">
             <SidebarDocs open={open} setOpen={setOpen} />
           </div>
 
           <div
-            className={`lg:col-span-3 bg-gray-200 h-[600px] overflow-y-scroll scrollbar-hide ${
-              !open && "lg:col-span-4"
+            className={`ml-0 lg:ml-auto lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl h-[580px] overflow-y-scroll scrollbar scrollbar-hide ${
+              !open && "ml-0 lg:ml-auto lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl"
             }`}
           >
             <div className="p-5">
-              <div className={`bg-white shadow-lg border border-gray-300`}>
+              <div className={`bg-white shadow rounded border border-gray-300`}>
                 <div id="overview" className="flex-col p-5 lg:p-10">
                   <h1 className="pb-10 text-center">
                     Nobus Flexible Compute Service
@@ -281,8 +282,8 @@ function index() {
                         service provider.
                       </p>
                     </div>
-                    <div className="px-10 my-10 border shadow-sm rounded-md">
-                      <div className="w-full px-2 py-16 sm:px-0">
+                    <div className="px-2 lg:px-10  my-10 border shadow-sm rounded-md">
+                      <div className="w-full px-2 py-4 md:py-16 sm:px-0">
                         <Tab.Group vertical>
                           <div className="grid grid-cols-1 md:grid-cols-3">
                             <Tab.List className="flex flex-col col-span-1 rounded-xl bg-gray-100">
@@ -514,9 +515,9 @@ function index() {
               <div className="p-5 text-sm tracking-wide leading-relaxed">
                 <p>Except otherwise...</p>
               </div>
-            </div>
-            <div className="overflow-hidden">
-              <Footer />
+              <div>
+                <Footer2 />
+              </div>
             </div>
           </div>
         </div>

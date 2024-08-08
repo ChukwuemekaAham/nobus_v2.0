@@ -116,14 +116,14 @@ function Footer() {
               </p>
               <div className="flex px-5 space-x-1 sm:px-0 items-center justify-center sm:space-x-2">
                 <img
-                  width={146}
+                  width={136}
                   height={46}
                   className="block mt-5 sm:my-10 w-29 shadow-lg"
                   src="/pcidss-logo.png"
                 />
                 <img
                   width={120}
-                  height={46}
+                  height={42}
                   className="block mt-5 sm:my-10 w-25 shadow-lg"
                   src="/iso-logo.png"
                 />

@@ -27,7 +27,7 @@ const data = [
     icon: "/license-key5.png",
   },
   {
-    title: "Project Focusedy",
+    title: "Project Focused",
     description:
       "Leverage our team of engineers to design and manage you resources, so you can focus on your core business and operation",
     icon: "/cyborg5.png",
@@ -174,9 +174,7 @@ const CardSection = () => {
         setCurrentPage={setCurrentPage}
       />
       <div className="flex justify-center mt-4 md:hidden">
-        <button
-          onClick={() => setCurrentPage((currentPage + 1) % totalPages)}
-        >
+        <button onClick={() => setCurrentPage((currentPage + 1) % totalPages)}>
           <svg
             width="40"
             height="40"

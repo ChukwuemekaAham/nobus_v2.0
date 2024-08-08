@@ -188,9 +188,9 @@ function SidebarDocs({ open, setOpen }) {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <Dialog.Panel className="flex w-full max-w-sm overflow-y-auto pb-12 shadow-md">
+            <Dialog.Panel className="flex w-full max-w-sm overflow-y-auto pb-12">
               <Tab.Group as="div" className="mt-2">
-                <div className="h-[500px] overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent mx-6">
+                <div className="h-[540px] ml-6 mr-3 shadow overflow-y-scroll scrollbar scrollbar-hide hover:scrollbar-thin scrollbar-thumb-zinc-200 scrollbar-track-transparent ">
                   {docsfilters.map((section) => (
                     <Disclosure
                       as="div"

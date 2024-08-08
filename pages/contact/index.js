@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer1";
 import { ArrowRightIcon, UserIcon } from "@heroicons/react/outline";
+import Footer2 from "../../components/Footer2";
 
 const cardData = [
   {
@@ -108,7 +109,7 @@ function index() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer2 />
     </section>
   );
 }

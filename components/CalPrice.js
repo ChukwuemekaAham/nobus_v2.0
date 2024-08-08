@@ -386,10 +386,10 @@ const CalPrice = () => {
 
     const doc = new jsPDF();
     const imgProps = doc.getImageProperties(img);
-    const pdfWidth = doc.internal.pageSize.getWidth() - 180;
+    const pdfWidth = doc.internal.pageSize.getWidth() - 186;
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
     const marginTop = 5;
-    const marginRight = 10;
+    const marginRight = 20;
 
     doc.addImage(
       img,
@@ -409,13 +409,14 @@ const CalPrice = () => {
       { label: "Total Price", value: total_price },
     ];
 
-    let currentY = 20;
+    let currentY = 35;
     doc.setFontSize(18);
-    doc.text("Cloud Pricing Calculator Results (NGN)", 20, 10);
+    doc.text("Cloud Pricing Calculator Results (NGN)", 20, 12);
+    doc.text("________________________________________________", 20, 20);
     doc.setFontSize(14);
 
     elements.forEach((element) => {
-      const currencySymbol = "#";
+      const currencySymbol = "N";
       doc.text(
         `${element.label}: ${currencySymbol}${element.value}`,
         20,
@@ -426,9 +427,23 @@ const CalPrice = () => {
 
     const currentDateTime = new Date().toLocaleString();
     const footerText = `Generated on ${currentDateTime} --  © 2024 Nkponani Ltd. All rights reserved.`;
+    const footerText3 =
+      "Charges displayed by the simple monthly calculator are as a result of the infomation you provided and may";
+    const footerText2 =
+      "differ from Nobus original billing. You will be billed based on how you use Nobus services.";
+    const footerText4 =
+      "_____________________________________________________________________________________";
+
     doc.setFontSize(10);
     const footerY = doc.internal.pageSize.getHeight() - 10;
+    const footerY2 = doc.internal.pageSize.getHeight() - 20;
+    const footerY3 = doc.internal.pageSize.getHeight() - 25;
+    const footerY4 = doc.internal.pageSize.getHeight() - 35;
+
     doc.text(footerText, 20, footerY);
+    doc.text(footerText2, 20, footerY2);
+    doc.text(footerText3, 20, footerY3);
+    doc.text(footerText4, 20, footerY4);
 
     doc.save("nobus-pricing-calculator-results.pdf");
   };

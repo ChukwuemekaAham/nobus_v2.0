@@ -4,9 +4,18 @@ import { PhoneIcon } from "@heroicons/react/outline";
 const Banner2 = () => {
   return (
     <section className="relative bg-clip-content bg-gradient-to-l from-[#000026] to-[#0332a0] min-h-screen flex items-center justify-center">
-      <div className="absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
+      <div className="hidden sm:block absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
         <Image
           src="/line2.png"
+          alt="Line design"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
+      <div className="block sm:hidden absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
+        <Image
+          src="/mob-line.png"
           alt="Line design"
           layout="fill"
           objectFit="cover"
