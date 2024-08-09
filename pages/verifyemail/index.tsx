@@ -178,14 +178,18 @@ export default function index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full h-full">
+      <div className="">
         <div className="">
           <div className="lg:grid lg:grid-cols-3">
             <div className="lg:col-span-2">
               <Headerregister />
+              <hr className="border-t " />
               <FormProvider {...methods}>
-                <form onSubmit={handleSubmit(onSubmitHandler)} className="p-20">
-                  <div className="overflow-hidden  sm:rounded-md ">
+                <form
+                  onSubmit={handleSubmit(onSubmitHandler)}
+                  className="p-10 sm:p-20"
+                >
+                  <div className="overflow-hidden sm:rounded-md ">
                     <div className="mx-auto justify-center pb-5 flex">
                       <a href="/">
                         <img className="h-16 w-auto" src="/2fa.png" alt="" />
@@ -252,6 +256,7 @@ export default function index() {
                   </div>
                 </form>
               </FormProvider>
+              <Footer2 />
             </div>
 
             <div className="hidden lg:block lg:col-span-1">
@@ -262,10 +267,6 @@ export default function index() {
               />
             </div>
           </div>
-        </div>
-
-        <div className="px-4">
-          <Footer2 />
         </div>
       </div>
     </section>

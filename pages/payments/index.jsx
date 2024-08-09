@@ -130,50 +130,66 @@ const index = () => {
         <title>Nobus | Payment</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <div className="">
-        <div className="mt-0">
+        <div>
           <div className="lg:grid lg:grid-cols-3">
             <div className="lg:col-span-2">
               <Headerregister />
               <hr className="border-t " />
-              {isClient &&
-                <div className="mx-auto text-center space-y-2 justify-center px-10 pt-20 pb-5">
-                  <div className="flex flex-col">
-                    <a href="/">
-                      <img className="h-16 w-auto mx-auto mb-5" src="/2fa.png" alt="" />
-                    </a>
-                    <p className="text-xl font-semibold">Hello 👋 {authUser?.user.first_name}</p>
-                    <p className="font-semibold text-sm pb-2 text-gray-400">We're thrilled to have you on board! ✨</p>
-                    <p><span className="font-semibold">Date Registered:</span> {authUser?.project[0].date_created}</p>    
-                      
-                  
+              <div className="p-10 sm:p-20">
+                {isClient && (
+                  <div className="mx-auto text-center space-y-2 justify-center px-10 pt-20 pb-5">
+                    <div className="flex flex-col">
+                      <a href="/">
+                        <img
+                          className="h-16 w-auto mx-auto mb-5"
+                          src="/2fa.png"
+                          alt=""
+                        />
+                      </a>
+                      <p className="text-xl font-semibold">
+                        Hello 👋 {authUser?.user.first_name}
+                      </p>
+                      <p className="font-semibold text-sm pb-2 text-gray-400">
+                        We're thrilled to have you on board! ✨
+                      </p>
+                      <p>
+                        <span className="font-semibold">Date Registered:</span>{" "}
+                        {authUser?.project[0].date_created}
+                      </p>
+                    </div>
+
+                    <h3 className="text-xl text-center pt-10 font-medium tracking-wider text-gray-500">
+                      VERIFY YOUR DEBIT CARD INFORMATION
+                    </h3>
+
+                    <p className="mt-1 pt-2 text-sm text-gray-600 mx-auto md:mx-20">
+                      We make a temporary deduction of N100 Naira (or an
+                      equivalent amount in local currency) as a pending
+                      transaction for 3-5 days to verify your identity.
+                    </p>
                   </div>
-                 
-                  <h3 className="text-xl text-center pt-10 font-medium tracking-wider text-gray-500">
-                     VERIFY YOUR DEBIT CARD INFORMATION
-                  </h3>
-                  
-                  <p className="mt-1 pt-2 text-sm text-gray-600 mx-auto md:mx-20">
-                    We make a temporary deduction of N100 Naira (or an equivalent amount in local currency)
-                    as a pending transaction for 3-5 days to verify your identity.
-                  </p>
+                )}
+                <div className="bg-gray-50 max-w-sm mx-auto px-4 pb-20 text-right sm:px-6">
+                  <PaystackButton
+                    className="bg-blue-600 w-full inline-flex justify-center tracking-wide leading-relax rounded-full border border-transparent py-2 px-4 text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    {...componentProps}
+                    onSuccess={onSuccess}
+                    onClose={onClose}
+                  />
                 </div>
-               
-              }
-              <div className="bg-gray-50 max-w-sm mx-auto px-4 pb-20 text-right sm:px-6">
-                <PaystackButton className="bg-blue-600 w-full inline-flex justify-center tracking-wide leading-relax rounded-full border border-transparent py-2 px-4 text-md font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" 
-                {...componentProps} onSuccess={onSuccess} onClose={onClose} />
               </div>
+              <Footer2 />
             </div>
             <div className="hidden lg:block lg:col-span-1">
-                <img className="w-full h-full bg-contain" src="/k8s-ad.png" alt="" />
+              <img
+                className="w-full h-full bg-contain"
+                src="/k8s-ad.png"
+                alt=""
+              />
             </div>
           </div>
-        </div>
-
-        <div className="px-4">
-          <Footer2 />
         </div>
       </div>
     </section>

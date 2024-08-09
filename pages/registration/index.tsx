@@ -135,6 +135,7 @@ const index = () => {
           <div className="lg:grid lg:grid-cols-3">
             <div className="lg:col-span-2">
               <HeaderRegister />
+              <hr className="border-t " />
               <FormProvider {...methods}>
                 <form onSubmit={handleSubmit(onSubmitHandler)} className="px-4">
                   <div className="overflow-hidden sm:rounded-md">
@@ -507,6 +508,7 @@ const index = () => {
                   </div>
                 </form>
               </FormProvider>
+              <Footer2 />
             </div>
             <div className="hidden lg:block lg:col-span-1">
               <img
@@ -517,8 +519,6 @@ const index = () => {
             </div>
           </div>
         </div>
-
-        <Footer2 />
       </div>
     </section>
   );
