@@ -186,7 +186,7 @@ const Validate2faPage = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmitHandler)}
-          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-8 space-y-5"
+          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-4 sm:p-8 space-y-5"
         >
           <div className="w-full">
             <div className="mx-auto justify-center flex">

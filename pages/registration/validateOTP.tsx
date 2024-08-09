@@ -170,7 +170,7 @@ const Validate2faPage = () => {
   }, []);
 
   return (
-    <section className="min-h-screen grid place-items-center bg-gray-200">
+    <section className="min-h-screen grid place-items-center bg-gray-200 px-2">
       <div className="mx-auto justify-center py-5 flex ">
         <a href="/">
           <img className="h-10 w-auto" src="/logo2.png" alt="" />
@@ -179,7 +179,7 @@ const Validate2faPage = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmitHandler)}
-          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-8 space-y-5"
+          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-4 sm:p-8 space-y-5"
         >
           <div className="w-full">
             <div className="mx-auto justify-center flex">

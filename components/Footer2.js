@@ -8,14 +8,14 @@ function Footer2() {
       <CookieAccept />
       <div className="grid grid-col-1 py-5 md:px-2 md:grid-cols-3 bg-[#000026] text-center place-items-center md:justify-between">
         <div className="flex flex-1 space-x-4">
-          <a href="/">
+          {/* <a href="/">
             <Image
               className="mx-auto w-full"
               src="/logo.png"
               width={66}
               height={26}
             />
-          </a>
+          </a> */}
           <p className="ml-2 text-sm font-semibold text-gray-100">
             © 2024 Nkponani Ltd. All rights reserved.
           </p>

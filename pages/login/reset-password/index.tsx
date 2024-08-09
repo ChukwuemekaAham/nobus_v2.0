@@ -96,7 +96,7 @@ const index = () => {
         <FormProvider {...methods}>
           <form
             onSubmit={handleSubmit(onSubmitHandler)}
-            className="max-w-sm w-full mx-auto overflow-hidden shadow-lg bg-white rounded-2xl p-8 space-y-5"
+            className="max-w-xs sm:max-w-sm w-full mx-auto my-16 sm:my-10 overflow-hidden shadow-md bg-white rounded-lg p-4 sm:p-8 space-y-5"
           >
             <div className="mx-auto justify-center pt-5 flex">
               <a href="/">

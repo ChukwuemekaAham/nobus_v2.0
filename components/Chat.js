@@ -89,7 +89,7 @@ function Chat() {
                   leaveTo="opacity-0 translate-y-1"
                 >
                   <Popover.Panel
-                    className="fixed p-4 bottom-[95px] right-1 md:right-4 bg-white rounded-xl shadow-lg w-full max-w-sm z-50 "
+                    className="fixed p-4 bottom-[95px] right-5 bg-white rounded-xl shadow-lg w-full max-w-xs z-50 "
                     style={{
                       backgroundImage: "url('/cont6.jpg')",
                       backgroundRepeat: "no-repeat",
@@ -100,7 +100,7 @@ function Chat() {
                       <div className="w-full max-w-md text-center">
                         <div className="flex justify-between">
                           <div className="flex-col">
-                            <p className="text-xl italic font-epilogue ">
+                            <p className="text-base italic font-bold font-epilogue ">
                               Support
                             </p>
                           </div>
@@ -118,7 +118,7 @@ function Chat() {
                         <h4 className="text-white mt-4">
                           Chat unavailable right now
                         </h4>
-                        <p className="text-white">
+                        <p className="text-white text-sm">
                           please tell us about your project
                         </p>
 
@@ -240,10 +240,10 @@ function Chat() {
       </Popover.Group>
       <div
         style={{ display: visible ? "block" : "none" }}
-        className="fixed inset-x-0 bottom-10 ml-10 mr-10 sm:mr-[300px] md:mr-[500px] lg:mr-[700px] xl:mr-[900px]"
+        className="fixed inset-x-0 bottom-5 max-w-xs z-50  left-6"
       >
         {success && (
-          <div className="flex flex-wrap bg-gray-800 shadow-lg w-50 px-3 py-2 text-md text-white font-semibold justify-between rounded-md">
+          <div className="flex flex-wrap bg-gray-800 shadow-lg w-50 px-2 py-px text-sm text-white font-semibold justify-between rounded-md">
             <div className="flex w-0 flex-1 p-2">{success}</div>{" "}
             <div className="order-2 flex-shrink-0 sm:order-3 bg-gray-800">
               <button
@@ -261,7 +261,7 @@ function Chat() {
           </div>
         )}
         {error && (
-          <div className="flex flex-wrap bg-red-600 w-50 px-3 py-2 shadow-lg text-md text-white font-semibold justify-between rounded-md">
+          <div className="flex flex-wrap bg-red-600 w-50 px-2 py-px shadow-lg text-sm text-white font-semibold justify-between rounded-md">
             <div className="flex w-0 flex-1 p-2">{error}</div>{" "}
             <div className="order-2 flex-shrink-0 sm:order-3 bg-red-600">
               <button

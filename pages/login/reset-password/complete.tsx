@@ -186,7 +186,7 @@ const Complete = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmitHandler)}
-          className="max-w-md w-full mx-auto my-5 overflow-hidden shadow-md bg-white rounded-2xl p-8 space-y-5"
+          className="max-w-xs sm:max-w-sm w-full mx-auto my-16 sm:my-10 overflow-hidden shadow-md bg-white rounded-lg py-4 px-2 sm:p-8 space-y-5"
         >
           <div className="w-full">
             <div className="mx-auto justify-center flex">
@@ -276,10 +276,10 @@ const Complete = () => {
             </div>
           </div>
 
-          <span className="flex mx-auto text-center justify-center text-md">
+          <span className="flex mx-auto text-center justify-center text-sm sm:text-base ">
             Didn't get a code?{" "}
             <button className="pl-2" onClick={() => resendVerificationCode()}>
-              <a className="hover:underline text-blue-600">
+              <a className="hover:underline text-blue-600 text-sm sm:text-base">
                 Resend Verification Code
               </a>
             </button>

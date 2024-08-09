@@ -80,7 +80,7 @@ const LoginPage: NextPage<LoginPageProps> = () => {
         <div className="mx-auto justify-center py-10 flex">
           <img className="h-12 w-auto" src="/favicon.ico" alt="" />
         </div>
-        <h1 className="text-sm pb-5">Attempting dashboard login</h1>
+        <h6 className="text-sm pb-5">Attempting dashboard login</h6>
         {error && (
           <div className="text-gray-400 font-semibold text-md">{error}</div>
         )}

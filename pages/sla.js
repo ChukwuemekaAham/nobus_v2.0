@@ -13,7 +13,7 @@ function sla() {
       <div className="px-10 md:px-20 py-5">
         <div className="my-10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl">
-            Nobus Service Level Agreements
+            Nobus Service Level Agreements (SLAs)
           </h1>
 
           <div
@@ -148,7 +148,7 @@ function sla() {
                   </tbody>
                 </table>
 
-                <p>
+                <p className="pt-5">
                   {" "}
                   We will apply any Service Credits only against future payments
                   for the applicable Included Service otherwise due from you. At

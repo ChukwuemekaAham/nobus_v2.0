@@ -92,13 +92,13 @@ export default function Content() {
       </div>
 
       <div className="mx-auto max-w-2xl text-center mt-16">
-        <div className="inline-flex items-center justify-center mx-auto place-items-center bg-blue-100 px-4 py-1.5 rounded-md">
+        <div className="inline-flex items-center justify-center mx-auto place-items-center bg-blue-100 px-3 py-1.5 rounded-md">
           <img src="/global.png" />
-          <span className="ml-2 text-blue-500 tracking-tight text-xs font-bold">
+          <span className="ml-2 text-[#0568FD] tracking-wide text-xs font-bold">
             GLOBAL OFFERING
           </span>
         </div>
-        <h2 className="text-4xl md:text-6xl text-center font-extrabold tracking-tight text-gray-900">
+        <h2 className="text-4xl mt-5 md:text-6xl text-center font-extrabold tracking-tight text-gray-900">
           Global Cloud-Based Offerings
         </h2>
         <p className="mt-6 text-justify sm:text-center text-md tracking-tight text-gray-900">

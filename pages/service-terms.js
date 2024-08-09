@@ -18,7 +18,7 @@ function serviceterms() {
             class="col pl-3 ml-1 border-l-2 border-l-blue-600 mt-4"
             id="doc-bd"
           >
-            <h6 class="py-2">Last Updated: December 10, 2022</h6>
+            <h6 class="py-2">Last Updated: August 10, 2024</h6>
           </div>
         </div>
 
@@ -384,12 +384,12 @@ function serviceterms() {
 
             <h4 class="pt-10 pb-2 text-2xl font-semibold">
               {" "}
-              4. NCS Access Management (NAM)
+              4. NCS Identity Access Management (NIAM)
             </h4>
             <div class="">
               <p>
                 <b>4.1.</b> &nbsp; We may change user credentials created by you
-                using NAM if we determine in our reasonable discretion that a
+                using NIAM if we determine in our reasonable discretion that a
                 change is necessary for the protection of your NCS account and
                 resources, and we will promptly notify you of any such change.
               </p>

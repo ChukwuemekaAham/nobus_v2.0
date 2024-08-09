@@ -10,147 +10,569 @@ import Header from "../components/Header";
 import Footer from "../components/Footer1";
 import Image from "next/image";
 
-const cardData = [
-  {
-    id: "1",
-    title: "Pay-as-you-use",
-    description:
-      "Pay-as-you-use allows you to easily adapt to changing business needs without over committing budgets and improving your responsiveness to changes. With a pay-as-you-use model, you can adapt your business depending on need and not on forecasts, reducing the risk of over provisioning or missing capacity.",
-  },
-  {
-    id: "2",
-    title: "Pay less by using more",
-    description:
-      "With Nobus, you can get volume based discounts and realize important savings as your usage increases. Nobus also gives you options to acquire services that help you address your business needs.",
-  },
-];
-const sections = [
-  {
-    id: "compute",
-    name: "Compute",
-    items: [
-      {
-        name: "Nobus Flexible Compute Service (FCS)",
-        href: "#",
-      },
-      {
-        name: "Nobus Flexible Compute Service Autoscaling (FCSA)",
-        href: "#",
-        desc: "Resizable compute capacity in the cloud",
-      },
-    ],
-  },
-  {
-    id: "storage",
-    name: "Storage",
-    items: [
-      {
-        name: "Nobus Flexible Block Storage (FBS)",
-        href: "#",
-        desc: "Block level storage volumes (1 GB to 1 TB ) for use with Nobus FC Instances",
-      },
-      {
-        name: "Flexible Object Storage (FOS)",
-        href: "#",
-        desc: "Extensive and Unlimited Storage in the cloud",
-      },
-    ],
-  },
-  {
-    id: "network",
-    name: "Networking and Content Delivery",
-    items: [
-      {
-        name: "Nobus Fast Transit (NFT)",
-        href: "#",
-        desc: "Exclusive allocated network connection",
-      },
-      {
-        name: "Nobus Flexible Load Balancing (FLB)",
-        href: "#",
-        desc: "Maximum performance scale load balancing",
-      },
-    ],
-  },
-];
+const accountFilters = {
+  item1: [
+    {
+      id: "compute",
+      name: "Will Nobus really save me money?",
+      options: [
+        {
+          value:
+            "Yes. Compared to private cloud, with nobus you pay only for the resources that you actually use.",
+        },
+      ],
+    },
+    {
+      id: "storage",
+      name: "How can I set up my Nobus account?",
+      options: [
+        {
+          value:
+            "Nobus is very easy to use. You can go through the Nobus website to create an account.",
+        },
+        {
+          value: "See Nobus fcs documentation to get started.",
+          href: "/documentation/fcs/",
+        },
+      ],
+    },
+    {
+      id: "payment",
+      name: "What payment methods are acceptable by Nobus?",
+      options: [
+        {
+          value:
+            "We offer several payment methods for adding balance to your Nobus account:",
+        },
+        { value: "Credit cards: Visa and MasterCard" },
+        {
+          value:
+            "PayStack: PayStack balance, bank account, debit and credit cards (payment methods may vary by region).",
+        },
+        { value: "Bank Transfers: Wallet" },
+        {
+          value:
+            "Contact us if you have any questions about the payment methods, please contact support",
+          href: "/contact/",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "usage",
+      name: "How will I be billed for resource usage?",
+      options: [
+        {
+          value:
+            "All Simple plans on your account are billed hourly up to the monthly rate cap and the hourly rate is determined by dividing the monthly rate by 672 hours (28 days). However, if your server is online for more than 672 hours in a calendar month, we will bill you on the monthly rate. The Flexible plan is billed hourly according to our pricing for the used resources. All invoices are calculated based on UTC times.",
+        },
+      ],
+    },
+    {
+      id: "shutdown",
+      name: "How are cloud servers billed if shutdown?",
+      options: [
+        {
+          value:
+            "Cloud servers are billed per hour regardless of whether the server is powered on or shutdown.",
+        },
+      ],
+    },
+    {
+      id: "other",
+      name: "How does Nobus compare to other cloud providers?",
+      options: [
+        {
+          value:
+            "Nobus is hosted on a Tier III datacenter, Fully automated, User friendly, easy to use and you pay as you use.",
+        },
+      ],
+    },
+  ],
+};
 
-const faqFilters = [
-  {
-    id: "compute",
-    name: "Will Nobus really save me money?",
-    options: [
-      {
-        value:
-          "Yes. Compared to private cloud, with nobus you pay only for the resources that you actually use.",
-      },
-    ],
-  },
-  {
-    id: "storage",
-    name: "How can I set up my Nobus account?",
-    options: [
-      {
-        value:
-          "Nobus is very easy to use. You can go through the Nobus website to create an account.",
-      },
-      {
-        value: "See Nobus fcs documentation to get started.",
-        href: "/documentation/fcs/",
-      },
-    ],
-  },
-  {
-    id: "payment",
-    name: "What payment methods are acceptable by Nobus?",
-    options: [
-      {
-        value:
-          "We offer several payment methods for adding balance to your Nobus account:",
-      },
-      { value: "Credit cards: Visa and MasterCard" },
-      {
-        value:
-          "PayStack: PayStack balance, bank account, debit and credit cards (payment methods may vary by region).",
-      },
-      { value: "Bank Transfers: Wallet" },
-      {
-        value:
-          "Contact us if you have any questions about the payment methods, please contact support",
-        href: "/contact/",
-      },
-    ],
-  },
-  {
-    id: "usage",
-    name: "How will I be billed for resource usage?",
-    options: [
-      {
-        value:
-          "All Simple plans on your account are billed hourly up to the monthly rate cap and the hourly rate is determined by dividing the monthly rate by 672 hours (28 days). However, if your server is online for more than 672 hours in a calendar month, we will bill you on the monthly rate. The Flexible plan is billed hourly according to our pricing for the used resources. All invoices are calculated based on UTC times.",
-      },
-    ],
-  },
-  {
-    id: "shutdown",
-    name: "How are cloud servers billed if shutdown?",
-    options: [
-      {
-        value:
-          "Cloud servers are billed per hour regardless of whether the server is powered on or shutdown.",
-      },
-    ],
-  },
-  {
-    id: "other",
-    name: "How does Nobus compare to other cloud providers?",
-    options: [
-      {
-        value:
-          "Nobus is hosted on a Tier III datacenter, Fully automated, User friendly, easy to use and you pay as you use.",
-      },
-    ],
-  },
-];
+const computeFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "How can I connect to my instances?",
+      options: [
+        {
+          value:
+            "We recommend using SSH for Linux servers and Remote Desktop for Windows.",
+        },
+        {
+          value: "See connecting to your fcs instance for more information.",
+          href: "/documentation/fcs/#connecting-to-instance",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "Will I have access to a console on my server?",
+      options: [
+        {
+          value:
+            "Yes, within seconds of deploying a server! You can use SSH, VNC, RDC for Windows, as well as the convenient web Console at your Nobus control panel.",
+        },
+        {
+          value: "See connecting to your fcs instance for more information.",
+          href: "/documentation/fcs/#connecting-to-instance",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "What SLAs are available for Nobus VMs?",
+      options: [
+        {
+          value:
+            "For all Virtual Machines that have two or more instances deployed in the same Availability Zone, we guarantee you will have Virtual Machine Connectivity to at least one instance at least 99.982% of the time.",
+        },
+        {
+          value:
+            "For any Single Instance Virtual Machine using Standard SSD Managed Disks for Operating System Disk and Data Disks, we guarantee you will have Virtual Machine Connectivity of at least 99.982%.",
+        },
+        {
+          value:
+            "See nobus Service Level Agreements (SLAs) for more information",
+          href: "/sla",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "Create VMs in Nobus through the nobus cloud console",
+      options: [
+        {
+          value:
+            "To create new VMs, visit the Nobus console at https://cloud.nobus.io/project/",
+          href: "https://cloud.nobus.io/project/",
+        },
+        {
+          value:
+            "You must have an account with nobus to be able to create an instance",
+        },
+      ],
+    },
+    {
+      id: "5",
+      name: "Can I use any other image? ",
+      options: [
+        {
+          value:
+            "Yes. If you can’t find your favourite flavour of Linux or Windows, you can always upload your custom images",
+        },
+      ],
+    },
+    {
+      id: "6",
+      name: "What operating system do you support?",
+      options: [
+        {
+          value:
+            "We offer a suite of popular Linux distributions and Windows templates for fast server deployment.These include Debian, OpenSUSE, CentOS, Ubuntu, Fedora and Windows Server with different versions of each. You can upload other operating systems or your custom images, but charges applies.",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "7",
+      name: "Can I use my own Windows licence?",
+      options: [
+        {
+          value:
+            "As a licensed Microsoft partner, we offer cloud servers running the latest Windows Server products. However, this means that Microsoft Windows licences you want to use on Nobus must be purchased from us. By signing the Microsoft License Mobility Agreement (MLMA), you may use your existing Microsoft licences such as Microsoft SQL Server database software, Microsoft Exchange Server, Microsoft SharePoint Server and many others.",
+        },
+        {
+          value: "Contact support learn more",
+          href: "/contact/support",
+        },
+      ],
+    },
+    {
+      id: "8",
+      name: "How do I connect using Remote Desktop?",
+      options: [
+        {
+          value:
+            "You’ll need to enter the IP address of your cloud server and then authenticate using the username “Administrator” and your server password.",
+        },
+        {
+          value:
+            "See connecting to your windows server using RDP to learn more",
+          href: "/documentation/fcs/#connecting-to-instance",
+        },
+      ],
+    },
+    {
+      id: "9",
+      name: "Do you offer Microsoft SQL licences?",
+      options: [
+        {
+          value:
+            "We currently offer MS SQL licences. By signing the Microsoft License Mobility Agreement you can use many of your existing Microsoft licenses such as Microsoft SQL Server database software, Microsoft Exchange Server, Microsoft SharePoint Server, and more.",
+        },
+      ],
+    },
+    {
+      id: "10",
+      name: " Do you offer managed hosting? ",
+      options: [
+        {
+          value:
+            "Not at this time. Nobus is an infrastructure-as-a-service provider and we focus on offering the best ‘tabula rasa’ in the cloud for developers and businesses to freely build upon. However, we have an extensive network of partners offering world-class managed hosting services. ",
+        },
+      ],
+    },
+    {
+      id: "11",
+      name: "What standards are your data centres certified for?",
+      options: [
+        {
+          value:
+            "Our data centres are certified for different requirements such as ISO9001, ISO27001, ISO14001, ISO14644-8, OHSAS 18001, PCI DSS, PAS 99, VAHTI T3 and KATAKRI.",
+        },
+        {
+          value: "Contact us for an up-to-date list of all certificates.",
+          href: "/contact",
+        },
+      ],
+    },
+  ],
+};
+
+const storageFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "What disk storage options are there when I provision a new Nobus VM?",
+      options: [
+        {
+          value:
+            "The available disk type is standard solid-state drives (SSDs).",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: " How much storage can I have per server?",
+      options: [
+        {
+          value:
+            " Each cloud server can have up to 8 storage devices 2TB each to the maximum of 16 TB of storage capacity. You can always add more storage capacity after deployment.",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "How do I change storage size? ",
+      options: [
+        {
+          value:
+            "You can increase storage size from the dashboard under Resizing tab in the server settings. Afterwards, you also need to increase the storage in the OS of your cloud server. ",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "I've increased my storage size, but it didn't change on my server.",
+      options: [
+        {
+          value:
+            "You need to tell your server operating system to use the new storage space.",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "5",
+      name: "Do I need to pay extra for persistent storage?",
+      options: [
+        {
+          value:
+            "Not at all. Every storage device, whether SSDs or HDD, is fully persistent.",
+        },
+      ],
+    },
+    {
+      id: "6",
+      name: "Do you offer server backups?",
+      options: [
+        {
+          value:
+            "Of course! You can take manual snapshot backups of any storage device on your server or schedule automatic backups. The backups are a quick way to restore an earlier state of your server or a simple way to archive data. Read more about backups in our tutorial.",
+        },
+      ],
+    },
+    {
+      id: "7",
+      name: "Are your storage devices encrypted?",
+      options: [
+        {
+          value:
+            "Not by default. Full storage encryption can be challenging to install and maintain, so instead, we focus on making your storage devices secure without encryption. You are, of course, free to encrypt your storage if you wish.",
+        },
+      ],
+    },
+  ],
+};
+
+const networkingFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "Do nobus offer IPv6 support?",
+      options: [
+        {
+          value:
+            "No. For now  IPv6 address is  disabled. We plan to implement it soon. ",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "How can I test your network speed? ",
+      options: [
+        {
+          value:
+            "You can do a network speed test by manually copying files between servers. Alternatively, you can test the network latency using ping.",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "Do you support multiple IP addresses per server?",
+      options: [
+        {
+          value:
+            "Yes. Each server can have up to 5 public IPv4 addresses and 1 private IPv4 address. Find out more in our guide for attaching new IP addresses.",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "What ports do you block on servers?",
+      options: [
+        {
+          value: "All ports are unlocked with the exception of the port 25.",
+        },
+      ],
+    },
+    {
+      id: "5",
+      name: "Do you allow outbound SMTP?",
+      options: [
+        {
+          value:
+            "Yes, but you must follow common good practices when sending any marketing emails. Spamming is strictly prohibited. As such the port 25 used by SMTP is blocked by default on all new accounts.",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "6",
+      name: "How is data transfer outside monthly quota billed?",
+      options: [
+        {
+          value:
+            "If the included outbound traffic runs out, we bill each additional GB of transfer according to our standard pricing at N6,000 monthly. All inbound and private network traffic is free of charge.",
+        },
+      ],
+    },
+    {
+      id: "7",
+      name: "How can I set my domain to my cloud server?",
+      options: [
+        {
+          value:
+            " You will need to point your domain name to the public IP address of your cloud server at your domain name registrar.",
+        },
+        {
+          value: "See nobus domains and dns documentation for more information",
+          href: "/documentation/dns",
+        },
+      ],
+    },
+    {
+      id: "8",
+      name: "Can I bring my own IPs or IP range?",
+      options: [
+        {
+          value: "Yes, you can do this in our Private Cloud. ",
+        },
+        {
+          value: "Contact us for more information.",
+          href: "/contact",
+        },
+      ],
+    },
+    {
+      id: "9",
+      name: "Do you offer private networking?",
+      options: [
+        {
+          value:
+            "Yes. Our SDN private networks and the account-wide utility network allow your servers to communicate securely. Only servers on your account can communicate via the utility network connection while with SDN private networks you get even more control over which cloud servers are connected. Your private networks are exclusively yours.",
+        },
+      ],
+    },
+  ],
+};
+
+const apiFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "Do you offer an API?",
+      options: [
+        {
+          value:
+            "Yes. We have built a fully-featured API which allows you to perform all the operations available at your Nobus Cloud Config Panel. The same API is used by our backend and it always has the latest features and updates.",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "2",
+      name: "Where can I find my API keys?",
+      options: [
+        {
+          value: "Nobus allows you to create the API ID and API key yourself.",
+        },
+      ],
+    },
+  ],
+};
+
+const gdprFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "Are you GDPR compliant?",
+      options: [
+        {
+          value:
+            "Yes. Nobus is fully GDPR compliant and we have followed similar principles for a long time, even before GDPR was introduced.",
+        },
+        {
+          value:
+            "Read more about GDPR and how it protects your privacy at our agreement update.",
+          href: "/agreement",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "Do you provide Data Processing Addendum (DPA)?",
+      options: [
+        {
+          value:
+            "If GDPR applies to your organization and you need a DPA to satisfy the GDPR requirements, contact our support.",
+        },
+        {
+          value: "contact support.",
+          href: "/contact",
+        },
+        {
+          value:
+            "Read more about GDPR and how it protects your privacy at our agreement update.",
+          href: "/agreement/dpa",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "3",
+      name: "What personal data do you collect?",
+      options: [
+        {
+          value:
+            "We collect and process certain personal data (contact, billing and behavioural) in compliance with GDPR to enhance our services. This does not include any personal data stored on your cloud servers. Those are not accessible by Nobus and they are under your sole discretion.",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "How can I delete or retrieve the data Nobus has about me?",
+      options: [
+        {
+          value:
+            "You may exercise your right to view, modify, or delete your personal data through your Nobus Cloud Config Panel.",
+        },
+        {
+          value: "",
+          href: "",
+        },
+      ],
+    },
+  ],
+};
+
+const supportFilters = {
+  item1: [
+    {
+      id: "1",
+      name: "Do you have a support help desk I can contact? ",
+      options: [
+        {
+          value:
+            "Yes, always! We have a friendly dedicated team of technical support specialists available 24/7. On average, we’ll respond in less than 5 minutes! We are happy to assist with any technical questions related to our infrastructure and services but are unable to manage any of our users’ cloud servers.",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: " How can I contact your support? ",
+      options: [
+        {
+          value:
+            "You can contact us via direct messages, email or phone lines in four different time zones.",
+        },
+        {
+          value: "Find the contact details here.",
+          href: "/contact",
+        },
+      ],
+    },
+  ],
+  item2: [
+    {
+      id: "3",
+      name: "What kind of assistance can you provide?",
+      options: [
+        {
+          value:
+            "We can help you with any technical difficulties you might experience with our services and their use. Don’t hesitate to contact us and ask for help! ",
+        },
+        {
+          value: "Contact technical support",
+          href: "/contact/support",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "Can you help me get started? ",
+      options: [
+        {
+          value:
+            "We have an extensive library of support articles, tutorials, and guides to help you configure your cloud server.",
+        },
+        {
+          value: "Check out our knowledge base to learn more.",
+          href: "/documentation",
+        },
+      ],
+    },
+  ],
+};
 
 function faqs() {
   return (
@@ -205,7 +627,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {accountFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -232,14 +654,23 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
                                   <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
                                   </p>
                                 </div>
                               ))}
@@ -254,7 +685,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {accountFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -281,9 +712,9 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
                                   <a
@@ -313,7 +744,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {computeFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -340,18 +771,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -365,7 +802,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {computeFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -392,18 +829,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -424,7 +867,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {storageFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -451,18 +894,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -476,7 +925,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {storageFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -503,18 +952,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -535,7 +990,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {networkingFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -562,18 +1017,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -587,7 +1048,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {networkingFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -614,18 +1075,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -646,7 +1113,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {apiFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -673,18 +1140,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -698,7 +1171,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {apiFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -725,18 +1198,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -757,7 +1236,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {gdprFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -784,18 +1263,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -809,7 +1294,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {gdprFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -836,18 +1321,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -868,7 +1359,7 @@ function faqs() {
           <div className="grid grid-cols-1 gap-y-8 gap-x-8 lg:grid-cols-2">
             <div className="px-5 bg-gray-100 flex flex-col space-x-4">
               <div className="">
-                {faqFilters.map((section) => (
+                {supportFilters.item1.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -895,18 +1386,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item1-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>
@@ -920,7 +1417,7 @@ function faqs() {
             </div>
             <div className="px-5 bg-gray-100 flex flex-col space-x-4 group">
               <div className="">
-                {faqFilters.map((section) => (
+                {supportFilters.item2.map((section) => (
                   <div className="overflow-y-scroll scrollbar-hide px-3">
                     <Disclosure as="div" key={section.id} className="py-6">
                       {({ open }) => (
@@ -947,18 +1444,24 @@ function faqs() {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-4 p-3 bg-blue-100">
-                              {section.options.map((option) => (
+                              {section.options.map((option, index) => (
                                 <div
-                                  key={option.value}
+                                  key={`item2-${section.id}-${index}`}
                                   className="flex items-center"
                                 >
-                                  <a
-                                    href={option.href}
-                                    className="font-md text-md text-gray-700"
-                                  >
+                                  <p className="font-md text-md text-gray-700">
                                     <span aria-hidden="true" />
-                                    {option.value}
-                                  </a>
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        className="text-blue-500 hover:underline"
+                                      >
+                                        {option.value}
+                                      </a>
+                                    ) : (
+                                      <span>{option.value}</span>
+                                    )}
+                                  </p>
                                 </div>
                               ))}
                             </div>

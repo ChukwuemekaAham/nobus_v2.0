@@ -11,6 +11,7 @@ const Banner2 = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
+          priority
         />
       </div>
       <div className="block sm:hidden absolute inset-0 w-full h-full z-0 animate-[pulse_5s_ease-in-out_infinite] overflow-hidden">
@@ -20,6 +21,7 @@ const Banner2 = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
+          priority
         />
       </div>
       <div className="relative z-10 text-center text-white px-6 lg:px-8 -mt-40">

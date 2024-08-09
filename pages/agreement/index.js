@@ -17,7 +17,7 @@ function agreement() {
           </h1>
 
           <div className="col pl-3 ml-1 border-l-2 border-l-blue-600 mt-4">
-            <h6 className="py-2">Last Updated: December 10, 2022</h6>
+            <h6 className="py-2">Last Updated: December 13, 2023</h6>
           </div>
 
           <div className="py-5">
@@ -815,7 +815,7 @@ function agreement() {
             <div className="">
               <p>
                 “Acceptable Use Policy” means the policy located at
-                https://nobus.io/aup (and any successor or related locations
+                https://nobus.io/policy (and any successor or related locations
                 designated by us), as it may be updated by us from time to time.
               </p>
               <p>
@@ -915,9 +915,7 @@ function agreement() {
                 “Documentation” means the user guides and admin guides (in each
                 case exclusive of content referenced via hyperlink) for the
                 Services located at{" "}
-                <a href="https://nobus.io/documentation ">
-                  https://nobus.io/documentation{" "}
-                </a>
+                <a href="/documentation ">https://nobus.io/documentation </a>
                 (and any successor or related locations designated by us), as
                 such user guides and admin guides may be updated by NCS from
                 time to time.
@@ -983,17 +981,13 @@ function agreement() {
               <p>
                 “Service Terms” means the rights and restrictions for particular
                 Services located at{" "}
-                <a href="https://nobus.io/service-terms/">
-                  https://nobus.io/service-terms/
-                </a>{" "}
+                <a href="/service-terms">https://nobus.io/service-terms/</a>{" "}
                 (and any successor or related locations designated by us), as
                 may be updated by us from time to time.
               </p>
               <p>
                 “Site Terms” means the terms of use located at{" "}
-                <a href="https://nobus.io/service-terms/">
-                  https://nobus.io/service-terms/
-                </a>{" "}
+                <a href="/service-terms">https://nobus.io/service-terms/</a>{" "}
                 (and any successor or related locations designated by us), as
                 may be updated by us from time to time.
               </p>
@@ -1027,8 +1021,6 @@ function agreement() {
             </div>
           </div>
         </div>
-
-        <div className=""></div>
       </div>
       <Footer />
     </section>

@@ -4,7 +4,7 @@ import useResponsive from "../hooks/useResponsive";
 
 const updates = [
   {
-    date: "September 15, 2024",
+    date: "September 15, 2023",
     category: "Security & Data",
     title: "New Sophos reinforcement for...",
     link: "#",
@@ -13,23 +13,23 @@ const updates = [
   {
     date: "May 12, 2024",
     category: "New Features",
-    title: "Kubernetes features now available.",
+    title: "Kubernetes features now available for...",
     link: "#",
     image: "/kubernetes.png",
   },
   {
-    date: "June 2, 2024",
+    date: "January 2, 2024",
     category: "Compliance & Legal",
     title: "We are now fully certified by the international...",
     link: "#",
-    image: "/Link.png",
+    image: "/isoImg.png",
   },
   {
     date: "August 2, 2023",
     category: "Policies & Laws",
     title: "Top 10 international payroll tax mistakes and how to avoid...",
     link: "#",
-    image: "/isoImg.png",
+    image: "/Link.png",
   },
 ];
 

@@ -139,7 +139,7 @@ const index = () => {
                 <form onSubmit={handleSubmit(onSubmitHandler)} className="px-4">
                   <div className="overflow-hidden sm:rounded-md">
                     <div className="my-5 text-center">
-                      <h3 className="text-xl font-medium leading-relax tracking-wider text-gray-500 pt-4">
+                      <h3 className="text-xl font-semibold leading-relax tracking-wider text-gray-500 pt-4">
                         SIGN UP TO NOBUS CLOUD SERVICES
                       </h3>
                       <p className="mt-1 text-sm text-gray-600">
@@ -518,9 +518,7 @@ const index = () => {
           </div>
         </div>
 
-        <div className="px-4">
-          <Footer2 />
-        </div>
+        <Footer2 />
       </div>
     </section>
   );

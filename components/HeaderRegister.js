@@ -39,15 +39,14 @@ const navigation = {
 
 const resources = [
   {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
+    name: "Service FAQs",
+    description: "Get all answers to the most frequently asked questions",
     href: "/service-faq",
     icon: UserIcon,
   },
   {
-    name: "Contact Sales",
-    description: "Speak to Sales",
+    name: "Contact Support",
+    description: "Having technical issues? Get help immediately",
     href: "/contact/",
     icon: PhoneIcon,
   },
@@ -155,7 +154,7 @@ export default function Headerregister() {
               </div>
 
               <div className="ml-auto flex items-center">
-                <div className="flex flex-1 items-center ustify-end space-x-6">
+                <div className="flex flex-1 items-center justify-end space-x-6">
                   {/* Flyout menus */}
                   <Popover.Group className="ml-8 block self-stretch">
                     <div className="flex h-full space-x-8">
@@ -192,7 +191,7 @@ export default function Headerregister() {
                               leaveFrom="opacity-100 translate-y-0"
                               leaveTo="opacity-0 translate-y-1"
                             >
-                              <Popover.Panel className="absolute right-5 z-10 mt-10 w-screen max-w-md transform px-2 sm:px-0">
+                              <Popover.Panel className="absolute right-0 z-10 mt-10 w-screen max-w-md transform px-2 sm:px-0">
                                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                   <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                     {resources.map((item) => (

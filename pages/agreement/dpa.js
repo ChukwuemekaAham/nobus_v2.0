@@ -17,7 +17,7 @@ function dpa() {
           </h1>
 
           <div className="col pl-3 ml-1 border-l-2 border-l-blue-600 mt-4">
-            <h6 className="py-2">Last Updated: December 10, 2022</h6>
+            <h6 className="py-2">Last Updated: December 14, 2023</h6>
           </div>
         </div>
         <div className="py-5">
